@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Introduction
 
-This document includes supplemental materials for the article, "Are there temporal differences in Gary dart point basal morphology?"
+This document includes supplemental materials for the article, "A Quantitative Assessment of Intraspecific Morphological Variation in Gary Dart Points: An Exercise in Archaeological Epistemology and Heuristics"
 
 ### Load geomorph and data
 
@@ -44,11 +44,11 @@ Y.gpa<-gpagen(coords, PrinAxes = TRUE, print.progress = FALSE)
 # quantify global integration relative to self-similarity (Bookstein 2015)
 globalIntegration(Y.gpa$coords)
 # geomorph data frame
-gdf<-geomorph.data.frame(shape=Y.gpa$coords, size=Y.gpa$Csize, region=qdata$region) 
+gdf<-geomorph.data.frame(shape=Y.gpa$coords, size=Y.gpa$Csize, region=qdata$region)
 csz<-Y.gpa$Csize # attribute for boxplot
 rgn<-qdata$region # attribute for boxplot
 # boxplot of central Texas and southern Caddo area Gahagan bifaces by centroid size
-boxplot(csz~rgn, 
+boxplot(csz~rgn,
         main = "Centroid size of Gary dart points by temporal assignment",
         names = c("Archaic", "Woodland"),
         xlab = "Temporal Assignment",
