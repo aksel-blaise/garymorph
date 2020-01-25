@@ -265,6 +265,12 @@ landmarking protocol was developed using the `digit3DLand` package in R
 replicable reference geometry across the sample in *Geomagic Design X*
 made it a better option for the dynamic design process.
 
+Components of this analytical work flow were developed and funded by a
+Preservation Technology and Training grant (P14AP00138) to RZS from the
+National Center for Preservation Technology and Training. Funding for
+this project was provided to RZS by the National Forests and Grasslands
+in Texas (15-PA-11081300-033).
+
 ### References cited
 
 <div id="refs" class="references">
