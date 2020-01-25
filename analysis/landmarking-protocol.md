@@ -8,10 +8,10 @@ Quantitative Assessment of Intraspecific Morphological Variation in Gary
 Dart Points: An Exercise in Archaeological Epistemology and Heuristics.”
 The study asks whether the morphologically-derived temporal framework
 advanced by Densmore (2007) can be extended to Gary dart points
-generally, and whether those specimens assigned to each category exhibit
-unique morphological characteristics. The landmarking protocol developed
-for this project bears some visual similarities with the configuration
-used in the [previous 2D study of basal
+generally, and whether those specimens assigned to each temporal
+category exhibit unique morphological characteristics. The landmarking
+protocol developed for this project bears some visual similarities with
+the configuration used in the [previous 2D study of basal
 morphology](https://scholarworks.sfasu.edu/cgi/viewcontent.cgi?article=1280&context=crhr),
 as well as other two-dimensional geometric morphometric analyses
 (Buchanan and Collard 2010; Buchanan et al. 2011; Ragan and Buchanan
@@ -53,18 +53,17 @@ precision in each subsequent iteration.
 
 Unlike the [previous
 study](https://scholarworks.sfasu.edu/cgi/viewcontent.cgi?article=1280&context=crhr),
-where the outline of the Gary dart point (base) was projected on a 2D
+where the outline of Gary dart point bases were projected onto a 2D
 plane, this effort is based upon a spline extracted from the surface
 geometry of the 3D mesh. That spline is generated with the `extract
-contour curves` command, which detects and extracts 3D contour curves
-from high-curvature areas of the mesh. In reverse-engineering, `extract
-contour curves` is regularly employed as the first step in building a
-`patch network` used to generate a surface. The extracted feature curve
-is rendered as a spline, and follows the highest curvature contours
-around the periphery of the lateral and basal edges, following the
-sinuous edges around the entirety of the point. The remainder of the
-landmarking protocol is based upon this spline, which is subsequently
-split at four mathematically-defined locations.
+contour curves` command that detects and extracts 3D contour curves
+along high-curvature areas of the mesh (i.e., edges). In
+reverse-engineering, `extract contour curves` is regularly employed as
+the first step in building a `patch network` used to generate a surface.
+The extracted feature curve is rendered as a spline, and follows the
+highest curvature contours around the sinuous edge of each point. The
+remainder of the landmarking protocol is based upon this spline, which
+is subsequently split at six mathematically-defined locations.
 
 ``` r
 knitr::include_graphics('images/extractspline.png')
@@ -91,15 +90,15 @@ The characteristic points and tangents developed for this landmarking
 protocol were inspired by the work of Birkhoff (1933). The first
 landmark (LM1) is placed at the horizontal tangent at the tip (proximal
 end) of each Gary dart point. The second and third splits (LM2 and LM3)
-enlist vertical tangents on either side of the biface at the junction of
+enlist vertical tangents on either side of each point at the junction of
 the blade and shoulder, and LM2 is always split on the right side of the
-biface when oriented in 3D space following the alignment output of
+point when oriented in 3D space following the alignment output of
 *auto3dgm*. The fourth and fifth landmarks (LM4 and LM5) occur at points
 of highest curvature at the junction of the shoulder and base. The final
-landmark (LM6), is placed by calculating the linear distance between LM4
-and LM5, then projecting a reference point equidistant between. That
-point is then used to place a reference plane, which is subsequently
-used to cut the spline at the location of LM6.
+landmark (LM6) is placed by calculating the linear distance between LM4
+and LM5, projecting a reference point equidistant between the landmarks,
+and using that point to place the reference plane that splits the spline
+at the location of LM6 (centre base).
 
 #### Spline split at location of LM1 (tip/proximal point)
 
@@ -108,12 +107,12 @@ above the tip of the Gary dart point using the tangent as a `common
 constraint`, and the horizontal as the `independent constraint`. To
 split the 3D spline at the location of the horizontal tangent, a
 `reference point` was inserted at the location of the `tangent` in the
-2D sketch (light blue point; below, left), followed by a `reference
-plane` (in white; below, left and right) using the `pick point and
-normal axis` function where the `reference point` (h-tangent) was used
-as the `pick point`, and the `Right plane` as the `normal axis` (below,
-left). The 3D spline was then cut at the location where the `reference
-plane` intersected with the spline (below image, right).
+sketch (light blue point; below, left), followed by a `reference plane`
+(in white; below, left and right) using the `pick point and normal axis`
+function where the `reference point` (h-tangent) was used as the `pick
+point`, and the `Right plane` as the `normal axis` (below, left). The 3D
+spline was then cut at the location where the `reference plane`
+intersects with the spline (below image, right).
 
 ``` r
 knitr::include_graphics('images/lm1.png')
