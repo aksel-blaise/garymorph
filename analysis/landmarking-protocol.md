@@ -141,6 +141,16 @@ The alignment and orientation of each point was dictated by the
 orientation in that figure, where LM2 was always placed on the right
 side of the basal edge, and LM3 on the left.
 
+``` r
+knitr::include_graphics('images/LM2-3.png')
+```
+
+![](images/LM2-3.png)<!-- -->
+
+``` r
+fig.cap="Identify vertical tangents, insert reference points (left). Then insert and use reference planes to cut spline at location of the vertical tangents (center [LM3] and right [LM2]) for junction of blade and shoulder. \\label{figsplinesplitvlr}"
+```
+
 #### Spline Split at locations of LM4 and LM5 (junction of shoulder and base)
 
 The point of highest curvature between the shoulder and base was
@@ -156,13 +166,13 @@ either side of each Gary dart point where the local radius measure was
 largest.
 
 ``` r
-knitr::include_graphics('images/41TN20-base.png')
+knitr::include_graphics('images/LM4-5.png')
 ```
 
-![](images/41TN20-base.png)<!-- -->
+![](images/LM4-5.png)<!-- -->
 
 ``` r
-fig.cap="Identify points of hightest curvature (light blue) at left/right intersection of lateral and basal edges. \\label{figsplinesplitlr}"
+fig.cap="Identify points of hightest curvature (light blue) at left [LM5] and right [LM4] intersections of shoulder and basal edges. \\label{figsplinesplitcrvlr}"
 ```
 
 #### Spline split at location of LM6 (centre base)
@@ -176,48 +186,50 @@ added using the ctrl-div as the pick point, and the `Right plane` as the
 `reference plane` and the basal spline.
 
 ``` r
-knitr::include_graphics('images/41TN20-base.png')
+knitr::include_graphics('images/LM6.png')
 ```
 
-![](images/41TN20-base.png)<!-- -->
+![](images/LM6.png)<!-- -->
 
 ``` r
-fig.cap="Calculate linear distance between LM2 and LM3, insert reference plane coplanar to Right plane equidistant between LM2 and LM3, and use the reference plane to cut the spline.  \\label{figlm4}"
+fig.cap="Calculate linear distance between LM4 and LM5 (ref-equidistant, left), use point to insert reference plane coplanar to Right plane and use reference plane to cut the spline(center). LM6 added at location of split.  \\label{figlm4}"
 ```
 
 #### Final spline
 
-Through the preceding protocol, the initial spline was split into four
-discrete splines. These splines articulate with components of bifacial
-morphology that can be compartmentalised in the subsequent analyses
-(i.e., left/right \[directional\] asymmetry, blade/base morphological
-integration, etc.). The primary analytical gain achieved through this
-exercise is the requisite foundation needed to carry out replicable
-analyses of Gahagan biface morphology in three dimensions, further
-increasing the precision of the geometric morphometric analysis.
+Through the preceding protocol, the initial spline was split into six
+discrete splines, and landmarks placed at the intersection of each.
+These splines articulate with components of bifacial morphology that can
+be compartmentalised in the subsequent analyses (i.e., left/right
+\[directional\] asymmetry, blade/base morphological integration, etc.).
+The primary analytical gain achieved through this exercise is the
+requisite foundation needed to carry out replicable analyses of Gahagan
+biface morphology in three dimensions, further increasing the precision
+of the geometric morphometric analysis.
 
 ``` r
-knitr::include_graphics('images/41TN20-base.png')
+knitr::include_graphics('images/spline-lm.png')
 ```
 
-![](images/41TN20-base.png)<!-- -->
+![](images/spline-lm.png)<!-- -->
 
 ``` r
-fig.cap="Result of spline splits include four discrete splines, each articulating with a potential region of analytical interest. \\label{figsplinesplit-frbl}"
+fig.cap="Result of spline splits include six discrete splines, each articulating with a region of analytical interest, with landmarks placed at the intersection of each. \\label{figsplinesplit-frbl}"
 ```
 
-### Landmark and semilandmark placement
+### Semilandmark placement
 
-Landmarks 1-4 were placed at the location of each spline split (blue
+Landmarks 1-6 were placed at the location of each spline split (blue
 points, below). Equidistant semilandmarks were then added to each of the
-four splines; 20 between LM1 and LM2, five between LM2 and LM4, five
-between LM4 and LM3, and 20 between LM3 and LM1.
+six splines; 10 between LM1 and LM2, five between LM2 and LM4, 10
+between LM4 and LM6, 10 between LM6 and LM5, five between LM5 and LM3,
+and 10 between LM3 and LM1.
 
 ``` r
-knitr::include_graphics('images/41TN20-base.png')
+knitr::include_graphics('images/spline-lmslm.png')
 ```
 
-![](images/41TN20-base.png)<!-- -->
+![](images/spline-lmslm.png)<!-- -->
 
 ``` r
 fig.cap="3D spline with landmarks (blue) and equidistant semilandmarks (white) applied, with top, right, and front planes. Semilandmarks are renumbered in post.  \\label{figlmslm-all}"
@@ -234,13 +246,13 @@ advancement in those analytical protocols used to achieve a more
 complete and holistic analysis of Gahagan biface morphology.
 
 ``` r
-knitr::include_graphics('images/41TN20-base.png')
+knitr::include_graphics('images/spline-lmslm-mesh.png')
 ```
 
-![](images/41TN20-base.png)<!-- -->
+![](images/spline-lmslm-mesh.png)<!-- -->
 
 ``` r
-fig.cap="Mesh for Gahagan biface 545 from Gahagan Mound with landmarks and equidistant semilandmarks applied. \\label{figbevlm}"
+fig.cap="Mesh for Gary dart point from 41TN20 with landmarks and equidistant semilandmarks applied. \\label{figmesh-lmslm}"
 ```
 
 ### Acknowledgments
