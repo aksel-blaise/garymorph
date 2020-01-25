@@ -100,6 +100,6 @@ fig.cap="Mesh for Gary dart point from 41TN20 with landmarks and equidistant sem
 
 I extend my gratitude to Christian S. Hoggard and David K. Thulman for their thoughtful comments and constructive criticisms on an earlier draft of this landmarking protocol. The current iteration of the landmarking protocol was developed using the `digit3DLand` package in R (code available in this repository); however, the capacity to populate replicable reference geometry across the sample in _Geomagic Design X_ made it a better option for the dynamic design process.
 
-Components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to RZS from the National Center for Preservation Technology and Training. Funding for this project was provided to RZS by the National Forests and Grasslands in Texas (15-PA-11081300-033).
+Funding for this project was provided to RZS by the National Forests and Grasslands in Texas (15-PA-11081300-033), and components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to RZS from the National Center for Preservation Technology and Training. 
 
 ### References cited
