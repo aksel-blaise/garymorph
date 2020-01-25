@@ -97,8 +97,8 @@ point when oriented in 3D space following the alignment output of
 of highest curvature at the junction of the shoulder and base. The final
 landmark (LM6) is placed by calculating the linear distance between LM4
 and LM5, projecting a reference point equidistant between the landmarks,
-and using that point to place the reference plane that splits the spline
-at the location of LM6 (centre base).
+and using that point to place the reference plane that then splits the
+spline at the location of LM6 (centre base).
 
 #### Spline split at location of LM1 (tip/proximal point)
 
