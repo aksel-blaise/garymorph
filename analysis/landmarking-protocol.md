@@ -11,7 +11,8 @@ advanced by Densmore (2007) can be extended to Gary dart points
 generally, and whether those specimens assigned to each category exhibit
 unique morphological characteristics. The landmarking protocol developed
 for this project bears some visual similarities with the configuration
-used in the previous 2D study of basal morphology in Gary dart points,
+used in the [previous 2D study of basal
+morphology](https://scholarworks.sfasu.edu/cgi/viewcontent.cgi?article=1280&context=crhr),
 as well as other two-dimensional geometric morphometric analyses
 (Buchanan and Collard 2010; Buchanan et al. 2011; Ragan and Buchanan
 2018); however, it differs in some fundamental ways. The first and most
@@ -33,36 +34,37 @@ fig.cap="Gary dart point from 41TN20. \\label{figTN20}"
 ```
 
 Inclusion of the third (z-dimension) provides a means of capturing those
-morphological characteristics associated with axial twisting that are
-introduced through the practice of bifacial beveling and resharpening.
-This landmarking protocol represents an intermediate iteration between
-the previous 2D analysis, and the forthcoming protocol that includes
+morphological characteristics associated with axial twisting introduced
+through the practice of bifacial beveling and/or resharpening. This
+landmarking protocol represents an intermediate iteration between the
+previous 2D analysis, and the forthcoming protocol that includes
 semilandmarks placed on a series of equidistant cross-sections. The
 cross-sections increase the coverage of semilandmarks across the mesh
-topology, and provide for greater precision in the analysis of
-morphology for the whole object. The evolution of this landmarking
-protocol represents a concerted effort to better comprehend the vagaries
-of morphological similarities and differences among and between sites
-where Gary dart point have been found. While true that some landmarking
-protocols can be—and often are—recycled as new specimens are added, this
-particular research programme endeavours to achieve greater analytical
-accuracy and precision in each subsequent iteration.
+topology, and provide for greater precision in the analysis of gross
+morphology. The evolution of this landmarking protocol represents a
+concerted effort to better comprehend the vagaries of morphological
+similarities and differences among and between sites where Gary dart
+points have been found. While true that some landmarking protocols can
+be—and often are—recycled as new specimens are added, this particular
+research programme endeavours to achieve greater analytical accuracy and
+precision in each subsequent iteration.
 
 ### Generating the spline
 
-Unlike the previous study, where the outline of the Gary dart poin
-(base) was projected onto a 2D plane, this effort enlists a spline
-extracted from the surface geometry of the mesh using the `extract
-contour curves` command, used to detect and extract 3D contour curves
+Unlike the [previous
+study](https://scholarworks.sfasu.edu/cgi/viewcontent.cgi?article=1280&context=crhr),
+where the outline of the Gary dart point (base) was projected on a 2D
+plane, this effort is based upon a spline extracted from the surface
+geometry of the 3D mesh. That spline is generated with the `extract
+contour curves` command, which detects and extracts 3D contour curves
 from high-curvature areas of the mesh. In reverse-engineering, `extract
 contour curves` is regularly employed as the first step in building a
-`patch network` that is used to create a surface. The extracted feature
-curve is rendered as a spline, and follows the highest curvature
-contours around the periphery of the lateral and basal edges, following
-the highly variable sinuous edge morphology around the entirety of the
-biface. The remainder of the landmarking protocol is based upon this
-spline, which was subsequently split at four mathematically-defined
-locations.
+`patch network` used to generate a surface. The extracted feature curve
+is rendered as a spline, and follows the highest curvature contours
+around the periphery of the lateral and basal edges, following the
+sinuous edges around the entirety of the point. The remainder of the
+landmarking protocol is based upon this spline, which is subsequently
+split at four mathematically-defined locations.
 
 ``` r
 knitr::include_graphics('images/extractspline.png')
@@ -87,14 +89,17 @@ body, and is used to create other features.*
 
 The characteristic points and tangents developed for this landmarking
 protocol were inspired by the work of Birkhoff (1933). The first
-landmark (LM1) is placed at the horizontal tangent on the tip of each
-Gahagan biface. The second and third splits (LM2 and LM3) occur at
-points of highest curvature, and LM2 is always split on the right side
-of the biface when oriented in 3D space following the alignment output
-of *auto3dgm*. To place the final landmark (LM4), a linear measurement
-was used to project a reference point equidistant between LM2 and LM3.
-The location of that point was leveraged in placing the reference plane
-used to cut the spline at the location of LM4.
+landmark (LM1) is placed at the horizontal tangent at the tip (proximal
+end) of each Gary dart point. The second and third splits (LM2 and LM3)
+enlist vertical tangents on either side of the biface at the junction of
+the blade and shoulder, and LM2 is always split on the right side of the
+biface when oriented in 3D space following the alignment output of
+*auto3dgm*. The fourth and fifth landmarks (LM4 and LM5) occur at points
+of highest curvature at the junction of the shoulder and base. The final
+landmark (LM6), is placed by calculating the linear distance between LM4
+and LM5, then projecting a reference point equidistant between. That
+point is then used to place a reference plane, which is subsequently
+used to cut the spline at the location of LM6.
 
 #### Spline split at location of LM1 (tip/proximal point)
 
