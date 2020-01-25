@@ -1,24 +1,25 @@
 3D landmarking protocol for Gary dart points
 ================
 Robert Z. Selden, Jr.
-January 16, 2020
+January 25, 2020
 
 This document includes supplemental materials for the article, “A
 Quantitative Assessment of Intraspecific Morphological Variation in Gary
-Dart Points: An Exercise in Archaeological Epistemology and Heuristics”
-The study represents the first formal morphological analysis to assess
-whether morphologically-derived variants can be quantitatively
-discriminated. The landmarking protocol developed for this project bears
-some visual similarities with the configuration used in the previous 2D
-study of basal morphology in Gary dart points, as well as other
-two-dimensional geometric morphometric analyses (Buchanan and Collard
-2010; Buchanan et al. 2011; Ragan and Buchanan 2018); however, it
-differs in some fundamental ways. The first and most obvious difference
-is that this is a three-dimensional study. The second is the method of
-landmark placement, where *Geomagic Design X (Build Version 2019.0.2
-\[Build Number: 78\])* was used to generate a spline around the
-periphery of each dart point, and to populate the landmarks and
-equidistant semilandmarks in a replicable manner using
+Dart Points: An Exercise in Archaeological Epistemology and Heuristics.”
+The study asks whether the morphologically-derived temporal framework
+advanced by Densmore (2007) can be extended to Gary dart points
+generally, and whether those specimens assigned to each category exhibit
+unique morphological characteristics. The landmarking protocol developed
+for this project bears some visual similarities with the configuration
+used in the previous 2D study of basal morphology in Gary dart points,
+as well as other two-dimensional geometric morphometric analyses
+(Buchanan and Collard 2010; Buchanan et al. 2011; Ragan and Buchanan
+2018); however, it differs in some fundamental ways. The first and most
+obvious difference is that this is a three-dimensional study. The second
+is the method of landmark placement, where *Geomagic Design X (Build
+Version 2019.0.2 \[Build Number: 78\])* was used to generate a spline
+around the periphery of each dart point, and to populate the landmarks
+and equidistant semilandmarks in a replicable manner using
 mathematically-defined criteria.
 
 ``` r
@@ -31,29 +32,29 @@ knitr::include_graphics('images/41TN20-base.png')
 fig.cap="Gary dart point from 41TN20. \\label{figTN20}"
 ```
 
-Due to variety-based definitions, the third (z-dimension) was required,
-which also provides a means of capturing those morphological
-characteristics associated with axial twisting that are introduced
-through the practice of bifacial beveling. This landmarking protocol
-represents an intermediate iteration between the previous 2D analysis,
-and the forthcoming protocol that includes semilandmarks placed on a
-series of equidistant cross-sections. The cross-sections increase the
-coverage of semilandmarks across the mesh topology, and provide for
-greater precision in the analysis of morphology for the whole object.
-The evolution of this landmarking protocol represents a concerted effort
-to better comprehend the vagaries of morphological similarities and
-differences among Gary dart points. While true that some landmarking
+Inclusion of the third (z-dimension) provides a means of capturing those
+morphological characteristics associated with axial twisting that are
+introduced through the practice of bifacial beveling and resharpening.
+This landmarking protocol represents an intermediate iteration between
+the previous 2D analysis, and the forthcoming protocol that includes
+semilandmarks placed on a series of equidistant cross-sections. The
+cross-sections increase the coverage of semilandmarks across the mesh
+topology, and provide for greater precision in the analysis of
+morphology for the whole object. The evolution of this landmarking
+protocol represents a concerted effort to better comprehend the vagaries
+of morphological similarities and differences among and between sites
+where Gary dart point have been found. While true that some landmarking
 protocols can be—and often are—recycled as new specimens are added, this
-particular research programme endeavours to achieve ever-greater
-accuracy and precision in each analytical iteration.
+particular research programme endeavours to achieve greater analytical
+accuracy and precision in each subsequent iteration.
 
 ### Generating the spline
 
-Unlike the previous study, where the outline of each Gahagan biface was
-projected onto a 2D plane, this effort enlists a spline extracted from
-the surface geometry of the mesh using the `extract contour curves`
-command, which is used to detect and extract 3D contour curves from
-high-curvature areas of the mesh. In reverse-engineering, `extract
+Unlike the previous study, where the outline of the Gary dart poin
+(base) was projected onto a 2D plane, this effort enlists a spline
+extracted from the surface geometry of the mesh using the `extract
+contour curves` command, used to detect and extract 3D contour curves
+from high-curvature areas of the mesh. In reverse-engineering, `extract
 contour curves` is regularly employed as the first step in building a
 `patch network` that is used to create a surface. The extracted feature
 curve is rendered as a spline, and follows the highest curvature
@@ -230,11 +231,9 @@ I extend my gratitude to Christian S. Hoggard and David K. Thulman for
 their thoughtful comments and constructive criticisms on an earlier
 draft of this landmarking protocol. The current iteration of the
 landmarking protocol was developed using the `digit3DLand` package in R
-(code available in this repository); however, the capacity to populate a
-replicable suite of reference geometry across the sample in *Geomagic
-Design X* made it a better option for the dynamic design process.
-Definitions of reference geometries and *Design X* features described in
-this protocol are paraphrased from the reference manual.
+(code available in this repository); however, the capacity to populate
+replicable reference geometry across the sample in *Geomagic Design X*
+made it a better option for the dynamic design process.
 
 ### References cited
 
@@ -264,6 +263,14 @@ O’Brien. 2011. “Points and Prey: A Quantitative Test of the Hypothesis
 that Prey Size Influences early Paleoindian Projectile Point Form.”
 *Journal of Archaeological Science* 38 (4): 852–64.
 <https://doi.org/10.1016/j.jas.2010.11.007>.
+
+</div>
+
+<div id="ref-RN20874">
+
+Densmore, Julie A. 2007. “A Detailed Analysis of the Variation in
+Morphology of the Gary Dart Point.” *Lithic Technology* 32 (1): 7–16.
+<https://doi.org/10.1080/01977261.2007.11721040>.
 
 </div>
 
