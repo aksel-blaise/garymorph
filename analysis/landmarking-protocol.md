@@ -33,21 +33,22 @@ knitr::include_graphics('images/41TN20-base.png')
 fig.cap="Gary dart point from 41TN20. \\label{figTN20}"
 ```
 
-Inclusion of the third (z-dimension) provides a means of capturing those
+Inclusion of the third dimension provides a means of capturing those
 morphological characteristics associated with axial twisting introduced
 through the practice of bifacial beveling and/or resharpening. This
 landmarking protocol represents an intermediate iteration between the
 previous 2D analysis, and the forthcoming protocol that includes
-semilandmarks placed on a series of equidistant cross-sections. The
-cross-sections increase the coverage of semilandmarks across the mesh
-topology, and provide for greater precision in the analysis of gross
-morphology. The evolution of this landmarking protocol represents a
-concerted effort to better comprehend the vagaries of morphological
-similarities and differences among and between sites where Gary dart
-points have been found. While true that some landmarking protocols can
-be—and often are—recycled as new specimens are added, this particular
-research programme endeavours to achieve greater analytical accuracy and
-precision in each subsequent iteration.
+semilandmarks placed on a series of equidistant cross-sections (similar
+to trusses) (Strauss and Bookstein 1982). The cross-sections increase
+the coverage of semilandmarks across the mesh topology, and provide for
+greater precision in the analysis of gross morphology. The evolution of
+this landmarking protocol represents a concerted effort to better
+comprehend the vagaries of morphological similarities and differences
+among and between sites where Gary dart points have been found. While
+true that some landmarking protocols can be—and often are—recycled as
+new specimens are added, this particular research programme endeavours
+to achieve greater analytical accuracy and precision in each subsequent
+iteration.
 
 ### Generating the spline
 
@@ -177,13 +178,13 @@ fig.cap="Identify points of hightest curvature (light blue) at left [LM5] and ri
 
 #### Spline split at location of LM6 (centre base)
 
-One additional landmark (LM4) was placed at the centre of the base. The
+One additional landmark (LM6) was placed at the centre of the base. The
 location of this landmark was identified by calculating the linear
-distance between LM2 and LM3, and projecting a `reference point`
-(ctrl-div; below) equidistant between the two. A `reference plane` was
-added using the ctrl-div as the pick point, and the `Right plane` as the
-`normal axis`. The spline was then split at the intersection of the
-`reference plane` and the basal spline.
+distance between LM4 and LM5, and projecting a `reference point`
+(ref-equidistant; below left) equidistant between the two. A `reference
+plane` was added using the ref-equidistant as the pick point, and the
+`Right plane` as the `normal axis`. The spline was then split where it
+intersected with the `reference plane`.
 
 ``` r
 knitr::include_graphics('images/LM6.png')
@@ -203,9 +204,9 @@ These splines articulate with components of bifacial morphology that can
 be compartmentalised in the subsequent analyses (i.e., left/right
 \[directional\] asymmetry, blade/base morphological integration, etc.).
 The primary analytical gain achieved through this exercise is the
-requisite foundation needed to carry out replicable analyses of Gahagan
-biface morphology in three dimensions, further increasing the precision
-of the geometric morphometric analysis.
+requisite foundation needed to carry out replicable analyses of Gary
+dart point morphology in three dimensions, further increasing the
+precision of the geometric morphometric analysis.
 
 ``` r
 knitr::include_graphics('images/spline-lm.png')
@@ -219,7 +220,7 @@ fig.cap="Result of spline splits include six discrete splines, each articulating
 
 ### Semilandmark placement
 
-Landmarks 1-6 were placed at the location of each spline split (blue
+Landmarks (LM1-6) were placed at the location of each spline split (blue
 points, below). Equidistant semilandmarks were then added to each of the
 six splines; 10 between LM1 and LM2, five between LM2 and LM4, 10
 between LM4 and LM6, 10 between LM6 and LM5, five between LM5 and LM3,
@@ -236,14 +237,14 @@ fig.cap="3D spline with landmarks (blue) and equidistant semilandmarks (white) a
 ```
 
 Superficially, this constellation of landmarks and semilandmarks appears
-similar to those used in recent 2D studies. However, the rigourous
-protocol used in the application of landmarks and semilandmarks aids in
-capturing morphological variation that articulates with axial twisting
-introduced by knappers through the practice of beveling. Thus, this
-constellation of landmarks and semilandmarks provides for greater
-precision in the geometric morphometric analysis, marking a substantive
-advancement in those analytical protocols used to achieve a more
-complete and holistic analysis of Gahagan biface morphology.
+similar to those used in recent 2D studies. However, the rigour of this
+protocol aids in capturing morphological variation that articulates with
+axial twisting introduced by knappers through the practice of beveling
+and/or resharpening. Thus, this constellation of landmarks and
+semilandmarks provides for greater precision in the geometric
+morphometric analysis, marking a substantive advancement in those
+analytical protocols used to achieve a more complete and holistic
+analysis of Gary dart point morphology.
 
 ``` r
 knitr::include_graphics('images/spline-lmslm-mesh.png')
@@ -316,6 +317,14 @@ Ragan, Kathryn, and Briggs Buchanan. 2018. “Assessing Collector Bias: A
 Geometric Morphometric Analysis of a Collection of Isolated Clovis
 Points from the Midcontinent.” *Midcontinental Journal of Archaeology*
 43 (2): 91–111. <https://doi.org/10.1080/01461109.2018.1426430>.
+
+</div>
+
+<div id="ref-RN20900">
+
+Strauss, Richard E., and Fred L. Bookstein. 1982. “The Truss: Body Form
+Reconstructions in Morphometrics.” *Systematic Zoology* 31 (2): 113–35.
+<https://doi.org/https://doi.org/10.1093/sysbio/31.2.113>.
 
 </div>
 
