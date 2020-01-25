@@ -96,33 +96,50 @@ was used to project a reference point equidistant between LM2 and LM3.
 The location of that point was leveraged in placing the reference plane
 used to cut the spline at the location of LM4.
 
-#### Spline split at location of LM1
+#### Spline split at location of LM1 (tip/proximal point)
 
 The `horizontal tangent` is calculated by drawing a horizontal line
-above the tip of the biface using the tangent as a `common constraint`,
-and the horizontal as the `independent constraint`. To split the 3D
-spline at the location of the horizontal tangent, a `reference point`
-was inserted at the location of the `tangent` in the 2D sketch (light
-blue point; below, left), followed by a `reference plane` (in white;
-below, left and right) using the `pick point and normal axis` function
-where the `reference point` (h-tangent) was used as the `pick point`,
-and the `Right plane` as the `normal axis` (below, left). The 3D spline
-was then cut at the location where the `reference plane` intersected
-with the spline (below image, right).
+above the tip of the Gary dart point using the tangent as a `common
+constraint`, and the horizontal as the `independent constraint`. To
+split the 3D spline at the location of the horizontal tangent, a
+`reference point` was inserted at the location of the `tangent` in the
+2D sketch (light blue point; below, left), followed by a `reference
+plane` (in white; below, left and right) using the `pick point and
+normal axis` function where the `reference point` (h-tangent) was used
+as the `pick point`, and the `Right plane` as the `normal axis` (below,
+left). The 3D spline was then cut at the location where the `reference
+plane` intersected with the spline (below image, right).
 
 ``` r
-knitr::include_graphics('images/41TN20-base.png')
+knitr::include_graphics('images/lm1.png')
 ```
 
-![](images/41TN20-base.png)<!-- -->
+![](images/lm1.png)<!-- -->
 
 ``` r
 fig.cap="Identify horizontal tangent, insert reference point and reference plane (left). Use reference plane to cut spline at the location of the horizontal tangent (right). \\label{figlm1}"
 ```
 
-#### Spline split at locations of LM2 and LM3
+#### Spline split at locations of LM2 and LM3 (junction of blade and shoulder)
 
-The point of highest curvature on either side of the basal edge was
+The `vertical tangent` is calculated by drawing a vertical line to the
+left or right of the Gary dart point using the tangent as a `common
+constraint`, and the vertical as the `independent constraint`. To split
+the 3D spline at the location of the vertical tangent, a `reference
+point` was inserted at the location of the `tangent` in the 2D sketch
+(light blue point; below, left), followed by a `reference plane` (in
+white; below, left and right) using the `pick point and normal axis`
+function where the `reference point` (v-tangent) was used as the `pick
+point`, and the `Top plane` as the `normal axis`. The 3D spline was cut
+at the location where the `reference plane` intersected with the spline.
+The alignment and orientation of each point was dictated by the
+*auto3dgm* output, and the landmarking protocol follows the mesh
+orientation in that figure, where LM2 was always placed on the right
+side of the basal edge, and LM3 on the left.
+
+#### Spline Split at locations of LM4 and LM5 (junction of shoulder and base)
+
+The point of highest curvature between the shoulder and base was
 calculated using the `curvature function` in the Accuracy Analyser. This
 function displays the curvature flow as a continuous colour plot across
 the area of the curve. In this instance, *curvature* is defined as the
@@ -130,12 +147,9 @@ amount by which a geometric shape deviates from being flat or straight
 in the case of a line. The curvature is displayed in different colours
 according to the local radius, and is calculated in only one direction
 (U or V) along the curve. Using this tool, the two points of highest
-curvature were located between the basal and lateral edges on either
-side of each biface where the local radius measure was largest. The
-alignment and orientation of each biface was dictated by the *auto3dgm*
-output (see Figure 7a in the manuscript), and the landmarking protocol
-follows the mesh orientation in that figure, where LM2 was always placed
-on the right side of the basal edge, and LM3 on the left.
+curvature were located between the edges of the shoulder and base on
+either side of each Gary dart point where the local radius measure was
+largest.
 
 ``` r
 knitr::include_graphics('images/41TN20-base.png')
@@ -147,7 +161,7 @@ knitr::include_graphics('images/41TN20-base.png')
 fig.cap="Identify points of hightest curvature (light blue) at left/right intersection of lateral and basal edges. \\label{figsplinesplitlr}"
 ```
 
-#### Spline split at location of LM4
+#### Spline split at location of LM6 (centre base)
 
 One additional landmark (LM4) was placed at the centre of the base. The
 location of this landmark was identified by calculating the linear
