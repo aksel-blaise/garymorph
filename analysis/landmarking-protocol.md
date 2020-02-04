@@ -27,7 +27,7 @@ mathematically-defined criteria.
 knitr::include_graphics('images/41TN20-base.png')
 ```
 
-![](images/41TN20-base.png)<!-- -->
+<img src="images/41TN20-base.png" width="4500" />
 
 ``` r
 fig.cap="Gary dart point from 41TN20. \\label{figTN20}"
@@ -70,7 +70,7 @@ is subsequently split at six mathematically-defined locations.
 knitr::include_graphics('images/extractspline.png')
 ```
 
-![](images/extractspline.png)<!-- -->
+<img src="images/extractspline.png" width="4500" />
 
 ``` r
 fig.cap="Spline extracted along the highest contours of the projectile. \\label{figspline}"
@@ -119,7 +119,7 @@ intersects with the spline (below image, right).
 knitr::include_graphics('images/lm1.png')
 ```
 
-![](images/lm1.png)<!-- -->
+<img src="images/lm1.png" width="2775" />
 
 ``` r
 fig.cap="Identify horizontal tangent, insert reference point and reference plane (left). Use reference plane to cut spline at the location of the horizontal tangent (right). \\label{figlm1}"
@@ -146,7 +146,7 @@ side of the basal edge, and LM3 on the left.
 knitr::include_graphics('images/LM2-3.png')
 ```
 
-![](images/LM2-3.png)<!-- -->
+<img src="images/LM2-3.png" width="4869" />
 
 ``` r
 fig.cap="Identify vertical tangents, insert reference points (left). Then insert and use reference planes to cut spline at location of the vertical tangents (center [LM3] and right [LM2]) for junction of blade and shoulder. \\label{figsplinesplitvlr}"
@@ -170,7 +170,7 @@ largest.
 knitr::include_graphics('images/LM4-5.png')
 ```
 
-![](images/LM4-5.png)<!-- -->
+<img src="images/LM4-5.png" width="3421" />
 
 ``` r
 fig.cap="Identify points of hightest curvature (light blue) at left [LM5] and right [LM4] intersections of shoulder and basal edges. \\label{figsplinesplitcrvlr}"
@@ -190,7 +190,7 @@ intersected with the `reference plane`.
 knitr::include_graphics('images/LM6.png')
 ```
 
-![](images/LM6.png)<!-- -->
+<img src="images/LM6.png" width="3763" />
 
 ``` r
 fig.cap="Calculate linear distance between LM4 and LM5 (ref-equidistant, left), use point to insert reference plane coplanar to Right plane and use reference plane to cut the spline(center). LM6 added at location of split.  \\label{figlm4}"
@@ -212,7 +212,7 @@ precision of the geometric morphometric analysis.
 knitr::include_graphics('images/spline-lm.png')
 ```
 
-![](images/spline-lm.png)<!-- -->
+<img src="images/spline-lm.png" width="4733" />
 
 ``` r
 fig.cap="Result of spline splits include six discrete splines, each articulating with a region of analytical interest, with landmarks placed at the intersection of each. \\label{figsplinesplit-frbl}"
@@ -230,7 +230,7 @@ and 10 between LM3 and LM1.
 knitr::include_graphics('images/spline-lmslm.png')
 ```
 
-![](images/spline-lmslm.png)<!-- -->
+<img src="images/spline-lmslm.png" width="6031" />
 
 ``` r
 fig.cap="3D spline with landmarks (blue) and equidistant semilandmarks (white) applied, with top, right, and front planes. Semilandmarks are renumbered in post.  \\label{figlmslm-all}"
@@ -250,10 +250,29 @@ analysis of Gary dart point morphology.
 knitr::include_graphics('images/spline-lmslm-mesh.png')
 ```
 
-![](images/spline-lmslm-mesh.png)<!-- -->
+<img src="images/spline-lmslm-mesh.png" width="6031" />
 
 ``` r
 fig.cap="Mesh for Gary dart point from 41TN20 with landmarks and equidistant semilandmarks applied. \\label{figmesh-lmslm}"
+```
+
+### Angle calculation
+
+In her study of Gary dart point morphology, Densmore (2007) employed an
+angle measurement between the stem and shoulder of each point. This
+study will use a modified approach to ensure that the angle calculations
+remain consistent across the sample, by calculating the angle using LMs
+2, 4, and 6. This provides a means of data collection that is consistent
+and replicable across the entirety of the sample.
+
+``` r
+knitr::include_graphics('images/angle.png')
+```
+
+<img src="images/angle.png" width="3436" />
+
+``` r
+fig.cap="Mesh for Gary dart point from 41TN20 with landmarks and equidistant semilandmarks applied, and angle calculated between landmarks 2, 4, and 6. \\label{figangle}"
 ```
 
 ### Acknowledgments

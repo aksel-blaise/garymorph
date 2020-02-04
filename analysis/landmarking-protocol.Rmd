@@ -96,6 +96,15 @@ knitr::include_graphics('images/spline-lmslm-mesh.png')
 fig.cap="Mesh for Gary dart point from 41TN20 with landmarks and equidistant semilandmarks applied. \\label{figmesh-lmslm}"
 ```
 
+### Angle calculation
+
+In her study of Gary dart point morphology, Densmore [-@RN20874] employed an angle measurement between the stem and shoulder of each point. This study will use a modified approach to ensure that the angle calculations remain consistent across the sample, by calculating the angle using LMs 2, 4, and 6. This provides a means of data collection that is consistent and replicable across the entirety of the sample.
+
+```{r figangle}
+knitr::include_graphics('images/angle.png')
+fig.cap="Mesh for Gary dart point from 41TN20 with landmarks and equidistant semilandmarks applied, and angle calculated between landmarks 2, 4, and 6. \\label{figangle}"
+```
+
 ### Acknowledgments
 
 I extend my gratitude to Christian S. Hoggard and David K. Thulman for their thoughtful comments and constructive criticisms on an earlier draft of this landmarking protocol. The current iteration of the landmarking protocol was developed using the `digit3DLand` package in R (code available in this repository); however, the capacity to populate replicable reference geometry across the sample in _Geomagic Design X_ made it a better option for the dynamic design process.
