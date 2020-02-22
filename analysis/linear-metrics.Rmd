@@ -1,0 +1,80 @@
+---
+title: "Traditional linear metrics for Gary dart points"
+author: "Robert Z. Selden, Jr."
+date: "February 22, 2020"
+output: github_document
+bibliography: landmarking-protocol.bib
+fig_caption: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+The traditional linear measures of maximum length, width, and thickness were combined with stem length and stem width for this study. These variables represent the full suite of metrics used to characterise Gary points in previous studies, while also providing those data necessary to examine whether those specimens included in this study may transcend the threshold between dart and arrow points [@RN20881]. 
+
+Others have noted a gradual diminution in the size of Gary dart points through time [@RN20898;@RN3132;@RN20874], thus it was necessary to begin by asking whether the size of those points aggregated for this study may fall below the arbitrary 11.8 mm dart-arrow index (DAI) threshold posited by Hildebrandt and King [-@RN20881]. The temporal span associated with morphologically-diagnostic Gary dart points is thought to transcend the cultural shift from hunter-gatherer to emergent horticulturalist, during the time thought to articulate with the advent and flourescence of the bow and arrow. The dart-arrow index was calculated for all specimens of Gary dart points used in this study, and none fell below the dart-arrow threshold posited by Hildebrandt and King [-@RN20881]. It is noteworthy that others [@RN20880] have found that the DAI may not be universally applicable; however, the DAI and the threshold identified by Hildebrandt and King [-@RN20881] is a useful heuristic in this instance.
+
+### Load packages
+
+```{r load packages}
+# load required analysis packages
+devtools::install_github("vqv/ggbiplot")
+devtools::install_github("mlcollyer/RRPP")
+library(ggbiplot)
+library(RRPP)
+```
+
+### Principal Components Analysis
+
+The `type` argument used in this and the subsequent section articulates with three variants of the Gary type (`Large`, `Typical`, and `Small`), which were assigned using those morphological criteria first advanced by Ford, Phillips, and Haag [-@RN20899] at the Jaketown site, and later refined by Ford and Webb [-@RN20898] at Poverty Point. The `type2` argument used in this and the subsequent section articulates with a modified approach to the classification system developed by Densmore [-@RN20874] that leverages shoulder classes, which is detailed in at the end of the [landmarking protocol](landmarking-protocol.md).
+
+```{r pca, echo=TRUE}
+# set working directory
+setwd(getwd())
+ppgary<-read.csv("garymorphlm.csv",header = TRUE)
+#define variables
+maxl<-ppgary$maxl #maximum length
+maxw<-ppgary$maxw #maximum width
+maxth<-ppgary$maxth #maximum thickness
+maxstl<-ppgary$maxstl #maximum stem length
+maxstw<-ppgary$maxstw #maximum stem width
+dai<-ppgary$dai #dart-arrow index value
+type<-ppgary$frdwbgrp #Gary varieties defined by Ford and Webb (1956)
+ppgary.pca<-prcomp(ppgary[c(2:6)],center = TRUE,scale. = TRUE)
+summary(ppgary.pca)
+#plot pca
+ggbiplot(ppgary.pca,obs.scale = 1, var.scale = 1, ellipse = TRUE,groups = type)
+```
+
+#### Analyses of Variance (ANOVA) for `attribute` ~ `type`
+
+```{r manova rrpp, echo=TRUE}
+#anova = maximum length ~ type
+ml<-lm.rrpp(maxl ~ type, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(ml)
+
+#anova = maximum width ~ type
+mw<-lm.rrpp(maxw ~ type, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(mw)
+
+#anova = maximum thickness ~ type
+mth<-lm.rrpp(maxth ~ type, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(mth)
+
+#anova = maximum stem length ~ type
+mstl<-lm.rrpp(maxstl ~ type, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(mstl)
+
+#anova = maximum stem width ~ type
+mstw<-lm.rrpp(maxw ~ type, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(mstw)
+
+#anova = dart-arrow index ~ type
+dai<-lm.rrpp(dai ~ type, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(dai)
+```
+
+## References cited
