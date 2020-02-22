@@ -21,10 +21,10 @@ Others have noted a gradual diminution in the size of Gary dart points through t
 
 ```{r load packages}
 # load required analysis packages
-library(devtools)
-install_github("vqv/ggbiplot")
+devtools::install_github("vqv/ggbiplot")
+devtools::install_github("mlcollyer/RRPP")
 library(ggbiplot)
-library(dplyr)
+library(RRPP)
 ```
 
 ### Principal Components Analysis
@@ -35,22 +35,46 @@ The `type` argument used in this and the subsequent section articulates with thr
 # set working directory
 setwd(getwd())
 ppgary<-read.csv("garymorphlm.csv",header = TRUE)
-type<-ppgary$frdwbgrp
+#define variables
+maxl<-ppgary$maxl #maximum length
+maxw<-ppgary$maxw #maximum width
+maxth<-ppgary$maxth #maximum thickness
+maxstl<-ppgary$maxstl #maximum stem length
+maxstw<-ppgary$maxstw #maximum stem width
+dai<-ppgary$dai #dart-arrow index value
+type<-ppgary$frdwbgrp #Gary varieties defined by Ford and Webb (1956)
 ppgary.pca<-prcomp(ppgary[c(2:6)],center = TRUE,scale. = TRUE)
 summary(ppgary.pca)
 #plot pca
 ggbiplot(ppgary.pca,obs.scale = 1, var.scale = 1, ellipse = TRUE,groups = type)
 ```
 
-### Multivariate Analysis of Variance
+#### Analyses of Variance (ANOVA) for `attribute` ~ `type`
 
-```{r manova, echo=TRUE}
-#compute manova
-res.man<-manova(cbind(maxl,maxth,maxw,maxstl,maxstw) ~ type, data = ppgary)
-summary(res.man)
-#which differ
-summary.aov(res.man)
-#end of code
+```{r manova rrpp, echo=TRUE}
+#anova = maximum length ~ type
+ml<-lm.rrpp(maxl ~ type, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(ml)
+
+#anova = maximum width ~ type
+mw<-lm.rrpp(maxw ~ type, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(mw)
+
+#anova = maximum thickness ~ type
+mth<-lm.rrpp(maxth ~ type, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(mth)
+
+#anova = maximum stem length ~ type
+mstl<-lm.rrpp(maxstl ~ type, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(mstl)
+
+#anova = maximum stem width ~ type
+mstw<-lm.rrpp(maxw ~ type, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(mstw)
+
+#anova = dart-arrow index ~ type
+dai<-lm.rrpp(dai ~ type, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(dai)
 ```
 
 ## References cited
