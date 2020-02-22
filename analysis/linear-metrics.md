@@ -99,7 +99,8 @@ summary(ppgary.pca)
 ``` r
 #plot pca
 pca<-ggbiplot(ppgary.pca,obs.scale = 1, var.scale = 1, ellipse = TRUE,groups = type)
-pca
+pca + scale_color_brewer(name = "Type-Variety",palette = "Dark2") +
+  theme(legend.position = "right")
 ```
 
 ![](linear-metrics_files/figure-gfm/pca-1.png)<!-- -->
@@ -110,7 +111,7 @@ pca
 #boxplot of maximum length ~ type
 mxl<-ggplot(ppgary,aes(x=type, y=maxl,color=type)) + geom_boxplot(notch = FALSE)
 mxl + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
-  scale_fill_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 ```
 
@@ -122,7 +123,7 @@ mxl + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
 #boxplot of maximum width ~ type
 mxw<-ggplot(ppgary,aes(x=type, y=maxw,color=type)) + geom_boxplot(notch = FALSE)
 mxw + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
-  scale_fill_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 ```
 
@@ -134,7 +135,7 @@ mxw + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
 #boxplot of maximum thickness ~ type
 mxth<-ggplot(ppgary,aes(x=type, y=maxth,color=type)) + geom_boxplot(notch = FALSE)
 mxth + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
-  scale_fill_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 ```
 
@@ -146,7 +147,7 @@ mxth + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
 #boxplot of stem length ~ type
 mxstl<-ggplot(ppgary,aes(x=type, y=maxstl,color=type)) + geom_boxplot(notch = FALSE)
 mxstl + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
-  scale_fill_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 ```
 
@@ -158,7 +159,7 @@ mxstl + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
 #boxplot of stem width ~ type
 mxstw<-ggplot(ppgary,aes(x=type, y=maxstw,color=type)) + geom_boxplot(notch = FALSE)
 mxstw + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
-  scale_fill_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 ```
 
@@ -170,7 +171,7 @@ mxstw + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
 #boxplot of dart-arrow index ~ type
 bdai<-ggplot(ppgary,aes(x=type, y=dai,color=type)) + geom_boxplot(notch = FALSE)
 bdai + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
-  scale_fill_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 ```
 
