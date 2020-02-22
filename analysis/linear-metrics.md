@@ -59,6 +59,7 @@ library(ggbiplot)
 
 ``` r
 library(RRPP)
+library(ggplot2)
 ```
 
 ### Principal Components Analysis
@@ -97,12 +98,63 @@ summary(ppgary.pca)
 
 ``` r
 #plot pca
-ggbiplot(ppgary.pca,obs.scale = 1, var.scale = 1, ellipse = TRUE,groups = type)
+pca<-ggbiplot(ppgary.pca,obs.scale = 1, var.scale = 1, ellipse = TRUE,groups = type)
+pca + scale_color_brewer(palette = "Dark2")
 ```
 
 ![](linear-metrics_files/figure-gfm/pca-1.png)<!-- -->
 
-#### Analyses of Variance (ANOVA) for `attribute` \~ `type`
+#### Boxplots for `variable` by `type`
+
+``` r
+#boxplot of maximum length ~ type
+mxl<-ggplot(ppgary,aes(x=type, y=maxl,color=type)) + geom_boxplot()
+mxl + scale_color_brewer(palette = "Dark2")
+```
+
+![](linear-metrics_files/figure-gfm/boxplot-1.png)<!-- -->
+
+``` r
+#boxplot of maximum width ~ type
+mxw<-ggplot(ppgary,aes(x=type, y=maxw,color=type)) + geom_boxplot()
+mxw + scale_color_brewer(palette = "Dark2")
+```
+
+![](linear-metrics_files/figure-gfm/boxplot-2.png)<!-- -->
+
+``` r
+#boxplot of maximum thickness ~ type
+mxth<-ggplot(ppgary,aes(x=type, y=maxth,color=type)) + geom_boxplot()
+mxth + scale_color_brewer(palette = "Dark2")
+```
+
+![](linear-metrics_files/figure-gfm/boxplot-3.png)<!-- -->
+
+``` r
+#boxplot of stem length ~ type
+mxstl<-ggplot(ppgary,aes(x=type, y=maxstl,color=type)) + geom_boxplot()
+mxstl + scale_color_brewer(palette = "Dark2")
+```
+
+![](linear-metrics_files/figure-gfm/boxplot-4.png)<!-- -->
+
+``` r
+#boxplot of stem width ~ type
+mxstw<-ggplot(ppgary,aes(x=type, y=maxstw,color=type)) + geom_boxplot()
+mxstw + scale_color_brewer(palette = "Dark2")
+```
+
+![](linear-metrics_files/figure-gfm/boxplot-5.png)<!-- -->
+
+``` r
+#boxplot of dart-arrow index ~ type
+bdai<-ggplot(ppgary,aes(x=type, y=dai,color=type)) + geom_boxplot()
+bdai + scale_color_brewer(palette = "Dark2")
+```
+
+![](linear-metrics_files/figure-gfm/boxplot-6.png)<!-- -->
+
+#### Analyses of Variance (ANOVA) for `variable` \~ `type`
 
 ``` r
 #anova = maximum length ~ type
