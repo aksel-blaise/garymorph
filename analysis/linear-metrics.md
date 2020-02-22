@@ -104,7 +104,7 @@ pca + scale_color_brewer(palette = "Dark2")
 
 ![](linear-metrics_files/figure-gfm/pca-1.png)<!-- -->
 
-#### Boxplots for `variable` by `type`
+### Boxplots for `variable` by `type`
 
 ``` r
 #boxplot of maximum length ~ type
@@ -154,7 +154,7 @@ bdai + scale_color_brewer(palette = "Dark2")
 
 ![](linear-metrics_files/figure-gfm/boxplot-6.png)<!-- -->
 
-#### Analyses of Variance (ANOVA) for `variable` \~ `type`
+### Analyses of Variance (ANOVA) for `variable` \~ `type`
 
 ``` r
 #anova = maximum length ~ type
