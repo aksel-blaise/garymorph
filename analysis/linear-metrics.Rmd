@@ -51,7 +51,7 @@ pca<-ggbiplot(ppgary.pca,obs.scale = 1, var.scale = 1, ellipse = TRUE,groups = t
 pca + scale_color_brewer(palette = "Dark2")
 ```
 
-#### Boxplots for `variable` by `type`
+### Boxplots for `variable` by `type`
 
 ```{r boxplot, echo=TRUE}
 #boxplot of maximum length ~ type
@@ -74,7 +74,7 @@ bdai<-ggplot(ppgary,aes(x=type, y=dai,color=type)) + geom_boxplot()
 bdai + scale_color_brewer(palette = "Dark2")
 ```
 
-#### Analyses of Variance (ANOVA) for `variable` ~ `type`
+### Analyses of Variance (ANOVA) for `variable` ~ `type`
 
 ```{r anova rrpp, echo=TRUE}
 #anova = maximum length ~ type
