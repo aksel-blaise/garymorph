@@ -99,7 +99,7 @@ summary(ppgary.pca)
 ``` r
 #plot pca
 pca<-ggbiplot(ppgary.pca,obs.scale = 1, var.scale = 1, ellipse = TRUE,groups = type)
-pca + scale_color_brewer(palette = "Dark2")
+pca
 ```
 
 ![](linear-metrics_files/figure-gfm/pca-1.png)<!-- -->
@@ -108,49 +108,73 @@ pca + scale_color_brewer(palette = "Dark2")
 
 ``` r
 #boxplot of maximum length ~ type
-mxl<-ggplot(ppgary,aes(x=type, y=maxl,color=type)) + geom_boxplot()
-mxl + scale_color_brewer(palette = "Dark2")
+mxl<-ggplot(ppgary,aes(x=type, y=maxl,color=type)) + geom_boxplot(notch = FALSE)
+mxl + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
+  scale_fill_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
 ```
+
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](linear-metrics_files/figure-gfm/boxplot-1.png)<!-- -->
 
 ``` r
 #boxplot of maximum width ~ type
-mxw<-ggplot(ppgary,aes(x=type, y=maxw,color=type)) + geom_boxplot()
-mxw + scale_color_brewer(palette = "Dark2")
+mxw<-ggplot(ppgary,aes(x=type, y=maxw,color=type)) + geom_boxplot(notch = FALSE)
+mxw + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
+  scale_fill_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
 ```
+
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](linear-metrics_files/figure-gfm/boxplot-2.png)<!-- -->
 
 ``` r
 #boxplot of maximum thickness ~ type
-mxth<-ggplot(ppgary,aes(x=type, y=maxth,color=type)) + geom_boxplot()
-mxth + scale_color_brewer(palette = "Dark2")
+mxth<-ggplot(ppgary,aes(x=type, y=maxth,color=type)) + geom_boxplot(notch = FALSE)
+mxth + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
+  scale_fill_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
 ```
+
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](linear-metrics_files/figure-gfm/boxplot-3.png)<!-- -->
 
 ``` r
 #boxplot of stem length ~ type
-mxstl<-ggplot(ppgary,aes(x=type, y=maxstl,color=type)) + geom_boxplot()
-mxstl + scale_color_brewer(palette = "Dark2")
+mxstl<-ggplot(ppgary,aes(x=type, y=maxstl,color=type)) + geom_boxplot(notch = FALSE)
+mxstl + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
+  scale_fill_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
 ```
+
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](linear-metrics_files/figure-gfm/boxplot-4.png)<!-- -->
 
 ``` r
 #boxplot of stem width ~ type
-mxstw<-ggplot(ppgary,aes(x=type, y=maxstw,color=type)) + geom_boxplot()
-mxstw + scale_color_brewer(palette = "Dark2")
+mxstw<-ggplot(ppgary,aes(x=type, y=maxstw,color=type)) + geom_boxplot(notch = FALSE)
+mxstw + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
+  scale_fill_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
 ```
+
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](linear-metrics_files/figure-gfm/boxplot-5.png)<!-- -->
 
 ``` r
 #boxplot of dart-arrow index ~ type
-bdai<-ggplot(ppgary,aes(x=type, y=dai,color=type)) + geom_boxplot()
-bdai + scale_color_brewer(palette = "Dark2")
+bdai<-ggplot(ppgary,aes(x=type, y=dai,color=type)) + geom_boxplot(notch = FALSE)
+bdai + geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.35) +
+  scale_fill_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
 ```
+
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
 
 ![](linear-metrics_files/figure-gfm/boxplot-6.png)<!-- -->
 
