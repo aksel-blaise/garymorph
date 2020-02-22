@@ -8,8 +8,8 @@ February 22, 2020
 The traditional linear measures of maximum length, width, and thickness
 were combined with stem length and stem width for this study. These
 variables represent the full suite of metrics used to characterise Gary
-points in previous studies, while also providing those data necessary to
-examine whether those specimens included in this study may transcend the
+points in previous studies, while also providing those data needed to
+examine whether specimens included in this study may transcend the
 threshold between dart and arrow points (Hildebrandt and King 2012).
 
 Others have noted a gradual diminution in the size of Gary dart points
@@ -19,14 +19,14 @@ aggregated for this study may fall below the arbitrary 11.8 mm
 dart-arrow index (DAI) threshold posited by Hildebrandt and King (2012).
 The temporal span associated with morphologically-diagnostic Gary dart
 points is thought to transcend the cultural shift from hunter-gatherer
-to emergent horticulturalist, during the time thought to articulate with
-the advent and flourescence of the bow and arrow. The dart-arrow index
-was calculated for all specimens of Gary dart points used in this study,
-and none fell below the dart-arrow threshold posited by Hildebrandt and
-King (2012). It is noteworthy that others (Erlandson, Watts, and Jew
-2014) have found that the DAI may not be universally applicable;
-however, the DAI and the threshold identified by Hildebrandt and King
-(2012) is a useful heuristic in this instance.
+to emergent horticulturalist, and overlaps temporally with the advent
+and flourescence of the bow and arrow. The dart-arrow index was
+calculated for all specimens of Gary dart points used in this study, and
+none fell below the dart-arrow threshold posited by Hildebrandt and King
+(2012). It is noteworthy that others (Erlandson, Watts, and Jew 2014)
+have found that the DAI may not be universally applicable; however, the
+DAI and the threshold identified by Hildebrandt and King (2012) is a
+useful heuristic in this instance.
 
 ### Load packages
 
