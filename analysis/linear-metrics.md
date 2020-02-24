@@ -85,21 +85,45 @@ dai<-ppgary$dai # dart-arrow index value
 
 ``` r
 # Ford, Phillips, and Haag (1955)
+fphl<-data.frame(Name=c('var.GaryStemmed-length','var.TypicalGaryStemmed-length','var.BroadGaryStemmed-length','var.ThinGaryStemmed-length','var.SmallGaryStemmed-length'),
+           Length=c(45,45,45,55,35), # in mm
+           end=c(70,79,70,75,50) # in mm
+)
+fphlength<-ggplot(fphl, aes(x=Length, xend=end, y=Name, yend=Name)) +
+  geom_segment()
+fphw<-data.frame(Name=c('var.GaryStemmed-width','var.TypicalGaryStemmed-width','var.BroadGaryStemmed-width','var.ThinGaryStemmed-width','var.SmallGaryStemmed-width'),
+           Width=c(22,22,32,30,20), # in mm
+           end=c(31,31,48,36,30) # in mm
+)
+fphwidth<-ggplot(fphw, aes(x=Width, xend=end, y=Name, yend=Name)) +
+  geom_segment()
+# render figure
+fwebbfig<-ggarrange(fphlength,fphwidth,
+                  labels = c("A","B"),
+                  ncol = 1, nrow = 2)
+annotate_figure(fwebbfig,
+                top=text_grob("Gary type-variety linear metrics per Ford, Phillips, and Haag (1955)")
+)
+```
+
+![](linear-metrics_files/figure-gfm/gantt-1.png)<!-- -->
+
+``` r
 # Ford and Webb (1956)
-fwebbl<-data.frame(Name=c('var.GaryLarge-length','var.GaryTypical-length','var.GarySmall-length'),
+fwebbl<-data.frame(Name=c('var.GaryLarge-length','var.GaryMed/Typical-length','var.GarySmall-length'),
            Length=c(80,46,33), # in mm
            end=c(140,79,45) # in mm
 )
 fwebblength<-ggplot(fwebbl, aes(x=Length, xend=end, y=Name, yend=Name)) +
   geom_segment()
-fwebbw<-data.frame(Name=c('var.GaryLarge-width','var.GaryTypical-width','var.GarySmall-width'),
+fwebbw<-data.frame(Name=c('var.GaryLarge-width','var.GaryMed/Typical-width','var.GarySmall-width'),
            Width=c(30,20,19), # in mm
            end=c(42,45,32) # in mm
 )
 fwebbwidth<-ggplot(fwebbw, aes(x=Width, xend=end, y=Name, yend=Name)) +
   geom_segment()
 # thickness values were not precisely reported for GaryLarge and GaryTypical, and are included here for reference only
-fwebbth<-data.frame(Name=c('var.GaryLarge-width','var.GaryTypical-width','var.GarySmall-width'),
+fwebbth<-data.frame(Name=c('var.GaryLarge-width','var.GaryMed/Typical-width','var.GarySmall-width'),
            Thickness=c(13,9,5), # in mm
            end=c(13,10,10) # in mm
 )
@@ -114,7 +138,7 @@ annotate_figure(fwebbfig,
 )
 ```
 
-![](linear-metrics_files/figure-gfm/gantt-1.png)<!-- -->
+![](linear-metrics_files/figure-gfm/gantt-2.png)<!-- -->
 
 ``` r
 # Schambach (1998)
@@ -157,7 +181,7 @@ annotate_figure(schambachfig,
 )
 ```
 
-![](linear-metrics_files/figure-gfm/gantt-2.png)<!-- -->
+![](linear-metrics_files/figure-gfm/gantt-3.png)<!-- -->
 
 ### Functions used to assign Gary type-varieties
 
