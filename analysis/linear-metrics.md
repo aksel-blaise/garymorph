@@ -90,7 +90,7 @@ fphl<-data.frame(Name=c('var.GaryStemmed-length','var.TypicalGaryStemmed-length'
            end=c(70,79,70,75,50) # in mm
 )
 fphlength<-ggplot(fphl,aes(x=Length,xend=end,y=Name,yend=Name,color=Name)) +
-  geom_segment() +
+  geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 fphw<-data.frame(Name=c('var.GaryStemmed-width','var.TypicalGaryStemmed-width','var.BroadGaryStemmed-width','var.ThinGaryStemmed-width','var.SmallGaryStemmed-width'),
@@ -98,7 +98,7 @@ fphw<-data.frame(Name=c('var.GaryStemmed-width','var.TypicalGaryStemmed-width','
            end=c(31,31,48,36,30) # in mm
 )
 fphwidth<-ggplot(fphw,aes(x=Width,xend=end,y=Name,yend=Name,color=Name)) +
-  geom_segment() +
+  geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 # render figure
@@ -119,7 +119,7 @@ fwebbl<-data.frame(Name=c('var.GaryLarge-length','var.GaryMed/Typical-length','v
            end=c(140,79,45) # in mm
 )
 fwebblength<-ggplot(fwebbl,aes(x=Length,xend=end,y=Name,yend=Name,color=Name)) +
-  geom_segment() +
+  geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 fwebbw<-data.frame(Name=c('var.GaryLarge-width','var.GaryMed/Typical-width','var.GarySmall-width'),
@@ -127,7 +127,7 @@ fwebbw<-data.frame(Name=c('var.GaryLarge-width','var.GaryMed/Typical-width','var
            end=c(42,45,32) # in mm
 )
 fwebbwidth<-ggplot(fwebbw,aes(x=Width,xend=end,y=Name,yend=Name,color=Name)) +
-  geom_segment() +
+  geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 # thickness values were not precisely reported for GaryLarge and GaryTypical, and are included here for reference only
@@ -136,7 +136,7 @@ fwebbth<-data.frame(Name=c('var.GaryLarge-width','var.GaryMed/Typical-width','va
            end=c(13,10,10) # in mm
 )
 fwebbthickness<-ggplot(fwebbth,aes(x=Thickness,xend=end,y=Name,yend=Name,color=Name)) +
-  geom_segment() +
+  geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 # render figure
@@ -157,7 +157,7 @@ schambl<-data.frame(Name=c('var.Gary-length','var.Malvern-length','var.LeFlore-l
            end=c(73,72,80,60,57,67,80) # in mm
 )
 length<-ggplot(schambl,aes(x=Length,xend=end,y=Name,yend=Name,color=Name)) +
-  geom_segment() +
+  geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 schambw<-data.frame(Name=c('var.Gary-width','var.Malvern-width','var.LeFlore-width','var.Bodcaw-width','var.Manice-width','var.CamdenA-width','var.CamdenB-width'),
@@ -165,7 +165,7 @@ schambw<-data.frame(Name=c('var.Gary-width','var.Malvern-width','var.LeFlore-wid
            end=c(45,33,54,36,41,27,38) # in mm
 )
 width<-ggplot(schambw,aes(x=Width,xend=end,y=Name,yend=Name,color=Name)) +
-  geom_segment() +
+  geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 schambth<-data.frame(Name=c('var.Gary-thickness','var.Malvern-thickness','var.LeFlore-thickness','var.Bodcaw-thickness','var.Manice-thickness','var.CamdenA-thickness','var.CamdenB-thickness'),
@@ -173,7 +173,7 @@ schambth<-data.frame(Name=c('var.Gary-thickness','var.Malvern-thickness','var.Le
            end=c(11,13,13,12,9,14,11) # in mm
 )
 thickness<-ggplot(schambth,aes(x=Thickness,xend=end,y=Name,yend=Name,color=Name)) +
-  geom_segment() +
+  geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 schambstl<-data.frame(Name=c('var.Gary-stemlength','var.Malvern-stemlength','var.LeFlore-stemlength','var.Bodcaw-stemlength','var.Manice-stemlength','var.CamdenA-stemlength','var.CamdenB-stemlength'),
@@ -181,7 +181,7 @@ schambstl<-data.frame(Name=c('var.Gary-stemlength','var.Malvern-stemlength','var
            end=c(29,23,24,24,17,19,18) # in mm
 )
 stemlength<-ggplot(schambstl,aes(x=StemLength,xend=end,y=Name,yend=Name,color=Name)) +
-  geom_segment() +
+  geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 schambstw<-data.frame(Name=c('var.Gary-stemlength','var.Malvern-stemlength','var.LeFlore-stemlength','var.Bodcaw-stemlength','var.Manice-stemlength','var.CamdenA-stemlength'), # var.CamdenB-stemlength not listed in text
@@ -189,7 +189,7 @@ schambstw<-data.frame(Name=c('var.Gary-stemlength','var.Malvern-stemlength','var
            end=c(28,25,33,24,24,21) # in mm
 )
 stemwidth<-ggplot(schambstw,aes(x=StemWidth,xend=end,y=Name,yend=Name,color=Name)) +
-  geom_segment() +
+  geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 # render figure
