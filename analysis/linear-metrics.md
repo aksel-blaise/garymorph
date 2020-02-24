@@ -257,6 +257,7 @@ t1figure
 ### Principal Components Analysis for `type1`
 
 ``` r
+#pca
 ppgary.pca<-prcomp(ppgary[c(2:6)],center = TRUE,scale. = TRUE)
 summary(ppgary.pca)
 ```
@@ -268,10 +269,11 @@ summary(ppgary.pca)
     ## Cumulative Proportion  0.4818 0.7165 0.8729 0.9688 1.00000
 
 ``` r
-# plot pca
-t1pca<-ggbiplot(ppgary.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = type1)
-t1pca + scale_color_brewer(name = "Type-Variety",palette = "Dark2") +
+t1pca<-ggbiplot(ppgary.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = type1) +
+  scale_color_brewer(name = "Type-Variety",palette = "Dark2") +
   theme(legend.position = "right")
+#render figure
+t1pca
 ```
 
 ![](linear-metrics_files/figure-gfm/pca-1.png)<!-- -->
