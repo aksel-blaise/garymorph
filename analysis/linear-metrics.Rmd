@@ -21,10 +21,10 @@ Others have noted a gradual diminution in the size of Gary dart points through t
 
 ```{r load packages}
 # install required analysis packages
-#devtools::install_github("vqv/ggbiplot")
-#devtools::install_github("mlcollyer/RRPP")
-#devtools::install_github("tidyverse/ggplot2")
-#devtools::install_github("kassambara/ggpubr")
+devtools::install_github("vqv/ggbiplot")
+devtools::install_github("mlcollyer/RRPP")
+devtools::install_github("tidyverse/ggplot2")
+devtools::install_github("kassambara/ggpubr")
 # load libraries
 library(ggbiplot)
 library(RRPP)
@@ -164,21 +164,15 @@ annotate_figure(schambachfig,
 type1<-ppgary$frdwbgrp # to be deleted
 # function to assign type-varieties based upon Ford and Webb (1956)
 #ppgary$type1<-NA
-#for (i in 1:(nrow(ppgary))) {
+#for (i in 1:(nrow(ppgary))){
 #  ml <- maxl[i]
-#  mw <- maxw[i]
-#  mt <- maxth[i]
-#  
+#
 #  lcheck1 <- ml %in% 80:140
-#  lcheck2 <- ml %in% 46:179
+#  lcheck2 <- ml %in% 46:79
 #  lcheck3 <- ml %in% 33:45
-#  wcheck1 <- mw %in% 30:42
-#  wcheck2 <- mw %in% 20:45
-#  wcheck3 <- mw %in% 19:32
-#  tcheck <- mt %in% 5:10
-#    
-#  res <- if(lcheck1 && wcheck1) "L" else if(lcheck2 && wcheck2) "M/T" else
-#    if(lcheck3 && wcheck3 && tcheck) "S" else "UID"
+#
+#  res <- if(lcheck1) "L" else if(lcheck2) "M/T" else
+#    if(lcheck3) "S" else "UID"
 #
 #  ppgary$type1[i] <- res
 #}
@@ -218,14 +212,9 @@ t1maxstw<-ggplot(ppgary,aes(x=type1,y=maxstw,color=type1)) + geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-# boxplot of dart-arrow index ~ type
-t1bdai<-ggplot(ppgary,aes(x=type1,y=dai,color=type1)) + geom_boxplot() +
-  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
-  theme(legend.position = "none")
 # render figure
-t1figure<-ggarrange(t1maxl,t1maxw,t1maxth,t1maxstl,t1maxstw,t1bdai,
-                  labels = c("A","B","C","D","E","F"),
+t1figure<-ggarrange(t1maxl,t1maxw,t1maxth,t1maxstl,t1maxstw,
+                  labels = c("A","B","C","D","E"),
                   ncol = 3, nrow = 2)
 t1figure
 ```

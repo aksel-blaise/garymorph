@@ -35,10 +35,47 @@ useful heuristic in this instance.
 
 ``` r
 # install required analysis packages
-#devtools::install_github("vqv/ggbiplot")
-#devtools::install_github("mlcollyer/RRPP")
-#devtools::install_github("tidyverse/ggplot2")
-#devtools::install_github("kassambara/ggpubr")
+devtools::install_github("vqv/ggbiplot")
+```
+
+    ## Skipping install of 'ggbiplot' from a github remote, the SHA1 (7325e880) has not changed since last install.
+    ##   Use `force = TRUE` to force installation
+
+``` r
+devtools::install_github("mlcollyer/RRPP")
+```
+
+    ## Skipping install of 'RRPP' from a github remote, the SHA1 (e29228ed) has not changed since last install.
+    ##   Use `force = TRUE` to force installation
+
+``` r
+devtools::install_github("tidyverse/ggplot2")
+```
+
+    ## Downloading GitHub repo tidyverse/ggplot2@master
+
+    ## 
+    ##          checking for file 'C:\Users\seldenjrz\AppData\Local\Temp\RtmpO4UVFQ\remotes10a877ab56f0\tidyverse-ggplot2-8bc39f2/DESCRIPTION' ...     checking for file 'C:\Users\seldenjrz\AppData\Local\Temp\RtmpO4UVFQ\remotes10a877ab56f0\tidyverse-ggplot2-8bc39f2/DESCRIPTION' ...   v  checking for file 'C:\Users\seldenjrz\AppData\Local\Temp\RtmpO4UVFQ\remotes10a877ab56f0\tidyverse-ggplot2-8bc39f2/DESCRIPTION'
+    ##       -  preparing 'ggplot2': (1.3s)
+    ##    checking DESCRIPTION meta-information ...     checking DESCRIPTION meta-information ...   v  checking DESCRIPTION meta-information
+    ##       -  checking for LF line-endings in source and make files and shell scripts (787ms)
+    ##       -  checking for empty or unneeded directories
+    ##       -  looking to see if a 'data/datalist' file should be added
+    ##       -  building 'ggplot2_3.3.0.9000.tar.gz'
+    ##      
+    ## 
+
+    ## Installing package into 'C:/Users/seldenjrz/Documents/R/win-library/3.6'
+    ## (as 'lib' is unspecified)
+
+``` r
+devtools::install_github("kassambara/ggpubr")
+```
+
+    ## Skipping install of 'ggpubr' from a github remote, the SHA1 (a8a3db99) has not changed since last install.
+    ##   Use `force = TRUE` to force installation
+
+``` r
 # load libraries
 library(ggbiplot)
 ```
@@ -250,18 +287,12 @@ t1maxstw<-ggplot(ppgary,aes(x=type1,y=maxstw,color=type1)) + geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-# boxplot of dart-arrow index ~ type
-t1bdai<-ggplot(ppgary,aes(x=type1,y=dai,color=type1)) + geom_boxplot() +
-  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
-  theme(legend.position = "none")
 # render figure
-t1figure<-ggarrange(t1maxl,t1maxw,t1maxth,t1maxstl,t1maxstw,t1bdai,
-                  labels = c("A","B","C","D","E","F"),
+t1figure<-ggarrange(t1maxl,t1maxw,t1maxth,t1maxstl,t1maxstw,
+                  labels = c("A","B","C","D","E"),
                   ncol = 3, nrow = 2)
 ```
 
-    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
     ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
     ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
     ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
@@ -283,10 +314,10 @@ summary(ppgary.pca)
 ```
 
     ## Importance of components:
-    ##                           PC1    PC2    PC3    PC4     PC5
-    ## Standard deviation     1.5521 1.0832 0.8842 0.6925 0.39530
-    ## Proportion of Variance 0.4818 0.2347 0.1564 0.0959 0.03125
-    ## Cumulative Proportion  0.4818 0.7165 0.8729 0.9688 1.00000
+    ##                           PC1    PC2    PC3     PC4     PC5
+    ## Standard deviation     1.6274 1.0458 0.8547 0.62704 0.36627
+    ## Proportion of Variance 0.5297 0.2188 0.1461 0.07864 0.02683
+    ## Cumulative Proportion  0.5297 0.7484 0.8945 0.97317 1.00000
 
 ``` r
 t1pca<-ggbiplot(ppgary.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = type1) +
@@ -314,10 +345,10 @@ anova(t1ml)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##           Df     SS      MS     Rsq     F      Z Pr(>F)    
-    ## type1      2 2925.7 1462.87 0.49302 29.66 3.2263  1e-04 ***
-    ## Residuals 61 3008.6   49.32 0.50698                        
-    ## Total     63 5934.4                                        
+    ##           Df      SS      MS     Rsq      F      Z Pr(>F)    
+    ## type1      6  9053.3 1508.88 0.64421 25.952 4.8793  1e-04 ***
+    ## Residuals 86  5000.1   58.14 0.35579                         
+    ## Total     92 14053.4                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -338,10 +369,10 @@ anova(t1mw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##           Df      SS     MS     Rsq      F      Z Pr(>F)  
-    ## type1      2  123.57 61.787 0.10497 3.5769 1.4664  0.033 *
-    ## Residuals 61 1053.69 17.274 0.89503                       
-    ## Total     63 1177.26                                      
+    ##           Df      SS      MS     Rsq      F      Z Pr(>F)    
+    ## type1      6  753.56 125.593 0.34161 7.4368 3.3751  1e-04 ***
+    ## Residuals 86 1452.36  16.888 0.65839                         
+    ## Total     92 2205.92                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -362,10 +393,10 @@ anova(t1mth)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##           Df      SS      MS     Rsq      F      Z Pr(>F)  
-    ## type1      2  25.741 12.8704 0.09701 3.2768 1.3278 0.0464 *
-    ## Residuals 61 239.594  3.9278 0.90299                       
-    ## Total     63 265.335                                       
+    ##           Df     SS      MS    Rsq      F      Z Pr(>F)   
+    ## type1      6  81.29 13.5490 0.1958 3.4897 2.1572 0.0039 **
+    ## Residuals 86 333.90  3.8825 0.8042                        
+    ## Total     92 415.19                                       
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -386,10 +417,10 @@ anova(t1mstl)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##           Df     SS     MS     Rsq      F      Z Pr(>F)   
-    ## type1      2 141.07 70.534 0.17904 6.6514 1.8069  0.002 **
-    ## Residuals 61 646.87 10.604 0.82096                        
-    ## Total     63 787.94                                       
+    ##           Df      SS     MS     Rsq      F      Z Pr(>F)    
+    ## type1      6  367.02 61.171 0.30924 6.4169 3.2029  1e-04 ***
+    ## Residuals 86  819.82  9.533 0.69076                         
+    ## Total     92 1186.84                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -410,10 +441,10 @@ anova(t1mstw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##           Df      SS     MS     Rsq      F      Z Pr(>F)  
-    ## type1      2  123.57 61.787 0.10497 3.5769 1.4664  0.033 *
-    ## Residuals 61 1053.69 17.274 0.89503                       
-    ## Total     63 1177.26                                      
+    ##           Df      SS      MS     Rsq      F      Z Pr(>F)    
+    ## type1      6  753.56 125.593 0.34161 7.4368 3.3751  1e-04 ***
+    ## Residuals 86 1452.36  16.888 0.65839                         
+    ## Total     92 2205.92                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -423,6 +454,16 @@ anova(t1mstw)
 ``` r
 # anova = dart-arrow index ~ type
 t1dai<-lm.rrpp(dai ~ type1, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+```
+
+    ## 
+    ## Warning: Because variables in the linear model are redundant,
+    ## the linear model design has been truncated (via QR decomposition).
+    ## Original X columns: 7
+    ## Final X columns (rank): 3
+    ## Check coefficients or degrees of freedom in ANOVA to see changes.
+
+``` r
 anova(t1dai)
 ```
 
