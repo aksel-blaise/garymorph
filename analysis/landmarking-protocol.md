@@ -1,17 +1,18 @@
 3D landmarking protocol for Gary dart points
 ================
 Robert Z. Selden, Jr.
-January 25, 2020
+February 28, 2020
 
 This document includes supplemental materials for the article, “A
-Quantitative Assessment of Intraspecific Morphological Variation in Gary
-Dart Points: An Exercise in Archaeological Epistemology and Heuristics.”
-The study asks whether the morphologically-derived temporal framework
-advanced by Densmore (2007) can be extended to Gary dart points
-generally, and whether those specimens assigned to each temporal
-category exhibit unique morphological characteristics. The landmarking
-protocol developed for this project bears some visual similarities with
-the configuration used in the [previous 2D study of basal
+quantitative assessment of intraspecific morphological variation in Gary
+dart points: An exercise in archaeological epistemology and heuristics.”
+The study asks whether the morphologically-derived temporal frameworks
+advanced Ford and Webb (1956) and Densmore (2007) might be extended to
+Gary dart points generally, and whether those specimens assigned to each
+temporal category using traditional morphometrics exhibit unique
+morphological characteristics. The landmarking protocol developed for
+this project bears some visual similarities with the configuration used
+in the [previous 2D study of basal
 morphology](https://scholarworks.sfasu.edu/cgi/viewcontent.cgi?article=1280&context=crhr),
 as well as other two-dimensional geometric morphometric analyses
 (Buchanan and Collard 2010; Buchanan et al. 2011; Ragan and Buchanan
@@ -256,14 +257,26 @@ knitr::include_graphics('images/spline-lmslm-mesh.png')
 fig.cap="Mesh for Gary dart point from 41TN20 with landmarks and equidistant semilandmarks applied. \\label{figmesh-lmslm}"
 ```
 
+### Linear metrics
+
+[Linear metrics](linear-metrics.md) associated with Gary type-varieties
+initially developed by Ford, Phillips, and Haag (1955), Ford and Webb
+(1956), and Schambach (1998) were used in tests to identify whether they
+could be replicated, and—if so—whether those differences can be said to
+articulate with temporal differences based upon relative or chronometric
+dating. Those type-varieties that could be replicated were incorporated
+into the geometric morphometric analysis, and were used to inform the
+phenotypic trajectory analysis.
+
 ### Angle calculation
 
 In her study of Gary dart point morphology, Densmore (2007) employed an
 angle measurement between the stem and shoulder of each point. This
-study will use a modified approach to ensure that the angle calculations
-remain consistent across the sample, by calculating the angle using LMs
-2, 4, and 6. This provides a means of data collection that is consistent
-and replicable across the entirety of the sample.
+study enlists the original approach advanced by Densmore (2007), in
+addition to a modified approach that ensures angle calculations remain
+consistent across the sample. The modified approach calculates the angle
+using LMs 2, 4, and 6, providing a means of data collection that is
+consistent and replicable across the entirety of the sample.
 
 ``` r
 knitr::include_graphics('images/angle.png')
@@ -285,11 +298,12 @@ landmarking protocol was developed using the `digit3DLand` package in R
 replicable reference geometry across the sample in *Geomagic Design X*
 made it a better option for the dynamic design process.
 
-Funding for this project was provided to RZS by the National Forests and
-Grasslands in Texas (15-PA-11081300-033), and components of this
-analytical work flow were developed and funded by a Preservation
-Technology and Training grant (P14AP00138) to RZS from the National
-Center for Preservation Technology and Training.
+Funding for this project was provided to RZS by the United States Forest
+Service, National Forests and Grasslands in Texas (15-PA-11081300-033
+and 20-PA-11081300-074), and components of this analytical work flow
+were developed and funded by a Preservation Technology and Training
+grant (P14AP00138) to RZS from the National Center for Preservation
+Technology and Training.
 
 ### References cited
 
@@ -330,12 +344,39 @@ Morphology of the Gary Dart Point.” *Lithic Technology* 32 (1): 7–16.
 
 </div>
 
+<div id="ref-RN20899">
+
+Ford, James A., Philip Phillips, and William G. Haag. 1955. *The
+Jaketown Site in West-Central Mississippi*. Vol. 45: Part 1.
+Anthropological Papers of the American Museum of Natural History. New
+York: American Museum of Natural History.
+<http://digitallibrary.amnh.org/handle/2246/90>.
+
+</div>
+
+<div id="ref-RN20898">
+
+Ford, James A., and Clarence H. Webb. 1956. *Poverty Point, a Late
+Archaic Site in Louisiana*. Vol. 46. Anthropological Papers of the
+American Museum of Natural History. New York: American Museum of Natural
+History. <http://digitallibrary.amnh.org/handle/2246/108>.
+
+</div>
+
 <div id="ref-RN11731">
 
 Ragan, Kathryn, and Briggs Buchanan. 2018. “Assessing Collector Bias: A
 Geometric Morphometric Analysis of a Collection of Isolated Clovis
 Points from the Midcontinent.” *Midcontinental Journal of Archaeology*
 43 (2): 91–111. <https://doi.org/10.1080/01461109.2018.1426430>.
+
+</div>
+
+<div id="ref-RN3132">
+
+Schambach, Frank F. 1998. *Pre-Caddoan Cultures in the Trans-Mississippi
+South: A Beginning Sequence*. Fayetteville: Research Series 53, Arkansas
+Archeological Survey.
 
 </div>
 

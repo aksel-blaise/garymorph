@@ -444,6 +444,15 @@ anova(t1dai)
     ## Call: lm.rrpp(f1 = dai ~ type1, iter = 9999, SS.type = "I", data = ppgary,  
     ##     print.progress = FALSE)
 
+## Acknowledgments
+
+Funding for this project was provided to RZS by the United States Forest
+Service, National Forests and Grasslands in Texas (15-PA-11081300-033
+and 20-PA-11081300-074), and components of this analytical work flow
+were developed and funded by a Preservation Technology and Training
+grant (P14AP00138) to RZS from the National Center for Preservation
+Technology and Training.
+
 ## References cited
 
 <div id="refs" class="references">
