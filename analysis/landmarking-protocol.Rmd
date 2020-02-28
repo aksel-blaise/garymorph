@@ -1,7 +1,7 @@
 ---
 title: "3D landmarking protocol for Gary dart points"
 author: "Robert Z. Selden, Jr."
-date: "January 25, 2020"
+date: "February 28, 2020"
 output: github_document
 bibliography: landmarking-protocol.bib
 fig_caption: yes
@@ -11,7 +11,7 @@ fig_caption: yes
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This document includes supplemental materials for the article, "A Quantitative Assessment of Intraspecific Morphological Variation in Gary Dart Points: An Exercise in Archaeological Epistemology and Heuristics." The study asks whether the morphologically-derived temporal framework advanced by Densmore [-@RN20874] can be extended to Gary dart points generally, and whether those specimens assigned to each temporal category exhibit unique morphological characteristics. The landmarking protocol developed for this project bears some visual similarities with the configuration used in the [previous 2D study of basal morphology](https://scholarworks.sfasu.edu/cgi/viewcontent.cgi?article=1280&context=crhr), as well as other two-dimensional geometric morphometric analyses [@RN1754;@RN1736;@RN11731]; however, it differs in some fundamental ways. The first and most obvious difference is that this is a three-dimensional study. The second is the method of landmark placement, where _Geomagic Design X (Build Version 2019.0.2 [Build Number: 78])_ was used to generate a spline around the periphery of each dart point, and to populate the landmarks and equidistant semilandmarks in a replicable manner using mathematically-defined criteria.
+This document includes supplemental materials for the article, "A quantitative assessment of intraspecific morphological variation in Gary dart points: An exercise in archaeological epistemology and heuristics." The study asks whether the morphologically-derived temporal frameworks advanced Ford and Webb [-@RN20898] and Densmore [-@RN20874] might be extended to Gary dart points generally, and whether those specimens assigned to each temporal category using traditional morphometrics exhibit unique morphological characteristics. The landmarking protocol developed for this project bears some visual similarities with the configuration used in the [previous 2D study of basal morphology](https://scholarworks.sfasu.edu/cgi/viewcontent.cgi?article=1280&context=crhr), as well as other two-dimensional geometric morphometric analyses [@RN1754;@RN1736;@RN11731]; however, it differs in some fundamental ways. The first and most obvious difference is that this is a three-dimensional study. The second is the method of landmark placement, where _Geomagic Design X (Build Version 2019.0.2 [Build Number: 78])_ was used to generate a spline around the periphery of each dart point, and to populate the landmarks and equidistant semilandmarks in a replicable manner using mathematically-defined criteria.
 
 ```{r figTN20}
 knitr::include_graphics('images/41TN20-base.png')
@@ -96,9 +96,13 @@ knitr::include_graphics('images/spline-lmslm-mesh.png')
 fig.cap="Mesh for Gary dart point from 41TN20 with landmarks and equidistant semilandmarks applied. \\label{figmesh-lmslm}"
 ```
 
+### Linear metrics
+
+[Linear metrics](linear-metrics.md) associated with Gary type-varieties initially developed by Ford, Phillips, and Haag [-@RN20899], Ford and Webb [-@RN20898], and Schambach [-@RN3132] were used in tests to identify whether they could be replicated, and---if so---whether those differences can be said to articulate with temporal differences based upon relative or chronometric dating. Those type-varieties that could be replicated were incorporated into the geometric morphometric analysis, and were used to inform the phenotypic trajectory analysis.
+
 ### Angle calculation
 
-In her study of Gary dart point morphology, Densmore [-@RN20874] employed an angle measurement between the stem and shoulder of each point. This study will use a modified approach to ensure that the angle calculations remain consistent across the sample, by calculating the angle using LMs 2, 4, and 6. This provides a means of data collection that is consistent and replicable across the entirety of the sample.
+In her study of Gary dart point morphology, Densmore [-@RN20874] employed an angle measurement between the stem and shoulder of each point. This study enlists the original approach advanced by Densmore [-@RN20874], in addition to a modified approach that ensures angle calculations remain consistent across the sample. The modified approach calculates the angle using LMs 2, 4, and 6, providing a means of data collection that is consistent and replicable across the entirety of the sample.
 
 ```{r figangle}
 knitr::include_graphics('images/angle.png')
@@ -109,6 +113,6 @@ fig.cap="Mesh for Gary dart point from 41TN20 with landmarks and equidistant sem
 
 I extend my gratitude to Christian S. Hoggard and David K. Thulman for their thoughtful comments and constructive criticisms on an earlier draft of this landmarking protocol. The current iteration of the landmarking protocol was developed using the `digit3DLand` package in R (code available in this repository); however, the capacity to populate replicable reference geometry across the sample in _Geomagic Design X_ made it a better option for the dynamic design process.
 
-Funding for this project was provided to RZS by the National Forests and Grasslands in Texas (15-PA-11081300-033), and components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to RZS from the National Center for Preservation Technology and Training. 
+Funding for this project was provided to RZS by the United States Forest Service, National Forests and Grasslands in Texas (15-PA-11081300-033 and 20-PA-11081300-074), and components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to RZS from the National Center for Preservation Technology and Training.
 
 ### References cited

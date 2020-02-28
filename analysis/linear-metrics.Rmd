@@ -266,4 +266,8 @@ t1dai<-lm.rrpp(dai ~ type1, SS.type = "I",data = ppgary,iter = 9999,print.progre
 anova(t1dai)
 ```
 
+## Acknowledgments
+
+Funding for this project was provided to RZS by the United States Forest Service, National Forests and Grasslands in Texas (15-PA-11081300-033 and 20-PA-11081300-074), and components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to RZS from the National Center for Preservation Technology and Training.
+
 ## References cited
