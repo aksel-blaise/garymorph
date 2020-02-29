@@ -248,10 +248,11 @@ The `type1` argument used within this and the subsequent section articulates wit
 
 Each of the three type-varieties proposed by Ford and Webb [-@RN20898] was based upon a suite of morphological criteria that can be systematically replicated, and a function was used to assign each of the Gary points to the correct type-variety. Gary type varieties range between 80 and 140 mm in maxl, and between 30 and 42 mm in maxw for _Gary Large_; between 46 to 79 mm in maxl, and between 20 and 45 mm in maxw for _Gary Medium/Typical_; and between 33 to 45 mm in maxl, 19 to 32 mm in maxw, and five to 10 mm in maxth for _Gary Small_ [@RN20898].
 
-
 ### Function used to assign Gary type-varieties
+
 ```{r type1, echo=FALSE}
 type1<-data$type1 # to be deleted
+type<-data$type
 ```
 
 
@@ -409,6 +410,40 @@ ppfigure
 fig.cap = "Labels: lpv, Gary Large from Poverty Point; mpv, Gary Medium/Typical from Poverty Point; spv, Gary Small from Poverty Point."
 ```
 
+
+### Principal Components Analysis for `type` across all sites
+
+```{r pca type, echo=TRUE}
+#pca
+data.pca<-prcomp(data[c(2:6)],center = TRUE,scale. = TRUE)
+summary(data.pca)
+tpca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = type) +
+  scale_color_brewer(name = "Type-Variety",palette = "Dark2") +
+  theme(legend.position = "right")
+#render figure
+tpca
+```
+
+### Analyses of Variance (ANOVA) for `variable` ~ `type`
+
+```{r anova type, echo=TRUE}
+# anova = maximum length ~ type
+tml<-lm.rrpp(maxl ~ type, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(tml)
+# anova = maximum width ~ type
+tmw<-lm.rrpp(maxw ~ type, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(tmw)
+# anova = maximum thickness ~ type
+tmth<-lm.rrpp(maxth ~ type, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(tmth)
+# anova = maximum stem length ~ type
+tmstl<-lm.rrpp(maxstl ~ type, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(tmstl)
+# anova = maximum stem width ~ type
+tmstw<-lm.rrpp(maxstw ~ type, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(tmstw)
+```
+
 ### Principal Components Analysis for `type1` at all sites
 
 ```{r pca, echo=TRUE}
@@ -425,19 +460,19 @@ t1pca
 ### Analyses of Variance (ANOVA) for `variable` ~ `type1`
 
 ```{r anova rrpp, echo=TRUE}
-# anova = maximum length ~ type
+# anova = maximum length ~ type1
 t1ml<-lm.rrpp(maxl ~ type1, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t1ml)
-# anova = maximum width ~ type
+# anova = maximum width ~ type1
 t1mw<-lm.rrpp(maxw ~ type1, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t1mw)
-# anova = maximum thickness ~ type
+# anova = maximum thickness ~ type1
 t1mth<-lm.rrpp(maxth ~ type1, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t1mth)
-# anova = maximum stem length ~ type
+# anova = maximum stem length ~ type1
 t1mstl<-lm.rrpp(maxstl ~ type1, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t1mstl)
-# anova = maximum stem width ~ type
+# anova = maximum stem width ~ type1
 t1mstw<-lm.rrpp(maxstw ~ type1, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t1mstw)
 ```
