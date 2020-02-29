@@ -21,10 +21,10 @@ Others have noted a gradual diminution in the size of Gary dart points through t
 
 ```{r load packages}
 # install required analysis packages
-devtools::install_github("vqv/ggbiplot")
-devtools::install_github("mlcollyer/RRPP")
-devtools::install_github("tidyverse/ggplot2")
-devtools::install_github("kassambara/ggpubr")
+#devtools::install_github("vqv/ggbiplot")
+#devtools::install_github("mlcollyer/RRPP")
+#devtools::install_github("tidyverse/ggplot2")
+#devtools::install_github("kassambara/ggpubr")
 # load libraries
 library(ggbiplot)
 library(RRPP)
@@ -53,6 +53,9 @@ site<-data$site # site name
 # calculate dart-arrow index (max stem width + max thickness)
 dai<-maxstw + maxth
 dai
+# how many observations fall at or below 11.8 mm
+numarrowpts<-sum(data$dai <= 11.8)
+numarrowpts
 ```
 
 

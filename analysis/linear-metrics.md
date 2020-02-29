@@ -35,34 +35,10 @@ useful heuristic in this instance.
 
 ``` r
 # install required analysis packages
-devtools::install_github("vqv/ggbiplot")
-```
-
-    ## Skipping install of 'ggbiplot' from a github remote, the SHA1 (7325e880) has not changed since last install.
-    ##   Use `force = TRUE` to force installation
-
-``` r
-devtools::install_github("mlcollyer/RRPP")
-```
-
-    ## Skipping install of 'RRPP' from a github remote, the SHA1 (e29228ed) has not changed since last install.
-    ##   Use `force = TRUE` to force installation
-
-``` r
-devtools::install_github("tidyverse/ggplot2")
-```
-
-    ## Skipping install of 'ggplot2' from a github remote, the SHA1 (8bc39f28) has not changed since last install.
-    ##   Use `force = TRUE` to force installation
-
-``` r
-devtools::install_github("kassambara/ggpubr")
-```
-
-    ## Skipping install of 'ggpubr' from a github remote, the SHA1 (a8a3db99) has not changed since last install.
-    ##   Use `force = TRUE` to force installation
-
-``` r
+#devtools::install_github("vqv/ggbiplot")
+#devtools::install_github("mlcollyer/RRPP")
+#devtools::install_github("tidyverse/ggplot2")
+#devtools::install_github("kassambara/ggpubr")
 # load libraries
 library(ggbiplot)
 ```
@@ -123,6 +99,14 @@ dai
     ##  [85] 26.73 36.43 26.12 26.82 24.17 34.50 24.62 26.67 24.55 25.28 23.80 25.68
     ##  [97] 17.75 22.13 22.20 17.18 19.21 31.06 23.25 32.00 26.78 30.83 26.06 19.27
     ## [109] 28.60 25.81 23.21 23.94 21.07
+
+``` r
+# how many observations fall at or below 11.8 mm
+numarrowpts<-sum(data$dai <= 11.8)
+numarrowpts
+```
+
+    ## [1] 0
 
 ### Gary type-variety linear metrics
 
