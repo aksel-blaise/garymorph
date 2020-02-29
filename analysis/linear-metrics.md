@@ -1,7 +1,7 @@
 Traditional linear metrics for Gary dart points
 ================
 Robert Z. Selden, Jr.
-February 22, 2020
+February 28, 2020
 
 ### Introduction
 
@@ -35,10 +35,34 @@ useful heuristic in this instance.
 
 ``` r
 # install required analysis packages
-#devtools::install_github("vqv/ggbiplot")
-#devtools::install_github("mlcollyer/RRPP")
-#devtools::install_github("tidyverse/ggplot2")
-#devtools::install_github("kassambara/ggpubr")
+devtools::install_github("vqv/ggbiplot")
+```
+
+    ## Skipping install of 'ggbiplot' from a github remote, the SHA1 (7325e880) has not changed since last install.
+    ##   Use `force = TRUE` to force installation
+
+``` r
+devtools::install_github("mlcollyer/RRPP")
+```
+
+    ## Skipping install of 'RRPP' from a github remote, the SHA1 (e29228ed) has not changed since last install.
+    ##   Use `force = TRUE` to force installation
+
+``` r
+devtools::install_github("tidyverse/ggplot2")
+```
+
+    ## Skipping install of 'ggplot2' from a github remote, the SHA1 (8bc39f28) has not changed since last install.
+    ##   Use `force = TRUE` to force installation
+
+``` r
+devtools::install_github("kassambara/ggpubr")
+```
+
+    ## Skipping install of 'ggpubr' from a github remote, the SHA1 (a8a3db99) has not changed since last install.
+    ##   Use `force = TRUE` to force installation
+
+``` r
 # load libraries
 library(ggbiplot)
 ```
@@ -78,6 +102,7 @@ maxw<-ppgary$maxw # maximum width
 maxth<-ppgary$maxth # maximum thickness
 maxstl<-ppgary$maxstl # maximum stem length
 maxstw<-ppgary$maxstw # maximum stem width
+site<-ppgary$site # site name
 dai<-ppgary$dai # dart-arrow index value
 ```
 
@@ -205,13 +230,208 @@ annotate_figure(schambachfig,
 
 ### Functions used to assign Gary type-varieties
 
+## Gary dart points by site
+
+### Boxplots for `variable` by `site`
+
+``` r
+# boxplot of maximum length ~ site
+sitemaxl<-ggplot(ppgary,aes(x=site,y=maxl,color=site)) + geom_boxplot(notch = TRUE) +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum width ~ site
+sitemaxw<-ggplot(ppgary,aes(x=site,y=maxw,color=site)) + geom_boxplot(notch = TRUE) +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness ~ site
+sitemaxth<-ggplot(ppgary,aes(x=site,y=maxth,color=site)) + geom_boxplot(notch = TRUE) +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of stem length ~ site
+sitemaxstl<-ggplot(ppgary,aes(x=site,y=maxstl,color=site)) + geom_boxplot(notch = TRUE) +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of stem width ~ site
+sitemaxstw<-ggplot(ppgary,aes(x=site,y=maxstw,color=site)) + geom_boxplot(notch = TRUE) +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# render figure
+sitefigure<-ggarrange(sitemaxl,sitemaxw,sitemaxth,sitemaxstl,sitemaxstw,
+                  labels = c("a","b","c","d","e"),
+                  ncol = 3, nrow = 2)
+```
+
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+
+``` r
+sitefigure
+```
+
+![](linear-metrics_files/figure-gfm/boxsite-1.png)<!-- -->
+
+### Principal Components Analysis for `site`
+
+``` r
+#pca
+ppgary.pca<-prcomp(ppgary[c(2:6)],center = TRUE,scale. = TRUE)
+summary(ppgary.pca)
+```
+
+    ## Importance of components:
+    ##                           PC1    PC2    PC3     PC4     PC5
+    ## Standard deviation     1.7466 0.9585 0.7415 0.60279 0.34274
+    ## Proportion of Variance 0.6101 0.1837 0.1100 0.07267 0.02349
+    ## Cumulative Proportion  0.6101 0.7939 0.9038 0.97651 1.00000
+
+``` r
+sitepca<-ggbiplot(ppgary.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = site) +
+  scale_color_brewer(name = "Site",palette = "Dark2") +
+  theme(legend.position = "right")
+#render figure
+sitepca
+```
+
+![](linear-metrics_files/figure-gfm/pcasite-1.png)<!-- -->
+
+### Analyses of Variance (ANOVA) for `variable` \~ `site`
+
+``` r
+# anova = maximum length ~ site
+siteml<-lm.rrpp(maxl ~ site, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(siteml)
+```
+
+    ## 
+    ## Analysis of Variance, using Residual Randomization
+    ## Permutation procedure: Randomization of null model residuals 
+    ## Number of permutations: 10000 
+    ## Estimation method: Ordinary Least Squares 
+    ## Sums of Squares and Cross-products: Type I 
+    ## Effect sizes (Z) based on F distributions
+    ## 
+    ##            Df    SS      MS     Rsq      F      Z Pr(>F)    
+    ## site        2  3368 1684.01 0.20053 13.795 2.5113  1e-04 ***
+    ## Residuals 110 13428  122.07 0.79947                         
+    ## Total     112 16796                                         
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Call: lm.rrpp(f1 = maxl ~ site, iter = 9999, SS.type = "I", data = ppgary,  
+    ##     print.progress = FALSE)
+
+``` r
+# anova = maximum width ~ site
+sitemw<-lm.rrpp(maxw ~ site, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(sitemw)
+```
+
+    ## 
+    ## Analysis of Variance, using Residual Randomization
+    ## Permutation procedure: Randomization of null model residuals 
+    ## Number of permutations: 10000 
+    ## Estimation method: Ordinary Least Squares 
+    ## Sums of Squares and Cross-products: Type I 
+    ## Effect sizes (Z) based on F distributions
+    ## 
+    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
+    ## site        2 1487.8 743.91 0.42347 40.399 3.2907  1e-04 ***
+    ## Residuals 110 2025.6  18.41 0.57653                         
+    ## Total     112 3513.4                                        
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Call: lm.rrpp(f1 = maxw ~ site, iter = 9999, SS.type = "I", data = ppgary,  
+    ##     print.progress = FALSE)
+
+``` r
+# anova = maximum thickness ~ site
+sitemth<-lm.rrpp(maxth ~ site, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(sitemth)
+```
+
+    ## 
+    ## Analysis of Variance, using Residual Randomization
+    ## Permutation procedure: Randomization of null model residuals 
+    ## Number of permutations: 10000 
+    ## Estimation method: Ordinary Least Squares 
+    ## Sums of Squares and Cross-products: Type I 
+    ## Effect sizes (Z) based on F distributions
+    ## 
+    ##            Df     SS     MS    Rsq      F      Z Pr(>F)    
+    ## site        2 106.99 53.493 0.1954 13.357 2.4344  1e-04 ***
+    ## Residuals 110 440.53  4.005 0.8046                         
+    ## Total     112 547.52                                       
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Call: lm.rrpp(f1 = maxth ~ site, iter = 9999, SS.type = "I", data = ppgary,  
+    ##     print.progress = FALSE)
+
+``` r
+# anova = maximum stem length ~ site
+sitemstl<-lm.rrpp(maxstl ~ site, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(sitemstl)
+```
+
+    ## 
+    ## Analysis of Variance, using Residual Randomization
+    ## Permutation procedure: Randomization of null model residuals 
+    ## Number of permutations: 10000 
+    ## Estimation method: Ordinary Least Squares 
+    ## Sums of Squares and Cross-products: Type I 
+    ## Effect sizes (Z) based on F distributions
+    ## 
+    ##            Df      SS      MS     Rsq      F      Z Pr(>F)    
+    ## site        2  483.14 241.568 0.27321 20.675 2.8293  1e-04 ***
+    ## Residuals 110 1285.22  11.684 0.72679                         
+    ## Total     112 1768.35                                         
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Call: lm.rrpp(f1 = maxstl ~ site, iter = 9999, SS.type = "I", data = ppgary,  
+    ##     print.progress = FALSE)
+
+``` r
+# anova = maximum stem width ~ site
+sitemstw<-lm.rrpp(maxw ~ site, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(sitemstw)
+```
+
+    ## 
+    ## Analysis of Variance, using Residual Randomization
+    ## Permutation procedure: Randomization of null model residuals 
+    ## Number of permutations: 10000 
+    ## Estimation method: Ordinary Least Squares 
+    ## Sums of Squares and Cross-products: Type I 
+    ## Effect sizes (Z) based on F distributions
+    ## 
+    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
+    ## site        2 1487.8 743.91 0.42347 40.399 3.2907  1e-04 ***
+    ## Residuals 110 2025.6  18.41 0.57653                         
+    ## Total     112 3513.4                                        
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Call: lm.rrpp(f1 = maxw ~ site, iter = 9999, SS.type = "I", data = ppgary,  
+    ##     print.progress = FALSE)
+
 ## Gary varieties proposed by Ford and Webb (1956)
 
 The `type1` argument used within this and the subsequent section
-articulates with three variants of the Gary type (`Large`, `Typical`,
-and `Small`), which were assigned using those morphological criteria
-first advanced by Ford, Phillips, and Haag (1955) at the Jaketown site,
-and later refined by Ford and Webb (1956) at Poverty Point.
+articulates with three variants of the Gary type (`Large`,
+`Medium/Typical`, and `Small`), which were assigned using those
+morphological criteria first advanced by Ford, Phillips, and Haag (1955)
+at the Jaketown site, and later refined by Ford and Webb (1956) at
+Poverty Point.
 
 Each of the three type-varieties proposed by Ford and Webb (1956) was
 based upon a suite of morphological criteria that can be systematically
@@ -222,42 +442,44 @@ mm in maxl, and between 30 and 42 mm in maxw for *Gary Large*; between
 Medium/Typical*; and between 33 to 45 mm in maxl, 19 to 32 mm in maxw,
 and five to 10 mm in maxth for *Gary Small* (Ford and Webb 1956).
 
-### Boxplots for `variable` by `type1`
+### Boxplots for `site` by `type1` for Gary dart points from Cooper
 
 ``` r
-# boxplot of maximum length ~ type
-t1maxl<-ggplot(ppgary,aes(x=type1,y=maxl,color=type1)) + geom_boxplot() +
+# subset cooper data
+cprmxl<-subset(ppgary,site=="Cooper",select=maxl:type1)
+# boxplot of maximum length
+cprmaxl<-ggplot(cprmxl,aes(x=type1,y=maxl,color=type1)) + 
+  geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-# boxplot of maximum width ~ type
-t1maxw<-ggplot(ppgary,aes(x=type1,y=maxw,color=type1)) + geom_boxplot() +
-  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+# boxplot of maximum width
+cprmaxw<-ggplot(cprmxl,aes(x=type1,y=maxw,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-# boxplot of maximum thickness ~ type
-t1maxth<-ggplot(ppgary,aes(x=type1,y=maxth,color=type1)) + geom_boxplot() +
-  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+# boxplot of maximum thickness
+cprmaxth<-ggplot(cprmxl,aes(x=type1,y=maxth,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-# boxplot of stem length ~ type
-t1maxstl<-ggplot(ppgary,aes(x=type1,y=maxstl,color=type1)) + geom_boxplot() +
-  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+# boxplot of maximum stem length
+cprmaxstl<-ggplot(cprmxl,aes(x=type1,y=maxstl,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-# boxplot of stem width ~ type
-t1maxstw<-ggplot(ppgary,aes(x=type1,y=maxstw,color=type1)) + geom_boxplot() +
-  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
-  theme(legend.position = "none")
-# boxplot of dart-arrow index ~ type
-t1bdai<-ggplot(ppgary,aes(x=type1,y=dai,color=type1)) + geom_boxplot() +
-  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+# boxplot of maximum thickness
+cprmaxstw<-ggplot(cprmxl,aes(x=type1,y=maxstw,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 # render figure
-t1figure<-ggarrange(t1maxl,t1maxw,t1maxth,t1maxstl,t1maxstw,t1bdai,
-                  labels = c("A","B","C","D","E","F"),
+cprfigure<-ggarrange(cprmaxl,cprmaxw,cprmaxth,cprmaxstl,cprmaxstw,
+                  labels = c("a","b","c","d","e"),
                   ncol = 3, nrow = 2)
 ```
 
@@ -266,15 +488,132 @@ t1figure<-ggarrange(t1maxl,t1maxw,t1maxth,t1maxstl,t1maxstw,t1bdai,
     ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
     ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
     ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+
+``` r
+cprfigure
+```
+
+![](linear-metrics_files/figure-gfm/boxplot%20c-1.png)<!-- -->
+
+``` r
+fig.cap = "Labels: lc, Gary Large from Cooper; mc, Gary Medium/Typical from Cooper; sc, Gary Small from Cooper."
+```
+
+### Boxplots for `site` by `type1` for Gary dart points from Means
+
+``` r
+# subset means data
+mnsmxl<-subset(ppgary,site=="Means",select=maxl:type1)
+# boxplot of maximum length
+mnsmaxl<-ggplot(mnsmxl,aes(x=type1,y=maxl,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum width
+mnsmaxw<-ggplot(mnsmxl,aes(x=type1,y=maxw,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+mnsmaxth<-ggplot(mnsmxl,aes(x=type1,y=maxth,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum stem length
+mnsmaxstl<-ggplot(mnsmxl,aes(x=type1,y=maxstl,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+mnsmaxstw<-ggplot(mnsmxl,aes(x=type1,y=maxstw,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# render figure
+mnsfigure<-ggarrange(mnsmaxl,mnsmaxw,mnsmaxth,mnsmaxstl,mnsmaxstw,
+                  labels = c("a","b","c","d","e"),
+                  ncol = 3, nrow = 2)
+```
+
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
     ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
 
 ``` r
-t1figure
+mnsfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot-1.png)<!-- -->
+![](linear-metrics_files/figure-gfm/boxplot%20m-1.png)<!-- -->
 
-### Principal Components Analysis for `type1`
+``` r
+fig.cap = "Labels: lm, Gary Large from Means; mm, Gary Medium/Typical from Means; sm, Gary Small from Means"
+```
+
+### Boxplots for `site` by `type1` for Gary dart points from Poverty Point
+
+``` r
+# subset poverty point data
+pvptmxl<-subset(ppgary,site=="Pov Pt",select=maxl:type1)
+# boxplot of maximum length
+pvptmaxl<-ggplot(pvptmxl,aes(x=type1,y=maxl,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum width
+pvptmaxw<-ggplot(pvptmxl,aes(x=type1,y=maxw,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+pvptmaxth<-ggplot(pvptmxl,aes(x=type1,y=maxth,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum stem length
+pvptmaxstl<-ggplot(pvptmxl,aes(x=type1,y=maxstl,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+pvptmaxstw<-ggplot(pvptmxl,aes(x=type1,y=maxstw,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# render figure
+ppfigure<-ggarrange(pvptmaxl,pvptmaxw,pvptmaxth,pvptmaxstl,pvptmaxstw,
+                  labels = c("a","b","c","d","e"),
+                  ncol = 3, nrow = 2)
+```
+
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+
+``` r
+ppfigure
+```
+
+![](linear-metrics_files/figure-gfm/boxplot%20pp-1.png)<!-- -->
+
+``` r
+fig.cap = "Labels: lpv, Gary Large from Poverty Point; mpv, Gary Medium/Typical from Poverty Point; spv, Gary Small from Poverty Point."
+```
+
+### Principal Components Analysis for `type1` at all sites
 
 ``` r
 #pca
@@ -283,10 +622,10 @@ summary(ppgary.pca)
 ```
 
     ## Importance of components:
-    ##                           PC1    PC2    PC3    PC4     PC5
-    ## Standard deviation     1.5521 1.0832 0.8842 0.6925 0.39530
-    ## Proportion of Variance 0.4818 0.2347 0.1564 0.0959 0.03125
-    ## Cumulative Proportion  0.4818 0.7165 0.8729 0.9688 1.00000
+    ##                           PC1    PC2    PC3     PC4     PC5
+    ## Standard deviation     1.7466 0.9585 0.7415 0.60279 0.34274
+    ## Proportion of Variance 0.6101 0.1837 0.1100 0.07267 0.02349
+    ## Cumulative Proportion  0.6101 0.7939 0.9038 0.97651 1.00000
 
 ``` r
 t1pca<-ggbiplot(ppgary.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = type1) +
@@ -314,10 +653,10 @@ anova(t1ml)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##           Df     SS      MS     Rsq     F      Z Pr(>F)    
-    ## type1      2 2925.7 1462.87 0.49302 29.66 3.2263  1e-04 ***
-    ## Residuals 61 3008.6   49.32 0.50698                        
-    ## Total     63 5934.4                                        
+    ##            Df      SS      MS   Rsq      F      Z Pr(>F)    
+    ## type1       7 11169.2 1595.59 0.665 29.776 5.6056  1e-04 ***
+    ## Residuals 105  5626.6   53.59 0.335                         
+    ## Total     112 16795.8                                       
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -338,10 +677,10 @@ anova(t1mw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##           Df      SS     MS     Rsq      F      Z Pr(>F)  
-    ## type1      2  123.57 61.787 0.10497 3.5769 1.4664  0.033 *
-    ## Residuals 61 1053.69 17.274 0.89503                       
-    ## Total     63 1177.26                                      
+    ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
+    ## type1       7 1781.7 254.523 0.50711 15.433 4.9516  1e-04 ***
+    ## Residuals 105 1731.7  16.492 0.49289                         
+    ## Total     112 3513.4                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -362,10 +701,10 @@ anova(t1mth)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##           Df      SS      MS     Rsq      F      Z Pr(>F)  
-    ## type1      2  25.741 12.8704 0.09701 3.2768 1.3278 0.0464 *
-    ## Residuals 61 239.594  3.9278 0.90299                       
-    ## Total     63 265.335                                       
+    ##            Df     SS      MS     Rsq      F     Z Pr(>F)    
+    ## type1       7 177.74 25.3916 0.32463 7.2101 3.549  1e-04 ***
+    ## Residuals 105 369.77  3.5217 0.67537                        
+    ## Total     112 547.52                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -386,10 +725,10 @@ anova(t1mstl)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##           Df     SS     MS     Rsq      F      Z Pr(>F)   
-    ## type1      2 141.07 70.534 0.17904 6.6514 1.8069  0.002 **
-    ## Residuals 61 646.87 10.604 0.82096                        
-    ## Total     63 787.94                                       
+    ##            Df     SS      MS     Rsq      F     Z Pr(>F)    
+    ## type1       7  701.7 100.242 0.39681 9.8677 4.148  1e-04 ***
+    ## Residuals 105 1066.7  10.159 0.60319                        
+    ## Total     112 1768.3                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -410,38 +749,14 @@ anova(t1mstw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##           Df      SS     MS     Rsq      F      Z Pr(>F)  
-    ## type1      2  123.57 61.787 0.10497 3.5769 1.4664  0.033 *
-    ## Residuals 61 1053.69 17.274 0.89503                       
-    ## Total     63 1177.26                                      
+    ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
+    ## type1       7 1781.7 254.523 0.50711 15.433 4.9516  1e-04 ***
+    ## Residuals 105 1731.7  16.492 0.49289                         
+    ## Total     112 3513.4                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## Call: lm.rrpp(f1 = maxw ~ type1, iter = 9999, SS.type = "I", data = ppgary,  
-    ##     print.progress = FALSE)
-
-``` r
-# anova = dart-arrow index ~ type
-t1dai<-lm.rrpp(dai ~ type1, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
-anova(t1dai)
-```
-
-    ## 
-    ## Analysis of Variance, using Residual Randomization
-    ## Permutation procedure: Randomization of null model residuals 
-    ## Number of permutations: 10000 
-    ## Estimation method: Ordinary Least Squares 
-    ## Sums of Squares and Cross-products: Type I 
-    ## Effect sizes (Z) based on F distributions
-    ## 
-    ##           Df      SS      MS    Rsq      F      Z Pr(>F)    
-    ## type1      2  276.44 138.222 0.2432 9.8015 2.2253  2e-04 ***
-    ## Residuals 61  860.23  14.102 0.7568                         
-    ## Total     63 1136.68                                        
-    ## ---
-    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    ## 
-    ## Call: lm.rrpp(f1 = dai ~ type1, iter = 9999, SS.type = "I", data = ppgary,  
     ##     print.progress = FALSE)
 
 ## Acknowledgments
