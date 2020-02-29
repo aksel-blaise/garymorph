@@ -1,4 +1,4 @@
-Traditional linear metrics for Gary dart points
+Exploratory analysis: Traditional linear metrics for Gary dart points
 ================
 Robert Z. Selden, Jr.
 February 28, 2020
@@ -95,22 +95,40 @@ library(ggpubr)
 ``` r
 # set working directory
 setwd(getwd())
-ppgary<-read.csv("garymorphlm.csv",header = TRUE)
+data<-read.csv("garymorphlm.csv",header = TRUE)
 # define variables
-maxl<-ppgary$maxl # maximum length
-maxw<-ppgary$maxw # maximum width
-maxth<-ppgary$maxth # maximum thickness
-maxstl<-ppgary$maxstl # maximum stem length
-maxstw<-ppgary$maxstw # maximum stem width
-site<-ppgary$site # site name
-dai<-ppgary$dai # dart-arrow index value
+maxl<-data$maxl # maximum length
+maxw<-data$maxw # maximum width
+maxth<-data$maxth # maximum thickness
+maxstl<-data$maxstl # maximum stem length
+maxstw<-data$maxstw # maximum stem width
+site<-data$site # site name
 ```
+
+### Calculate dart-arrow index
+
+``` r
+# calculate dart-arrow index (max stem width + max thickness)
+dai<-maxstw + maxth
+dai
+```
+
+    ##   [1] 40.47 25.12 33.19 36.56 28.00 36.08 34.01 30.26 31.36 33.92 27.97 30.39
+    ##  [13] 29.38 27.30 34.16 25.09 31.20 36.02 32.25 28.93 28.57 32.01 32.01 33.70
+    ##  [25] 29.51 26.08 27.44 29.76 29.11 22.56 30.09 32.71 26.92 36.95 30.71 28.86
+    ##  [37] 31.34 32.64 24.83 24.91 25.12 33.19 28.90 27.95 30.12 26.73 36.43 26.12
+    ##  [49] 26.82 24.17 34.50 24.62 31.06 23.25 32.00 26.78 30.83 26.06 19.27 28.60
+    ##  [61] 25.81 23.21 23.94 21.07 37.55 36.55 38.94 34.81 37.01 39.62 37.32 32.32
+    ##  [73] 28.28 24.73 25.19 33.60 27.26 28.58 26.67 24.55 25.96 25.28 28.76 44.05
+    ##  [85] 28.00 32.85 36.73 38.55 29.36 42.17 39.01 34.68 27.59 23.80 25.68 28.01
+    ##  [97] 17.75 23.81 22.13 24.53 20.59 25.92 27.12 22.20 19.16 26.42 26.33 17.18
+    ## [109] 17.70 20.52 19.21 18.93 20.13
 
 ### Gary type-variety linear metrics
 
 ``` r
 # Ford, Phillips, and Haag (1955)
-fphl<-data.frame(Name=c('var.GaryStemmed-length','var.TypicalGaryStemmed-length','var.BroadGaryStemmed-length','var.ThinGaryStemmed-length','var.SmallGaryStemmed-length'),
+fphl<-data.frame(Name=c('var.GaryStemmed','var.TypicalGaryStemmed','var.BroadGaryStemmed','var.ThinGaryStemmed','var.SmallGaryStemmed'),
            Length=c(45,45,45,55,35), # in mm
            end=c(70,79,70,75,50) # in mm
 )
@@ -118,7 +136,7 @@ fphlength<-ggplot(fphl,aes(x=Length,xend=end,y=Name,yend=Name,color=Name)) +
   geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-fphw<-data.frame(Name=c('var.GaryStemmed-width','var.TypicalGaryStemmed-width','var.BroadGaryStemmed-width','var.ThinGaryStemmed-width','var.SmallGaryStemmed-width'),
+fphw<-data.frame(Name=c('var.GaryStemmed','var.TypicalGaryStemmed','var.BroadGaryStemmed','var.ThinGaryStemmed','var.SmallGaryStemmed'),
            Width=c(22,22,32,30,20), # in mm
            end=c(31,31,48,36,30) # in mm
 )
@@ -128,7 +146,7 @@ fphwidth<-ggplot(fphw,aes(x=Width,xend=end,y=Name,yend=Name,color=Name)) +
   theme(legend.position = "none")
 # render figure
 fwebbfig<-ggarrange(fphlength,fphwidth,
-                  labels = c("A","B"),
+                  labels = c("a","b"),
                   ncol = 1, nrow = 2)
 annotate_figure(fwebbfig,
                 top=text_grob("Gary type-variety linear metrics per Ford, Phillips, and Haag (1955)")
@@ -139,7 +157,7 @@ annotate_figure(fwebbfig,
 
 ``` r
 # Ford and Webb (1956)
-fwebbl<-data.frame(Name=c('var.GaryLarge-length','var.GaryMed/Typical-length','var.GarySmall-length'),
+fwebbl<-data.frame(Name=c('var.GaryLarge','var.GaryMed/Typical','var.GarySmall'),
            Length=c(80,46,33), # in mm
            end=c(140,79,45) # in mm
 )
@@ -147,7 +165,7 @@ fwebblength<-ggplot(fwebbl,aes(x=Length,xend=end,y=Name,yend=Name,color=Name)) +
   geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-fwebbw<-data.frame(Name=c('var.GaryLarge-width','var.GaryMed/Typical-width','var.GarySmall-width'),
+fwebbw<-data.frame(Name=c('var.GaryLarge','var.GaryMed/Typical','var.GarySmall'),
            Width=c(30,20,19), # in mm
            end=c(42,45,32) # in mm
 )
@@ -156,7 +174,7 @@ fwebbwidth<-ggplot(fwebbw,aes(x=Width,xend=end,y=Name,yend=Name,color=Name)) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 # thickness values were not precisely reported for GaryLarge and GaryTypical, and are included here for reference only
-fwebbth<-data.frame(Name=c('var.GaryLarge-width','var.GaryMed/Typical-width','var.GarySmall-width'),
+fwebbth<-data.frame(Name=c('var.GaryLarge','var.GaryMed/Typical','var.GarySmall'),
            Thickness=c(13,9,5), # in mm
            end=c(13,10,10) # in mm
 )
@@ -166,7 +184,7 @@ fwebbthickness<-ggplot(fwebbth,aes(x=Thickness,xend=end,y=Name,yend=Name,color=N
   theme(legend.position = "none")
 # render figure
 fwebbfig<-ggarrange(fwebblength,fwebbwidth,fwebbthickness,
-                  labels = c("A","B","C"),
+                  labels = c("a","b","c"),
                   ncol = 1, nrow = 3)
 annotate_figure(fwebbfig,
                 top=text_grob("Gary type-variety linear metrics per Ford and Webb (1956)")
@@ -177,7 +195,8 @@ annotate_figure(fwebbfig,
 
 ``` r
 # Schambach (1998)
-schambl<-data.frame(Name=c('var.Gary-length','var.Malvern-length','var.LeFlore-length','var.Bodcaw-length','var.Manice-length','var.CamdenA-length','var.CamdenB-length'),
+# reported length by variety
+schambl<-data.frame(Name=c('var.Gary','var.Malvern','var.LeFlore','var.Bodcaw','var.Manice','var.CamdenA','var.CamdenB'),
            Length=c(51,43,43,40,36,39,50), # in mm
            end=c(73,72,80,60,57,67,80) # in mm
 )
@@ -185,7 +204,8 @@ length<-ggplot(schambl,aes(x=Length,xend=end,y=Name,yend=Name,color=Name)) +
   geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-schambw<-data.frame(Name=c('var.Gary-width','var.Malvern-width','var.LeFlore-width','var.Bodcaw-width','var.Manice-width','var.CamdenA-width','var.CamdenB-width'),
+# reported width by variety
+schambw<-data.frame(Name=c('var.Gary','var.Malvern','var.LeFlore','var.Bodcaw','var.Manice','var.CamdenA','var.CamdenB'),
            Width=c(31,23,25,21,22,16,26), # in mm
            end=c(45,33,54,36,41,27,38) # in mm
 )
@@ -193,7 +213,8 @@ width<-ggplot(schambw,aes(x=Width,xend=end,y=Name,yend=Name,color=Name)) +
   geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-schambth<-data.frame(Name=c('var.Gary-thickness','var.Malvern-thickness','var.LeFlore-thickness','var.Bodcaw-thickness','var.Manice-thickness','var.CamdenA-thickness','var.CamdenB-thickness'),
+# reported thickness by variety
+schambth<-data.frame(Name=c('var.Gary','var.Malvern','var.LeFlore','var.Bodcaw','var.Manice','var.CamdenA','var.CamdenB'),
            Thickness=c(6,7,5,5,6,5,7), # in mm
            end=c(11,13,13,12,9,14,11) # in mm
 )
@@ -201,7 +222,8 @@ thickness<-ggplot(schambth,aes(x=Thickness,xend=end,y=Name,yend=Name,color=Name)
   geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-schambstl<-data.frame(Name=c('var.Gary-stemlength','var.Malvern-stemlength','var.LeFlore-stemlength','var.Bodcaw-stemlength','var.Manice-stemlength','var.CamdenA-stemlength','var.CamdenB-stemlength'),
+# reported stem length by variety
+schambstl<-data.frame(Name=c('var.Gary','var.Malvern','var.LeFlore','var.Bodcaw','var.Manice','var.CamdenA','var.CamdenB'),
            StemLength=c(15,11,11,11,10,9,12), # in mm
            end=c(29,23,24,24,17,19,18) # in mm
 )
@@ -209,7 +231,8 @@ stemlength<-ggplot(schambstl,aes(x=StemLength,xend=end,y=Name,yend=Name,color=Na
   geom_segment(size=2) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-schambstw<-data.frame(Name=c('var.Gary-stemlength','var.Malvern-stemlength','var.LeFlore-stemlength','var.Bodcaw-stemlength','var.Manice-stemlength','var.CamdenA-stemlength'), # var.CamdenB-stemlength not listed in text
+# reported stem width by variety
+schambstw<-data.frame(Name=c('var.Gary','var.Malvern','var.LeFlore','var.Bodcaw','var.Manice','var.CamdenA'), # var.CamdenB-stemlength not listed in text
            StemWidth=c(20,17,13,15,12,11), # in mm
            end=c(28,25,33,24,24,21) # in mm
 )
@@ -219,7 +242,7 @@ stemwidth<-ggplot(schambstw,aes(x=StemWidth,xend=end,y=Name,yend=Name,color=Name
   theme(legend.position = "none")
 # render figure
 schambachfig<-ggarrange(length,width,thickness,stemlength,stemwidth,
-                  labels = c("A","B","C","D","E"),
+                  labels = c("a","b","c","d","e"),
                   ncol = 2, nrow = 3)
 annotate_figure(schambachfig,
                 top=text_grob("Gary type-variety linear metrics per Schambach (1998)")
@@ -228,35 +251,33 @@ annotate_figure(schambachfig,
 
 ![](linear-metrics_files/figure-gfm/gantt-3.png)<!-- -->
 
-### Functions used to assign Gary type-varieties
-
-## Gary dart points by site
+## Linear metrics of Gary dart points by site
 
 ### Boxplots for `variable` by `site`
 
 ``` r
 # boxplot of maximum length ~ site
-sitemaxl<-ggplot(ppgary,aes(x=site,y=maxl,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxl<-ggplot(data,aes(x=site,y=maxl,color=site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 # boxplot of maximum width ~ site
-sitemaxw<-ggplot(ppgary,aes(x=site,y=maxw,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxw<-ggplot(data,aes(x=site,y=maxw,color=site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 # boxplot of maximum thickness ~ site
-sitemaxth<-ggplot(ppgary,aes(x=site,y=maxth,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxth<-ggplot(data,aes(x=site,y=maxth,color=site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 # boxplot of stem length ~ site
-sitemaxstl<-ggplot(ppgary,aes(x=site,y=maxstl,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxstl<-ggplot(data,aes(x=site,y=maxstl,color=site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 # boxplot of stem width ~ site
-sitemaxstw<-ggplot(ppgary,aes(x=site,y=maxstw,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxstw<-ggplot(data,aes(x=site,y=maxstw,color=site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
@@ -282,8 +303,8 @@ sitefigure
 
 ``` r
 #pca
-ppgary.pca<-prcomp(ppgary[c(2:6)],center = TRUE,scale. = TRUE)
-summary(ppgary.pca)
+data.pca<-prcomp(data[c(2:6)],center = TRUE,scale. = TRUE)
+summary(data.pca)
 ```
 
     ## Importance of components:
@@ -293,7 +314,7 @@ summary(ppgary.pca)
     ## Cumulative Proportion  0.6101 0.7939 0.9038 0.97651 1.00000
 
 ``` r
-sitepca<-ggbiplot(ppgary.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = site) +
+sitepca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = site) +
   scale_color_brewer(name = "Site",palette = "Dark2") +
   theme(legend.position = "right")
 #render figure
@@ -306,7 +327,7 @@ sitepca
 
 ``` r
 # anova = maximum length ~ site
-siteml<-lm.rrpp(maxl ~ site, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+siteml<-lm.rrpp(maxl ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(siteml)
 ```
 
@@ -325,12 +346,12 @@ anova(siteml)
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxl ~ site, iter = 9999, SS.type = "I", data = ppgary,  
+    ## Call: lm.rrpp(f1 = maxl ~ site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum width ~ site
-sitemw<-lm.rrpp(maxw ~ site, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+sitemw<-lm.rrpp(maxw ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemw)
 ```
 
@@ -349,12 +370,12 @@ anova(sitemw)
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxw ~ site, iter = 9999, SS.type = "I", data = ppgary,  
+    ## Call: lm.rrpp(f1 = maxw ~ site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum thickness ~ site
-sitemth<-lm.rrpp(maxth ~ site, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+sitemth<-lm.rrpp(maxth ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemth)
 ```
 
@@ -373,12 +394,12 @@ anova(sitemth)
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxth ~ site, iter = 9999, SS.type = "I", data = ppgary,  
+    ## Call: lm.rrpp(f1 = maxth ~ site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum stem length ~ site
-sitemstl<-lm.rrpp(maxstl ~ site, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+sitemstl<-lm.rrpp(maxstl ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemstl)
 ```
 
@@ -397,12 +418,12 @@ anova(sitemstl)
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxstl ~ site, iter = 9999, SS.type = "I", data = ppgary,  
+    ## Call: lm.rrpp(f1 = maxstl ~ site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum stem width ~ site
-sitemstw<-lm.rrpp(maxw ~ site, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+sitemstw<-lm.rrpp(maxstw ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemstw)
 ```
 
@@ -414,14 +435,14 @@ anova(sitemstw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
-    ## site        2 1487.8 743.91 0.42347 40.399 3.2907  1e-04 ***
-    ## Residuals 110 2025.6  18.41 0.57653                         
-    ## Total     112 3513.4                                        
+    ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
+    ## site        2  897.96 448.98 0.39742 36.275 3.2028  1e-04 ***
+    ## Residuals 110 1361.49  12.38 0.60258                         
+    ## Total     112 2259.44                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxw ~ site, iter = 9999, SS.type = "I", data = ppgary,  
+    ## Call: lm.rrpp(f1 = maxstw ~ site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ## Gary varieties proposed by Ford and Webb (1956)
@@ -442,11 +463,13 @@ mm in maxl, and between 30 and 42 mm in maxw for *Gary Large*; between
 Medium/Typical*; and between 33 to 45 mm in maxl, 19 to 32 mm in maxw,
 and five to 10 mm in maxth for *Gary Small* (Ford and Webb 1956).
 
+### Function used to assign Gary type-varieties
+
 ### Boxplots for `site` by `type1` for Gary dart points from Cooper
 
 ``` r
 # subset cooper data
-cprmxl<-subset(ppgary,site=="Cooper",select=maxl:type1)
+cprmxl<-subset(data,site=="Cooper",select=maxl:type1)
 # boxplot of maximum length
 cprmaxl<-ggplot(cprmxl,aes(x=type1,y=maxl,color=type1)) + 
   geom_boxplot() +
@@ -503,7 +526,7 @@ fig.cap = "Labels: lc, Gary Large from Cooper; mc, Gary Medium/Typical from Coop
 
 ``` r
 # subset means data
-mnsmxl<-subset(ppgary,site=="Means",select=maxl:type1)
+mnsmxl<-subset(data,site=="Means",select=maxl:type1)
 # boxplot of maximum length
 mnsmaxl<-ggplot(mnsmxl,aes(x=type1,y=maxl,color=type1)) + 
   geom_boxplot() +
@@ -560,7 +583,7 @@ fig.cap = "Labels: lm, Gary Large from Means; mm, Gary Medium/Typical from Means
 
 ``` r
 # subset poverty point data
-pvptmxl<-subset(ppgary,site=="Pov Pt",select=maxl:type1)
+pvptmxl<-subset(data,site=="Pov Pt",select=maxl:type1)
 # boxplot of maximum length
 pvptmaxl<-ggplot(pvptmxl,aes(x=type1,y=maxl,color=type1)) + 
   geom_boxplot() +
@@ -617,8 +640,8 @@ fig.cap = "Labels: lpv, Gary Large from Poverty Point; mpv, Gary Medium/Typical 
 
 ``` r
 #pca
-ppgary.pca<-prcomp(ppgary[c(2:6)],center = TRUE,scale. = TRUE)
-summary(ppgary.pca)
+data.pca<-prcomp(data[c(2:6)],center = TRUE,scale. = TRUE)
+summary(data.pca)
 ```
 
     ## Importance of components:
@@ -628,7 +651,7 @@ summary(ppgary.pca)
     ## Cumulative Proportion  0.6101 0.7939 0.9038 0.97651 1.00000
 
 ``` r
-t1pca<-ggbiplot(ppgary.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = type1) +
+t1pca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = type1) +
   scale_color_brewer(name = "Type-Variety",palette = "Dark2") +
   theme(legend.position = "right")
 #render figure
@@ -641,7 +664,7 @@ t1pca
 
 ``` r
 # anova = maximum length ~ type
-t1ml<-lm.rrpp(maxl ~ type1, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+t1ml<-lm.rrpp(maxl ~ type1, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t1ml)
 ```
 
@@ -660,12 +683,12 @@ anova(t1ml)
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxl ~ type1, iter = 9999, SS.type = "I", data = ppgary,  
+    ## Call: lm.rrpp(f1 = maxl ~ type1, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum width ~ type
-t1mw<-lm.rrpp(maxw ~ type1, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+t1mw<-lm.rrpp(maxw ~ type1, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t1mw)
 ```
 
@@ -684,12 +707,12 @@ anova(t1mw)
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxw ~ type1, iter = 9999, SS.type = "I", data = ppgary,  
+    ## Call: lm.rrpp(f1 = maxw ~ type1, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum thickness ~ type
-t1mth<-lm.rrpp(maxth ~ type1, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+t1mth<-lm.rrpp(maxth ~ type1, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t1mth)
 ```
 
@@ -708,12 +731,12 @@ anova(t1mth)
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxth ~ type1, iter = 9999, SS.type = "I", data = ppgary,  
+    ## Call: lm.rrpp(f1 = maxth ~ type1, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum stem length ~ type
-t1mstl<-lm.rrpp(maxstl ~ type1, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+t1mstl<-lm.rrpp(maxstl ~ type1, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t1mstl)
 ```
 
@@ -732,12 +755,12 @@ anova(t1mstl)
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxstl ~ type1, iter = 9999, SS.type = "I", data = ppgary,  
+    ## Call: lm.rrpp(f1 = maxstl ~ type1, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum stem width ~ type
-t1mstw<-lm.rrpp(maxw ~ type1, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+t1mstw<-lm.rrpp(maxstw ~ type1, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t1mstw)
 ```
 
@@ -750,13 +773,13 @@ anova(t1mstw)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
-    ## type1       7 1781.7 254.523 0.50711 15.433 4.9516  1e-04 ***
-    ## Residuals 105 1731.7  16.492 0.49289                         
-    ## Total     112 3513.4                                         
+    ## type1       7 1157.9 165.409 0.51245 15.766 4.9573  1e-04 ***
+    ## Residuals 105 1101.6  10.491 0.48755                         
+    ## Total     112 2259.4                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxw ~ type1, iter = 9999, SS.type = "I", data = ppgary,  
+    ## Call: lm.rrpp(f1 = maxstw ~ type1, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ## Acknowledgments
