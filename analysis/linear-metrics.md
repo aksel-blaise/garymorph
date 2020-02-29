@@ -1,7 +1,7 @@
 Exploratory analysis: Traditional linear metrics for Gary dart points
 ================
 Robert Z. Selden, Jr.
-February 28, 2020
+February 29, 2020
 
 ### Introduction
 
@@ -10,36 +10,38 @@ quantitative assessment of intraspecific morphological variation in Gary
 dart points: An exercise in archaeological epistemology and heuristics.”
 The traditional linear measures of maximum length, width, and thickness
 were combined with stem length and stem width for this study. These
-variables represent the full suite of metrics used to characterise Gary
-points in previous studies, while also providing those data needed to
+variables represent the standard suite of metrics used to characterise
+Gary points in previous studies, and also providing those data needed to
 examine whether specimens included in this study may transcend the
 threshold between dart and arrow points (Hildebrandt and King 2012).
 
-Others have noted a gradual diminution in the size of Gary dart points
-through time (Ford and Webb 1956; Schambach 1998; Densmore 2007), thus
-it was necessary to begin by asking whether the size of those points
-aggregated for this study may fall below the arbitrary 11.8 mm
-dart-arrow index (DAI) threshold posited by Hildebrandt and King (2012).
-The temporal span associated with morphologically-diagnostic Gary dart
-points is thought to transcend the cultural shift from hunter-gatherer
-to emergent horticulturalist, and overlaps temporally with the advent
-and flourescence of the bow and arrow. The dart-arrow index was
-calculated for all specimens of Gary dart points used in this study, and
-none fell below the dart-arrow threshold posited by Hildebrandt and King
-(2012). It is noteworthy that others (Erlandson, Watts, and Jew 2014)
-have found that the DAI may not be universally applicable; however, the
-DAI and the threshold identified by Hildebrandt and King (2012) is a
-useful heuristic in this instance.
+Others have noted the gradual diminution in the size of Gary dart points
+through time (Baerreis 1951; Ford and Webb 1956; Schambach 1998;
+Densmore 2007), thus it was necessary to begin by asking whether the
+size of those points aggregated for this study may fall below the
+arbitrary 11.8 mm dart-arrow index (DAI) threshold posited by
+Hildebrandt and King (2012). The temporal span associated with
+morphologically-diagnostic Gary dart points is thought to transcend the
+cultural shift from hunter-gatherer to emergent horticulturalist, and
+overlaps temporally with the advent and flourescence of the bow and
+arrow. The dart-arrow index was calculated for all specimens of Gary
+dart points used in this study, and none fell below the dart-arrow
+threshold posited by Hildebrandt and King (2012). It is noteworthy that
+others (Erlandson, Watts, and Jew 2014) have found that the DAI may not
+be universally applicable; however, the DAI and the threshold identified
+by Hildebrandt and King (2012) is a useful heuristic in this instance.
 
 ### Load packages for analysis
 
 ``` r
 # install required analysis packages
+#devtools::install_github("rich-iannone/DiagrammeR")
 #devtools::install_github("vqv/ggbiplot")
 #devtools::install_github("mlcollyer/RRPP")
 #devtools::install_github("tidyverse/ggplot2")
 #devtools::install_github("kassambara/ggpubr")
 # load libraries
+library(DiagrammeR)
 library(ggbiplot)
 ```
 
@@ -81,34 +83,44 @@ maxstw<-data$maxstw # maximum stem width
 site<-data$site # site name
 ```
 
-### Calculate dart-arrow index
+### Krieger’s (1944, Figure 25) typological concept and the Gary dart point
 
 ``` r
-# calculate dart-arrow index (max stem width + max thickness)
-dai<-maxstw + maxth
-dai
+#grViz("
+#  digraph{
+#    node[shape = rectangle
+#         fontname = lato
+#         penwidth = 0.2]
+#    Material; Pattern1; Pattern2; Pattern3; 1; 2; 3; 4
+#    
+#    node[shape = doublecircle]
+#    A; B; C; D; E; F; G
+#    
+#    node[shape = diamond
+#         style = filled
+#         fillcolor = grey]
+#    x
+#    
+#    edge[fontname = lato
+#         penwidth = 0.2]
+#    Material->Pattern1; Material->Pattern2; Material->Pattern3;
+#    Pattern2->A; Pattern2->B; Pattern2->C; Pattern2->D; 
+#    Pattern2->E; Pattern2->F; Pattern2->G; A->1; C->1; F->1; B->2;
+#    D->3; E->3; G->4; x->4
+#    
+#    graph[nodesep = 0.8]
+#  }
+#")
+knitr::include_graphics('krieger.png')
 ```
 
-    ##   [1] 44.05 42.17 27.59 40.47 37.55 36.55 38.94 34.81 37.01 39.62 37.32 32.32
-    ##  [13] 33.60 27.26 28.58 25.96 28.76 28.00 32.85 36.73 38.55 29.36 39.01 34.68
-    ##  [25] 28.28 24.73 25.19 28.01 23.81 24.53 20.59 25.92 27.12 19.16 26.42 26.33
-    ##  [37] 17.70 20.52 18.93 20.13 25.12 33.19 36.56 28.00 36.08 34.01 30.26 31.36
-    ##  [49] 33.92 27.97 30.39 29.38 27.30 34.16 25.09 31.20 36.02 32.25 28.93 28.57
-    ##  [61] 32.01 32.01 33.70 29.51 26.08 27.44 29.76 29.11 22.56 30.09 32.71 26.92
-    ##  [73] 36.95 30.71 28.86 31.34 32.64 24.83 24.91 25.12 33.19 28.90 27.95 30.12
-    ##  [85] 26.73 36.43 26.12 26.82 24.17 34.50 24.62 26.67 24.55 25.28 23.80 25.68
-    ##  [97] 17.75 22.13 22.20 17.18 19.21 31.06 23.25 32.00 26.78 30.83 26.06 19.27
-    ## [109] 28.60 25.81 23.21 23.94 21.07
+<img src="krieger.png" width="1812" />
 
 ``` r
-# how many observations fall at or below 11.8 mm
-numarrowpts<-sum(data$dai <= 11.8)
-numarrowpts
+fig.cap = "Step 1: sorting into working patterns of distinct structural plan. Step 2: sorting into detailed working groups each consistently combining features in but one way. Step 3: recombining working groups into tentative types on basis of comparative distributions and associations of working groups. Step 4: consolidation of types through further testing for consistency in form and variation. Step 5: description and illustration of types with full range of variation. Step 6: a - determination of series of linked types, b - determination of material-culture complexes, and c - determination of type relationships in related cultures."
 ```
 
-    ## [1] 0
-
-### Gary type-variety linear metrics
+### Morphological attributes of Gary dart point type-varieties
 
 ``` r
 # Ford, Phillips, and Haag (1955)
@@ -234,6 +246,33 @@ annotate_figure(schambachfig,
 ```
 
 ![](linear-metrics_files/figure-gfm/gantt-3.png)<!-- -->
+
+### Calculate dart-arrow index
+
+``` r
+# calculate dart-arrow index (max stem width + max thickness)
+dai<-maxstw + maxth
+dai
+```
+
+    ##   [1] 44.05 42.17 27.59 40.47 37.55 36.55 38.94 34.81 37.01 39.62 37.32 32.32
+    ##  [13] 33.60 27.26 28.58 25.96 28.76 28.00 32.85 36.73 38.55 29.36 39.01 34.68
+    ##  [25] 28.28 24.73 25.19 28.01 23.81 24.53 20.59 25.92 27.12 19.16 26.42 26.33
+    ##  [37] 17.70 20.52 18.93 20.13 25.12 33.19 36.56 28.00 36.08 34.01 30.26 31.36
+    ##  [49] 33.92 27.97 30.39 29.38 27.30 34.16 25.09 31.20 36.02 32.25 28.93 28.57
+    ##  [61] 32.01 32.01 33.70 29.51 26.08 27.44 29.76 29.11 22.56 30.09 32.71 26.92
+    ##  [73] 36.95 30.71 28.86 31.34 32.64 24.83 24.91 25.12 33.19 28.90 27.95 30.12
+    ##  [85] 26.73 36.43 26.12 26.82 24.17 34.50 24.62 26.67 24.55 25.28 23.80 25.68
+    ##  [97] 17.75 22.13 22.20 17.18 19.21 31.06 23.25 32.00 26.78 30.83 26.06 19.27
+    ## [109] 28.60 25.81 23.21 23.94 21.07
+
+``` r
+# how many observations fall at or below 11.8 mm
+arrow<-sum(data$dai <= 11.8)
+arrow
+```
+
+    ## [1] 0
 
 ## Linear metrics of Gary dart points by site
 
@@ -925,6 +964,14 @@ Technology and Training.
 
 <div id="refs" class="references">
 
+<div id="ref-RN20896">
+
+Baerreis, D. A. 1951. *The Preceramic Horizons of Northeastern
+Oklahoma*. Anthropological Papers, Museum of Anthropology, No. 6. Ann
+Arbor.
+
+</div>
+
 <div id="ref-RN20874">
 
 Densmore, Julie A. 2007. “A Detailed Analysis of the Variation in
@@ -967,6 +1014,13 @@ Hildebrandt, William R., and Jerome H. King. 2012. “Distinguishing
 Between Darts and Arrows in the Archaeological Record: Implications for
 Technological Change in the American West.” *American Antiquity* 77 (4):
 789–99. <https://doi.org/10.7183/0002-7316.77.4.789>.
+
+</div>
+
+<div id="ref-RN3937">
+
+Krieger, Alex D. 1944. “The Typological Concept.” *American Antiquity* 9
+(3): 271–88. <https://doi.org/10.2307/275785>.
 
 </div>
 
