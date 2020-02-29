@@ -35,34 +35,10 @@ useful heuristic in this instance.
 
 ``` r
 # install required analysis packages
-devtools::install_github("vqv/ggbiplot")
-```
-
-    ## Skipping install of 'ggbiplot' from a github remote, the SHA1 (7325e880) has not changed since last install.
-    ##   Use `force = TRUE` to force installation
-
-``` r
-devtools::install_github("mlcollyer/RRPP")
-```
-
-    ## Skipping install of 'RRPP' from a github remote, the SHA1 (e29228ed) has not changed since last install.
-    ##   Use `force = TRUE` to force installation
-
-``` r
-devtools::install_github("tidyverse/ggplot2")
-```
-
-    ## Skipping install of 'ggplot2' from a github remote, the SHA1 (8bc39f28) has not changed since last install.
-    ##   Use `force = TRUE` to force installation
-
-``` r
-devtools::install_github("kassambara/ggpubr")
-```
-
-    ## Skipping install of 'ggpubr' from a github remote, the SHA1 (a8a3db99) has not changed since last install.
-    ##   Use `force = TRUE` to force installation
-
-``` r
+#devtools::install_github("vqv/ggbiplot")
+#devtools::install_github("mlcollyer/RRPP")
+#devtools::install_github("tidyverse/ggplot2")
+#devtools::install_github("kassambara/ggpubr")
 # load libraries
 library(ggbiplot)
 ```
@@ -113,16 +89,24 @@ dai<-maxstw + maxth
 dai
 ```
 
-    ##   [1] 40.47 25.12 33.19 36.56 28.00 36.08 34.01 30.26 31.36 33.92 27.97 30.39
-    ##  [13] 29.38 27.30 34.16 25.09 31.20 36.02 32.25 28.93 28.57 32.01 32.01 33.70
-    ##  [25] 29.51 26.08 27.44 29.76 29.11 22.56 30.09 32.71 26.92 36.95 30.71 28.86
-    ##  [37] 31.34 32.64 24.83 24.91 25.12 33.19 28.90 27.95 30.12 26.73 36.43 26.12
-    ##  [49] 26.82 24.17 34.50 24.62 31.06 23.25 32.00 26.78 30.83 26.06 19.27 28.60
-    ##  [61] 25.81 23.21 23.94 21.07 37.55 36.55 38.94 34.81 37.01 39.62 37.32 32.32
-    ##  [73] 28.28 24.73 25.19 33.60 27.26 28.58 26.67 24.55 25.96 25.28 28.76 44.05
-    ##  [85] 28.00 32.85 36.73 38.55 29.36 42.17 39.01 34.68 27.59 23.80 25.68 28.01
-    ##  [97] 17.75 23.81 22.13 24.53 20.59 25.92 27.12 22.20 19.16 26.42 26.33 17.18
-    ## [109] 17.70 20.52 19.21 18.93 20.13
+    ##   [1] 44.05 42.17 27.59 40.47 37.55 36.55 38.94 34.81 37.01 39.62 37.32 32.32
+    ##  [13] 33.60 27.26 28.58 25.96 28.76 28.00 32.85 36.73 38.55 29.36 39.01 34.68
+    ##  [25] 28.28 24.73 25.19 28.01 23.81 24.53 20.59 25.92 27.12 19.16 26.42 26.33
+    ##  [37] 17.70 20.52 18.93 20.13 25.12 33.19 36.56 28.00 36.08 34.01 30.26 31.36
+    ##  [49] 33.92 27.97 30.39 29.38 27.30 34.16 25.09 31.20 36.02 32.25 28.93 28.57
+    ##  [61] 32.01 32.01 33.70 29.51 26.08 27.44 29.76 29.11 22.56 30.09 32.71 26.92
+    ##  [73] 36.95 30.71 28.86 31.34 32.64 24.83 24.91 25.12 33.19 28.90 27.95 30.12
+    ##  [85] 26.73 36.43 26.12 26.82 24.17 34.50 24.62 26.67 24.55 25.28 23.80 25.68
+    ##  [97] 17.75 22.13 22.20 17.18 19.21 31.06 23.25 32.00 26.78 30.83 26.06 19.27
+    ## [109] 28.60 25.81 23.21 23.94 21.07
+
+``` r
+# how many observations fall at or below 11.8 mm
+numarrowpts<-sum(data$dai <= 11.8)
+numarrowpts
+```
+
+    ## [1] 0
 
 ### Gary type-variety linear metrics
 
@@ -340,7 +324,7 @@ anova(siteml)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df    SS      MS     Rsq      F      Z Pr(>F)    
-    ## site        2  3368 1684.01 0.20053 13.795 2.5113  1e-04 ***
+    ## site        2  3368 1684.01 0.20053 13.795 2.4837  1e-04 ***
     ## Residuals 110 13428  122.07 0.79947                         
     ## Total     112 16796                                         
     ## ---
@@ -363,10 +347,10 @@ anova(sitemw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
-    ## site        2 1487.8 743.91 0.42347 40.399 3.2907  1e-04 ***
-    ## Residuals 110 2025.6  18.41 0.57653                         
-    ## Total     112 3513.4                                        
+    ##            Df     SS     MS     Rsq      F     Z Pr(>F)    
+    ## site        2 1487.8 743.91 0.42347 40.399 3.237  1e-04 ***
+    ## Residuals 110 2025.6  18.41 0.57653                        
+    ## Total     112 3513.4                                       
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -388,7 +372,7 @@ anova(sitemth)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df     SS     MS    Rsq      F      Z Pr(>F)    
-    ## site        2 106.99 53.493 0.1954 13.357 2.4344  1e-04 ***
+    ## site        2 106.99 53.493 0.1954 13.357 2.4455  1e-04 ***
     ## Residuals 110 440.53  4.005 0.8046                         
     ## Total     112 547.52                                       
     ## ---
@@ -412,7 +396,7 @@ anova(sitemstl)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df      SS      MS     Rsq      F      Z Pr(>F)    
-    ## site        2  483.14 241.568 0.27321 20.675 2.8293  1e-04 ***
+    ## site        2  483.14 241.568 0.27321 20.675 2.7908  1e-04 ***
     ## Residuals 110 1285.22  11.684 0.72679                         
     ## Total     112 1768.35                                         
     ## ---
@@ -436,7 +420,7 @@ anova(sitemstw)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
-    ## site        2  897.96 448.98 0.39742 36.275 3.2028  1e-04 ***
+    ## site        2  897.96 448.98 0.39742 36.275 3.2096  1e-04 ***
     ## Residuals 110 1361.49  12.38 0.60258                         
     ## Total     112 2259.44                                        
     ## ---
@@ -636,6 +620,152 @@ ppfigure
 fig.cap = "Labels: lpv, Gary Large from Poverty Point; mpv, Gary Medium/Typical from Poverty Point; spv, Gary Small from Poverty Point."
 ```
 
+### Principal Components Analysis for `type` across all sites
+
+``` r
+#pca
+data.pca<-prcomp(data[c(2:6)],center = TRUE,scale. = TRUE)
+summary(data.pca)
+```
+
+    ## Importance of components:
+    ##                           PC1    PC2    PC3     PC4     PC5
+    ## Standard deviation     1.7466 0.9585 0.7415 0.60279 0.34274
+    ## Proportion of Variance 0.6101 0.1837 0.1100 0.07267 0.02349
+    ## Cumulative Proportion  0.6101 0.7939 0.9038 0.97651 1.00000
+
+``` r
+tpca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = type) +
+  scale_color_brewer(name = "Type-Variety",palette = "Dark2") +
+  theme(legend.position = "right")
+#render figure
+tpca
+```
+
+![](linear-metrics_files/figure-gfm/pca%20type-1.png)<!-- -->
+
+### Analyses of Variance (ANOVA) for `variable` \~ `type`
+
+``` r
+# anova = maximum length ~ type
+tml<-lm.rrpp(maxl ~ type, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(tml)
+```
+
+    ## 
+    ## Analysis of Variance, using Residual Randomization
+    ## Permutation procedure: Randomization of null model residuals 
+    ## Number of permutations: 10000 
+    ## Estimation method: Ordinary Least Squares 
+    ## Sums of Squares and Cross-products: Type I 
+    ## Effect sizes (Z) based on F distributions
+    ## 
+    ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
+    ## type        2  9660.4 4830.2 0.57517 74.464 3.7725  1e-04 ***
+    ## Residuals 110  7135.4   64.9 0.42483                         
+    ## Total     112 16795.8                                        
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Call: lm.rrpp(f1 = maxl ~ type, iter = 9999, SS.type = "I", data = data,  
+    ##     print.progress = FALSE)
+
+``` r
+# anova = maximum width ~ type
+tmw<-lm.rrpp(maxw ~ type, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(tmw)
+```
+
+    ## 
+    ## Analysis of Variance, using Residual Randomization
+    ## Permutation procedure: Randomization of null model residuals 
+    ## Number of permutations: 10000 
+    ## Estimation method: Ordinary Least Squares 
+    ## Sums of Squares and Cross-products: Type I 
+    ## Effect sizes (Z) based on F distributions
+    ## 
+    ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
+    ## type        2  538.8 269.398 0.15336 9.9624 2.2489  2e-04 ***
+    ## Residuals 110 2974.6  27.042 0.84664                         
+    ## Total     112 3513.4                                         
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Call: lm.rrpp(f1 = maxw ~ type, iter = 9999, SS.type = "I", data = data,  
+    ##     print.progress = FALSE)
+
+``` r
+# anova = maximum thickness ~ type
+tmth<-lm.rrpp(maxth ~ type, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(tmth)
+```
+
+    ## 
+    ## Analysis of Variance, using Residual Randomization
+    ## Permutation procedure: Randomization of null model residuals 
+    ## Number of permutations: 10000 
+    ## Estimation method: Ordinary Least Squares 
+    ## Sums of Squares and Cross-products: Type I 
+    ## Effect sizes (Z) based on F distributions
+    ## 
+    ##            Df     SS     MS     Rsq     F      Z Pr(>F)    
+    ## type        2  86.93 43.464 0.15877 10.38 2.2867  2e-04 ***
+    ## Residuals 110 460.59  4.187 0.84123                        
+    ## Total     112 547.52                                       
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Call: lm.rrpp(f1 = maxth ~ type, iter = 9999, SS.type = "I", data = data,  
+    ##     print.progress = FALSE)
+
+``` r
+# anova = maximum stem length ~ type
+tmstl<-lm.rrpp(maxstl ~ type, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(tmstl)
+```
+
+    ## 
+    ## Analysis of Variance, using Residual Randomization
+    ## Permutation procedure: Randomization of null model residuals 
+    ## Number of permutations: 10000 
+    ## Estimation method: Ordinary Least Squares 
+    ## Sums of Squares and Cross-products: Type I 
+    ## Effect sizes (Z) based on F distributions
+    ## 
+    ##            Df      SS      MS     Rsq      F      Z Pr(>F)    
+    ## type        2  302.46 151.228 0.17104 11.348 2.3026  1e-04 ***
+    ## Residuals 110 1465.90  13.326 0.82896                         
+    ## Total     112 1768.35                                         
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Call: lm.rrpp(f1 = maxstl ~ type, iter = 9999, SS.type = "I", data = data,  
+    ##     print.progress = FALSE)
+
+``` r
+# anova = maximum stem width ~ type
+tmstw<-lm.rrpp(maxstw ~ type, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(tmstw)
+```
+
+    ## 
+    ## Analysis of Variance, using Residual Randomization
+    ## Permutation procedure: Randomization of null model residuals 
+    ## Number of permutations: 10000 
+    ## Estimation method: Ordinary Least Squares 
+    ## Sums of Squares and Cross-products: Type I 
+    ## Effect sizes (Z) based on F distributions
+    ## 
+    ##            Df      SS      MS    Rsq      F      Z Pr(>F)    
+    ## type        2  421.15 210.577 0.1864 12.601 2.4369  1e-04 ***
+    ## Residuals 110 1838.29  16.712 0.8136                         
+    ## Total     112 2259.44                                        
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Call: lm.rrpp(f1 = maxstw ~ type, iter = 9999, SS.type = "I", data = data,  
+    ##     print.progress = FALSE)
+
 ### Principal Components Analysis for `type1` at all sites
 
 ``` r
@@ -663,7 +793,7 @@ t1pca
 ### Analyses of Variance (ANOVA) for `variable` \~ `type1`
 
 ``` r
-# anova = maximum length ~ type
+# anova = maximum length ~ type1
 t1ml<-lm.rrpp(maxl ~ type1, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t1ml)
 ```
@@ -677,7 +807,7 @@ anova(t1ml)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df      SS      MS   Rsq      F      Z Pr(>F)    
-    ## type1       7 11169.2 1595.59 0.665 29.776 5.6056  1e-04 ***
+    ## type1       7 11169.2 1595.59 0.665 29.776 5.6641  1e-04 ***
     ## Residuals 105  5626.6   53.59 0.335                         
     ## Total     112 16795.8                                       
     ## ---
@@ -687,7 +817,7 @@ anova(t1ml)
     ##     print.progress = FALSE)
 
 ``` r
-# anova = maximum width ~ type
+# anova = maximum width ~ type1
 t1mw<-lm.rrpp(maxw ~ type1, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t1mw)
 ```
@@ -701,7 +831,7 @@ anova(t1mw)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
-    ## type1       7 1781.7 254.523 0.50711 15.433 4.9516  1e-04 ***
+    ## type1       7 1781.7 254.523 0.50711 15.433 4.9161  1e-04 ***
     ## Residuals 105 1731.7  16.492 0.49289                         
     ## Total     112 3513.4                                         
     ## ---
@@ -711,7 +841,7 @@ anova(t1mw)
     ##     print.progress = FALSE)
 
 ``` r
-# anova = maximum thickness ~ type
+# anova = maximum thickness ~ type1
 t1mth<-lm.rrpp(maxth ~ type1, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t1mth)
 ```
@@ -724,10 +854,10 @@ anova(t1mth)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS      MS     Rsq      F     Z Pr(>F)    
-    ## type1       7 177.74 25.3916 0.32463 7.2101 3.549  1e-04 ***
-    ## Residuals 105 369.77  3.5217 0.67537                        
-    ## Total     112 547.52                                        
+    ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
+    ## type1       7 177.74 25.3916 0.32463 7.2101 3.6007  1e-04 ***
+    ## Residuals 105 369.77  3.5217 0.67537                         
+    ## Total     112 547.52                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -735,7 +865,7 @@ anova(t1mth)
     ##     print.progress = FALSE)
 
 ``` r
-# anova = maximum stem length ~ type
+# anova = maximum stem length ~ type1
 t1mstl<-lm.rrpp(maxstl ~ type1, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t1mstl)
 ```
@@ -748,10 +878,10 @@ anova(t1mstl)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS      MS     Rsq      F     Z Pr(>F)    
-    ## type1       7  701.7 100.242 0.39681 9.8677 4.148  1e-04 ***
-    ## Residuals 105 1066.7  10.159 0.60319                        
-    ## Total     112 1768.3                                        
+    ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
+    ## type1       7  701.7 100.242 0.39681 9.8677 4.0886  1e-04 ***
+    ## Residuals 105 1066.7  10.159 0.60319                         
+    ## Total     112 1768.3                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -759,7 +889,7 @@ anova(t1mstl)
     ##     print.progress = FALSE)
 
 ``` r
-# anova = maximum stem width ~ type
+# anova = maximum stem width ~ type1
 t1mstw<-lm.rrpp(maxstw ~ type1, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t1mstw)
 ```
@@ -773,7 +903,7 @@ anova(t1mstw)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
-    ## type1       7 1157.9 165.409 0.51245 15.766 4.9573  1e-04 ***
+    ## type1       7 1157.9 165.409 0.51245 15.766 4.9686  1e-04 ***
     ## Residuals 105 1101.6  10.491 0.48755                         
     ## Total     112 2259.4                                         
     ## ---
