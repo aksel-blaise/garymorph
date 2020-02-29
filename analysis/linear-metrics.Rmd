@@ -1,7 +1,7 @@
 ---
 title: "Exploratory analysis: Traditional linear metrics for Gary dart points"
 author: "Robert Z. Selden, Jr."
-date: "February 28, 2020"
+date: "February 29, 2020"
 output: github_document
 bibliography: landmarking-protocol.bib
 fig_caption: yes
@@ -13,19 +13,21 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Introduction
 
-This document includes supplemental materials for the article, “A quantitative assessment of intraspecific morphological variation in Gary dart points: An exercise in archaeological epistemology and heuristics.” The traditional linear measures of maximum length, width, and thickness were combined with stem length and stem width for this study. These variables represent the full suite of metrics used to characterise Gary points in previous studies, while also providing those data needed to examine whether specimens included in this study may transcend the threshold between dart and arrow points [@RN20881]. 
+This document includes supplemental materials for the article, “A quantitative assessment of intraspecific morphological variation in Gary dart points: An exercise in archaeological epistemology and heuristics.” The traditional linear measures of maximum length, width, and thickness were combined with stem length and stem width for this study. These variables represent the standard suite of metrics used to characterise Gary points in previous studies, and also providing those data needed to examine whether specimens included in this study may transcend the threshold between dart and arrow points [@RN20881].
 
-Others have noted a gradual diminution in the size of Gary dart points through time [@RN20898;@RN3132;@RN20874], thus it was necessary to begin by asking whether the size of those points aggregated for this study may fall below the arbitrary 11.8 mm dart-arrow index (DAI) threshold posited by Hildebrandt and King [-@RN20881]. The temporal span associated with morphologically-diagnostic Gary dart points is thought to transcend the cultural shift from hunter-gatherer to emergent horticulturalist, and overlaps temporally with the advent and flourescence of the bow and arrow. The dart-arrow index was calculated for all specimens of Gary dart points used in this study, and none fell below the dart-arrow threshold posited by Hildebrandt and King [-@RN20881]. It is noteworthy that others [@RN20880] have found that the DAI may not be universally applicable; however, the DAI and the threshold identified by Hildebrandt and King [-@RN20881] is a useful heuristic in this instance.
+Others have noted the gradual diminution in the size of Gary dart points through time [@RN20896;@RN20898;@RN3132;@RN20874], thus it was necessary to begin by asking whether the size of those points aggregated for this study may fall below the arbitrary 11.8 mm dart-arrow index (DAI) threshold posited by Hildebrandt and King [-@RN20881]. The temporal span associated with morphologically-diagnostic Gary dart points is thought to transcend the cultural shift from hunter-gatherer to emergent horticulturalist, and overlaps temporally with the advent and flourescence of the bow and arrow. The dart-arrow index was calculated for all specimens of Gary dart points used in this study, and none fell below the dart-arrow threshold posited by Hildebrandt and King [-@RN20881]. It is noteworthy that others [@RN20880] have found that the DAI may not be universally applicable; however, the DAI and the threshold identified by Hildebrandt and King [-@RN20881] is a useful heuristic in this instance.
 
 ### Load packages for analysis
 
 ```{r load packages}
 # install required analysis packages
+#devtools::install_github("rich-iannone/DiagrammeR")
 #devtools::install_github("vqv/ggbiplot")
 #devtools::install_github("mlcollyer/RRPP")
 #devtools::install_github("tidyverse/ggplot2")
 #devtools::install_github("kassambara/ggpubr")
 # load libraries
+library(DiagrammeR)
 library(ggbiplot)
 library(RRPP)
 library(ggplot2)
@@ -47,19 +49,39 @@ maxstw<-data$maxstw # maximum stem width
 site<-data$site # site name
 ```
 
-### Calculate dart-arrow index
+### Krieger's [-@RN3937, Figure 25] typological concept and the Gary dart point
 
-```{r dart-arrow, echo=TRUE}
-# calculate dart-arrow index (max stem width + max thickness)
-dai<-maxstw + maxth
-dai
-# how many observations fall at or below 11.8 mm
-numarrowpts<-sum(data$dai <= 11.8)
-numarrowpts
+```{r krieger, echo=TRUE}
+#grViz("
+#  digraph{
+#    node[shape = rectangle
+#         fontname = lato
+#         penwidth = 0.2]
+#    Material; Pattern1; Pattern2; Pattern3; 1; 2; 3; 4
+#    
+#    node[shape = doublecircle]
+#    A; B; C; D; E; F; G
+#    
+#    node[shape = diamond
+#         style = filled
+#         fillcolor = grey]
+#    x
+#    
+#    edge[fontname = lato
+#         penwidth = 0.2]
+#    Material->Pattern1; Material->Pattern2; Material->Pattern3;
+#    Pattern2->A; Pattern2->B; Pattern2->C; Pattern2->D; 
+#    Pattern2->E; Pattern2->F; Pattern2->G; A->1; C->1; F->1; B->2;
+#    D->3; E->3; G->4; x->4
+#    
+#    graph[nodesep = 0.8]
+#  }
+#")
+knitr::include_graphics('krieger.png')
+fig.cap = "Step 1: sorting into working patterns of distinct structural plan. Step 2: sorting into detailed working groups each consistently combining features in but one way. Step 3: recombining working groups into tentative types on basis of comparative distributions and associations of working groups. Step 4: consolidation of types through further testing for consistency in form and variation. Step 5: description and illustration of types with full range of variation. Step 6: a - determination of series of linked types, b - determination of material-culture complexes, and c - determination of type relationships in related cultures."
 ```
 
-
-### Gary type-variety linear metrics
+### Morphological attributes of Gary dart point type-varieties
 
 ```{r gantt, echo=TRUE}
 # Ford, Phillips, and Haag (1955)
@@ -173,6 +195,17 @@ schambachfig<-ggarrange(length,width,thickness,stemlength,stemwidth,
 annotate_figure(schambachfig,
                 top=text_grob("Gary type-variety linear metrics per Schambach (1998)")
 )
+```
+
+### Calculate dart-arrow index
+
+```{r dart-arrow, echo=TRUE}
+# calculate dart-arrow index (max stem width + max thickness)
+dai<-maxstw + maxth
+dai
+# how many observations fall at or below 11.8 mm
+arrow<-sum(data$dai <= 11.8)
+arrow
 ```
 
 ## Linear metrics of Gary dart points by site
