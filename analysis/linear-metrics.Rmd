@@ -1,7 +1,7 @@
 ---
 title: "Traditional linear metrics for Gary dart points"
 author: "Robert Z. Selden, Jr."
-date: "February 22, 2020"
+date: "February 28, 2020"
 output: github_document
 bibliography: landmarking-protocol.bib
 fig_caption: yes
@@ -44,6 +44,7 @@ maxw<-ppgary$maxw # maximum width
 maxth<-ppgary$maxth # maximum thickness
 maxstl<-ppgary$maxstl # maximum stem length
 maxstw<-ppgary$maxstw # maximum stem width
+site<-ppgary$site # site name
 dai<-ppgary$dai # dart-arrow index value
 ```
 
@@ -161,7 +162,7 @@ annotate_figure(schambachfig,
 ### Functions used to assign Gary type-varieties
 
 ```{r type function, echo=FALSE}
-type1<-ppgary$frdwbgrp # to be deleted
+type1<-ppgary$type1 # to be deleted
 # function to assign type-varieties based upon Ford and Webb (1956)
 #ppgary$type1<-NA
 #for (i in 1:(nrow(ppgary))){
@@ -178,48 +179,212 @@ type1<-ppgary$frdwbgrp # to be deleted
 #}
 ```
 
-## Gary varieties proposed by Ford and Webb [-@RN20898]
+## Gary dart points by site
 
-The `type1` argument used within this and the subsequent section articulates with three variants of the Gary type (`Large`, `Typical`, and `Small`), which were assigned using those morphological criteria first advanced by Ford, Phillips, and Haag [-@RN20899] at the Jaketown site, and later refined by Ford and Webb [-@RN20898] at Poverty Point.
+### Boxplots for `variable` by `site`
 
-Each of the three type-varieties proposed by Ford and Webb [-@RN20898] was based upon a suite of morphological criteria that can be systematically replicated, and a function was used to assign each of the Gary points to the correct type-variety. Gary type varieties range between 80 and 140 mm in maxl, and between 30 and 42 mm in maxw for _Gary Large_; between 46 to 79 mm in maxl, and between 20 and 45 mm in maxw for _Gary Medium/Typical_; and between 33 to 45 mm in maxl, 19 to 32 mm in maxw, and five to 10 mm in maxth for _Gary Small_ [@RN20898].
-
-### Boxplots for `variable` by `type1`
-
-```{r boxplot, echo=TRUE}
-# boxplot of maximum length ~ type
-t1maxl<-ggplot(ppgary,aes(x=type1,y=maxl,color=type1)) + geom_boxplot() +
+```{r boxsite, echo=TRUE}
+# boxplot of maximum length ~ site
+sitemaxl<-ggplot(ppgary,aes(x=site,y=maxl,color=site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-# boxplot of maximum width ~ type
-t1maxw<-ggplot(ppgary,aes(x=type1,y=maxw,color=type1)) + geom_boxplot() +
+# boxplot of maximum width ~ site
+sitemaxw<-ggplot(ppgary,aes(x=site,y=maxw,color=site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-# boxplot of maximum thickness ~ type
-t1maxth<-ggplot(ppgary,aes(x=type1,y=maxth,color=type1)) + geom_boxplot() +
+# boxplot of maximum thickness ~ site
+sitemaxth<-ggplot(ppgary,aes(x=site,y=maxth,color=site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-# boxplot of stem length ~ type
-t1maxstl<-ggplot(ppgary,aes(x=type1,y=maxstl,color=type1)) + geom_boxplot() +
+# boxplot of stem length ~ site
+sitemaxstl<-ggplot(ppgary,aes(x=site,y=maxstl,color=site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
-# boxplot of stem width ~ type
-t1maxstw<-ggplot(ppgary,aes(x=type1,y=maxstw,color=type1)) + geom_boxplot() +
+# boxplot of stem width ~ site
+sitemaxstw<-ggplot(ppgary,aes(x=site,y=maxstw,color=site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Dark2") +
   theme(legend.position = "none")
 # render figure
-t1figure<-ggarrange(t1maxl,t1maxw,t1maxth,t1maxstl,t1maxstw,
-                  labels = c("A","B","C","D","E"),
+sitefigure<-ggarrange(sitemaxl,sitemaxw,sitemaxth,sitemaxstl,sitemaxstw,
+                  labels = c("a","b","c","d","e"),
                   ncol = 3, nrow = 2)
-t1figure
+sitefigure
 ```
 
-### Principal Components Analysis for `type1`
+### Principal Components Analysis for `site`
+
+```{r pcasite, echo=TRUE}
+#pca
+ppgary.pca<-prcomp(ppgary[c(2:6)],center = TRUE,scale. = TRUE)
+summary(ppgary.pca)
+sitepca<-ggbiplot(ppgary.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = site) +
+  scale_color_brewer(name = "Site",palette = "Dark2") +
+  theme(legend.position = "right")
+#render figure
+sitepca
+```
+
+### Analyses of Variance (ANOVA) for `variable` ~ `site`
+
+```{r anovasite, echo=TRUE}
+# anova = maximum length ~ site
+siteml<-lm.rrpp(maxl ~ site, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(siteml)
+# anova = maximum width ~ site
+sitemw<-lm.rrpp(maxw ~ site, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(sitemw)
+# anova = maximum thickness ~ site
+sitemth<-lm.rrpp(maxth ~ site, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(sitemth)
+# anova = maximum stem length ~ site
+sitemstl<-lm.rrpp(maxstl ~ site, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(sitemstl)
+# anova = maximum stem width ~ site
+sitemstw<-lm.rrpp(maxw ~ site, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
+anova(sitemstw)
+```
+
+## Gary varieties proposed by Ford and Webb [-@RN20898]
+
+The `type1` argument used within this and the subsequent section articulates with three variants of the Gary type (`Large`, `Medium/Typical`, and `Small`), which were assigned using those morphological criteria first advanced by Ford, Phillips, and Haag [-@RN20899] at the Jaketown site, and later refined by Ford and Webb [-@RN20898] at Poverty Point.
+
+Each of the three type-varieties proposed by Ford and Webb [-@RN20898] was based upon a suite of morphological criteria that can be systematically replicated, and a function was used to assign each of the Gary points to the correct type-variety. Gary type varieties range between 80 and 140 mm in maxl, and between 30 and 42 mm in maxw for _Gary Large_; between 46 to 79 mm in maxl, and between 20 and 45 mm in maxw for _Gary Medium/Typical_; and between 33 to 45 mm in maxl, 19 to 32 mm in maxw, and five to 10 mm in maxth for _Gary Small_ [@RN20898].
+
+### Boxplots for `site` by `type1` for Gary dart points from Cooper
+
+```{r boxplot c, echo=TRUE}
+# subset cooper data
+cprmxl<-subset(ppgary,site=="Cooper",select=maxl:type1)
+# boxplot of maximum length
+cprmaxl<-ggplot(cprmxl,aes(x=type1,y=maxl,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum width
+cprmaxw<-ggplot(cprmxl,aes(x=type1,y=maxw,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+cprmaxth<-ggplot(cprmxl,aes(x=type1,y=maxth,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum stem length
+cprmaxstl<-ggplot(cprmxl,aes(x=type1,y=maxstl,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+cprmaxstw<-ggplot(cprmxl,aes(x=type1,y=maxstw,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# render figure
+cprfigure<-ggarrange(cprmaxl,cprmaxw,cprmaxth,cprmaxstl,cprmaxstw,
+                  labels = c("a","b","c","d","e"),
+                  ncol = 3, nrow = 2)
+cprfigure
+fig.cap = "Labels: lc, Gary Large from Cooper; mc, Gary Medium/Typical from Cooper; sc, Gary Small from Cooper."
+```
+
+### Boxplots for `site` by `type1` for Gary dart points from Means
+
+```{r boxplot m, echo=TRUE}
+# subset means data
+mnsmxl<-subset(ppgary,site=="Means",select=maxl:type1)
+# boxplot of maximum length
+mnsmaxl<-ggplot(mnsmxl,aes(x=type1,y=maxl,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum width
+mnsmaxw<-ggplot(mnsmxl,aes(x=type1,y=maxw,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+mnsmaxth<-ggplot(mnsmxl,aes(x=type1,y=maxth,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum stem length
+mnsmaxstl<-ggplot(mnsmxl,aes(x=type1,y=maxstl,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+mnsmaxstw<-ggplot(mnsmxl,aes(x=type1,y=maxstw,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# render figure
+mnsfigure<-ggarrange(mnsmaxl,mnsmaxw,mnsmaxth,mnsmaxstl,mnsmaxstw,
+                  labels = c("a","b","c","d","e"),
+                  ncol = 3, nrow = 2)
+mnsfigure
+fig.cap = "Labels: lm, Gary Large from Means; mm, Gary Medium/Typical from Means; sm, Gary Small from Means"
+```
+
+### Boxplots for `site` by `type1` for Gary dart points from Poverty Point
+
+```{r boxplot pp, echo=TRUE}
+# subset poverty point data
+pvptmxl<-subset(ppgary,site=="Pov Pt",select=maxl:type1)
+# boxplot of maximum length
+pvptmaxl<-ggplot(pvptmxl,aes(x=type1,y=maxl,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum width
+pvptmaxw<-ggplot(pvptmxl,aes(x=type1,y=maxw,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+pvptmaxth<-ggplot(pvptmxl,aes(x=type1,y=maxth,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum stem length
+pvptmaxstl<-ggplot(pvptmxl,aes(x=type1,y=maxstl,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+pvptmaxstw<-ggplot(pvptmxl,aes(x=type1,y=maxstw,color=type1)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Dark2") +
+  theme(legend.position = "none")
+# render figure
+ppfigure<-ggarrange(pvptmaxl,pvptmaxw,pvptmaxth,pvptmaxstl,pvptmaxstw,
+                  labels = c("a","b","c","d","e"),
+                  ncol = 3, nrow = 2)
+ppfigure
+fig.cap = "Labels: lpv, Gary Large from Poverty Point; mpv, Gary Medium/Typical from Poverty Point; spv, Gary Small from Poverty Point."
+```
+
+### Principal Components Analysis for `type1` at all sites
 
 ```{r pca, echo=TRUE}
 #pca
@@ -250,9 +415,6 @@ anova(t1mstl)
 # anova = maximum stem width ~ type
 t1mstw<-lm.rrpp(maxw ~ type1, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
 anova(t1mstw)
-# anova = dart-arrow index ~ type
-t1dai<-lm.rrpp(dai ~ type1, SS.type = "I",data = ppgary,iter = 9999,print.progress = FALSE)
-anova(t1dai)
 ```
 
 ## Acknowledgments
