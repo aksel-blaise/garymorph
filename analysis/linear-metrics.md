@@ -1,7 +1,7 @@
 Traditional metrics for type-varieties of Gary dart points
 ================
 Robert Z. Selden, Jr.
-February 29, 2020
+March 1, 2020
 
 ### Introduction
 
@@ -11,7 +11,7 @@ dart points: An exercise in archaeological epistemology and heuristics.”
 The traditional linear measures of maximum length, width, and thickness
 were combined with stem length and stem width for this study. These
 variables represent the standard suite of metrics used to characterise
-Gary points in previous studies, and also providing those data needed to
+Gary points in previous studies, and provide those data needed to
 examine whether specimens included in this study may transcend the
 threshold between dart and arrow points (Hildebrandt and King 2012).
 
@@ -25,7 +25,7 @@ morphologically-diagnostic Gary dart points is thought to transcend the
 cultural shift from hunter-gatherer to emergent horticulturalist, and
 overlaps temporally with the advent and flourescence of the bow and
 arrow. The dart-arrow index was calculated for all specimens of Gary
-dart points used in this study, and none fell below the dart-arrow
+dart points used in this study, and none fall below the dart-arrow
 threshold posited by Hildebrandt and King (2012). It is noteworthy that
 others (Erlandson, Watts, and Jew 2014) have found that the DAI may not
 be universally applicable; however, the DAI and the threshold identified
@@ -344,12 +344,13 @@ anova(sitemstw)
 ## Gary varieties proposed by Ford, Phillips, and Haag (1955)
 
 The `tv0` argument used within this and the subsequent section
-articulates with three variants of the Gary type (`Gary Stemmed`,
-`Typical Gary Stemmed`, `Broad Gary Stemmed`, `Thin Gary Stemmed`, and
-`Small Gary Stemmed`), which were assigned using those morphological
-criteria advanced by Ford, Phillips, and Haag (1955) at the Jaketown
-site in west central Mississippi. The `Long Gary Stemmed` type was
-omitted from consideration due to the absence of reported metrics.
+articulates with three variants of the Gary type–including *Gary
+Stemmed*, *Typical Gary Stemmed*, *Broad Gary Stemmed*, *Thin Gary
+Stemmed*, and *Small Gary Stemmed*, which were assigned using those
+morphological criteria advanced by Ford, Phillips, and Haag (1955) at
+the Jaketown site in west central Mississippi. The *Long Gary Stemmed*
+type was omitted from consideration due to the absence of reported
+metrics.
 
 ``` r
 # Ford, Phillips, and Haag (1955)
@@ -390,17 +391,17 @@ one of the three criteria were assigned as unidentified “UID.” Due to
 the degree of overlap in those ranges associated with the Gary
 type-varieties advanced by Ford, Phillips, and Haag (1956), it is
 expected that `Gary Stemmed` will fall out due to overlap in length with
-`Broad Gary Stemmed`, and overlap in width with `Typical Gary Stemmed`.
+*Broad Gary Stemmed*, and overlap in width with *Typical Gary Stemmed*.
 
 ``` r
 # assign varieties based upon reported metrics in Ford, Phillips, and Haag [1954]
-fphlcheck1 <- data$maxl > 45 & data$maxl < 70
+fphlcheck1 <- data$maxl >= 45 & data$maxl <= 70
 fphlcheck2 <- data$maxl > 45 & data$maxl <= 79
-fphlcheck3 <- data$maxl > 45 & data$maxl <70
+fphlcheck3 <- data$maxl > 45 & data$maxl < 70
 fphlcheck4 <- data$maxl >= 55 & data$maxl <= 75
 fphlcheck5 <- data$maxl >= 35 & data$maxl <= 50
 
-fphwcheck1 <- data$maxw > 22 & data$maxw < 31
+fphwcheck1 <- data$maxw >= 22 & data$maxw <=31
 fphwcheck2 <- data$maxw > 22 & data$maxw < 31
 fphwcheck3 <- data$maxw >= 32 & data$maxw <= 48
 fphwcheck4 <- data$maxw >= 30 & data$maxw <= 36
@@ -1062,8 +1063,8 @@ anova(t0mstw)
 ## Gary varieties proposed by Ford and Webb (1956)
 
 The `tv1` argument used within this and the subsequent section
-articulates with three variants of the Gary type (`Large`,
-`Medium/Typical`, and `Small`), which were assigned using those
+articulates with three variants of the Gary type that include *Large*,
+*Medium/Typical*, and *Small*, which were assigned using those
 morphological criteria first advanced by Ford, Phillips, and Haag (1955)
 at the Jaketown site, and later refined by Ford and Webb (1956) at
 Poverty Point.
@@ -1121,9 +1122,9 @@ Ford and Webb (1956) used a single metric (maximum length) to assign
 Gary varieties at the Poverty Point site. The approach empoyed here
 enlists all of Ford and Webb’s (1956) reported metrics, including
 maximum length and maximum width for all varieties, coupled with maximum
-thickness for one (Gary Small). No metrics were reported for Gary Long,
+thickness for *Gary Small*. No metrics were reported for *Gary Long*,
 which was omitted from this analysis. Those points that do not match
-with one of the three criteria were assigned as unidentified “UID.”
+with one of the three criteria were assigned as unidentified (“UID”).
 
 ``` r
 # assign varieties based upon reported metrics in Ford and Webb [1956]
@@ -1773,48 +1774,48 @@ annotate_figure(schambachfig,
 
 ``` r
 # assign varieties based upon reported metrics in Schambach (1998)
-slcheck1 <- data$maxl > 51 & data$maxl < 73
-slcheck2 <- data$maxl > 43 & data$maxl < 72
-slcheck3 <- data$maxl > 43 & data$maxl < 80
-slcheck4 <- data$maxl > 40 & data$maxl < 60
-slcheck5 <- data$maxl > 36 & data$maxl < 57
-slcheck6 <- data$maxl > 34 & data$maxl < 73
-slcheck7 <- data$maxl > 39 & data$maxl < 67
+slcheck1 <- data$maxl >= 51 & data$maxl <= 73
+slcheck2 <- data$maxl >= 43 & data$maxl <= 72
+slcheck3 <- data$maxl > 43 & data$maxl <= 80
+slcheck4 <- data$maxl >= 40 & data$maxl <= 60
+slcheck5 <- data$maxl >= 36 & data$maxl <= 57
+slcheck6 <- data$maxl >= 34 & data$maxl <= 73
+slcheck7 <- data$maxl >= 39 & data$maxl <= 67
 
-swcheck1 <- data$maxw > 22 & data$maxw < 31
-swcheck2 <- data$maxw > 23 & data$maxw < 33
-swcheck3 <- data$maxw > 25 & data$maxw < 54
-swcheck4 <- data$maxw > 21 & data$maxw < 36
-swcheck5 <- data$maxw > 22 & data$maxw < 41
-swcheck6 <- data$maxw > 14 & data$maxw < 35
-swcheck7 <- data$maxw > 16 & data$maxw < 27
-swcheck8 <- data$maxw > 26 & data$maxw < 38
+swcheck1 <- data$maxw >= 22 & data$maxw <= 31
+swcheck2 <- data$maxw >= 23 & data$maxw <= 33
+swcheck3 <- data$maxw >= 25 & data$maxw <= 54
+swcheck4 <- data$maxw >= 21 & data$maxw <= 36
+swcheck5 <- data$maxw >= 22 & data$maxw <= 41
+swcheck6 <- data$maxw >= 14 & data$maxw <= 35
+swcheck7 <- data$maxw >= 16 & data$maxw <= 27
+swcheck8 <- data$maxw >= 26 & data$maxw <= 38
 
-stcheck1 <- data$maxth > 6 & data$maxth < 11
-stcheck2 <- data$maxth > 7 & data$maxth < 13
-stcheck3 <- data$maxth > 5 & data$maxth < 13
-stcheck4 <- data$maxth > 5 & data$maxth < 12
-stcheck5 <- data$maxth > 6 & data$maxth < 9
-stcheck6 <- data$maxth > 6 & data$maxth < 12
-stcheck7 <- data$maxth > 5 & data$maxth < 14
+stcheck1 <- data$maxth >= 6 & data$maxth <= 11
+stcheck2 <- data$maxth >= 7 & data$maxth <= 13
+stcheck3 <- data$maxth >= 5 & data$maxth < 13
+stcheck4 <- data$maxth > 5 & data$maxth <= 12
+stcheck5 <- data$maxth > 6 & data$maxth <= 9
+stcheck6 <- data$maxth > 6 & data$maxth <= 12
+stcheck7 <- data$maxth > 5 & data$maxth <= 14
 stcheck8 <- data$maxth > 7 & data$maxth < 11
 
-sslcheck1 <- data$maxstl > 15 & data$maxstl < 29
-sslcheck2 <- data$maxstl > 11 & data$maxstl < 23
-sslcheck3 <- data$maxstl > 11 & data$maxstl < 24
+sslcheck1 <- data$maxstl >= 15 & data$maxstl <= 29
+sslcheck2 <- data$maxstl >= 11 & data$maxstl <= 23
+sslcheck3 <- data$maxstl > 11 & data$maxstl <= 24
 sslcheck4 <- data$maxstl > 11 & data$maxstl < 24
-sslcheck5 <- data$maxstl > 10 & data$maxstl < 17
-sslcheck6 <- data$maxstl > 9 & data$maxstl < 22
-sslcheck7 <- data$maxstl > 9 & data$maxstl < 19
+sslcheck5 <- data$maxstl >= 10 & data$maxstl <= 17
+sslcheck6 <- data$maxstl >= 9 & data$maxstl <= 22
+sslcheck7 <- data$maxstl > 9 & data$maxstl <= 19
 sslcheck8 <- data$maxstl > 9 & data$maxstl < 19
 
-sswcheck1 <- data$maxstw > 20 & data$maxstw < 28
-sswcheck2 <- data$maxstw > 17 & data$maxstw < 25
-sswcheck3 <- data$maxstw > 13 & data$maxstw < 33
-sswcheck4 <- data$maxstw > 15 & data$maxstw < 24
-sswcheck5 <- data$maxstw > 12 & data$maxstw < 24
-sswcheck6 <- data$maxstw > 9 & data$maxstw < 20
-sswcheck7 <- data$maxstw > 11 & data$maxstw < 21
+sswcheck1 <- data$maxstw >= 20 & data$maxstw <= 28
+sswcheck2 <- data$maxstw >= 17 & data$maxstw <= 25
+sswcheck3 <- data$maxstw >= 13 & data$maxstw <= 33
+sswcheck4 <- data$maxstw >= 15 & data$maxstw <= 24
+sswcheck5 <- data$maxstw >= 12 & data$maxstw < 24
+sswcheck6 <- data$maxstw >= 9 & data$maxstw <= 20
+sswcheck7 <- data$maxstw >= 11 & data$maxstw <= 21
 
 data$tv2 <- "UID"
 data$tv2 <- ifelse(slcheck1 & swcheck1 & stcheck1 & sslcheck1 & sswcheck1, "G", data$tv2)
