@@ -137,7 +137,10 @@ dai
     ##  [73] 36.95 30.71 28.86 31.34 32.64 24.83 24.91 25.12 33.19 28.90 27.95 30.12
     ##  [85] 26.73 36.43 26.12 26.82 24.17 34.50 24.62 26.67 24.55 25.28 23.80 25.68
     ##  [97] 17.75 22.13 22.20 17.18 19.21 31.06 23.25 32.00 26.78 30.83 26.06 19.27
-    ## [109] 28.60 25.81 23.21 23.94 21.07
+    ## [109] 28.60 25.81 23.21 23.94 21.07 29.02 23.43 26.58 29.73 21.93 24.00 30.50
+    ## [121] 21.16 27.67 22.66 22.63 25.43 31.09 23.35 20.78 30.33 18.84 22.17 20.92
+    ## [133] 22.19 17.17 21.99 23.43 26.36 23.38 29.81 27.64 24.08 17.44 22.68 19.89
+    ## [145] 20.02 22.79 20.43 25.73
 
 ``` r
 # how many observations fall at or below 11.8 mm
@@ -205,9 +208,9 @@ summary(data.pca)
 
     ## Importance of components:
     ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7466 0.9585 0.7415 0.60279 0.34274
-    ## Proportion of Variance 0.6101 0.1837 0.1100 0.07267 0.02349
-    ## Cumulative Proportion  0.6101 0.7939 0.9038 0.97651 1.00000
+    ## Standard deviation     1.7517 0.9361 0.7493 0.59569 0.37254
+    ## Proportion of Variance 0.6137 0.1753 0.1123 0.07097 0.02776
+    ## Cumulative Proportion  0.6137 0.7890 0.9013 0.97224 1.00000
 
 ``` r
 sitepca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = site) +
@@ -236,9 +239,9 @@ anova(siteml)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df    SS      MS     Rsq      F      Z Pr(>F)    
-    ## site        2  3368 1684.01 0.20053 13.795 2.4837  1e-04 ***
-    ## Residuals 110 13428  122.07 0.79947                         
-    ## Total     112 16796                                         
+    ## site        2  3982 1991.01 0.19503 17.566 2.6575  1e-04 ***
+    ## Residuals 145 16435  113.35 0.80497                         
+    ## Total     147 20417                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -259,10 +262,10 @@ anova(sitemw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS     MS     Rsq      F     Z Pr(>F)    
-    ## site        2 1487.8 743.91 0.42347 40.399 3.237  1e-04 ***
-    ## Residuals 110 2025.6  18.41 0.57653                        
-    ## Total     112 3513.4                                       
+    ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
+    ## site        2 2371.9 1185.94 0.45153 59.687 3.6275  1e-04 ***
+    ## Residuals 145 2881.1   19.87 0.54847                         
+    ## Total     147 5253.0                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -283,10 +286,10 @@ anova(sitemth)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS     MS    Rsq      F      Z Pr(>F)    
-    ## site        2 106.99 53.493 0.1954 13.357 2.4455  1e-04 ***
-    ## Residuals 110 440.53  4.005 0.8046                         
-    ## Total     112 547.52                                       
+    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
+    ## site        2 154.36 77.178 0.20035 18.165 2.7085  1e-04 ***
+    ## Residuals 145 616.07  4.249 0.79965                         
+    ## Total     147 770.42                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -307,10 +310,10 @@ anova(sitemstl)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS      MS     Rsq      F      Z Pr(>F)    
-    ## site        2  483.14 241.568 0.27321 20.675 2.7908  1e-04 ***
-    ## Residuals 110 1285.22  11.684 0.72679                         
-    ## Total     112 1768.35                                         
+    ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
+    ## site        2  766.25 383.12 0.29273 30.006 3.0826  1e-04 ***
+    ## Residuals 145 1851.38  12.77 0.70727                         
+    ## Total     147 2617.63                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -331,10 +334,10 @@ anova(sitemstw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
-    ## site        2  897.96 448.98 0.39742 36.275 3.2096  1e-04 ***
-    ## Residuals 110 1361.49  12.38 0.60258                         
-    ## Total     112 2259.44                                        
+    ##            Df     SS     MS    Rsq      F      Z Pr(>F)    
+    ## site        2 1250.3 625.13 0.4418 57.383 3.5488  1e-04 ***
+    ## Residuals 145 1579.7  10.89 0.5582                         
+    ## Total     147 2829.9                                       
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -383,14 +386,14 @@ annotate_figure(fwebbfig,
 
 ### Assign Gary type-varieties proposed by Ford, Phillips, and Haag (1955)
 
-Ford, Phillips, and Haag (1956) used a series of metrics (maximum
+Ford, Phillips, and Haag (1955) used a series of metrics (maximum
 length) to assign Gary varieties at the Jaketown site. The approach
 empoyed here enlists all of Ford and Webb’s (1956) reported metrics, and
 applies them to each of the points. Those points that do not match with
-one of the three criteria were assigned as unidentified “UID.” Due to
-the degree of overlap in those ranges associated with the Gary
+one of the three criteria were assigned as unidentified ( *UID* ). Due
+to the degree of overlap in those ranges associated with the Gary
 type-varieties advanced by Ford, Phillips, and Haag (1956), it is
-expected that `Gary Stemmed` will fall out due to overlap in length with
+expected that *Gary Stemmed* will fall out due to overlap in length with
 *Broad Gary Stemmed*, and overlap in width with *Typical Gary Stemmed*.
 
 ``` r
@@ -407,7 +410,7 @@ fphwcheck3 <- data$maxw >= 32 & data$maxw <= 48
 fphwcheck4 <- data$maxw >= 30 & data$maxw <= 36
 fphwcheck5 <- data$maxw >= 20 & data$maxw <= 30
 
-data$tv0 <- "UID"
+data$tv0 <- "GNV" # gary no variety
 data$tv0 <- ifelse(fphlcheck1 & fphwcheck1, "GS", data$tv0)
 data$tv0 <- ifelse(fphlcheck2 & fphwcheck2, "TyGS", data$tv0)
 data$tv0 <- ifelse(fphlcheck3 & fphwcheck3, "BGS", data$tv0)
@@ -418,22 +421,25 @@ tv0<-data$tv0
 tv0
 ```
 
-    ##   [1] "UID"  "UID"  "UID"  "UID"  "BGS"  "BGS"  "BGS"  "BGS"  "ThGS" "UID" 
+    ##   [1] "GNV"  "GNV"  "GNV"  "GNV"  "BGS"  "BGS"  "BGS"  "BGS"  "ThGS" "GNV" 
     ##  [11] "BGS"  "ThGS" "TyGS" "ThGS" "TyGS" "ThGS" "SGS"  "ThGS" "ThGS" "ThGS"
-    ##  [21] "ThGS" "UID"  "UID"  "TyGS" "TyGS" "SGS"  "SGS"  "TyGS" "SGS"  "TyGS"
-    ##  [31] "UID"  "TyGS" "TyGS" "SGS"  "UID"  "SGS"  "UID"  "UID"  "UID"  "SGS" 
-    ##  [41] "TyGS" "ThGS" "ThGS" "TyGS" "UID"  "TyGS" "ThGS" "TyGS" "ThGS" "ThGS"
+    ##  [21] "ThGS" "GNV"  "GNV"  "TyGS" "TyGS" "SGS"  "SGS"  "TyGS" "SGS"  "TyGS"
+    ##  [31] "GNV"  "TyGS" "TyGS" "SGS"  "GNV"  "SGS"  "GNV"  "GNV"  "GNV"  "SGS" 
+    ##  [41] "TyGS" "ThGS" "ThGS" "TyGS" "GNV"  "TyGS" "ThGS" "TyGS" "ThGS" "ThGS"
     ##  [51] "ThGS" "ThGS" "ThGS" "ThGS" "TyGS" "TyGS" "TyGS" "ThGS" "TyGS" "TyGS"
     ##  [61] "TyGS" "TyGS" "ThGS" "TyGS" "TyGS" "ThGS" "TyGS" "TyGS" "TyGS" "ThGS"
     ##  [71] "TyGS" "TyGS" "TyGS" "BGS"  "TyGS" "TyGS" "TyGS" "TyGS" "TyGS" "TyGS"
-    ##  [81] "TyGS" "TyGS" "SGS"  "SGS"  "SGS"  "BGS"  "SGS"  "UID"  "SGS"  "SGS" 
-    ##  [91] "SGS"  "SGS"  "SGS"  "SGS"  "SGS"  "SGS"  "UID"  "SGS"  "UID"  "UID" 
-    ## [101] "UID"  "BGS"  "SGS"  "UID"  "SGS"  "SGS"  "SGS"  "UID"  "SGS"  "SGS" 
-    ## [111] "SGS"  "SGS"  "SGS"
+    ##  [81] "TyGS" "TyGS" "SGS"  "SGS"  "SGS"  "BGS"  "SGS"  "GNV"  "SGS"  "SGS" 
+    ##  [91] "SGS"  "SGS"  "SGS"  "SGS"  "SGS"  "SGS"  "GNV"  "SGS"  "GNV"  "GNV" 
+    ## [101] "GNV"  "BGS"  "SGS"  "GNV"  "SGS"  "SGS"  "SGS"  "GNV"  "SGS"  "SGS" 
+    ## [111] "SGS"  "SGS"  "SGS"  "GNV"  "TyGS" "TyGS" "TyGS" "SGS"  "SGS"  "TyGS"
+    ## [121] "SGS"  "TyGS" "GNV"  "SGS"  "SGS"  "TyGS" "TyGS" "SGS"  "SGS"  "GNV" 
+    ## [131] "SGS"  "GNV"  "GNV"  "GNV"  "SGS"  "SGS"  "SGS"  "SGS"  "TyGS" "BGS" 
+    ## [141] "TyGS" "GNV"  "GNV"  "GNV"  "GNV"  "GNV"  "GNV"  "BGS"
 
 ### Maximum and minimum values for all `tv0` variables
 
-The Gary type-varieties defined by Ford, Phillips, and Haag (1956) only
+The Gary type-varieties defined by Ford, Phillips, and Haag (1955) only
 included ranges for maximum length and width. The listing appended below
 reflects the maximum and minimum values for each orthogonal measurement
 included in the dataset. These metrics may have utility in positing
@@ -477,7 +483,7 @@ max(mmtygs$maxw)
 min(mmtygs$maxw)
 ```
 
-    ## [1] 22.08
+    ## [1] 22.04
 
 ``` r
 # max thickness (mm)
@@ -505,7 +511,7 @@ max(mmtygs$maxstl)
 min(mmtygs$maxstl)
 ```
 
-    ## [1] 11.04
+    ## [1] 7.11
 
 ``` r
 # max stem width (mm)
@@ -519,7 +525,7 @@ max(mmtygs$maxstw)
 min(mmtygs$maxstw)
 ```
 
-    ## [1] 14.38
+    ## [1] 14.06
 
 ##### Maximum/minimum for Broad Gary Stemmed
 
@@ -544,7 +550,7 @@ min(mmbgs$maxl)
 max(mmbgs$maxw)
 ```
 
-    ## [1] 42.46
+    ## [1] 44.22
 
 ``` r
 # min width (mm)
@@ -565,7 +571,7 @@ max(mmbgs$maxth)
 min(mmbgs$maxth)
 ```
 
-    ## [1] 9.18
+    ## [1] 7.41
 
 ``` r
 # max stem length (mm)
@@ -579,7 +585,7 @@ max(mmbgs$maxstl)
 min(mmbgs$maxstl)
 ```
 
-    ## [1] 15.09
+    ## [1] 11.89
 
 ``` r
 # max stem width (mm)
@@ -593,7 +599,7 @@ max(mmbgs$maxstw)
 min(mmbgs$maxstw)
 ```
 
-    ## [1] 19.15
+    ## [1] 18.32
 
 ##### Maximum/minimum for Thin Gary Stemmed
 
@@ -678,14 +684,14 @@ min(mmthgs$maxstw)
 max(mmsgs$maxl)
 ```
 
-    ## [1] 49.21
+    ## [1] 49.62
 
 ``` r
 # min length (mm)
 min(mmsgs$maxl)
 ```
 
-    ## [1] 37.06
+    ## [1] 36.82
 
 ``` r
 # max width (mm)
@@ -699,7 +705,7 @@ max(mmsgs$maxw)
 min(mmsgs$maxw)
 ```
 
-    ## [1] 20.7
+    ## [1] 20.02
 
 ``` r
 # max thickness (mm)
@@ -713,7 +719,7 @@ max(mmsgs$maxth)
 min(mmsgs$maxth)
 ```
 
-    ## [1] 6.2
+    ## [1] 6.18
 
 ``` r
 # max stem length (mm)
@@ -741,7 +747,7 @@ max(mmsgs$maxstw)
 min(mmsgs$maxstw)
 ```
 
-    ## [1] 12.42
+    ## [1] 12.4
 
 ### Boxplots for `site` by `tv0` for Gary dart points from Cooper
 
@@ -924,9 +930,9 @@ summary(data.pca)
 
     ## Importance of components:
     ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7466 0.9585 0.7415 0.60279 0.34274
-    ## Proportion of Variance 0.6101 0.1837 0.1100 0.07267 0.02349
-    ## Cumulative Proportion  0.6101 0.7939 0.9038 0.97651 1.00000
+    ## Standard deviation     1.7517 0.9361 0.7493 0.59569 0.37254
+    ## Proportion of Variance 0.6137 0.1753 0.1123 0.07097 0.02776
+    ## Cumulative Proportion  0.6137 0.7890 0.9013 0.97224 1.00000
 
 ``` r
 tv0pca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = tv0) +
@@ -954,10 +960,10 @@ anova(t0ml)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS      MS     Rsq      F      Z Pr(>F)    
-    ## tv0         4  5421.3 1355.34 0.32278 12.869 3.5075  1e-04 ***
-    ## Residuals 108 11374.5  105.32 0.67722                         
-    ## Total     112 16795.8                                         
+    ##            Df      SS      MS   Rsq     F      Z Pr(>F)    
+    ## tv0         4  6676.4 1669.09 0.327 17.37 3.8827  1e-04 ***
+    ## Residuals 143 13740.8   96.09 0.673                        
+    ## Total     147 20417.1                                      
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -978,10 +984,10 @@ anova(t0mw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS     MS     Rsq      F     Z Pr(>F)    
-    ## tv0         4 1475.2 368.80 0.41988 19.542 3.934  1e-04 ***
-    ## Residuals 108 2038.2  18.87 0.58012                        
-    ## Total     112 3513.4                                       
+    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
+    ## tv0         4 2433.8 608.44 0.46331 30.862 4.5215  1e-04 ***
+    ## Residuals 143 2819.2  19.71 0.53669                         
+    ## Total     147 5253.0                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1002,10 +1008,10 @@ anova(t0mth)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS      MS     Rsq      F      Z Pr(>F)   
-    ## tv0         4  86.61 21.6513 0.15818 5.0733 2.3052 0.0013 **
-    ## Residuals 108 460.91  4.2677 0.84182                        
-    ## Total     112 547.52                                        
+    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
+    ## tv0         4 145.40 36.350 0.18873 8.3166 2.9581  1e-04 ***
+    ## Residuals 143 625.02  4.371 0.81127                         
+    ## Total     147 770.42                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1026,10 +1032,10 @@ anova(t0mstl)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS     MS     Rsq      F      Z Pr(>F)  
-    ## tv0         4  196.25 49.062 0.11098 3.3705 1.7837  0.014 *
-    ## Residuals 108 1572.10 14.557 0.88902                       
-    ## Total     112 1768.35                                      
+    ##            Df      SS     MS     Rsq      F      Z Pr(>F)   
+    ## tv0         4  306.18 76.545 0.11697 4.7355 2.2734 0.0017 **
+    ## Residuals 143 2311.45 16.164 0.88303                        
+    ## Total     147 2617.63                                       
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1051,9 +1057,9 @@ anova(t0mstw)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df      SS      MS     Rsq      F      Z Pr(>F)    
-    ## tv0         4  482.03 120.507 0.21334 7.3223 2.7323  3e-04 ***
-    ## Residuals 108 1777.42  16.458 0.78666                         
-    ## Total     112 2259.44                                         
+    ## tv0         4  666.88 166.719 0.23565 11.022 3.2489  1e-04 ***
+    ## Residuals 143 2163.04  15.126 0.76435                         
+    ## Total     147 2829.92                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1138,7 +1144,7 @@ wcheck3 <- data$maxw >= 19 & data$maxw <= 32
 
 tcheck <- data$maxth >= 5 & data$maxth <= 10
 
-data$tv1 <- "UID"
+data$tv1 <- "GNV" # gary no variety
 data$tv1 <- ifelse(lcheck1 & wcheck1, "L", data$tv1)
 data$tv1 <- ifelse(lcheck2 & wcheck2, "M/T", data$tv1)
 data$tv1 <- ifelse(lcheck3 & wcheck3 & tcheck, "S", data$tv1)
@@ -1149,14 +1155,17 @@ tv1
 
     ##   [1] "L"   "L"   "L"   "L"   "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
     ##  [13] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
-    ##  [25] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "UID" "M/T" "M/T" "M/T" "M/T" "S"  
-    ##  [37] "UID" "UID" "UID" "S"   "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
+    ##  [25] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "GNV" "M/T" "M/T" "M/T" "M/T" "S"  
+    ##  [37] "GNV" "GNV" "GNV" "S"   "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
     ##  [49] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
     ##  [61] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
     ##  [73] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
     ##  [85] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "S"   "S"   "S"   "S"   "S"  
-    ##  [97] "UID" "S"   "UID" "S"   "S"   "UID" "S"   "UID" "UID" "UID" "UID" "UID"
-    ## [109] "S"   "S"   "S"   "S"   "S"
+    ##  [97] "GNV" "S"   "GNV" "S"   "S"   "GNV" "S"   "GNV" "GNV" "GNV" "GNV" "GNV"
+    ## [109] "S"   "S"   "S"   "S"   "S"   "GNV" "M/T" "M/T" "M/T" "M/T" "S"   "M/T"
+    ## [121] "S"   "M/T" "GNV" "S"   "S"   "M/T" "M/T" "S"   "GNV" "GNV" "M/T" "M/T"
+    ## [133] "GNV" "GNV" "S"   "S"   "S"   "M/T" "M/T" "M/T" "M/T" "GNV" "GNV" "S"  
+    ## [145] "M/T" "M/T" "S"   "M/T"
 
 ### Maximum and minimum values for all `tv1` variables
 
@@ -1271,7 +1280,7 @@ min(mmmt$maxl)
 max(mmmt$maxw)
 ```
 
-    ## [1] 42.46
+    ## [1] 44.22
 
 ``` r
 # min width (mm)
@@ -1292,7 +1301,7 @@ max(mmmt$maxth)
 min(mmmt$maxth)
 ```
 
-    ## [1] 6.35
+    ## [1] 5.87
 
 ``` r
 # max stem length (mm)
@@ -1338,7 +1347,7 @@ max(mms$maxl)
 min(mms$maxl)
 ```
 
-    ## [1] 37.06
+    ## [1] 36.82
 
 ``` r
 # max width (mm)
@@ -1387,7 +1396,7 @@ min(mms$maxstl)
 max(mms$maxstw)
 ```
 
-    ## [1] 19.07
+    ## [1] 19.72
 
 ``` r
 # min stem width (mm)
@@ -1577,9 +1586,9 @@ summary(data.pca)
 
     ## Importance of components:
     ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7466 0.9585 0.7415 0.60279 0.34274
-    ## Proportion of Variance 0.6101 0.1837 0.1100 0.07267 0.02349
-    ## Cumulative Proportion  0.6101 0.7939 0.9038 0.97651 1.00000
+    ## Standard deviation     1.7517 0.9361 0.7493 0.59569 0.37254
+    ## Proportion of Variance 0.6137 0.1753 0.1123 0.07097 0.02776
+    ## Cumulative Proportion  0.6137 0.7890 0.9013 0.97224 1.00000
 
 ``` r
 t1pca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = tv1) +
@@ -1607,10 +1616,10 @@ anova(t1ml)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df    SS     MS     Rsq      F      Z Pr(>F)    
-    ## tv1         3 10414 3471.3 0.62002 59.287 4.4938  1e-04 ***
-    ## Residuals 109  6382   58.6 0.37998                         
-    ## Total     112 16796                                        
+    ##            Df      SS     MS     Rsq      F    Z Pr(>F)    
+    ## tv1         3 11964.9 3988.3 0.58602 67.949 4.71  1e-04 ***
+    ## Residuals 144  8452.2   58.7 0.41398                       
+    ## Total     147 20417.1                                      
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1632,9 +1641,9 @@ anova(t1mw)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
-    ## tv1         3 1032.3 344.10 0.29382 15.117 3.1627  1e-04 ***
-    ## Residuals 109 2481.1  22.76 0.70618                         
-    ## Total     112 3513.4                                        
+    ## tv1         3 1647.1 549.04 0.31356 21.926 3.5319  1e-04 ***
+    ## Residuals 144 3605.8  25.04 0.68644                         
+    ## Total     147 5253.0                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1656,9 +1665,9 @@ anova(t1mth)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
-    ## tv1         3 128.86 42.955 0.23536 11.184 2.8467  1e-04 ***
-    ## Residuals 109 418.65  3.841 0.76464                         
-    ## Total     112 547.52                                        
+    ## tv1         3 185.13 61.709 0.24029 15.182 3.1738  1e-04 ***
+    ## Residuals 144 585.30  4.065 0.75971                         
+    ## Total     147 770.42                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1679,10 +1688,10 @@ anova(t1mstl)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS      MS     Rsq      F     Z Pr(>F)    
-    ## tv1         3  418.84 139.615 0.23686 11.277 2.823  1e-04 ***
-    ## Residuals 109 1349.51  12.381 0.76314                        
-    ## Total     112 1768.35                                        
+    ##            Df      SS      MS     Rsq      F      Z Pr(>F)    
+    ## tv1         3  613.92 204.639 0.23453 14.707 3.1607  1e-04 ***
+    ## Residuals 144 2003.71  13.915 0.76547                         
+    ## Total     147 2617.63                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1703,10 +1712,10 @@ anova(t1mstw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
-    ## tv1         3  658.28 219.43 0.29135 14.938 3.2181  1e-04 ***
-    ## Residuals 109 1601.16  14.69 0.70865                         
-    ## Total     112 2259.44                                        
+    ##            Df      SS      MS     Rsq      F      Z Pr(>F)    
+    ## tv1         3  833.93 277.975 0.29468 20.054 3.4816  1e-04 ***
+    ## Residuals 144 1995.99  13.861 0.70532                         
+    ## Total     147 2829.92                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1817,7 +1826,7 @@ sswcheck5 <- data$maxstw >= 12 & data$maxstw < 24
 sswcheck6 <- data$maxstw >= 9 & data$maxstw <= 20
 sswcheck7 <- data$maxstw >= 11 & data$maxstw <= 21
 
-data$tv2 <- "UID"
+data$tv2 <- "GNV" # gary no variety
 data$tv2 <- ifelse(slcheck1 & swcheck1 & stcheck1 & sslcheck1 & sswcheck1, "G", data$tv2)
 data$tv2 <- ifelse(slcheck2 & swcheck2 & stcheck2 & sslcheck2 & sswcheck2, "Ml", data$tv2)
 data$tv2 <- ifelse(slcheck3 & swcheck3 & stcheck3 & sslcheck3 & sswcheck3, "LF", data$tv2)
@@ -1831,16 +1840,19 @@ tv2<-data$tv2
 tv2
 ```
 
-    ##   [1] "UID" "UID" "UID" "UID" "LF"  "CmB" "LF"  "CmB" "CmB" "LF"  "LF"  "CmB"
-    ##  [13] "Bd"  "Bd"  "Bd"  "CmB" "CmB" "CmB" "CmB" "LF"  "LF"  "CmB" "UID" "LF" 
-    ##  [25] "CmB" "CmB" "Cm"  "CmB" "CmA" "CmA" "CmA" "CmA" "CmA" "UID" "UID" "CmA"
-    ##  [37] "UID" "CmA" "CmA" "UID" "CmB" "UID" "LF"  "Cm"  "LF"  "UID" "CmB" "Ml" 
-    ##  [49] "CmB" "CmB" "LF"  "CmB" "CmB" "UID" "CmB" "LF"  "UID" "CmB" "Ml"  "CmB"
-    ##  [61] "Bd"  "UID" "Bd"  "Cm"  "CmA" "CmB" "LF"  "CmB" "CmB" "CmB" "Bd"  "CmA"
-    ##  [73] "LF"  "Cm"  "CmA" "Bd"  "CmB" "CmB" "CmA" "CmB" "UID" "CmA" "CmA" "Bd" 
-    ##  [85] "CmB" "UID" "CmA" "CmB" "CmA" "LF"  "CmA" "Cm"  "CmB" "Cm"  "Cm"  "Cm" 
-    ##  [97] "UID" "CmA" "CmA" "CmA" "CmA" "CmB" "CmB" "CmB" "UID" "CmA" "CmA" "Cm" 
-    ## [109] "CmA" "CmB" "CmA" "CmA" "Cm"
+    ##   [1] "GNV" "GNV" "GNV" "GNV" "LF"  "CmB" "LF"  "CmB" "CmB" "LF"  "LF"  "CmB"
+    ##  [13] "Bd"  "Bd"  "Bd"  "CmB" "CmB" "CmB" "CmB" "LF"  "LF"  "CmB" "GNV" "LF" 
+    ##  [25] "CmB" "CmB" "Cm"  "CmB" "CmA" "CmA" "CmA" "CmA" "CmA" "GNV" "GNV" "CmA"
+    ##  [37] "GNV" "CmA" "CmA" "GNV" "CmB" "GNV" "LF"  "Cm"  "LF"  "GNV" "CmB" "Ml" 
+    ##  [49] "CmB" "CmB" "LF"  "CmB" "CmB" "GNV" "CmB" "LF"  "GNV" "CmB" "Ml"  "CmB"
+    ##  [61] "Bd"  "GNV" "Bd"  "Cm"  "CmA" "CmB" "LF"  "CmB" "CmB" "CmB" "Bd"  "CmA"
+    ##  [73] "LF"  "Cm"  "CmA" "Bd"  "CmB" "CmB" "CmA" "CmB" "GNV" "CmA" "CmA" "Bd" 
+    ##  [85] "CmB" "GNV" "CmA" "CmB" "CmA" "LF"  "CmA" "Cm"  "CmB" "Cm"  "Cm"  "Cm" 
+    ##  [97] "GNV" "CmA" "CmA" "CmA" "CmA" "CmB" "CmB" "CmB" "GNV" "CmA" "CmA" "Cm" 
+    ## [109] "CmA" "CmB" "CmA" "CmA" "Cm"  "GNV" "GNV" "CmA" "CmA" "CmA" "CmA" "CmA"
+    ## [121] "CmA" "GNV" "CmA" "CmA" "CmA" "GNV" "CmA" "CmA" "GNV" "GNV" "CmA" "CmA"
+    ## [133] "CmA" "GNV" "GNV" "CmA" "Cm"  "CmA" "GNV" "LF"  "CmB" "Cm"  "CmA" "CmA"
+    ## [145] "CmA" "CmA" "Cm"  "CmB"
 
 ### Maximum and minimum values for all `tv2` variables
 
@@ -2056,7 +2068,7 @@ min(mmlf$maxl)
 max(mmlf$maxw)
 ```
 
-    ## [1] 42.46
+    ## [1] 44.22
 
 ``` r
 # min width (mm)
@@ -2077,7 +2089,7 @@ max(mmlf$maxth)
 min(mmlf$maxth)
 ```
 
-    ## [1] 9.62
+    ## [1] 8.06
 
 ``` r
 # max stem length (mm)
@@ -2340,14 +2352,14 @@ min(mmcm$maxstl)
 max(mmcm$maxstw)
 ```
 
-    ## [1] 19.15
+    ## [1] 19.72
 
 ``` r
 # min stem width (mm)
 min(mmcm$maxstw)
 ```
 
-    ## [1] 11.99
+    ## [1] 10.94
 
 ##### Maximum/minimum for *variety Camden subgroup A*
 
@@ -2358,7 +2370,7 @@ min(mmcm$maxstw)
 max(mmcma$maxl)
 ```
 
-    ## [1] 62.41
+    ## [1] 65.44
 
 ``` r
 # min length (mm)
@@ -2393,7 +2405,7 @@ max(mmcma$maxth)
 min(mmcma$maxth)
 ```
 
-    ## [1] 5.97
+    ## [1] 5.87
 
 ``` r
 # max stem length (mm)
@@ -2678,9 +2690,9 @@ summary(data.pca)
 
     ## Importance of components:
     ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7466 0.9585 0.7415 0.60279 0.34274
-    ## Proportion of Variance 0.6101 0.1837 0.1100 0.07267 0.02349
-    ## Cumulative Proportion  0.6101 0.7939 0.9038 0.97651 1.00000
+    ## Standard deviation     1.7517 0.9361 0.7493 0.59569 0.37254
+    ## Proportion of Variance 0.6137 0.1753 0.1123 0.07097 0.02776
+    ## Cumulative Proportion  0.6137 0.7890 0.9013 0.97224 1.00000
 
 ``` r
 tv2pca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = tv2) +
@@ -2708,10 +2720,10 @@ anova(t2ml)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS     MS    Rsq      F      Z Pr(>F)    
-    ## tv2         6  4487.9 747.98 0.2672 6.4419 3.1041  4e-04 ***
-    ## Residuals 106 12307.9 116.11 0.7328                         
-    ## Total     112 16795.8                                       
+    ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
+    ## tv2         6  4832.3 805.39 0.23668 7.2866 3.2997  2e-04 ***
+    ## Residuals 141 15584.8 110.53 0.76332                         
+    ## Total     147 20417.1                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -2732,10 +2744,10 @@ anova(t2mw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
-    ## tv2         6 1611.2 268.528 0.45858 14.964 4.4773  1e-04 ***
-    ## Residuals 106 1902.2  17.945 0.54142                         
-    ## Total     112 3513.4                                         
+    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
+    ## tv2         6 2630.6 438.44 0.50079 23.574 5.3037  1e-04 ***
+    ## Residuals 141 2622.3  18.60 0.49921                         
+    ## Total     147 5253.0                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -2756,10 +2768,10 @@ anova(t2mth)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
-    ## tv2         6 135.76 22.6266 0.24796 5.8249 3.0061  1e-04 ***
-    ## Residuals 106 411.76  3.8845 0.75204                         
-    ## Total     112 547.52                                         
+    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
+    ## tv2         6 180.75 30.126 0.23462 7.2036 3.3502  1e-04 ***
+    ## Residuals 141 589.67  4.182 0.76538                         
+    ## Total     147 770.42                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -2780,10 +2792,10 @@ anova(t2mstl)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
-    ## tv2         6  490.13 81.688 0.27716 6.7741 3.2625  1e-04 ***
-    ## Residuals 106 1278.23 12.059 0.72284                         
-    ## Total     112 1768.35                                        
+    ##            Df      SS      MS    Rsq      F      Z Pr(>F)    
+    ## tv2         6  678.48 113.080 0.2592 8.2223 3.5564  1e-04 ***
+    ## Residuals 141 1939.15  13.753 0.7408                         
+    ## Total     147 2617.63                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -2804,10 +2816,10 @@ anova(t2mstw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS      MS     Rsq      F     Z Pr(>F)    
-    ## tv2         6  823.04 137.174 0.36427 10.123 3.867  1e-04 ***
-    ## Residuals 106 1436.40  13.551 0.63573                        
-    ## Total     112 2259.44                                        
+    ##            Df     SS      MS     Rsq      F     Z Pr(>F)    
+    ## tv2         6 1060.2 176.705 0.37465 14.079 4.379  1e-04 ***
+    ## Residuals 141 1769.7  12.551 0.62535                        
+    ## Total     147 2829.9                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
