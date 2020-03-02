@@ -196,7 +196,7 @@ annotate_figure(fwebbfig,
 
 ### Assign Gary type-varieties proposed by Ford, Phillips, and Haag [-@RN20899]
 
-Ford, Phillips, and Haag [-@RN20898] used a series of metrics (maximum length) to assign Gary varieties at the Jaketown site. The approach empoyed here enlists all of Ford and Webb's [-@RN20898] reported metrics, and applies them to each of the points. Those points that do not match with one of the three criteria were assigned as unidentified "UID." Due to the degree of overlap in those ranges associated with the Gary type-varieties advanced by Ford, Phillips, and Haag [-@RN20898], it is expected that `Gary Stemmed` will fall out due to overlap in length with _Broad Gary Stemmed_, and overlap in width with _Typical Gary Stemmed_.
+Ford, Phillips, and Haag [-@RN20899] used a series of metrics (maximum length) to assign Gary varieties at the Jaketown site. The approach empoyed here enlists all of Ford and Webb's [-@RN20898] reported metrics, and applies them to each of the points. Those points that do not match with one of the three criteria were assigned as unidentified ( _UID_ ). Due to the degree of overlap in those ranges associated with the Gary type-varieties advanced by Ford, Phillips, and Haag [-@RN20898], it is expected that _Gary Stemmed_ will fall out due to overlap in length with _Broad Gary Stemmed_, and overlap in width with _Typical Gary Stemmed_.
 
 ```{r tv0, echo=TRUE}
 # assign varieties based upon reported metrics in Ford, Phillips, and Haag [1954]
@@ -212,7 +212,7 @@ fphwcheck3 <- data$maxw >= 32 & data$maxw <= 48
 fphwcheck4 <- data$maxw >= 30 & data$maxw <= 36
 fphwcheck5 <- data$maxw >= 20 & data$maxw <= 30
 
-data$tv0 <- "UID"
+data$tv0 <- "GNV" # gary no variety
 data$tv0 <- ifelse(fphlcheck1 & fphwcheck1, "GS", data$tv0)
 data$tv0 <- ifelse(fphlcheck2 & fphwcheck2, "TyGS", data$tv0)
 data$tv0 <- ifelse(fphlcheck3 & fphwcheck3, "BGS", data$tv0)
@@ -225,7 +225,7 @@ tv0
 
 ### Maximum and minimum values for all `tv0` variables
 
-The Gary type-varieties defined by Ford, Phillips, and Haag [-@RN20898] only included ranges for maximum length and width. The listing appended below reflects the maximum and minimum values for each orthogonal measurement included in the dataset. These metrics may have utility in positing type-variety assignments to partial specimens.
+The Gary type-varieties defined by Ford, Phillips, and Haag [-@RN20899] only included ranges for maximum length and width. The listing appended below reflects the maximum and minimum values for each orthogonal measurement included in the dataset. These metrics may have utility in positing type-variety assignments to partial specimens.
 
 ```{r typevartv0, echo=TRUE}
 # subset dataset by tv0 type-varieties
@@ -563,7 +563,7 @@ wcheck3 <- data$maxw >= 19 & data$maxw <= 32
 
 tcheck <- data$maxth >= 5 & data$maxth <= 10
 
-data$tv1 <- "UID"
+data$tv1 <- "GNV" # gary no variety
 data$tv1 <- ifelse(lcheck1 & wcheck1, "L", data$tv1)
 data$tv1 <- ifelse(lcheck2 & wcheck2, "M/T", data$tv1)
 data$tv1 <- ifelse(lcheck3 & wcheck3 & tcheck, "S", data$tv1)
@@ -929,7 +929,7 @@ sswcheck5 <- data$maxstw >= 12 & data$maxstw < 24
 sswcheck6 <- data$maxstw >= 9 & data$maxstw <= 20
 sswcheck7 <- data$maxstw >= 11 & data$maxstw <= 21
 
-data$tv2 <- "UID"
+data$tv2 <- "GNV" # gary no variety
 data$tv2 <- ifelse(slcheck1 & swcheck1 & stcheck1 & sslcheck1 & sswcheck1, "G", data$tv2)
 data$tv2 <- ifelse(slcheck2 & swcheck2 & stcheck2 & sslcheck2 & sswcheck2, "Ml", data$tv2)
 data$tv2 <- ifelse(slcheck3 & swcheck3 & stcheck3 & sslcheck3 & sswcheck3, "LF", data$tv2)
