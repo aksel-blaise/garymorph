@@ -31,7 +31,7 @@ others (Erlandson, Watts, and Jew 2014) have found that the DAI may not
 be universally applicable; however, the DAI and the threshold identified
 by Hildebrandt and King (2012) is a useful heuristic in this instance.
 
-#### The Gary type prior to formal definition by Suhm, Krieger, and Jelks (1954, 430–31, Plate 94)
+### The Gary type prior to formal definition by Suhm, Krieger, and Jelks (1954, 430–31, Plate 94)
 
 Gary dart points were formally defined by (Suhm, Krieger, and Jelks
 1954, 430–31, Plate 94), providing a description with defining
