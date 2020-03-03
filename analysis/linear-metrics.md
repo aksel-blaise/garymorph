@@ -1,9 +1,9 @@
-Traditional metrics for type-varieties of Gary dart points
+Linear metrics of Gary type-varieties
 ================
 Robert Z. Selden, Jr.
 March 1, 2020
 
-### Introduction
+## Introduction
 
 This document includes supplemental materials for the article, “A
 quantitative assessment of intraspecific morphological variation in Gary
@@ -31,25 +31,24 @@ others (Erlandson, Watts, and Jew 2014) have found that the DAI may not
 be universally applicable; however, the DAI and the threshold identified
 by Hildebrandt and King (2012) is a useful heuristic in this instance.
 
-##### Uses of the Gary type prior to formal definition in Suhm et al. (1954, 430–31, Plate 94)
+#### The Gary type prior to formal definition by Suhm, Krieger, and Jelks (1954, 430–31, Plate 94)
 
 Gary dart points were formally defined by (Suhm, Krieger, and Jelks
 1954, 430–31, Plate 94), providing a description with defining
 morphological characteristics for a point known to investigators working
 across the region, but by different names. The earliest recorded Gary
-dart point was excavated on September 14, 1930 by Frank Bryan (Ford,
-Quimby Jr., and Snow 1945, 76). The point was recovered from the chest
-cavity, behind the sternum of a flexed burial eroding from a wall in an
-active gravel pit—roughly two and one-half feet below the
-surface—located around 14 miles from Waco, Texas on the East side of
-the Brazos River in Texas (Ford, Quimby Jr., and Snow 1945, 76, 78–79,
-Plate XIV:6). While discovered in association with the burial, this
-point may have been included in the fill that was excavated when the
-burial was interred. In the same burial, a Perdiz arrow point was found
-lodged in the upper end of the right humerus (Ford, Quimby Jr., and Snow
-1945, Plate XIV:4a, 4b, 5), and a small arrow point fragment was found
-lodged between the neck and greater trochanter of the left femur (Ford,
-Quimby Jr., and Snow 1945, Plate XIV:3).
+dart point was excavated on September 14, 1930 by Frank Bryan
+(Aynesworth 1936, 76). The point was recovered from the chest cavity,
+behind the sternum of a flexed burial eroding from a wall in an active
+gravel pit—roughly two and one-half feet below the surface—located
+around 14 miles from Waco, Texas on the East side of the Brazos River in
+Texas (Aynesworth 1936, 76, 78–79, Plate XIV:6). While discovered in
+association with the burial, this point may have been included in the
+fill that was excavated when the burial was interred. In the same
+burial, a Perdiz arrow point was found lodged in the upper end of the
+right humerus (Aynesworth 1936, Plate XIV:4a, 4b, 5), and a small arrow
+point fragment was found lodged between the neck and greater trochanter
+of the left femur (Aynesworth 1936, Plate XIV:3).
 
 In Limestone County, Texas, (Bryan 1936, 83–84) found Gary points in the
 Delia Area (sites 7, 8, 9, 10, 11, 18, 19, and 20), the Cooledge Area
@@ -66,33 +65,32 @@ Points*, which would later be replaced by *Gary Contracting Stemmed*,
 *Gary Stemmed* (Newell and Krieger 1949, 164–66), and finally, Gary
 (Suhm, Krieger, and Jelks 1954, 430–31, Plate 94).
 
-Ford et al. (1945, 35) refer to the Gary type that articulates with the
-Tchefuncte period as Simple Haft 1A; however, that type is first
-introduced in the analysis of the materials from the Crooks site (Ford
-and Willey 1940, 97). In that volume, Gary points were also assigned to
-Simple Haft 1C (Ford and Willey 1940, 97, Figures 45a-b, 46a-d),
-described as leaf-shaped with a stem that may be either flat or convex,
-and Simple Haft 2A (Ford and Willey 1940, 99, Figures 45d, 46g-h),
-described as the narrowest of their Blade 2 group, which is almost as
-thick as they are wide, with sloped shoulders, a pronounced median
-ridge, and an ill-organised approach to secondary flaking. Ford et
-al. (Ford and Willey 1940, 99) describe Simple Haft 2B as identical in
-shape to Simple Haft 2A, but with excellent primary and secondary
-flaking, no similarities in execution, and a cross-section that is less
-than 5mm thick. This is the only type at the Crooks site that was
-assigned based upon execution alone. Simple Haft 2C (Ford and Willey
-1940, 99, Figure 45f) displays thickening at the median, with a
-triangular blade, small contracting stem, and broad, straight shoulders.
-This is the earliest work that begins to expound upon the diversity of
-morphological variation thought to occur within what would later be the
-Gary type.
+Ford, Quimby Jr., and Snow (1945, 35) refer to the Gary type that
+articulates with the Tchefuncte period as Simple Haft 1A; however, that
+type is first introduced in the analysis of the materials from the
+Crooks site (Ford and Willey 1940, 97). In that volume, Gary points were
+also assigned to Simple Haft 1C (Ford and Willey 1940, 97, Figures
+45a-b, 46a-d), described as leaf-shaped with a stem that may be either
+flat or convex, and Simple Haft 2A (Ford and Willey 1940, 99, Figures
+45d, 46g-h), described as the narrowest of their Blade 2 group, which is
+almost as thick as they are wide, with sloped shoulders, a pronounced
+median ridge, and an ill-organised approach to secondary flaking. Ford
+and Willey (1940, 99) describe Simple Haft 2B as identical in shape to
+Simple Haft 2A, but with excellent primary and secondary flaking, no
+similarities in execution, and a cross-section that is less than 5mm
+thick. This is the only type at the Crooks site that was assigned based
+upon execution alone. Simple Haft 2C (Ford and Willey 1940, 99, Figure
+45f) displays thickening at the median, with a triangular blade, small
+contracting stem, and broad, straight shoulders. This is the earliest
+work that begins to expound upon the diversity of morphological
+variation thought to occur within what would later become the Gary type.
 
 In the winter of 1938, two Gary points were excavated from midden B, a
 150 x 100 foot (long axis along northeast-southwest line) elongated-oval
 shell midden, at the Tchefuncte site, located parallel to the shoreline
 of Lake Pontchartrain (Louisiana) (Ford, Quimby Jr., and Snow 1945,
-11–12, Figure 5). (Ford, Quimby Jr., and Snow 1945, 35) refer to the
-type as Simple Haft 1A, described earlier by (Ford and Willey 1940, 97),
+11–12, Figure 5). Ford, Quimby Jr., and Snow (1945, 35) refer to the
+type as Simple Haft 1A, described earlier by Ford and Willey (1940, 97),
 noting that blade shape is represented by a near-equilateral triangle,
 straight shoulders, and the characteristic broad stem atop a convex
 base. This point type was also found to occur in Marksville period sites
@@ -104,13 +102,16 @@ Jr., and Snow 1945, Figure 8:K)—based upon the initial (Suhm, Krieger,
 and Jelks 1954, 430–31, Plate 94) and current formal definitions
 (Turner, Hester, and McReynolds 2011, 107–8).
 
-  - Aynesworth (1936, 76, 78–79, Plate XIV:6)
-
-  - Bryan (1936, 83–84)
-
-  - Ford and Willey (1940, 97, 99, Figures 45a-b, d, f, and 46a-d, g-h)
-
-  - Ford et al. (1945, 32–33, Figure 8)
+Lewis and Kneberg (1947, 12–18) identified Gary dart points as the
+Tapered Stem and Beaver Tail Stem types as Eva Focus traits not shared
+by Lauderdale and Indian Knoll. Both types were noted to be rare or
+alien (Lewis and Kneberg 1947). The Tapered Stem type was noted to be
+ubiquitous but rare, and the Beaver Tail Stem type–noted to be a
+specialised variant of the Tapered Stem (the earliest recorded Gary
+variety)–was reported to rarely occur at most sites, but frequently at
+two of the southernmost sites in the area (Lewis and Kneberg 1947). The
+Tapered Stem *var. Beaver Tail Stem* was noted to be an Archaic or
+Woodland type (Lewis and Kneberg 1947).
 
   - Webb (1948, Figure 44:1,4)
 
@@ -118,13 +119,15 @@ and Jelks 1954, 430–31, Plate 94) and current formal definitions
 
   - Wheat (1953, 204–5, Plate 36)
 
-##### Discussions of manufacture and retouch in Gary dart points
+#### Discussions of manufacture and retouch in Gary dart points
 
   - Studer (1982, 67–73, Figure 3)
 
+  - Ensor and Carlson (1991, Figure 85)
+
   - Patterson (1996)
 
-### Load packages for analysis
+## Preliminaries
 
 ``` r
 # install required analysis packages
@@ -176,44 +179,9 @@ maxstw<-data$maxstw # maximum stem width
 site<-data$site # site name
 ```
 
-### Krieger’s (1944, Figure 25) typological concept and the Gary dart point
+## Theoretical underpinnings
 
-``` r
-#grViz("
-#  digraph{
-#    node[shape = rectangle
-#         fontname = lato
-#         penwidth = 0.2]
-#    Material; Pattern1; Pattern2; Pattern3; 1; 2; 3; 4
-#    
-#    node[shape = doublecircle]
-#    A; B; C; D; E; F; G
-#    
-#    node[shape = diamond
-#         style = filled
-#         fillcolor = grey]
-#    x
-#    
-#    edge[fontname = lato
-#         penwidth = 0.2]
-#    Material->Pattern1; Material->Pattern2; Material->Pattern3;
-#    Pattern2->A; Pattern2->B; Pattern2->C; Pattern2->D; 
-#    Pattern2->E; Pattern2->F; Pattern2->G; A->1; C->1; F->1; B->2;
-#    D->3; E->3; G->4; x->4
-#    
-#    graph[nodesep = 0.8]
-#  }
-#")
-knitr::include_graphics('krieger.png')
-```
-
-![](krieger.png)<!-- -->
-
-``` r
-fig.cap = "Step 1: sorting into working patterns of distinct structural plan. Step 2: sorting into detailed working groups each consistently combining features in but one way. Step 3: recombining working groups into tentative types on basis of comparative distributions and associations of working groups. Step 4: consolidation of types through further testing for consistency in form and variation. Step 5: description and illustration of types with full range of variation. Step 6: a - determination of series of linked types, b - determination of material-culture complexes, and c - determination of type relationships in related cultures."
-```
-
-### Calculate dart-arrow index
+### Calculate dart-arrow index (Hildebrandt and King 2012)
 
 ``` r
 # calculate dart-arrow index (max stem width + max thickness)
@@ -247,6 +215,43 @@ arrow
 ```
 
     ## [1] 0
+
+### Krieger’s (1944, Figure 25) typological concept and the Gary dart point
+
+``` r
+#grViz("
+#  digraph{
+#    node[shape = rectangle
+#         fontname = lato
+#         penwidth = 0.2]
+#    Material; Pattern1; Pattern2; Pattern3; 1; 2; 3; 4
+#    
+#    node[shape = doublecircle]
+#    A; B; C; D; E; F; G
+#    
+#    node[shape = diamond
+#         style = filled
+#         fillcolor = grey]
+#    x
+#    
+#    edge[fontname = lato
+#         penwidth = 0.2]
+#    Material->Pattern1; Material->Pattern2; Material->Pattern3;
+#    Pattern2->A; Pattern2->B; Pattern2->C; Pattern2->D; 
+#    Pattern2->E; Pattern2->F; Pattern2->G; A->1; C->1; F->1; B->2;
+#    D->3; E->3; G->4; x->4
+#    
+#    graph[nodesep = 0.8]
+#  }
+#")
+knitr::include_graphics('krieger.png')
+```
+
+<img src="krieger.png" width="1812" />
+
+``` r
+fig.cap = "Step 1: sorting into working patterns of distinct structural plan. Step 2: sorting into detailed working groups each consistently combining features in but one way. Step 3: recombining working groups into tentative types on basis of comparative distributions and associations of working groups. Step 4: consolidation of types through further testing for consistency in form and variation. Step 5: description and illustration of types with full range of variation. Step 6: a - determination of series of linked types, b - determination of material-culture complexes, and c - determination of type relationships in related cultures."
+```
 
 ## Linear metrics of Gary dart points by `site`
 
@@ -442,7 +447,9 @@ anova(sitemstw)
     ## Call: lm.rrpp(f1 = maxstw ~ site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
-## Gary varieties proposed by Ford, Phillips, and Haag (1955)
+## Toward a replicable method of assigning Gary type-varieties
+
+### Gary varieties proposed by Ford, Phillips, and Haag (1955)
 
 The `tv0` argument used within this and the subsequent section
 articulates with three variants of the Gary type–including *Gary
@@ -487,9 +494,10 @@ annotate_figure(fwebbfig,
 Ford, Phillips, and Haag (1955) used a series of metrics (maximum
 length) to assign Gary varieties at the Jaketown site. The approach
 empoyed here enlists all of Ford and Webb’s (1956) reported metrics, and
-applies them to each of the points. Those points that do not match with
-one of the three criteria were assigned as unidentified ( *UID* ). Due
-to the degree of overlap in those ranges associated with the Gary
+applies them to each of the points. Those points that do not articulate
+with one of the three criteria were assigned as unidentified (UID), and
+should be considered as Gary with no type-variety assignment. Due to the
+degree of overlap in those ranges associated with the Gary
 type-varieties advanced by Ford, Phillips, and Haag (1956), it is
 expected that *Gary Stemmed* will fall out due to overlap in length with
 *Broad Gary Stemmed*, and overlap in width with *Typical Gary Stemmed*.
@@ -508,7 +516,7 @@ fphwcheck3 <- data$maxw >= 32 & data$maxw <= 48
 fphwcheck4 <- data$maxw >= 30 & data$maxw <= 36
 fphwcheck5 <- data$maxw >= 20 & data$maxw <= 30
 
-data$tv0 <- "GNV" # gary no variety
+data$tv0 <- "UID"
 data$tv0 <- ifelse(fphlcheck1 & fphwcheck1, "GS", data$tv0)
 data$tv0 <- ifelse(fphlcheck2 & fphwcheck2, "TyGS", data$tv0)
 data$tv0 <- ifelse(fphlcheck3 & fphwcheck3, "BGS", data$tv0)
@@ -519,28 +527,28 @@ tv0<-data$tv0
 tv0
 ```
 
-    ##   [1] "GNV"  "GNV"  "GNV"  "GNV"  "BGS"  "BGS"  "BGS"  "BGS"  "ThGS" "GNV" 
+    ##   [1] "UID"  "UID"  "UID"  "UID"  "BGS"  "BGS"  "BGS"  "BGS"  "ThGS" "UID" 
     ##  [11] "BGS"  "ThGS" "TyGS" "ThGS" "TyGS" "ThGS" "SGS"  "ThGS" "ThGS" "ThGS"
-    ##  [21] "ThGS" "GNV"  "GNV"  "TyGS" "TyGS" "SGS"  "SGS"  "TyGS" "SGS"  "TyGS"
-    ##  [31] "GNV"  "TyGS" "TyGS" "SGS"  "GNV"  "SGS"  "GNV"  "GNV"  "GNV"  "SGS" 
-    ##  [41] "TyGS" "ThGS" "ThGS" "TyGS" "GNV"  "TyGS" "ThGS" "TyGS" "ThGS" "ThGS"
+    ##  [21] "ThGS" "UID"  "UID"  "TyGS" "TyGS" "SGS"  "SGS"  "TyGS" "SGS"  "TyGS"
+    ##  [31] "UID"  "TyGS" "TyGS" "SGS"  "UID"  "SGS"  "UID"  "UID"  "UID"  "SGS" 
+    ##  [41] "TyGS" "ThGS" "ThGS" "TyGS" "UID"  "TyGS" "ThGS" "TyGS" "ThGS" "ThGS"
     ##  [51] "ThGS" "ThGS" "ThGS" "ThGS" "TyGS" "TyGS" "TyGS" "ThGS" "TyGS" "TyGS"
     ##  [61] "TyGS" "TyGS" "ThGS" "TyGS" "TyGS" "ThGS" "TyGS" "TyGS" "TyGS" "ThGS"
     ##  [71] "TyGS" "TyGS" "TyGS" "BGS"  "TyGS" "TyGS" "TyGS" "TyGS" "TyGS" "TyGS"
-    ##  [81] "TyGS" "TyGS" "SGS"  "SGS"  "SGS"  "BGS"  "SGS"  "GNV"  "SGS"  "SGS" 
-    ##  [91] "SGS"  "SGS"  "SGS"  "SGS"  "SGS"  "SGS"  "GNV"  "SGS"  "GNV"  "GNV" 
-    ## [101] "GNV"  "BGS"  "SGS"  "GNV"  "SGS"  "SGS"  "SGS"  "GNV"  "SGS"  "SGS" 
-    ## [111] "SGS"  "SGS"  "SGS"  "GNV"  "TyGS" "TyGS" "TyGS" "SGS"  "SGS"  "TyGS"
-    ## [121] "SGS"  "TyGS" "GNV"  "SGS"  "SGS"  "TyGS" "TyGS" "SGS"  "SGS"  "GNV" 
-    ## [131] "SGS"  "GNV"  "GNV"  "GNV"  "SGS"  "SGS"  "SGS"  "SGS"  "TyGS" "BGS" 
-    ## [141] "TyGS" "GNV"  "GNV"  "GNV"  "GNV"  "GNV"  "GNV"  "BGS"  "GNV"  "TyGS"
-    ## [151] "TyGS" "SGS"  "TyGS" "SGS"  "BGS"  "GNV"  "BGS"  "GNV"  "TyGS" "BGS" 
+    ##  [81] "TyGS" "TyGS" "SGS"  "SGS"  "SGS"  "BGS"  "SGS"  "UID"  "SGS"  "SGS" 
+    ##  [91] "SGS"  "SGS"  "SGS"  "SGS"  "SGS"  "SGS"  "UID"  "SGS"  "UID"  "UID" 
+    ## [101] "UID"  "BGS"  "SGS"  "UID"  "SGS"  "SGS"  "SGS"  "UID"  "SGS"  "SGS" 
+    ## [111] "SGS"  "SGS"  "SGS"  "UID"  "TyGS" "TyGS" "TyGS" "SGS"  "SGS"  "TyGS"
+    ## [121] "SGS"  "TyGS" "UID"  "SGS"  "SGS"  "TyGS" "TyGS" "SGS"  "SGS"  "UID" 
+    ## [131] "SGS"  "UID"  "UID"  "UID"  "SGS"  "SGS"  "SGS"  "SGS"  "TyGS" "BGS" 
+    ## [141] "TyGS" "UID"  "UID"  "UID"  "UID"  "UID"  "UID"  "BGS"  "UID"  "TyGS"
+    ## [151] "TyGS" "SGS"  "TyGS" "SGS"  "BGS"  "UID"  "BGS"  "UID"  "TyGS" "BGS" 
     ## [161] "SGS"  "TyGS" "TyGS" "BGS"  "TyGS" "TyGS" "SGS"  "SGS"  "SGS"  "SGS" 
-    ## [171] "GNV"  "GNV"  "GNV"  "TyGS" "GNV"  "TyGS" "SGS"  "GNV"  "GNV"  "TyGS"
-    ## [181] "TyGS" "TyGS" "TyGS" "GNV"  "SGS"  "TyGS" "SGS"  "GNV"  "TyGS" "SGS" 
-    ## [191] "TyGS" "TyGS" "GNV"  "SGS"  "GNV"  "GNV"  "GNV"  "GNV"  "GNV"  "GNV" 
-    ## [201] "TyGS" "SGS"  "SGS"  "SGS"  "GNV"  "TyGS" "TyGS" "SGS"  "SGS"  "GNV" 
-    ## [211] "GNV"  "GNV"
+    ## [171] "UID"  "UID"  "UID"  "TyGS" "UID"  "TyGS" "SGS"  "UID"  "UID"  "TyGS"
+    ## [181] "TyGS" "TyGS" "TyGS" "UID"  "SGS"  "TyGS" "SGS"  "UID"  "TyGS" "SGS" 
+    ## [191] "TyGS" "TyGS" "UID"  "SGS"  "UID"  "UID"  "UID"  "UID"  "UID"  "UID" 
+    ## [201] "TyGS" "SGS"  "SGS"  "SGS"  "UID"  "TyGS" "TyGS" "SGS"  "SGS"  "UID" 
+    ## [211] "UID"  "UID"
 
 ### Maximum and minimum values for all `tv0` variables
 
@@ -558,7 +566,7 @@ mmthgs<-subset(data,tv0=="ThGS",select=maxl:tv0)
 mmsgs<-subset(data,tv0=="SGS",select=maxl:tv0)
 ```
 
-##### Maximum/minimum for Typical Gary Stemmed
+#### Maximum/minimum for Typical Gary Stemmed
 
 ``` r
 # identify maximum/minimum metrics for Typical Gary Stemmed
@@ -632,7 +640,7 @@ min(mmtygs$maxstw)
 
     ## [1] 13.79
 
-##### Maximum/minimum for Broad Gary Stemmed
+#### Maximum/minimum for Broad Gary Stemmed
 
 ``` r
 # identify maximum/minimum metrics for Broad Gary Stemmed
@@ -706,7 +714,7 @@ min(mmbgs$maxstw)
 
     ## [1] 16.87
 
-##### Maximum/minimum for Thin Gary Stemmed
+#### Maximum/minimum for Thin Gary Stemmed
 
 ``` r
 # identify maximum/minimum metrics for Thin Gary Stemmed
@@ -780,7 +788,7 @@ min(mmthgs$maxstw)
 
     ## [1] 16.66
 
-##### Maximum/minimum for Small Gary Stemmed
+#### Maximum/minimum for Small Gary Stemmed
 
 ``` r
 # identify maximum/minimum metrics for Small Gary Stemmed
@@ -1249,7 +1257,7 @@ wcheck3 <- data$maxw >= 19 & data$maxw <= 32
 
 tcheck <- data$maxth >= 5 & data$maxth <= 10
 
-data$tv1 <- "GNV" # gary no variety
+data$tv1 <- "UID" # gary no variety
 data$tv1 <- ifelse(lcheck1 & wcheck1, "L", data$tv1)
 data$tv1 <- ifelse(lcheck2 & wcheck2, "M/T", data$tv1)
 data$tv1 <- ifelse(lcheck3 & wcheck3 & tcheck, "S", data$tv1)
@@ -1260,22 +1268,22 @@ tv1
 
     ##   [1] "L"   "L"   "L"   "L"   "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
     ##  [13] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
-    ##  [25] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "GNV" "M/T" "M/T" "M/T" "M/T" "S"  
-    ##  [37] "GNV" "GNV" "GNV" "S"   "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
+    ##  [25] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "UID" "M/T" "M/T" "M/T" "M/T" "S"  
+    ##  [37] "UID" "UID" "UID" "S"   "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
     ##  [49] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
     ##  [61] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
     ##  [73] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
     ##  [85] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "S"   "S"   "S"   "S"   "S"  
-    ##  [97] "GNV" "S"   "GNV" "S"   "S"   "GNV" "S"   "GNV" "GNV" "GNV" "GNV" "GNV"
-    ## [109] "S"   "S"   "S"   "S"   "S"   "GNV" "M/T" "M/T" "M/T" "M/T" "S"   "M/T"
-    ## [121] "S"   "M/T" "GNV" "S"   "S"   "M/T" "M/T" "S"   "GNV" "GNV" "M/T" "M/T"
-    ## [133] "GNV" "GNV" "S"   "S"   "S"   "M/T" "M/T" "M/T" "M/T" "GNV" "GNV" "S"  
-    ## [145] "M/T" "M/T" "S"   "M/T" "M/T" "M/T" "M/T" "S"   "M/T" "M/T" "GNV" "L"  
+    ##  [97] "UID" "S"   "UID" "S"   "S"   "UID" "S"   "UID" "UID" "UID" "UID" "UID"
+    ## [109] "S"   "S"   "S"   "S"   "S"   "UID" "M/T" "M/T" "M/T" "M/T" "S"   "M/T"
+    ## [121] "S"   "M/T" "UID" "S"   "S"   "M/T" "M/T" "S"   "UID" "UID" "M/T" "M/T"
+    ## [133] "UID" "UID" "S"   "S"   "S"   "M/T" "M/T" "M/T" "M/T" "UID" "UID" "S"  
+    ## [145] "M/T" "M/T" "S"   "M/T" "M/T" "M/T" "M/T" "S"   "M/T" "M/T" "UID" "L"  
     ## [157] "M/T" "M/T" "M/T" "M/T" "S"   "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "S"  
-    ## [169] "S"   "M/T" "GNV" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "S"   "M/T" "M/T"
-    ## [181] "M/T" "M/T" "M/T" "GNV" "M/T" "M/T" "S"   "GNV" "M/T" "S"   "M/T" "M/T"
-    ## [193] "S"   "S"   "GNV" "GNV" "M/T" "GNV" "GNV" "GNV" "M/T" "S"   "S"   "S"  
-    ## [205] "S"   "M/T" "M/T" "M/T" "M/T" "GNV" "GNV" "M/T"
+    ## [169] "S"   "M/T" "UID" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "S"   "M/T" "M/T"
+    ## [181] "M/T" "M/T" "M/T" "UID" "M/T" "M/T" "S"   "UID" "M/T" "S"   "M/T" "M/T"
+    ## [193] "S"   "S"   "UID" "UID" "M/T" "UID" "UID" "UID" "M/T" "S"   "S"   "S"  
+    ## [205] "S"   "M/T" "M/T" "M/T" "M/T" "UID" "UID" "M/T"
 
 ### Maximum and minimum values for all `tv1` variables
 
@@ -1293,7 +1301,7 @@ mmmt<-subset(data,tv1=="M/T",select=maxl:tv1)
 mms<-subset(data,tv1=="S",select=maxl:tv1)
 ```
 
-##### Maximum/minimum for Gary Large
+#### Maximum/minimum for Gary Large
 
 ``` r
 # identify maximum/minimum metrics for Gary Large
@@ -1367,7 +1375,7 @@ min(mml$maxstw)
 
     ## [1] 18.29
 
-##### Maximum/minimum for Gary Med/Typical
+#### Maximum/minimum for Gary Med/Typical
 
 ``` r
 # identify maximum/minimum metrics for Gary Med/Typical
@@ -1441,7 +1449,7 @@ min(mmmt$maxstw)
 
     ## [1] 12.09
 
-##### Maximum/minimum for Gary Small
+#### Maximum/minimum for Gary Small
 
 ``` r
 # identify maximum/minimum metrics for Gary Small
@@ -1936,7 +1944,7 @@ sswcheck5 <- data$maxstw >= 12 & data$maxstw < 24
 sswcheck6 <- data$maxstw >= 9 & data$maxstw <= 20
 sswcheck7 <- data$maxstw >= 11 & data$maxstw <= 21
 
-data$tv2 <- "GNV" # gary no variety
+data$tv2 <- "UID" # gary no variety
 data$tv2 <- ifelse(slcheck1 & swcheck1 & stcheck1 & sslcheck1 & sswcheck1, "G", data$tv2)
 data$tv2 <- ifelse(slcheck2 & swcheck2 & stcheck2 & sslcheck2 & sswcheck2, "Ml", data$tv2)
 data$tv2 <- ifelse(slcheck3 & swcheck3 & stcheck3 & sslcheck3 & sswcheck3, "LF", data$tv2)
@@ -1950,24 +1958,24 @@ tv2<-data$tv2
 tv2
 ```
 
-    ##   [1] "GNV" "GNV" "GNV" "GNV" "LF"  "CmB" "LF"  "CmB" "CmB" "LF"  "LF"  "CmB"
-    ##  [13] "Bd"  "Bd"  "Bd"  "CmB" "CmB" "CmB" "CmB" "LF"  "LF"  "CmB" "GNV" "LF" 
-    ##  [25] "CmB" "CmB" "Cm"  "CmB" "CmA" "CmA" "CmA" "CmA" "CmA" "GNV" "GNV" "CmA"
-    ##  [37] "GNV" "CmA" "CmA" "GNV" "CmB" "GNV" "LF"  "Cm"  "LF"  "GNV" "CmB" "Ml" 
-    ##  [49] "CmB" "CmB" "LF"  "CmB" "CmB" "GNV" "CmB" "LF"  "GNV" "CmB" "Ml"  "CmB"
-    ##  [61] "Bd"  "GNV" "Bd"  "Cm"  "CmA" "CmB" "LF"  "CmB" "CmB" "CmB" "Bd"  "CmA"
-    ##  [73] "LF"  "Cm"  "CmA" "Bd"  "CmB" "CmB" "CmA" "CmB" "GNV" "CmA" "CmA" "Bd" 
-    ##  [85] "CmB" "GNV" "CmA" "CmB" "CmA" "LF"  "CmA" "Cm"  "CmB" "Cm"  "Cm"  "Cm" 
-    ##  [97] "GNV" "CmA" "CmA" "CmA" "CmA" "CmB" "CmB" "CmB" "GNV" "CmA" "CmA" "Cm" 
-    ## [109] "CmA" "CmB" "CmA" "CmA" "Cm"  "GNV" "GNV" "CmA" "CmA" "CmA" "CmA" "CmA"
-    ## [121] "CmA" "GNV" "CmA" "CmA" "CmA" "GNV" "CmA" "CmA" "GNV" "GNV" "CmA" "CmA"
-    ## [133] "CmA" "GNV" "GNV" "CmA" "Cm"  "CmA" "GNV" "LF"  "CmB" "Cm"  "CmA" "CmA"
-    ## [145] "CmA" "CmA" "Cm"  "CmB" "GNV" "CmA" "CmB" "CmB" "CmB" "CmB" "CmB" "GNV"
+    ##   [1] "UID" "UID" "UID" "UID" "LF"  "CmB" "LF"  "CmB" "CmB" "LF"  "LF"  "CmB"
+    ##  [13] "Bd"  "Bd"  "Bd"  "CmB" "CmB" "CmB" "CmB" "LF"  "LF"  "CmB" "UID" "LF" 
+    ##  [25] "CmB" "CmB" "Cm"  "CmB" "CmA" "CmA" "CmA" "CmA" "CmA" "UID" "UID" "CmA"
+    ##  [37] "UID" "CmA" "CmA" "UID" "CmB" "UID" "LF"  "Cm"  "LF"  "UID" "CmB" "Ml" 
+    ##  [49] "CmB" "CmB" "LF"  "CmB" "CmB" "UID" "CmB" "LF"  "UID" "CmB" "Ml"  "CmB"
+    ##  [61] "Bd"  "UID" "Bd"  "Cm"  "CmA" "CmB" "LF"  "CmB" "CmB" "CmB" "Bd"  "CmA"
+    ##  [73] "LF"  "Cm"  "CmA" "Bd"  "CmB" "CmB" "CmA" "CmB" "UID" "CmA" "CmA" "Bd" 
+    ##  [85] "CmB" "UID" "CmA" "CmB" "CmA" "LF"  "CmA" "Cm"  "CmB" "Cm"  "Cm"  "Cm" 
+    ##  [97] "UID" "CmA" "CmA" "CmA" "CmA" "CmB" "CmB" "CmB" "UID" "CmA" "CmA" "Cm" 
+    ## [109] "CmA" "CmB" "CmA" "CmA" "Cm"  "UID" "UID" "CmA" "CmA" "CmA" "CmA" "CmA"
+    ## [121] "CmA" "UID" "CmA" "CmA" "CmA" "UID" "CmA" "CmA" "UID" "UID" "CmA" "CmA"
+    ## [133] "CmA" "UID" "UID" "CmA" "Cm"  "CmA" "UID" "LF"  "CmB" "Cm"  "CmA" "CmA"
+    ## [145] "CmA" "CmA" "Cm"  "CmB" "UID" "CmA" "CmB" "CmB" "CmB" "CmB" "CmB" "UID"
     ## [157] "CmB" "CmA" "CmB" "Cm"  "Cm"  "CmA" "CmA" "CmB" "CmB" "CmA" "CmA" "CmB"
     ## [169] "CmA" "CmA" "Cm"  "CmA" "CmA" "CmA" "CmB" "CmA" "CmA" "CmA" "CmA" "CmB"
     ## [181] "G"   "LF"  "CmA" "CmA" "CmA" "CmB" "Bd"  "LF"  "Cm"  "CmA" "CmA" "Cm" 
-    ## [193] "Cm"  "Cm"  "CmA" "Cm"  "CmA" "Cm"  "GNV" "CmA" "CmB" "GNV" "Cm"  "CmA"
-    ## [205] "CmA" "GNV" "CmB" "CmA" "CmA" "Cm"  "GNV" "CmA"
+    ## [193] "Cm"  "Cm"  "CmA" "Cm"  "CmA" "Cm"  "UID" "CmA" "CmB" "UID" "Cm"  "CmA"
+    ## [205] "CmA" "UID" "CmB" "CmA" "CmA" "Cm"  "UID" "CmA"
 
 ### Maximum and minimum values for all `tv2` variables
 
@@ -2066,7 +2074,7 @@ min(mmg$maxstw)
 
     ## [1] 20.9
 
-##### Maximum/minimum for *variety Malvern*
+#### Maximum/minimum for *variety Malvern*
 
 ``` r
 # identify maximum/minimum metrics for variety Malvern
@@ -2140,7 +2148,7 @@ min(mmml$maxstw)
 
     ## [1] 18.42
 
-##### Maximum/minimum for *variety Le Flore*
+#### Maximum/minimum for *variety Le Flore*
 
 ``` r
 # identify maximum/minimum metrics for variety Le Flore
@@ -2214,7 +2222,7 @@ min(mmlf$maxstw)
 
     ## [1] 16.8
 
-##### Maximum/minimum for *variety Bodcaw*
+#### Maximum/minimum for *variety Bodcaw*
 
 ``` r
 # identify maximum/minimum metrics for variety Bodcaw
@@ -2288,7 +2296,7 @@ min(mmbd$maxstw)
 
     ## [1] 20.57
 
-##### Maximum/minimum for *variety Manice*
+#### Maximum/minimum for *variety Manice*
 
 ``` r
 # identify maximum/minimum metrics for variety Manice
@@ -2382,7 +2390,7 @@ min(mmmn$maxstw)
 
     ## [1] Inf
 
-##### Maximum/minimum for *variety Camden*
+#### Maximum/minimum for *variety Camden*
 
 ``` r
 # identify maximum/minimum metrics for variety Camden
@@ -2456,7 +2464,7 @@ min(mmcm$maxstw)
 
     ## [1] 10.94
 
-##### Maximum/minimum for *variety Camden subgroup A*
+#### Maximum/minimum for *variety Camden subgroup A*
 
 ``` r
 # identify maximum/minimum metrics for variety Camden subgroup A
@@ -2530,7 +2538,7 @@ min(mmcma$maxstw)
 
     ## [1] 11.21
 
-##### Maximum/minimum for *variety Camden subgroup B*
+#### Maximum/minimum for *variety Camden subgroup B*
 
 ``` r
 # identify maximum/minimum metrics for variety Camden subgroup B
@@ -2930,6 +2938,15 @@ were developed and funded by a Preservation Technology and Training
 grant (P14AP00138) to RZS from the National Center for Preservation
 Technology and Training.
 
+I extend my gratitude to the Poverty Point World Heritage Site, and The
+University Museum in the J. William Fulbright College of Arts and
+Sciences at the University of Arkansas. Personal thanks go to Diana
+Greenlee and Mary C. Suter for their help and guidance regarding
+permissions and access to the collections. Additional thanks to Jared S.
+Pebworth and Ernest Gann for their help with aggregating the Gary dart
+points, and with locating and sorting through the various associated
+site records for the collections from the Cooper and Means sites.
+
 ## References cited
 
 <div id="refs" class="references">
@@ -2962,6 +2979,15 @@ Limestone County.” *Central Texas Archeological Society* 2: 81–95.
 Densmore, Julie A. 2007. “A Detailed Analysis of the Variation in
 Morphology of the Gary Dart Point.” *Lithic Technology* 32 (1): 7–16.
 <https://doi.org/10.1080/01977261.2007.11721040>.
+
+</div>
+
+<div id="ref-RN20913">
+
+Ensor, H. Blaine, and David L. Carlson. 1991. “Alabonson Road: Early
+Ceramic Period Adaptation to the Inland Coastal Prairie Zone, Harris
+County, Southeast Texas.” Reports of Investigations 8. Archeological
+Research Laboratory, Texas A\&M University, College Station.
 
 </div>
 
@@ -3014,8 +3040,8 @@ History. <http://digitallibrary.amnh.org/handle/2246/108>.
 
 <div id="ref-RN20875">
 
-Ford, James A., and Gordon R. Willey. 1940. *Crooks Site, a Marksville
-Period Burial Mound in La Salle Parish, Louisiana*. Anthropological
+Ford, James A., and Gordon R. Willey. 1940. “Crooks Site, a Marksville
+Period Burial Mound in La Salle Parish, Louisiana.” Anthropological
 Study, Department of Conservation, Louisiana Geological Survey. New
 Orleans: Anthropological Study No. 3, Department of Conservation,
 Louisiana Geological Survey.
@@ -3038,9 +3064,17 @@ Krieger, Alex D. 1944. “The Typological Concept.” *American Antiquity* 9
 
 </div>
 
+<div id="ref-RN20895">
+
+Lewis, Thomas N. M., and Madeline D. Kneberg. 1947. “The Archaic Horizon
+in Western Tennessee. Division of University Extension.” Tennessee
+Anthropology Papers, No. 2. University of Tennessee, Knoxville.
+
+</div>
+
 <div id="ref-RN800">
 
-Newell, H. Perry, and Alex D. Krieger. 1949. *The George c. Davis Site,
+Newell, H. Perry, and Alex D. Krieger. 1949. *The George C. Davis Site,
 Cherokee County, Texas*. Menasha, Wisconsin: Memoir No. 5. Society for
 American Archaeology.
 
@@ -3096,8 +3130,9 @@ Louisiana.” *American Antiquity* 13 (3): 227–32.
 <div id="ref-RN20873">
 
 Wheat, Joe Ben. 1953. “The Addicks Dam Site: An Archeological Survey of
-the Addicks Dam Basin, Southeast Texas.” Smithsonian Institution, Bureau
-of American Ethnology.
+the Addicks Dam Basin, Southeast Texas.” River Basin Surveys Papers, No.
+4: Bulletin 154. Smithsonian Institution, Bureau of American Ethnology,
+Washington, D. C.
 
 </div>
 
