@@ -1,9 +1,9 @@
-Traditional metrics for type-varieties of Gary dart points
+Linear metrics of Gary type-varieties
 ================
 Robert Z. Selden, Jr.
 March 1, 2020
 
-### Introduction
+## Introduction
 
 This document includes supplemental materials for the article, “A
 quantitative assessment of intraspecific morphological variation in Gary
@@ -31,7 +31,103 @@ others (Erlandson, Watts, and Jew 2014) have found that the DAI may not
 be universally applicable; however, the DAI and the threshold identified
 by Hildebrandt and King (2012) is a useful heuristic in this instance.
 
-### Load packages for analysis
+#### The Gary type prior to formal definition by Suhm, Krieger, and Jelks (1954, 430–31, Plate 94)
+
+Gary dart points were formally defined by (Suhm, Krieger, and Jelks
+1954, 430–31, Plate 94), providing a description with defining
+morphological characteristics for a point known to investigators working
+across the region, but by different names. The earliest recorded Gary
+dart point was excavated on September 14, 1930 by Frank Bryan
+(Aynesworth 1936, 76). The point was recovered from the chest cavity,
+behind the sternum of a flexed burial eroding from a wall in an active
+gravel pit—roughly two and one-half feet below the surface—located
+around 14 miles from Waco, Texas on the East side of the Brazos River in
+Texas (Aynesworth 1936, 76, 78–79, Plate XIV:6). While discovered in
+association with the burial, this point may have been included in the
+fill that was excavated when the burial was interred. In the same
+burial, a Perdiz arrow point was found lodged in the upper end of the
+right humerus (Aynesworth 1936, Plate XIV:4a, 4b, 5), and a small arrow
+point fragment was found lodged between the neck and greater trochanter
+of the left femur (Aynesworth 1936, Plate XIV:3).
+
+In Limestone County, Texas, (Bryan 1936, 83–84) found Gary points in the
+Delia Area (sites 7, 8, 9, 10, 11, 18, 19, and 20), the Cooledge Area
+(Bryan 1936, 85–86) (sites 1, 2, 3, 4, 5, and 6), the Tehuacana-Wortham
+Area (Bryan 1936, 85, 87) (sites 3, 4, and 6), on Christmas Creek (Bryan
+1936, 85, 90) (all sites; 1-6), the Frosa Area (Bryan 1936, 89–90)
+(sites 1, 2, 4, and 5), the Ben Hur Area (Bryan 1936, 89, 94) (sites 1,
+2, 3, and 6), and near Groesbeck and Thornton (Bryan 1936, 89, 91)
+(sites 6 and 7). In Hill County, Texas, (Bryan 1936, 92, 95) also found
+Gary points at sites 1, 3, and 4. Bryan (1936, 92, Plate XV) determined
+that this point type was common enough across the various localities
+that it was deserving of a name, dubbing them *Dead-Man Triangle
+Points*, which would later be replaced by *Gary Contracting Stemmed*,
+*Gary Stemmed* (Newell and Krieger 1949, 164–66), and finally, Gary
+(Suhm, Krieger, and Jelks 1954, 430–31, Plate 94).
+
+Ford, Quimby Jr., and Snow (1945, 35) refer to the Gary type that
+articulates with the Tchefuncte period as Simple Haft 1A; however, that
+type is first introduced in the analysis of the materials from the
+Crooks site (Ford and Willey 1940, 97). In that volume, Gary points were
+also assigned to Simple Haft 1C (Ford and Willey 1940, 97, Figures
+45a-b, 46a-d), described as leaf-shaped with a stem that may be either
+flat or convex, and Simple Haft 2A (Ford and Willey 1940, 99, Figures
+45d, 46g-h), described as the narrowest of their Blade 2 group, which is
+almost as thick as they are wide, with sloped shoulders, a pronounced
+median ridge, and an ill-organised approach to secondary flaking. Ford
+and Willey (1940, 99) describe Simple Haft 2B as identical in shape to
+Simple Haft 2A, but with excellent primary and secondary flaking, no
+similarities in execution, and a cross-section that is less than 5mm
+thick. This is the only type at the Crooks site that was assigned based
+upon execution alone. Simple Haft 2C (Ford and Willey 1940, 99, Figure
+45f) displays thickening at the median, with a triangular blade, small
+contracting stem, and broad, straight shoulders. This is the earliest
+work that begins to expound upon the diversity of morphological
+variation thought to occur within what would later become the Gary type.
+
+In the winter of 1938, two Gary points were excavated from midden B, a
+150 x 100 foot (long axis along northeast-southwest line) elongated-oval
+shell midden, at the Tchefuncte site, located parallel to the shoreline
+of Lake Pontchartrain (Louisiana) (Ford, Quimby Jr., and Snow 1945,
+11–12, Figure 5). Ford, Quimby Jr., and Snow (1945, 35) refer to the
+type as Simple Haft 1A, described earlier by Ford and Willey (1940, 97),
+noting that blade shape is represented by a near-equilateral triangle,
+straight shoulders, and the characteristic broad stem atop a convex
+base. This point type was also found to occur in Marksville period sites
+(Ford, Quimby Jr., and Snow 1945, 35). While Newell and Krieger (1949)
+later considered five of the point types found by Ford et al. (1945,
+Figure 8:D, H-K) to be Gary, that assignment is revised to include only
+one type—represented by two projectiles (one illustrated) (Ford, Quimby
+Jr., and Snow 1945, Figure 8:K)—based upon the initial (Suhm, Krieger,
+and Jelks 1954, 430–31, Plate 94) and current formal definitions
+(Turner, Hester, and McReynolds 2011, 107–8).
+
+Lewis and Kneberg (1947, 12–18) identified Gary dart points as the
+Tapered Stem and Beaver Tail Stem types as Eva Focus traits not shared
+by Lauderdale and Indian Knoll. Both types were noted to be rare or
+alien (Lewis and Kneberg 1947). The Tapered Stem type was noted to be
+ubiquitous but rare, and the Beaver Tail Stem type–noted to be a
+specialised variant of the Tapered Stem (the earliest recorded Gary
+variety)–was reported to rarely occur at most sites, but frequently at
+two of the southernmost sites in the area (Lewis and Kneberg 1947). The
+Tapered Stem *var. Beaver Tail Stem* was noted to be an Archaic or
+Woodland type (Lewis and Kneberg 1947).
+
+  - Webb (1948, Figure 44:1,4)
+
+  - Ford (1951, 115, Figure 45)
+
+  - Wheat (1953, 204–5, Plate 36)
+
+#### Discussions of manufacture and retouch in Gary dart points
+
+  - Studer (1982, 67–73, Figure 3)
+
+  - Ensor and Carlson (1991, Figure 85)
+
+  - Patterson (1996)
+
+## Preliminaries
 
 ``` r
 # install required analysis packages
@@ -83,6 +179,43 @@ maxstw<-data$maxstw # maximum stem width
 site<-data$site # site name
 ```
 
+## Theoretical underpinnings
+
+### Calculate dart-arrow index (Hildebrandt and King 2012)
+
+``` r
+# calculate dart-arrow index (max stem width + max thickness)
+dai<-maxstw + maxth
+dai
+```
+
+    ##   [1] 44.05 42.17 27.59 40.47 37.55 36.55 38.94 34.81 37.01 39.62 37.32 32.32
+    ##  [13] 33.60 27.26 28.58 25.96 28.76 28.00 32.85 36.73 38.55 29.36 39.01 34.68
+    ##  [25] 28.28 24.73 25.19 28.01 23.81 24.53 20.59 25.92 27.12 19.16 26.42 26.33
+    ##  [37] 17.70 20.52 18.93 20.13 25.12 33.19 36.56 28.00 36.08 34.01 30.26 31.36
+    ##  [49] 33.92 27.97 30.39 29.38 27.30 34.16 25.09 31.20 36.02 32.25 28.93 28.57
+    ##  [61] 32.01 32.01 33.70 29.51 26.08 27.44 29.76 29.11 22.56 30.09 32.71 26.92
+    ##  [73] 36.95 30.71 28.86 31.34 32.64 24.83 24.91 25.12 33.19 28.90 27.95 30.12
+    ##  [85] 26.73 36.43 26.12 26.82 24.17 34.50 24.62 26.67 24.55 25.28 23.80 25.68
+    ##  [97] 17.75 22.13 22.20 17.18 19.21 31.06 23.25 32.00 26.78 30.83 26.06 19.27
+    ## [109] 28.60 25.81 23.21 23.94 21.07 29.02 23.43 26.58 29.73 21.93 24.00 30.50
+    ## [121] 21.16 27.67 22.66 22.63 25.43 31.09 23.35 20.78 30.33 18.84 22.17 20.92
+    ## [133] 22.19 17.17 21.99 23.43 26.36 23.38 29.81 27.64 24.08 17.44 22.68 19.89
+    ## [145] 20.02 22.79 20.43 25.73 46.83 25.94 24.07 30.82 26.90 25.01 25.98 30.96
+    ## [157] 29.12 21.29 28.55 22.89 26.21 23.41 24.73 32.80 31.24 23.55 29.19 28.39
+    ## [169] 20.61 22.45 22.29 22.95 21.20 27.51 25.89 23.28 26.19 24.47 21.45 25.22
+    ## [181] 29.24 33.74 27.45 23.18 24.54 27.87 29.92 37.59 26.06 23.98 29.23 26.32
+    ## [193] 23.76 23.20 21.15 24.98 19.68 30.92 32.30 22.82 23.99 21.36 20.39 24.75
+    ## [205] 20.64 26.46 30.38 19.16 27.81 25.46 16.74 24.78
+
+``` r
+# how many observations fall at or below 11.8 mm
+arrow<-sum(data$dai <= 11.8)
+arrow
+```
+
+    ## [1] 0
+
 ### Krieger’s (1944, Figure 25) typological concept and the Gary dart point
 
 ``` r
@@ -114,41 +247,11 @@ site<-data$site # site name
 knitr::include_graphics('krieger.png')
 ```
 
-<img src="krieger.png" width="1812" />
+![](krieger.png)<!-- -->
 
 ``` r
 fig.cap = "Step 1: sorting into working patterns of distinct structural plan. Step 2: sorting into detailed working groups each consistently combining features in but one way. Step 3: recombining working groups into tentative types on basis of comparative distributions and associations of working groups. Step 4: consolidation of types through further testing for consistency in form and variation. Step 5: description and illustration of types with full range of variation. Step 6: a - determination of series of linked types, b - determination of material-culture complexes, and c - determination of type relationships in related cultures."
 ```
-
-### Calculate dart-arrow index
-
-``` r
-# calculate dart-arrow index (max stem width + max thickness)
-dai<-maxstw + maxth
-dai
-```
-
-    ##   [1] 44.05 42.17 27.59 40.47 37.55 36.55 38.94 34.81 37.01 39.62 37.32 32.32
-    ##  [13] 33.60 27.26 28.58 25.96 28.76 28.00 32.85 36.73 38.55 29.36 39.01 34.68
-    ##  [25] 28.28 24.73 25.19 28.01 23.81 24.53 20.59 25.92 27.12 19.16 26.42 26.33
-    ##  [37] 17.70 20.52 18.93 20.13 25.12 33.19 36.56 28.00 36.08 34.01 30.26 31.36
-    ##  [49] 33.92 27.97 30.39 29.38 27.30 34.16 25.09 31.20 36.02 32.25 28.93 28.57
-    ##  [61] 32.01 32.01 33.70 29.51 26.08 27.44 29.76 29.11 22.56 30.09 32.71 26.92
-    ##  [73] 36.95 30.71 28.86 31.34 32.64 24.83 24.91 25.12 33.19 28.90 27.95 30.12
-    ##  [85] 26.73 36.43 26.12 26.82 24.17 34.50 24.62 26.67 24.55 25.28 23.80 25.68
-    ##  [97] 17.75 22.13 22.20 17.18 19.21 31.06 23.25 32.00 26.78 30.83 26.06 19.27
-    ## [109] 28.60 25.81 23.21 23.94 21.07 29.02 23.43 26.58 29.73 21.93 24.00 30.50
-    ## [121] 21.16 27.67 22.66 22.63 25.43 31.09 23.35 20.78 30.33 18.84 22.17 20.92
-    ## [133] 22.19 17.17 21.99 23.43 26.36 23.38 29.81 27.64 24.08 17.44 22.68 19.89
-    ## [145] 20.02 22.79 20.43 25.73
-
-``` r
-# how many observations fall at or below 11.8 mm
-arrow<-sum(data$dai <= 11.8)
-arrow
-```
-
-    ## [1] 0
 
 ## Linear metrics of Gary dart points by `site`
 
@@ -208,9 +311,9 @@ summary(data.pca)
 
     ## Importance of components:
     ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7517 0.9361 0.7493 0.59569 0.37254
-    ## Proportion of Variance 0.6137 0.1753 0.1123 0.07097 0.02776
-    ## Cumulative Proportion  0.6137 0.7890 0.9013 0.97224 1.00000
+    ## Standard deviation     1.7169 0.9249 0.7982 0.62917 0.40486
+    ## Proportion of Variance 0.5896 0.1711 0.1274 0.07917 0.03278
+    ## Cumulative Proportion  0.5896 0.7606 0.8881 0.96722 1.00000
 
 ``` r
 sitepca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = site) +
@@ -238,10 +341,10 @@ anova(siteml)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df    SS      MS     Rsq      F      Z Pr(>F)    
-    ## site        2  3982 1991.01 0.19503 17.566 2.6575  1e-04 ***
-    ## Residuals 145 16435  113.35 0.80497                         
-    ## Total     147 20417                                         
+    ##            Df      SS     MS     Rsq      F      Z Pr(>F)   
+    ## site        2  1654.9 827.46 0.05936 6.5946 1.9163 0.0016 **
+    ## Residuals 209 26224.4 125.48 0.94064                        
+    ## Total     211 27879.3                                       
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -262,10 +365,10 @@ anova(sitemw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
-    ## site        2 2371.9 1185.94 0.45153 59.687 3.6275  1e-04 ***
-    ## Residuals 145 2881.1   19.87 0.54847                         
-    ## Total     147 5253.0                                         
+    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
+    ## site        2 1499.0 749.49 0.18081 23.064 2.9037  1e-04 ***
+    ## Residuals 209 6791.6  32.50 0.81919                         
+    ## Total     211 8290.6                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -286,10 +389,10 @@ anova(sitemth)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
-    ## site        2 154.36 77.178 0.20035 18.165 2.7085  1e-04 ***
-    ## Residuals 145 616.07  4.249 0.79965                         
-    ## Total     147 770.42                                        
+    ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
+    ## site        2  153.07 76.533 0.15023 18.475 2.7012  1e-04 ***
+    ## Residuals 209  865.80  4.143 0.84977                         
+    ## Total     211 1018.87                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -310,10 +413,10 @@ anova(sitemstl)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
-    ## site        2  766.25 383.12 0.29273 30.006 3.0826  1e-04 ***
-    ## Residuals 145 1851.38  12.77 0.70727                         
-    ## Total     147 2617.63                                        
+    ##            Df     SS      MS     Rsq      F     Z Pr(>F)    
+    ## site        2  417.9 208.963 0.12494 14.921 2.528  1e-04 ***
+    ## Residuals 209 2927.1  14.005 0.87506                        
+    ## Total     211 3345.0                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -334,17 +437,19 @@ anova(sitemstw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS     MS    Rsq      F      Z Pr(>F)    
-    ## site        2 1250.3 625.13 0.4418 57.383 3.5488  1e-04 ***
-    ## Residuals 145 1579.7  10.89 0.5582                         
-    ## Total     147 2829.9                                       
+    ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
+    ## site        2  581.8 290.876 0.15969 19.859 2.7559  1e-04 ***
+    ## Residuals 209 3061.3  14.647 0.84031                         
+    ## Total     211 3643.0                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
     ## Call: lm.rrpp(f1 = maxstw ~ site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
-## Gary varieties proposed by Ford, Phillips, and Haag (1955)
+## Toward a replicable method of assigning Gary type-varieties
+
+### Gary varieties proposed by Ford, Phillips, and Haag (1955)
 
 The `tv0` argument used within this and the subsequent section
 articulates with three variants of the Gary type–including *Gary
@@ -389,9 +494,10 @@ annotate_figure(fwebbfig,
 Ford, Phillips, and Haag (1955) used a series of metrics (maximum
 length) to assign Gary varieties at the Jaketown site. The approach
 empoyed here enlists all of Ford and Webb’s (1956) reported metrics, and
-applies them to each of the points. Those points that do not match with
-one of the three criteria were assigned as unidentified ( *UID* ). Due
-to the degree of overlap in those ranges associated with the Gary
+applies them to each of the points. Those points that do not articulate
+with one of the three criteria were assigned as unidentified (UID), and
+should be considered as Gary with no type-variety assignment. Due to the
+degree of overlap in those ranges associated with the Gary
 type-varieties advanced by Ford, Phillips, and Haag (1956), it is
 expected that *Gary Stemmed* will fall out due to overlap in length with
 *Broad Gary Stemmed*, and overlap in width with *Typical Gary Stemmed*.
@@ -410,7 +516,7 @@ fphwcheck3 <- data$maxw >= 32 & data$maxw <= 48
 fphwcheck4 <- data$maxw >= 30 & data$maxw <= 36
 fphwcheck5 <- data$maxw >= 20 & data$maxw <= 30
 
-data$tv0 <- "GNV" # gary no variety
+data$tv0 <- "UID" # = Gary points (no variety)
 data$tv0 <- ifelse(fphlcheck1 & fphwcheck1, "GS", data$tv0)
 data$tv0 <- ifelse(fphlcheck2 & fphwcheck2, "TyGS", data$tv0)
 data$tv0 <- ifelse(fphlcheck3 & fphwcheck3, "BGS", data$tv0)
@@ -421,21 +527,28 @@ tv0<-data$tv0
 tv0
 ```
 
-    ##   [1] "GNV"  "GNV"  "GNV"  "GNV"  "BGS"  "BGS"  "BGS"  "BGS"  "ThGS" "GNV" 
+    ##   [1] "UID"  "UID"  "UID"  "UID"  "BGS"  "BGS"  "BGS"  "BGS"  "ThGS" "UID" 
     ##  [11] "BGS"  "ThGS" "TyGS" "ThGS" "TyGS" "ThGS" "SGS"  "ThGS" "ThGS" "ThGS"
-    ##  [21] "ThGS" "GNV"  "GNV"  "TyGS" "TyGS" "SGS"  "SGS"  "TyGS" "SGS"  "TyGS"
-    ##  [31] "GNV"  "TyGS" "TyGS" "SGS"  "GNV"  "SGS"  "GNV"  "GNV"  "GNV"  "SGS" 
-    ##  [41] "TyGS" "ThGS" "ThGS" "TyGS" "GNV"  "TyGS" "ThGS" "TyGS" "ThGS" "ThGS"
+    ##  [21] "ThGS" "UID"  "UID"  "TyGS" "TyGS" "SGS"  "SGS"  "TyGS" "SGS"  "TyGS"
+    ##  [31] "UID"  "TyGS" "TyGS" "SGS"  "UID"  "SGS"  "UID"  "UID"  "UID"  "SGS" 
+    ##  [41] "TyGS" "ThGS" "ThGS" "TyGS" "UID"  "TyGS" "ThGS" "TyGS" "ThGS" "ThGS"
     ##  [51] "ThGS" "ThGS" "ThGS" "ThGS" "TyGS" "TyGS" "TyGS" "ThGS" "TyGS" "TyGS"
     ##  [61] "TyGS" "TyGS" "ThGS" "TyGS" "TyGS" "ThGS" "TyGS" "TyGS" "TyGS" "ThGS"
     ##  [71] "TyGS" "TyGS" "TyGS" "BGS"  "TyGS" "TyGS" "TyGS" "TyGS" "TyGS" "TyGS"
-    ##  [81] "TyGS" "TyGS" "SGS"  "SGS"  "SGS"  "BGS"  "SGS"  "GNV"  "SGS"  "SGS" 
-    ##  [91] "SGS"  "SGS"  "SGS"  "SGS"  "SGS"  "SGS"  "GNV"  "SGS"  "GNV"  "GNV" 
-    ## [101] "GNV"  "BGS"  "SGS"  "GNV"  "SGS"  "SGS"  "SGS"  "GNV"  "SGS"  "SGS" 
-    ## [111] "SGS"  "SGS"  "SGS"  "GNV"  "TyGS" "TyGS" "TyGS" "SGS"  "SGS"  "TyGS"
-    ## [121] "SGS"  "TyGS" "GNV"  "SGS"  "SGS"  "TyGS" "TyGS" "SGS"  "SGS"  "GNV" 
-    ## [131] "SGS"  "GNV"  "GNV"  "GNV"  "SGS"  "SGS"  "SGS"  "SGS"  "TyGS" "BGS" 
-    ## [141] "TyGS" "GNV"  "GNV"  "GNV"  "GNV"  "GNV"  "GNV"  "BGS"
+    ##  [81] "TyGS" "TyGS" "SGS"  "SGS"  "SGS"  "BGS"  "SGS"  "UID"  "SGS"  "SGS" 
+    ##  [91] "SGS"  "SGS"  "SGS"  "SGS"  "SGS"  "SGS"  "UID"  "SGS"  "UID"  "UID" 
+    ## [101] "UID"  "BGS"  "SGS"  "UID"  "SGS"  "SGS"  "SGS"  "UID"  "SGS"  "SGS" 
+    ## [111] "SGS"  "SGS"  "SGS"  "UID"  "TyGS" "TyGS" "TyGS" "SGS"  "SGS"  "TyGS"
+    ## [121] "SGS"  "TyGS" "UID"  "SGS"  "SGS"  "TyGS" "TyGS" "SGS"  "SGS"  "UID" 
+    ## [131] "SGS"  "UID"  "UID"  "UID"  "SGS"  "SGS"  "SGS"  "SGS"  "TyGS" "BGS" 
+    ## [141] "TyGS" "UID"  "UID"  "UID"  "UID"  "UID"  "UID"  "BGS"  "UID"  "TyGS"
+    ## [151] "TyGS" "SGS"  "TyGS" "SGS"  "BGS"  "UID"  "BGS"  "UID"  "TyGS" "BGS" 
+    ## [161] "SGS"  "TyGS" "TyGS" "BGS"  "TyGS" "TyGS" "SGS"  "SGS"  "SGS"  "SGS" 
+    ## [171] "UID"  "UID"  "UID"  "TyGS" "UID"  "TyGS" "SGS"  "UID"  "UID"  "TyGS"
+    ## [181] "TyGS" "TyGS" "TyGS" "UID"  "SGS"  "TyGS" "SGS"  "UID"  "TyGS" "SGS" 
+    ## [191] "TyGS" "TyGS" "UID"  "SGS"  "UID"  "UID"  "UID"  "UID"  "UID"  "UID" 
+    ## [201] "TyGS" "SGS"  "SGS"  "SGS"  "UID"  "TyGS" "TyGS" "SGS"  "SGS"  "UID" 
+    ## [211] "UID"  "UID"
 
 ### Maximum and minimum values for all `tv0` variables
 
@@ -453,7 +566,7 @@ mmthgs<-subset(data,tv0=="ThGS",select=maxl:tv0)
 mmsgs<-subset(data,tv0=="SGS",select=maxl:tv0)
 ```
 
-##### Maximum/minimum for Typical Gary Stemmed
+#### Maximum/minimum for Typical Gary Stemmed
 
 ``` r
 # identify maximum/minimum metrics for Typical Gary Stemmed
@@ -462,7 +575,7 @@ mmsgs<-subset(data,tv0=="SGS",select=maxl:tv0)
 max(mmtygs$maxl)
 ```
 
-    ## [1] 73.05
+    ## [1] 78.63
 
 ``` r
 # min length (mm)
@@ -497,7 +610,7 @@ max(mmtygs$maxth)
 min(mmtygs$maxth)
 ```
 
-    ## [1] 7.06
+    ## [1] 6.6
 
 ``` r
 # max stem length (mm)
@@ -525,9 +638,9 @@ max(mmtygs$maxstw)
 min(mmtygs$maxstw)
 ```
 
-    ## [1] 14.06
+    ## [1] 13.79
 
-##### Maximum/minimum for Broad Gary Stemmed
+#### Maximum/minimum for Broad Gary Stemmed
 
 ``` r
 # identify maximum/minimum metrics for Broad Gary Stemmed
@@ -543,7 +656,7 @@ max(mmbgs$maxl)
 min(mmbgs$maxl)
 ```
 
-    ## [1] 45.66
+    ## [1] 45.26
 
 ``` r
 # max width (mm)
@@ -571,7 +684,7 @@ max(mmbgs$maxth)
 min(mmbgs$maxth)
 ```
 
-    ## [1] 7.41
+    ## [1] 6.02
 
 ``` r
 # max stem length (mm)
@@ -585,7 +698,7 @@ max(mmbgs$maxstl)
 min(mmbgs$maxstl)
 ```
 
-    ## [1] 11.89
+    ## [1] 10.6
 
 ``` r
 # max stem width (mm)
@@ -599,9 +712,9 @@ max(mmbgs$maxstw)
 min(mmbgs$maxstw)
 ```
 
-    ## [1] 18.32
+    ## [1] 16.87
 
-##### Maximum/minimum for Thin Gary Stemmed
+#### Maximum/minimum for Thin Gary Stemmed
 
 ``` r
 # identify maximum/minimum metrics for Thin Gary Stemmed
@@ -675,7 +788,7 @@ min(mmthgs$maxstw)
 
     ## [1] 16.66
 
-##### Maximum/minimum for Small Gary Stemmed
+#### Maximum/minimum for Small Gary Stemmed
 
 ``` r
 # identify maximum/minimum metrics for Small Gary Stemmed
@@ -691,14 +804,14 @@ max(mmsgs$maxl)
 min(mmsgs$maxl)
 ```
 
-    ## [1] 36.82
+    ## [1] 35.01
 
 ``` r
 # max width (mm)
 max(mmsgs$maxw)
 ```
 
-    ## [1] 29.54
+    ## [1] 29.67
 
 ``` r
 # min width (mm)
@@ -719,7 +832,7 @@ max(mmsgs$maxth)
 min(mmsgs$maxth)
 ```
 
-    ## [1] 6.18
+    ## [1] 5.95
 
 ``` r
 # max stem length (mm)
@@ -747,7 +860,7 @@ max(mmsgs$maxstw)
 min(mmsgs$maxstw)
 ```
 
-    ## [1] 12.4
+    ## [1] 12.09
 
 ### Boxplots for `site` by `tv0` for Gary dart points from Cooper
 
@@ -930,9 +1043,9 @@ summary(data.pca)
 
     ## Importance of components:
     ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7517 0.9361 0.7493 0.59569 0.37254
-    ## Proportion of Variance 0.6137 0.1753 0.1123 0.07097 0.02776
-    ## Cumulative Proportion  0.6137 0.7890 0.9013 0.97224 1.00000
+    ## Standard deviation     1.7169 0.9249 0.7982 0.62917 0.40486
+    ## Proportion of Variance 0.5896 0.1711 0.1274 0.07917 0.03278
+    ## Cumulative Proportion  0.5896 0.7606 0.8881 0.96722 1.00000
 
 ``` r
 tv0pca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = tv0) +
@@ -960,10 +1073,10 @@ anova(t0ml)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS      MS   Rsq     F      Z Pr(>F)    
-    ## tv0         4  6676.4 1669.09 0.327 17.37 3.8827  1e-04 ***
-    ## Residuals 143 13740.8   96.09 0.673                        
-    ## Total     147 20417.1                                      
+    ##            Df      SS      MS     Rsq      F      Z Pr(>F)    
+    ## tv0         4  8985.8 2246.45 0.32231 24.612 4.2993  1e-04 ***
+    ## Residuals 207 18893.5   91.27 0.67769                         
+    ## Total     211 27879.3                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -985,9 +1098,9 @@ anova(t0mw)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
-    ## tv0         4 2433.8 608.44 0.46331 30.862 4.5215  1e-04 ***
-    ## Residuals 143 2819.2  19.71 0.53669                         
-    ## Total     147 5253.0                                        
+    ## tv0         4 2632.2 658.06 0.31749 24.074 4.2661  1e-04 ***
+    ## Residuals 207 5658.4  27.34 0.68251                         
+    ## Total     211 8290.6                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1008,10 +1121,10 @@ anova(t0mth)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
-    ## tv0         4 145.40 36.350 0.18873 8.3166 2.9581  1e-04 ***
-    ## Residuals 143 625.02  4.371 0.81127                         
-    ## Total     147 770.42                                        
+    ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
+    ## tv0         4  145.89 36.471 0.14318 8.6481 3.0274  1e-04 ***
+    ## Residuals 207  872.98  4.217 0.85682                         
+    ## Total     211 1018.87                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1032,10 +1145,10 @@ anova(t0mstl)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS     MS     Rsq      F      Z Pr(>F)   
-    ## tv0         4  306.18 76.545 0.11697 4.7355 2.2734 0.0017 **
-    ## Residuals 143 2311.45 16.164 0.88303                        
-    ## Total     147 2617.63                                       
+    ##            Df     SS     MS     Rsq      F      Z Pr(>F)   
+    ## tv0         4  252.8 63.196 0.07557 4.2305 2.0857 0.0029 **
+    ## Residuals 207 3092.2 14.938 0.92443                        
+    ## Total     211 3345.0                                       
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1056,10 +1169,10 @@ anova(t0mstw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS      MS     Rsq      F      Z Pr(>F)    
-    ## tv0         4  666.88 166.719 0.23565 11.022 3.2489  1e-04 ***
-    ## Residuals 143 2163.04  15.126 0.76435                         
-    ## Total     147 2829.92                                         
+    ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
+    ## tv0         4  696.1 174.025 0.19108 12.224 3.4191  1e-04 ***
+    ## Residuals 207 2946.9  14.236 0.80892                         
+    ## Total     211 3643.0                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1144,7 +1257,7 @@ wcheck3 <- data$maxw >= 19 & data$maxw <= 32
 
 tcheck <- data$maxth >= 5 & data$maxth <= 10
 
-data$tv1 <- "GNV" # gary no variety
+data$tv1 <- "UID" # = Gary points (no variety)
 data$tv1 <- ifelse(lcheck1 & wcheck1, "L", data$tv1)
 data$tv1 <- ifelse(lcheck2 & wcheck2, "M/T", data$tv1)
 data$tv1 <- ifelse(lcheck3 & wcheck3 & tcheck, "S", data$tv1)
@@ -1155,17 +1268,22 @@ tv1
 
     ##   [1] "L"   "L"   "L"   "L"   "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
     ##  [13] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
-    ##  [25] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "GNV" "M/T" "M/T" "M/T" "M/T" "S"  
-    ##  [37] "GNV" "GNV" "GNV" "S"   "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
+    ##  [25] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "UID" "M/T" "M/T" "M/T" "M/T" "S"  
+    ##  [37] "UID" "UID" "UID" "S"   "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
     ##  [49] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
     ##  [61] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
     ##  [73] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T"
     ##  [85] "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "S"   "S"   "S"   "S"   "S"  
-    ##  [97] "GNV" "S"   "GNV" "S"   "S"   "GNV" "S"   "GNV" "GNV" "GNV" "GNV" "GNV"
-    ## [109] "S"   "S"   "S"   "S"   "S"   "GNV" "M/T" "M/T" "M/T" "M/T" "S"   "M/T"
-    ## [121] "S"   "M/T" "GNV" "S"   "S"   "M/T" "M/T" "S"   "GNV" "GNV" "M/T" "M/T"
-    ## [133] "GNV" "GNV" "S"   "S"   "S"   "M/T" "M/T" "M/T" "M/T" "GNV" "GNV" "S"  
-    ## [145] "M/T" "M/T" "S"   "M/T"
+    ##  [97] "UID" "S"   "UID" "S"   "S"   "UID" "S"   "UID" "UID" "UID" "UID" "UID"
+    ## [109] "S"   "S"   "S"   "S"   "S"   "UID" "M/T" "M/T" "M/T" "M/T" "S"   "M/T"
+    ## [121] "S"   "M/T" "UID" "S"   "S"   "M/T" "M/T" "S"   "UID" "UID" "M/T" "M/T"
+    ## [133] "UID" "UID" "S"   "S"   "S"   "M/T" "M/T" "M/T" "M/T" "UID" "UID" "S"  
+    ## [145] "M/T" "M/T" "S"   "M/T" "M/T" "M/T" "M/T" "S"   "M/T" "M/T" "UID" "L"  
+    ## [157] "M/T" "M/T" "M/T" "M/T" "S"   "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "S"  
+    ## [169] "S"   "M/T" "UID" "M/T" "M/T" "M/T" "M/T" "M/T" "M/T" "S"   "M/T" "M/T"
+    ## [181] "M/T" "M/T" "M/T" "UID" "M/T" "M/T" "S"   "UID" "M/T" "S"   "M/T" "M/T"
+    ## [193] "S"   "S"   "UID" "UID" "M/T" "UID" "UID" "UID" "M/T" "S"   "S"   "S"  
+    ## [205] "S"   "M/T" "M/T" "M/T" "M/T" "UID" "UID" "M/T"
 
 ### Maximum and minimum values for all `tv1` variables
 
@@ -1183,7 +1301,7 @@ mmmt<-subset(data,tv1=="M/T",select=maxl:tv1)
 mms<-subset(data,tv1=="S",select=maxl:tv1)
 ```
 
-##### Maximum/minimum for Gary Large
+#### Maximum/minimum for Gary Large
 
 ``` r
 # identify maximum/minimum metrics for Gary Large
@@ -1241,7 +1359,7 @@ max(mml$maxstl)
 min(mml$maxstl)
 ```
 
-    ## [1] 22.54
+    ## [1] 15.71
 
 ``` r
 # max stem width (mm)
@@ -1257,7 +1375,7 @@ min(mml$maxstw)
 
     ## [1] 18.29
 
-##### Maximum/minimum for Gary Med/Typical
+#### Maximum/minimum for Gary Med/Typical
 
 ``` r
 # identify maximum/minimum metrics for Gary Med/Typical
@@ -1273,7 +1391,7 @@ max(mmmt$maxl)
 min(mmmt$maxl)
 ```
 
-    ## [1] 46.08
+    ## [1] 46.01
 
 ``` r
 # max width (mm)
@@ -1287,14 +1405,14 @@ max(mmmt$maxw)
 min(mmmt$maxw)
 ```
 
-    ## [1] 20.24
+    ## [1] 20.02
 
 ``` r
 # max thickness (mm)
 max(mmmt$maxth)
 ```
 
-    ## [1] 16.76
+    ## [1] 17.96
 
 ``` r
 # min thickness (mm)
@@ -1329,9 +1447,9 @@ max(mmmt$maxstw)
 min(mmmt$maxstw)
 ```
 
-    ## [1] 12.42
+    ## [1] 12.09
 
-##### Maximum/minimum for Gary Small
+#### Maximum/minimum for Gary Small
 
 ``` r
 # identify maximum/minimum metrics for Gary Small
@@ -1347,14 +1465,14 @@ max(mms$maxl)
 min(mms$maxl)
 ```
 
-    ## [1] 36.82
+    ## [1] 34.76
 
 ``` r
 # max width (mm)
 max(mms$maxw)
 ```
 
-    ## [1] 27.68
+    ## [1] 29.67
 
 ``` r
 # min width (mm)
@@ -1375,7 +1493,7 @@ max(mms$maxth)
 min(mms$maxth)
 ```
 
-    ## [1] 5.97
+    ## [1] 5.95
 
 ``` r
 # max stem length (mm)
@@ -1396,7 +1514,7 @@ min(mms$maxstl)
 max(mms$maxstw)
 ```
 
-    ## [1] 19.72
+    ## [1] 22.23
 
 ``` r
 # min stem width (mm)
@@ -1586,9 +1704,9 @@ summary(data.pca)
 
     ## Importance of components:
     ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7517 0.9361 0.7493 0.59569 0.37254
-    ## Proportion of Variance 0.6137 0.1753 0.1123 0.07097 0.02776
-    ## Cumulative Proportion  0.6137 0.7890 0.9013 0.97224 1.00000
+    ## Standard deviation     1.7169 0.9249 0.7982 0.62917 0.40486
+    ## Proportion of Variance 0.5896 0.1711 0.1274 0.07917 0.03278
+    ## Cumulative Proportion  0.5896 0.7606 0.8881 0.96722 1.00000
 
 ``` r
 t1pca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = tv1) +
@@ -1616,10 +1734,10 @@ anova(t1ml)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS     MS     Rsq      F    Z Pr(>F)    
-    ## tv1         3 11964.9 3988.3 0.58602 67.949 4.71  1e-04 ***
-    ## Residuals 144  8452.2   58.7 0.41398                       
-    ## Total     147 20417.1                                      
+    ##            Df    SS     MS    Rsq      F      Z Pr(>F)    
+    ## tv1         3 15629 5209.7 0.5606 88.457 4.9472  1e-04 ***
+    ## Residuals 208 12250   58.9 0.4394                         
+    ## Total     211 27879                                       
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1640,10 +1758,10 @@ anova(t1mw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
-    ## tv1         3 1647.1 549.04 0.31356 21.926 3.5319  1e-04 ***
-    ## Residuals 144 3605.8  25.04 0.68644                         
-    ## Total     147 5253.0                                        
+    ##            Df     SS     MS     Rsq     F      Z Pr(>F)    
+    ## tv1         3 1362.0 454.01 0.16429 13.63 3.0333  1e-04 ***
+    ## Residuals 208 6928.6  33.31 0.83571                        
+    ## Total     211 8290.6                                       
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1664,10 +1782,10 @@ anova(t1mth)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
-    ## tv1         3 185.13 61.709 0.24029 15.182 3.1738  1e-04 ***
-    ## Residuals 144 585.30  4.065 0.75971                         
-    ## Total     147 770.42                                        
+    ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
+    ## tv1         3  198.99 66.331 0.19531 16.828 3.3008  1e-04 ***
+    ## Residuals 208  819.87  3.942 0.80469                         
+    ## Total     211 1018.87                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1688,10 +1806,10 @@ anova(t1mstl)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS      MS     Rsq      F      Z Pr(>F)    
-    ## tv1         3  613.92 204.639 0.23453 14.707 3.1607  1e-04 ***
-    ## Residuals 144 2003.71  13.915 0.76547                         
-    ## Total     147 2617.63                                         
+    ##            Df   SS      MS     Rsq     F      Z Pr(>F)    
+    ## tv1         3  489 162.987 0.14618 11.87 2.9386  1e-04 ***
+    ## Residuals 208 2856  13.731 0.85382                        
+    ## Total     211 3345                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1712,10 +1830,10 @@ anova(t1mstw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS      MS     Rsq      F      Z Pr(>F)    
-    ## tv1         3  833.93 277.975 0.29468 20.054 3.4816  1e-04 ***
-    ## Residuals 144 1995.99  13.861 0.70532                         
-    ## Total     147 2829.92                                         
+    ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
+    ## tv1         3  697.5 232.514 0.19147 16.419 3.2769  1e-04 ***
+    ## Residuals 208 2945.5  14.161 0.80853                         
+    ## Total     211 3643.0                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -1826,7 +1944,7 @@ sswcheck5 <- data$maxstw >= 12 & data$maxstw < 24
 sswcheck6 <- data$maxstw >= 9 & data$maxstw <= 20
 sswcheck7 <- data$maxstw >= 11 & data$maxstw <= 21
 
-data$tv2 <- "GNV" # gary no variety
+data$tv2 <- "UID" # = Gary points (no variety)
 data$tv2 <- ifelse(slcheck1 & swcheck1 & stcheck1 & sslcheck1 & sswcheck1, "G", data$tv2)
 data$tv2 <- ifelse(slcheck2 & swcheck2 & stcheck2 & sslcheck2 & sswcheck2, "Ml", data$tv2)
 data$tv2 <- ifelse(slcheck3 & swcheck3 & stcheck3 & sslcheck3 & sswcheck3, "LF", data$tv2)
@@ -1840,19 +1958,24 @@ tv2<-data$tv2
 tv2
 ```
 
-    ##   [1] "GNV" "GNV" "GNV" "GNV" "LF"  "CmB" "LF"  "CmB" "CmB" "LF"  "LF"  "CmB"
-    ##  [13] "Bd"  "Bd"  "Bd"  "CmB" "CmB" "CmB" "CmB" "LF"  "LF"  "CmB" "GNV" "LF" 
-    ##  [25] "CmB" "CmB" "Cm"  "CmB" "CmA" "CmA" "CmA" "CmA" "CmA" "GNV" "GNV" "CmA"
-    ##  [37] "GNV" "CmA" "CmA" "GNV" "CmB" "GNV" "LF"  "Cm"  "LF"  "GNV" "CmB" "Ml" 
-    ##  [49] "CmB" "CmB" "LF"  "CmB" "CmB" "GNV" "CmB" "LF"  "GNV" "CmB" "Ml"  "CmB"
-    ##  [61] "Bd"  "GNV" "Bd"  "Cm"  "CmA" "CmB" "LF"  "CmB" "CmB" "CmB" "Bd"  "CmA"
-    ##  [73] "LF"  "Cm"  "CmA" "Bd"  "CmB" "CmB" "CmA" "CmB" "GNV" "CmA" "CmA" "Bd" 
-    ##  [85] "CmB" "GNV" "CmA" "CmB" "CmA" "LF"  "CmA" "Cm"  "CmB" "Cm"  "Cm"  "Cm" 
-    ##  [97] "GNV" "CmA" "CmA" "CmA" "CmA" "CmB" "CmB" "CmB" "GNV" "CmA" "CmA" "Cm" 
-    ## [109] "CmA" "CmB" "CmA" "CmA" "Cm"  "GNV" "GNV" "CmA" "CmA" "CmA" "CmA" "CmA"
-    ## [121] "CmA" "GNV" "CmA" "CmA" "CmA" "GNV" "CmA" "CmA" "GNV" "GNV" "CmA" "CmA"
-    ## [133] "CmA" "GNV" "GNV" "CmA" "Cm"  "CmA" "GNV" "LF"  "CmB" "Cm"  "CmA" "CmA"
-    ## [145] "CmA" "CmA" "Cm"  "CmB"
+    ##   [1] "UID" "UID" "UID" "UID" "LF"  "CmB" "LF"  "CmB" "CmB" "LF"  "LF"  "CmB"
+    ##  [13] "Bd"  "Bd"  "Bd"  "CmB" "CmB" "CmB" "CmB" "LF"  "LF"  "CmB" "UID" "LF" 
+    ##  [25] "CmB" "CmB" "Cm"  "CmB" "CmA" "CmA" "CmA" "CmA" "CmA" "UID" "UID" "CmA"
+    ##  [37] "UID" "CmA" "CmA" "UID" "CmB" "UID" "LF"  "Cm"  "LF"  "UID" "CmB" "Ml" 
+    ##  [49] "CmB" "CmB" "LF"  "CmB" "CmB" "UID" "CmB" "LF"  "UID" "CmB" "Ml"  "CmB"
+    ##  [61] "Bd"  "UID" "Bd"  "Cm"  "CmA" "CmB" "LF"  "CmB" "CmB" "CmB" "Bd"  "CmA"
+    ##  [73] "LF"  "Cm"  "CmA" "Bd"  "CmB" "CmB" "CmA" "CmB" "UID" "CmA" "CmA" "Bd" 
+    ##  [85] "CmB" "UID" "CmA" "CmB" "CmA" "LF"  "CmA" "Cm"  "CmB" "Cm"  "Cm"  "Cm" 
+    ##  [97] "UID" "CmA" "CmA" "CmA" "CmA" "CmB" "CmB" "CmB" "UID" "CmA" "CmA" "Cm" 
+    ## [109] "CmA" "CmB" "CmA" "CmA" "Cm"  "UID" "UID" "CmA" "CmA" "CmA" "CmA" "CmA"
+    ## [121] "CmA" "UID" "CmA" "CmA" "CmA" "UID" "CmA" "CmA" "UID" "UID" "CmA" "CmA"
+    ## [133] "CmA" "UID" "UID" "CmA" "Cm"  "CmA" "UID" "LF"  "CmB" "Cm"  "CmA" "CmA"
+    ## [145] "CmA" "CmA" "Cm"  "CmB" "UID" "CmA" "CmB" "CmB" "CmB" "CmB" "CmB" "UID"
+    ## [157] "CmB" "CmA" "CmB" "Cm"  "Cm"  "CmA" "CmA" "CmB" "CmB" "CmA" "CmA" "CmB"
+    ## [169] "CmA" "CmA" "Cm"  "CmA" "CmA" "CmA" "CmB" "CmA" "CmA" "CmA" "CmA" "CmB"
+    ## [181] "G"   "LF"  "CmA" "CmA" "CmA" "CmB" "Bd"  "LF"  "Cm"  "CmA" "CmA" "Cm" 
+    ## [193] "Cm"  "Cm"  "CmA" "Cm"  "CmA" "Cm"  "UID" "CmA" "CmB" "UID" "Cm"  "CmA"
+    ## [205] "CmA" "UID" "CmB" "CmA" "CmA" "Cm"  "UID" "CmA"
 
 ### Maximum and minimum values for all `tv2` variables
 
@@ -1886,92 +2009,72 @@ mmcmb<-subset(data,tv2=="CmB",select=maxl:tv2)
 max(mmg$maxl)
 ```
 
-    ## Warning in max(mmg$maxl): no non-missing arguments to max; returning -Inf
-
-    ## [1] -Inf
+    ## [1] 54.69
 
 ``` r
 # min length (mm)
 min(mmg$maxl)
 ```
 
-    ## Warning in min(mmg$maxl): no non-missing arguments to min; returning Inf
-
-    ## [1] Inf
+    ## [1] 54.69
 
 ``` r
 # max width (mm)
 max(mmg$maxw)
 ```
 
-    ## Warning in max(mmg$maxw): no non-missing arguments to max; returning -Inf
-
-    ## [1] -Inf
+    ## [1] 26.16
 
 ``` r
 # min width (mm)
 min(mmg$maxw)
 ```
 
-    ## Warning in min(mmg$maxw): no non-missing arguments to min; returning Inf
-
-    ## [1] Inf
+    ## [1] 26.16
 
 ``` r
 # max thickness (mm)
 max(mmg$maxth)
 ```
 
-    ## Warning in max(mmg$maxth): no non-missing arguments to max; returning -Inf
-
-    ## [1] -Inf
+    ## [1] 8.34
 
 ``` r
 # min thickness (mm)
 min(mmg$maxth)
 ```
 
-    ## Warning in min(mmg$maxth): no non-missing arguments to min; returning Inf
-
-    ## [1] Inf
+    ## [1] 8.34
 
 ``` r
 # max stem length (mm)
 max(mmg$maxstl)
 ```
 
-    ## Warning in max(mmg$maxstl): no non-missing arguments to max; returning -Inf
-
-    ## [1] -Inf
+    ## [1] 24.14
 
 ``` r
 # min stem length (mm)
 min(mmg$maxstl)
 ```
 
-    ## Warning in min(mmg$maxstl): no non-missing arguments to min; returning Inf
-
-    ## [1] Inf
+    ## [1] 24.14
 
 ``` r
 # max stem width (mm)
 max(mmg$maxstw)
 ```
 
-    ## Warning in max(mmg$maxstw): no non-missing arguments to max; returning -Inf
-
-    ## [1] -Inf
+    ## [1] 20.9
 
 ``` r
 # min stem width (mm)
 min(mmg$maxstw)
 ```
 
-    ## Warning in min(mmg$maxstw): no non-missing arguments to min; returning Inf
+    ## [1] 20.9
 
-    ## [1] Inf
-
-##### Maximum/minimum for *variety Malvern*
+#### Maximum/minimum for *variety Malvern*
 
 ``` r
 # identify maximum/minimum metrics for variety Malvern
@@ -2045,7 +2148,7 @@ min(mmml$maxstw)
 
     ## [1] 18.42
 
-##### Maximum/minimum for *variety Le Flore*
+#### Maximum/minimum for *variety Le Flore*
 
 ``` r
 # identify maximum/minimum metrics for variety Le Flore
@@ -2068,7 +2171,7 @@ min(mmlf$maxl)
 max(mmlf$maxw)
 ```
 
-    ## [1] 44.22
+    ## [1] 48.98
 
 ``` r
 # min width (mm)
@@ -2119,7 +2222,7 @@ min(mmlf$maxstw)
 
     ## [1] 16.8
 
-##### Maximum/minimum for *variety Bodcaw*
+#### Maximum/minimum for *variety Bodcaw*
 
 ``` r
 # identify maximum/minimum metrics for variety Bodcaw
@@ -2135,7 +2238,7 @@ max(mmbd$maxl)
 min(mmbd$maxl)
 ```
 
-    ## [1] 48.08
+    ## [1] 40.67
 
 ``` r
 # max width (mm)
@@ -2149,7 +2252,7 @@ max(mmbd$maxw)
 min(mmbd$maxw)
 ```
 
-    ## [1] 25.6
+    ## [1] 24.58
 
 ``` r
 # max thickness (mm)
@@ -2193,7 +2296,7 @@ min(mmbd$maxstw)
 
     ## [1] 20.57
 
-##### Maximum/minimum for *variety Manice*
+#### Maximum/minimum for *variety Manice*
 
 ``` r
 # identify maximum/minimum metrics for variety Manice
@@ -2287,7 +2390,7 @@ min(mmmn$maxstw)
 
     ## [1] Inf
 
-##### Maximum/minimum for *variety Camden*
+#### Maximum/minimum for *variety Camden*
 
 ``` r
 # identify maximum/minimum metrics for variety Camden
@@ -2303,14 +2406,14 @@ max(mmcm$maxl)
 min(mmcm$maxl)
 ```
 
-    ## [1] 37.06
+    ## [1] 34.28
 
 ``` r
 # max width (mm)
 max(mmcm$maxw)
 ```
 
-    ## [1] 32.47
+    ## [1] 33.36
 
 ``` r
 # min width (mm)
@@ -2331,14 +2434,14 @@ max(mmcm$maxth)
 min(mmcm$maxth)
 ```
 
-    ## [1] 6.2
+    ## [1] 6.02
 
 ``` r
 # max stem length (mm)
 max(mmcm$maxstl)
 ```
 
-    ## [1] 19.39
+    ## [1] 21.09
 
 ``` r
 # min stem length (mm)
@@ -2352,7 +2455,7 @@ min(mmcm$maxstl)
 max(mmcm$maxstw)
 ```
 
-    ## [1] 19.72
+    ## [1] 19.83
 
 ``` r
 # min stem width (mm)
@@ -2361,7 +2464,7 @@ min(mmcm$maxstw)
 
     ## [1] 10.94
 
-##### Maximum/minimum for *variety Camden subgroup A*
+#### Maximum/minimum for *variety Camden subgroup A*
 
 ``` r
 # identify maximum/minimum metrics for variety Camden subgroup A
@@ -2370,7 +2473,7 @@ min(mmcm$maxstw)
 max(mmcma$maxl)
 ```
 
-    ## [1] 65.44
+    ## [1] 66.79
 
 ``` r
 # min length (mm)
@@ -2398,7 +2501,7 @@ min(mmcma$maxw)
 max(mmcma$maxth)
 ```
 
-    ## [1] 11.84
+    ## [1] 12.15
 
 ``` r
 # min thickness (mm)
@@ -2435,7 +2538,7 @@ min(mmcma$maxstw)
 
     ## [1] 11.21
 
-##### Maximum/minimum for *variety Camden subgroup B*
+#### Maximum/minimum for *variety Camden subgroup B*
 
 ``` r
 # identify maximum/minimum metrics for variety Camden subgroup B
@@ -2444,14 +2547,14 @@ min(mmcma$maxstw)
 max(mmcmb$maxl)
 ```
 
-    ## [1] 73.05
+    ## [1] 78.63
 
 ``` r
 # min length (mm)
 min(mmcmb$maxl)
 ```
 
-    ## [1] 41.08
+    ## [1] 35.42
 
 ``` r
 # max width (mm)
@@ -2493,7 +2596,7 @@ max(mmcmb$maxstl)
 min(mmcmb$maxstl)
 ```
 
-    ## [1] 11.04
+    ## [1] 9.23
 
 ``` r
 # max stem width (mm)
@@ -2690,9 +2793,9 @@ summary(data.pca)
 
     ## Importance of components:
     ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7517 0.9361 0.7493 0.59569 0.37254
-    ## Proportion of Variance 0.6137 0.1753 0.1123 0.07097 0.02776
-    ## Cumulative Proportion  0.6137 0.7890 0.9013 0.97224 1.00000
+    ## Standard deviation     1.7169 0.9249 0.7982 0.62917 0.40486
+    ## Proportion of Variance 0.5896 0.1711 0.1274 0.07917 0.03278
+    ## Cumulative Proportion  0.5896 0.7606 0.8881 0.96722 1.00000
 
 ``` r
 tv2pca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = tv2) +
@@ -2720,10 +2823,10 @@ anova(t2ml)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
-    ## tv2         6  4832.3 805.39 0.23668 7.2866 3.2997  2e-04 ***
-    ## Residuals 141 15584.8 110.53 0.76332                         
-    ## Total     147 20417.1                                        
+    ##            Df      SS     MS     Rsq     F      Z Pr(>F)    
+    ## tv2         7  6557.1 936.72 0.23519 8.962 3.8893  1e-04 ***
+    ## Residuals 204 21322.3 104.52 0.76481                        
+    ## Total     211 27879.3                                       
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -2744,10 +2847,10 @@ anova(t2mw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
-    ## tv2         6 2630.6 438.44 0.50079 23.574 5.3037  1e-04 ***
-    ## Residuals 141 2622.3  18.60 0.49921                         
-    ## Total     147 5253.0                                        
+    ##            Df     SS     MS     Rsq     F      Z Pr(>F)    
+    ## tv2         7 3506.5 500.93 0.42295 21.36 5.3228  1e-04 ***
+    ## Residuals 204 4784.1  23.45 0.57705                        
+    ## Total     211 8290.6                                       
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -2768,10 +2871,10 @@ anova(t2mth)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
-    ## tv2         6 180.75 30.126 0.23462 7.2036 3.3502  1e-04 ***
-    ## Residuals 141 589.67  4.182 0.76538                         
-    ## Total     147 770.42                                        
+    ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
+    ## tv2         7  253.72 36.246 0.24902 9.6638 4.0704  1e-04 ***
+    ## Residuals 204  765.14  3.751 0.75098                         
+    ## Total     211 1018.87                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -2792,10 +2895,10 @@ anova(t2mstl)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df      SS      MS    Rsq      F      Z Pr(>F)    
-    ## tv2         6  678.48 113.080 0.2592 8.2223 3.5564  1e-04 ***
-    ## Residuals 141 1939.15  13.753 0.7408                         
-    ## Total     147 2617.63                                        
+    ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
+    ## tv2         7  891.8 127.403 0.26662 10.595 4.2639  1e-04 ***
+    ## Residuals 204 2453.2  12.025 0.73338                         
+    ## Total     211 3345.0                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -2816,10 +2919,10 @@ anova(t2mstw)
     ## Sums of Squares and Cross-products: Type I 
     ## Effect sizes (Z) based on F distributions
     ## 
-    ##            Df     SS      MS     Rsq      F     Z Pr(>F)    
-    ## tv2         6 1060.2 176.705 0.37465 14.079 4.379  1e-04 ***
-    ## Residuals 141 1769.7  12.551 0.62535                        
-    ## Total     147 2829.9                                        
+    ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
+    ## tv2         7 1401.2 200.173 0.38463 18.215 5.0995  1e-04 ***
+    ## Residuals 204 2241.8  10.989 0.61537                         
+    ## Total     211 3643.0                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
@@ -2835,15 +2938,39 @@ were developed and funded by a Preservation Technology and Training
 grant (P14AP00138) to RZS from the National Center for Preservation
 Technology and Training.
 
+I extend my gratitude to the Poverty Point World Heritage Site, and The
+University Museum in the J. William Fulbright College of Arts and
+Sciences at the University of Arkansas. Personal thanks go to Diana
+Greenlee and Mary C. Suter for their help and guidance regarding
+permissions and access to the collections. Additional thanks to Jared S.
+Pebworth and Ernest Gann for their help with aggregating the Gary dart
+points, and with locating and sorting through the various associated
+site records for the collections from the Cooper and Means sites.
+
 ## References cited
 
 <div id="refs" class="references">
+
+<div id="ref-RN20871">
+
+Aynesworth, K. H. 1936. “Flint Arrowhead Wounds of Bones as Shown in
+Skeletons in Central Texas.” *Central Texas Archeological Society* 2:
+74–79.
+
+</div>
 
 <div id="ref-RN20896">
 
 Baerreis, D. A. 1951. *The Preceramic Horizons of Northeastern
 Oklahoma*. Anthropological Papers, Museum of Anthropology, No. 6. Ann
 Arbor.
+
+</div>
+
+<div id="ref-RN20872B">
+
+Bryan, Frank. 1936. “Prelminary Report on the Archeology of Western
+Limestone County.” *Central Texas Archeological Society* 2: 81–95.
 
 </div>
 
@@ -2855,12 +2982,30 @@ Morphology of the Gary Dart Point.” *Lithic Technology* 32 (1): 7–16.
 
 </div>
 
+<div id="ref-RN20913">
+
+Ensor, H. Blaine, and David L. Carlson. 1991. “Alabonson Road: Early
+Ceramic Period Adaptation to the Inland Coastal Prairie Zone, Harris
+County, Southeast Texas.” Reports of Investigations 8. Archeological
+Research Laboratory, Texas A\&M University, College Station.
+
+</div>
+
 <div id="ref-RN20880">
 
 Erlandson, Jon M., Jack L. Watts, and Nicholas P. Jew. 2014. “Darts,
 Arrows, and Archaeologists: Distinguishing Dart and Arrow Points in the
 Archaeological Record.” *American Antiquity* 79 (1): 162–69.
 <https://doi.org/10.7183/0002-7316.79.1.162>.
+
+</div>
+
+<div id="ref-RN1836">
+
+Ford, James A. 1951. *Greenhouse: A Troyville-Coles Creek Period Site in
+Avoyelles Parish, Louisiana*. Vol. 44: Part 1. Anthropological Papers of
+the American Museum of Natural History. New York: American Museum of
+Natural History. <http://digitallibrary.amnh.org/handle/2246/225>.
 
 </div>
 
@@ -2874,12 +3019,32 @@ York: American Museum of Natural History.
 
 </div>
 
+<div id="ref-RN20876">
+
+Ford, James A., George I. Quimby Jr., and Charles E. Snow. 1945. *The
+Tchefuncte Culture, an Early Occupation of the Lower Mississippi
+Valley*. Memoirs of the Society for American Archaeology. Menasha,
+Wisconsin: Society for American Archaeology; Louisiana State University
+Press.
+
+</div>
+
 <div id="ref-RN20898">
 
 Ford, James A., and Clarence H. Webb. 1956. *Poverty Point, a Late
 Archaic Site in Louisiana*. Vol. 46. Anthropological Papers of the
 American Museum of Natural History. New York: American Museum of Natural
 History. <http://digitallibrary.amnh.org/handle/2246/108>.
+
+</div>
+
+<div id="ref-RN20875">
+
+Ford, James A., and Gordon R. Willey. 1940. “Crooks Site, a Marksville
+Period Burial Mound in La Salle Parish, Louisiana.” Anthropological
+Study, Department of Conservation, Louisiana Geological Survey. New
+Orleans: Anthropological Study No. 3, Department of Conservation,
+Louisiana Geological Survey.
 
 </div>
 
@@ -2899,11 +3064,75 @@ Krieger, Alex D. 1944. “The Typological Concept.” *American Antiquity* 9
 
 </div>
 
+<div id="ref-RN20895">
+
+Lewis, Thomas N. M., and Madeline D. Kneberg. 1947. “The Archaic Horizon
+in Western Tennessee. Division of University Extension.” Tennessee
+Anthropology Papers, No. 2. University of Tennessee, Knoxville.
+
+</div>
+
+<div id="ref-RN800">
+
+Newell, H. Perry, and Alex D. Krieger. 1949. *The George C. Davis Site,
+Cherokee County, Texas*. Menasha, Wisconsin: Memoir No. 5. Society for
+American Archaeology.
+
+</div>
+
+<div id="ref-RN20852">
+
+Patterson, Leland W. 1996. “Manufacturing Variation of Gary and Kent
+Dart Points.” *Journal of the Houston Archeological Society* 114: 15–19.
+
+</div>
+
 <div id="ref-RN3132">
 
 Schambach, Frank F. 1998. *Pre-Caddoan Cultures in the Trans-Mississippi
 South: A Beginning Sequence*. Fayetteville: Research Series 53, Arkansas
 Archeological Survey.
+
+</div>
+
+<div id="ref-RN20894">
+
+Studer, Joseph M. 1982. *Archaic Pebble Core Reduction Technology in
+East Texas: The Icy Eye Example*. Nacogdoches, Texas: Papers in
+Anthropology No. 3. Stephen F. Austin State University.
+
+</div>
+
+<div id="ref-RN5066">
+
+Suhm, Dee Ann, Alex D. Krieger, and Edward B. Jelks. 1954. “An
+Introductory Handbook of Texas Archeology.” *Bulletin of the Texas
+Archeological Society* 25: 1–562.
+
+</div>
+
+<div id="ref-RN871">
+
+Turner, Ellen Sue, Thomas R. Hester, and Richard L. McReynolds. 2011.
+*Stone Artifacts of Texas Indians*. Lanham, Maryland: Third Edition.
+Taylor Trade Publishing.
+
+</div>
+
+<div id="ref-RN20851">
+
+Webb, Clarence H. 1948. “Evidences of Pre-Pottery Cultures in
+Louisiana.” *American Antiquity* 13 (3): 227–32.
+<https://doi.org/10.2307/275428>.
+
+</div>
+
+<div id="ref-RN20873">
+
+Wheat, Joe Ben. 1953. “The Addicks Dam Site: An Archeological Survey of
+the Addicks Dam Basin, Southeast Texas.” River Basin Surveys Papers, No.
+4: Bulletin 154. Smithsonian Institution, Bureau of American Ethnology,
+Washington, D. C.
 
 </div>
 

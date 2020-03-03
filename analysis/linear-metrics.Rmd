@@ -1,5 +1,5 @@
 ---
-title: "Traditional metrics for type-varieties of Gary dart points"
+title: "Linear metrics of Gary type-varieties"
 author: "Robert Z. Selden, Jr."
 date: "March 1, 2020"
 output: github_document
@@ -11,13 +11,39 @@ fig_caption: yes
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-### Introduction
+## Introduction
 
 This document includes supplemental materials for the article, “A quantitative assessment of intraspecific morphological variation in Gary dart points: An exercise in archaeological epistemology and heuristics.” The traditional linear measures of maximum length, width, and thickness were combined with stem length and stem width for this study. These variables represent the standard suite of metrics used to characterise Gary points in previous studies, and provide those data needed to examine whether specimens included in this study may transcend the threshold between dart and arrow points [@RN20881].
 
 Others have noted the gradual diminution in the size of Gary dart points through time [@RN20896;@RN20898;@RN3132;@RN20874], thus it was necessary to begin by asking whether the size of those points aggregated for this study may fall below the arbitrary 11.8 mm dart-arrow index (DAI) threshold posited by Hildebrandt and King [-@RN20881]. The temporal span associated with morphologically-diagnostic Gary dart points is thought to transcend the cultural shift from hunter-gatherer to emergent horticulturalist, and overlaps temporally with the advent and flourescence of the bow and arrow. The dart-arrow index was calculated for all specimens of Gary dart points used in this study, and none fall below the dart-arrow threshold posited by Hildebrandt and King [-@RN20881]. It is noteworthy that others [@RN20880] have found that the DAI may not be universally applicable; however, the DAI and the threshold identified by Hildebrandt and King [-@RN20881] is a useful heuristic in this instance.
 
-### Load packages for analysis
+#### The Gary type prior to formal definition by Suhm, Krieger, and Jelks [-@RN5066, 430-431, Plate 94]
+
+Gary dart points were formally defined by [@RN5066, 430-431, Plate 94], providing a description with defining morphological characteristics for a point known to investigators working across the region, but by different names. The earliest recorded Gary dart point was excavated on September 14, 1930 by Frank Bryan [@RN20871, 76]. The point was recovered from the chest cavity, behind the sternum of a flexed burial eroding from a wall in an active gravel pit---roughly two and one-half feet below the surface---located around 14 miles from Waco, Texas on the East side of the Brazos River in Texas [@RN20871, 76, 78-79, Plate XIV:6]. While discovered in association with the burial, this point may have been included in the fill that was excavated when the burial was interred. In the same burial, a Perdiz arrow point was found lodged in the upper end of the right humerus [@RN20871, Plate XIV:4a, 4b, 5], and a small arrow point fragment was found lodged between the neck and greater trochanter of the left femur [@RN20871, Plate XIV:3].
+
+In Limestone County, Texas, [@RN20872B, 83-84] found Gary points in the Delia Area (sites 7, 8, 9, 10, 11, 18, 19, and 20), the Cooledge Area [@RN20872B, 85-86] (sites 1, 2, 3, 4, 5, and 6), the Tehuacana-Wortham Area [@RN20872B, 85, 87] (sites 3, 4, and 6), on Christmas Creek [@RN20872B, 85, 90] (all sites; 1-6), the Frosa Area [@RN20872B, 89-90] (sites 1, 2, 4, and 5), the Ben Hur Area [@RN20872B, 89, 94] (sites 1, 2, 3, and 6), and near Groesbeck and Thornton [@RN20872B, 89, 91] (sites 6 and 7). In Hill County, Texas, [@RN20872B, 92, 95] also found Gary points at sites 1, 3, and 4. Bryan [-@RN20872B, 92, Plate XV] determined that this point type was common enough across the various localities that it was deserving of a name, dubbing them _Dead-Man Triangle Points_, which would later be replaced by _Gary Contracting Stemmed_, _Gary Stemmed_ [@RN800, 164-166], and finally, Gary [@RN5066, 430-431, Plate 94].
+
+Ford, Quimby Jr., and Snow [-@RN20876, 35] refer to the Gary type that articulates with the Tchefuncte period as Simple Haft 1A; however, that type is first introduced in the analysis of the materials from the Crooks site [@RN20875, 97]. In that volume, Gary points were also assigned to Simple Haft 1C [@RN20875, 97, Figures 45a-b, 46a-d], described as leaf-shaped with a stem that may be either flat or convex, and Simple Haft 2A [@RN20875, 99, Figures 45d, 46g-h], described as the narrowest of their Blade 2 group, which is almost as thick as they are wide, with sloped shoulders, a pronounced median ridge, and an ill-organised approach to secondary flaking. Ford and Willey [-@RN20875, 99] describe Simple Haft 2B as identical in shape to Simple Haft 2A, but with excellent primary and secondary flaking, no similarities in execution, and a cross-section that is less than 5mm thick. This is the only type at the Crooks site that was assigned based upon execution alone. Simple Haft 2C [@RN20875, 99, Figure 45f] displays thickening at the median, with a triangular blade, small contracting stem, and broad, straight shoulders. This is the earliest work that begins to expound upon the diversity of morphological variation thought to occur within what would later become the Gary type.
+
+In the winter of 1938, two Gary points were excavated from midden B, a 150 x 100 foot (long axis along northeast-southwest line) elongated-oval shell midden, at the Tchefuncte site, located parallel to the shoreline of Lake Pontchartrain (Louisiana) [@RN20876, 11-12, Figure 5]. Ford, Quimby Jr., and Snow [-@RN20876, 35] refer to the type as Simple Haft 1A, described earlier by Ford and Willey [-@RN20875, 97], noting that blade shape is represented by a near-equilateral triangle, straight shoulders, and the characteristic broad stem atop a convex base. This point type was also found to occur in Marksville period sites [@RN20876, 35]. While Newell and Krieger [-@RN800] later considered five of the point types found by Ford et al. [-@RN20876, Figure 8:D, H-K] to be Gary, that assignment is revised to include only one type---represented by two projectiles (one illustrated) [@RN20876, Figure 8:K]---based upon the initial [@RN5066, 430-431, Plate 94] and current formal definitions [@RN871, 107-108].
+
+Lewis and Kneberg [-@RN20895, 12-18] identified Gary dart points as the Tapered Stem and Beaver Tail Stem types as Eva Focus traits not shared by Lauderdale and Indian Knoll. Both types were noted to be rare or alien [@RN20895]. The Tapered Stem type was noted to be ubiquitous but rare, and the Beaver Tail Stem type--noted to be a specialised variant of the Tapered Stem (the earliest recorded Gary variety)--was reported to rarely occur at most sites, but frequently at two of the southernmost sites in the area [@RN20895]. The Tapered Stem _var. Beaver Tail Stem_ was noted to be an Archaic or Woodland type [@RN20895].
+
+* Webb [-@RN20851, Figure 44:1,4]
+
+* Ford [-@RN1836, 115, Figure 45]
+
+* Wheat [-@RN20873, 204-205, Plate 36]
+
+#### Discussions of manufacture and retouch in Gary dart points
+
+* Studer [-@RN20894, 67-73, Figure 3]
+
+* Ensor and Carlson [-@RN20913, Figure 85]
+
+* Patterson [-@RN20852]
+
+## Preliminaries
 
 ```{r load packages, echo=TRUE}
 # install required analysis packages
@@ -47,6 +73,19 @@ maxth<-data$maxth # maximum thickness
 maxstl<-data$maxstl # maximum stem length
 maxstw<-data$maxstw # maximum stem width
 site<-data$site # site name
+```
+
+## Theoretical underpinnings
+
+### Calculate dart-arrow index [@RN20881]
+
+```{r dart-arrow, echo=TRUE}
+# calculate dart-arrow index (max stem width + max thickness)
+dai<-maxstw + maxth
+dai
+# how many observations fall at or below 11.8 mm
+arrow<-sum(data$dai <= 11.8)
+arrow
 ```
 
 ### Krieger's [-@RN3937, Figure 25] typological concept and the Gary dart point
@@ -79,17 +118,6 @@ site<-data$site # site name
 #")
 knitr::include_graphics('krieger.png')
 fig.cap = "Step 1: sorting into working patterns of distinct structural plan. Step 2: sorting into detailed working groups each consistently combining features in but one way. Step 3: recombining working groups into tentative types on basis of comparative distributions and associations of working groups. Step 4: consolidation of types through further testing for consistency in form and variation. Step 5: description and illustration of types with full range of variation. Step 6: a - determination of series of linked types, b - determination of material-culture complexes, and c - determination of type relationships in related cultures."
-```
-
-### Calculate dart-arrow index
-
-```{r dart-arrow, echo=TRUE}
-# calculate dart-arrow index (max stem width + max thickness)
-dai<-maxstw + maxth
-dai
-# how many observations fall at or below 11.8 mm
-arrow<-sum(data$dai <= 11.8)
-arrow
 ```
 
 ## Linear metrics of Gary dart points by `site`
@@ -162,7 +190,9 @@ sitemstw<-lm.rrpp(maxstw ~ site, SS.type = "I",data = data,iter = 9999,print.pro
 anova(sitemstw)
 ```
 
-## Gary varieties proposed by Ford, Phillips, and Haag [-@RN20899]
+## Toward a replicable method of assigning Gary type-varieties
+
+### Gary varieties proposed by Ford, Phillips, and Haag [-@RN20899]
 
 The `tv0` argument used within this and the subsequent section articulates with three variants of the Gary type--including _Gary Stemmed_, _Typical Gary Stemmed_, _Broad Gary Stemmed_, _Thin Gary Stemmed_, and _Small Gary Stemmed_, which were assigned using those morphological criteria advanced by Ford, Phillips, and Haag [-@RN20899] at the Jaketown site in west central Mississippi. The _Long Gary Stemmed_ type was omitted from consideration due to the absence of reported metrics.
 
@@ -196,7 +226,7 @@ annotate_figure(fwebbfig,
 
 ### Assign Gary type-varieties proposed by Ford, Phillips, and Haag [-@RN20899]
 
-Ford, Phillips, and Haag [-@RN20899] used a series of metrics (maximum length) to assign Gary varieties at the Jaketown site. The approach empoyed here enlists all of Ford and Webb's [-@RN20898] reported metrics, and applies them to each of the points. Those points that do not match with one of the three criteria were assigned as unidentified ( _UID_ ). Due to the degree of overlap in those ranges associated with the Gary type-varieties advanced by Ford, Phillips, and Haag [-@RN20898], it is expected that _Gary Stemmed_ will fall out due to overlap in length with _Broad Gary Stemmed_, and overlap in width with _Typical Gary Stemmed_.
+Ford, Phillips, and Haag [-@RN20899] used a series of metrics (maximum length) to assign Gary varieties at the Jaketown site. The approach empoyed here enlists all of Ford and Webb's [-@RN20898] reported metrics, and applies them to each of the points. Those points that do not articulate with one of the three criteria were assigned as unidentified (UID), and should be considered as Gary with no type-variety assignment. Due to the degree of overlap in those ranges associated with the Gary type-varieties advanced by Ford, Phillips, and Haag [-@RN20898], it is expected that _Gary Stemmed_ will fall out due to overlap in length with _Broad Gary Stemmed_, and overlap in width with _Typical Gary Stemmed_.
 
 ```{r tv0, echo=TRUE}
 # assign varieties based upon reported metrics in Ford, Phillips, and Haag [1954]
@@ -212,7 +242,7 @@ fphwcheck3 <- data$maxw >= 32 & data$maxw <= 48
 fphwcheck4 <- data$maxw >= 30 & data$maxw <= 36
 fphwcheck5 <- data$maxw >= 20 & data$maxw <= 30
 
-data$tv0 <- "GNV" # gary no variety
+data$tv0 <- "UID" # = Gary points (no variety)
 data$tv0 <- ifelse(fphlcheck1 & fphwcheck1, "GS", data$tv0)
 data$tv0 <- ifelse(fphlcheck2 & fphwcheck2, "TyGS", data$tv0)
 data$tv0 <- ifelse(fphlcheck3 & fphwcheck3, "BGS", data$tv0)
@@ -235,7 +265,7 @@ mmthgs<-subset(data,tv0=="ThGS",select=maxl:tv0)
 mmsgs<-subset(data,tv0=="SGS",select=maxl:tv0)
 ```
 
-##### Maximum/minimum for Typical Gary Stemmed
+#### Maximum/minimum for Typical Gary Stemmed
 
 ```{r, maxmin tygs, echo=TRUE}
 # identify maximum/minimum metrics for Typical Gary Stemmed
@@ -262,7 +292,7 @@ max(mmtygs$maxstw)
 min(mmtygs$maxstw)
 ```
 
-##### Maximum/minimum for Broad Gary Stemmed
+#### Maximum/minimum for Broad Gary Stemmed
 
 ```{r, maxmin bgs, echo=TRUE}
 # identify maximum/minimum metrics for Broad Gary Stemmed
@@ -289,7 +319,7 @@ max(mmbgs$maxstw)
 min(mmbgs$maxstw)
 ```
 
-##### Maximum/minimum for Thin Gary Stemmed
+#### Maximum/minimum for Thin Gary Stemmed
 
 ```{r, maxmin thgs, echo=TRUE}
 # identify maximum/minimum metrics for Thin Gary Stemmed
@@ -316,7 +346,7 @@ max(mmthgs$maxstw)
 min(mmthgs$maxstw)
 ```
 
-##### Maximum/minimum for Small Gary Stemmed
+#### Maximum/minimum for Small Gary Stemmed
 
 ```{r, maxmin sgs, echo=TRUE}
 # identify maximum/minimum metrics for Small Gary Stemmed
@@ -563,7 +593,7 @@ wcheck3 <- data$maxw >= 19 & data$maxw <= 32
 
 tcheck <- data$maxth >= 5 & data$maxth <= 10
 
-data$tv1 <- "GNV" # gary no variety
+data$tv1 <- "UID" # = Gary points (no variety)
 data$tv1 <- ifelse(lcheck1 & wcheck1, "L", data$tv1)
 data$tv1 <- ifelse(lcheck2 & wcheck2, "M/T", data$tv1)
 data$tv1 <- ifelse(lcheck3 & wcheck3 & tcheck, "S", data$tv1)
@@ -583,7 +613,7 @@ mmmt<-subset(data,tv1=="M/T",select=maxl:tv1)
 mms<-subset(data,tv1=="S",select=maxl:tv1)
 ```
 
-##### Maximum/minimum for Gary Large
+#### Maximum/minimum for Gary Large
 
 ```{r, maxmin mml, echo=TRUE}
 # identify maximum/minimum metrics for Gary Large
@@ -610,7 +640,7 @@ max(mml$maxstw)
 min(mml$maxstw)
 ```
 
-##### Maximum/minimum for Gary Med/Typical
+#### Maximum/minimum for Gary Med/Typical
 
 ```{r, maxmin mmmt, echo=TRUE}
 # identify maximum/minimum metrics for Gary Med/Typical
@@ -637,7 +667,7 @@ max(mmmt$maxstw)
 min(mmmt$maxstw)
 ```
 
-##### Maximum/minimum for Gary Small
+#### Maximum/minimum for Gary Small
 
 ```{r, maxmin mms, echo=TRUE}
 # identify maximum/minimum metrics for Gary Small
@@ -929,7 +959,7 @@ sswcheck5 <- data$maxstw >= 12 & data$maxstw < 24
 sswcheck6 <- data$maxstw >= 9 & data$maxstw <= 20
 sswcheck7 <- data$maxstw >= 11 & data$maxstw <= 21
 
-data$tv2 <- "GNV" # gary no variety
+data$tv2 <- "UID" # = Gary points (no variety)
 data$tv2 <- ifelse(slcheck1 & swcheck1 & stcheck1 & sslcheck1 & sswcheck1, "G", data$tv2)
 data$tv2 <- ifelse(slcheck2 & swcheck2 & stcheck2 & sslcheck2 & sswcheck2, "Ml", data$tv2)
 data$tv2 <- ifelse(slcheck3 & swcheck3 & stcheck3 & sslcheck3 & sswcheck3, "LF", data$tv2)
@@ -986,7 +1016,7 @@ max(mmg$maxstw)
 min(mmg$maxstw)
 ```
 
-##### Maximum/minimum for _variety Malvern_
+#### Maximum/minimum for _variety Malvern_
 
 ```{r, maxmin mmml, echo=TRUE}
 # identify maximum/minimum metrics for variety Malvern
@@ -1013,7 +1043,7 @@ max(mmml$maxstw)
 min(mmml$maxstw)
 ```
 
-##### Maximum/minimum for _variety Le Flore_
+#### Maximum/minimum for _variety Le Flore_
 
 ```{r, maxmin mmlf, echo=TRUE}
 # identify maximum/minimum metrics for variety Le Flore
@@ -1040,7 +1070,7 @@ max(mmlf$maxstw)
 min(mmlf$maxstw)
 ```
 
-##### Maximum/minimum for _variety Bodcaw_
+#### Maximum/minimum for _variety Bodcaw_
 
 ```{r, maxmin mmbd, echo=TRUE}
 # identify maximum/minimum metrics for variety Bodcaw
@@ -1067,7 +1097,7 @@ max(mmbd$maxstw)
 min(mmbd$maxstw)
 ```
 
-##### Maximum/minimum for _variety Manice_
+#### Maximum/minimum for _variety Manice_
 
 ```{r, maxmin mmmn, echo=TRUE}
 # identify maximum/minimum metrics for variety Manice
@@ -1094,7 +1124,7 @@ max(mmmn$maxstw)
 min(mmmn$maxstw)
 ```
 
-##### Maximum/minimum for _variety Camden_
+#### Maximum/minimum for _variety Camden_
 
 ```{r, maxmin mmcm, echo=TRUE}
 # identify maximum/minimum metrics for variety Camden
@@ -1121,7 +1151,7 @@ max(mmcm$maxstw)
 min(mmcm$maxstw)
 ```
 
-##### Maximum/minimum for _variety Camden subgroup A_
+#### Maximum/minimum for _variety Camden subgroup A_
 
 ```{r, maxmin mmcma, echo=TRUE}
 # identify maximum/minimum metrics for variety Camden subgroup A
@@ -1148,7 +1178,7 @@ max(mmcma$maxstw)
 min(mmcma$maxstw)
 ```
 
-##### Maximum/minimum for _variety Camden subgroup B_
+#### Maximum/minimum for _variety Camden subgroup B_
 
 ```{r, maxmin mmcmb, echo=TRUE}
 # identify maximum/minimum metrics for variety Camden subgroup B
@@ -1340,5 +1370,7 @@ anova(t2mstw)
 ## Acknowledgments
 
 Funding for this project was provided to RZS by the United States Forest Service, National Forests and Grasslands in Texas (15-PA-11081300-033 and 20-PA-11081300-074), and components of this analytical work flow were developed and funded by a Preservation Technology and Training grant (P14AP00138) to RZS from the National Center for Preservation Technology and Training.
+
+I extend my gratitude to the Poverty Point World Heritage Site, and The University Museum in the J. William Fulbright College of Arts and Sciences at the University of Arkansas. Personal thanks go to Diana Greenlee and Mary C. Suter  for their help and guidance regarding permissions and access to the collections. Additional thanks to Jared S. Pebworth and Ernest Gann for their help with aggregating the Gary dart points, and with locating and sorting through the various associated site records for the collections from the Cooper and Means sites.
 
 ## References cited
