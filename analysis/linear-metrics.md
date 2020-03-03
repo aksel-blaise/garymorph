@@ -102,6 +102,14 @@ Jr., and Snow 1945, Figure 8:K)—based upon the initial (Suhm, Krieger,
 and Jelks 1954, 430–31, Plate 94) and current formal definitions
 (Turner, Hester, and McReynolds 2011, 107–8).
 
+  - Webb and DeJarnette (1942, 8–9)
+
+In his discussion of the assemblage from the Harrell site, Krieger
+(1946, 115–17, Table 2, Figure 8p) includes *Gary Contracting Stem*
+among those dart points that are very common in northeast Texas pottery
+sites. All three of the *Gary Contracting Stem* specimens were noted to
+have possibly come from Level II (Krieger 1946, Table 2).
+
 Lewis and Kneberg (1947, 12–18) identified Gary dart points as the
 Tapered Stem and Beaver Tail Stem types as Eva Focus traits not shared
 by Lauderdale and Indian Knoll. Both types were noted to be rare or
@@ -247,7 +255,7 @@ arrow
 knitr::include_graphics('krieger.png')
 ```
 
-![](krieger.png)<!-- -->
+<img src="krieger.png" width="1812" />
 
 ``` r
 fig.cap = "Step 1: sorting into working patterns of distinct structural plan. Step 2: sorting into detailed working groups each consistently combining features in but one way. Step 3: recombining working groups into tentative types on basis of comparative distributions and associations of working groups. Step 4: consolidation of types through further testing for consistency in form and variation. Step 5: description and illustration of types with full range of variation. Step 6: a - determination of series of linked types, b - determination of material-culture complexes, and c - determination of type relationships in related cultures."
@@ -3064,6 +3072,14 @@ Krieger, Alex D. 1944. “The Typological Concept.” *American Antiquity* 9
 
 </div>
 
+<div id="ref-RN2518">
+
+———. 1946. *Culture Complexes and Chronology in Northern Texas, with
+Extensions of Puebloan Datings to the Mississippi Valley*. Austin:
+Publication No. 4640, The University of Texas.
+
+</div>
+
 <div id="ref-RN20895">
 
 Lewis, Thomas N. M., and Madeline D. Kneberg. 1947. “The Archaic Horizon
@@ -3124,6 +3140,15 @@ Taylor Trade Publishing.
 Webb, Clarence H. 1948. “Evidences of Pre-Pottery Cultures in
 Louisiana.” *American Antiquity* 13 (3): 227–32.
 <https://doi.org/10.2307/275428>.
+
+</div>
+
+<div id="ref-RN11562">
+
+Webb, William S., and David L. DeJarnette. 1942. “An Archaeological
+Survey of Pickwick Basin in the Adjacent Portions of the States of
+Alabama, Mississippi, and Tennessee.” Bulletin 129, Smithsonian
+Institution, Bureau of American Ethnology, Washington, D. C.
 
 </div>
 
