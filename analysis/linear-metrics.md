@@ -191,6 +191,21 @@ library(ggpubr)
     ## 
     ##     mutate
 
+``` r
+library(ggfortify)
+```
+
+    ## 
+    ## Attaching package: 'ggfortify'
+
+    ## The following object is masked from 'package:ggbiplot':
+    ## 
+    ##     ggbiplot
+
+``` r
+library(cluster)
+```
+
 ### Set working directory, load data, and define variables
 
 ``` r
@@ -332,20 +347,11 @@ sitefigure
 
 ``` r
 #pca
-data.pca<-prcomp(data[c(2:6)],center = TRUE,scale. = TRUE)
-summary(data.pca)
-```
-
-    ## Importance of components:
-    ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7169 0.9249 0.7982 0.62917 0.40486
-    ## Proportion of Variance 0.5896 0.1711 0.1274 0.07917 0.03278
-    ## Cumulative Proportion  0.5896 0.7606 0.8881 0.96722 1.00000
-
-``` r
-sitepca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = site) +
-  scale_color_brewer(name = "Site",palette = "Set1") +
-  theme(legend.position = "right")
+df<-data[c(2:6)]
+sitepca<-autoplot(prcomp(df),data = data, colour = 'site',
+         loadings = TRUE, loadings.colour = 'blue',
+         loadings.label = TRUE,loadings.label.size = 3, 
+         frame = TRUE)
 #render figure
 sitepca
 ```
@@ -1052,20 +1058,11 @@ ppfigure
 
 ``` r
 #pca
-data.pca<-prcomp(data[c(2:6)],center = TRUE,scale. = TRUE)
-summary(data.pca)
-```
-
-    ## Importance of components:
-    ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7169 0.9249 0.7982 0.62917 0.40486
-    ## Proportion of Variance 0.5896 0.1711 0.1274 0.07917 0.03278
-    ## Cumulative Proportion  0.5896 0.7606 0.8881 0.96722 1.00000
-
-``` r
-tv0pca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = tv0) +
-  scale_color_brewer(name = "Type-Variety",palette = "Set1") +
-  theme(legend.position = "right")
+df<-data[c(2:6)]
+tv0pca<-autoplot(prcomp(df),data = data, colour = 'tv0',
+         loadings = TRUE, loadings.colour = 'blue',
+         loadings.label = TRUE,loadings.label.size = 3, 
+         frame = TRUE)
 #render figure
 tv0pca
 ```
@@ -1700,20 +1697,11 @@ ppfigure
 
 ``` r
 #pca
-data.pca<-prcomp(data[c(2:6)],center = TRUE,scale. = TRUE)
-summary(data.pca)
-```
-
-    ## Importance of components:
-    ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7169 0.9249 0.7982 0.62917 0.40486
-    ## Proportion of Variance 0.5896 0.1711 0.1274 0.07917 0.03278
-    ## Cumulative Proportion  0.5896 0.7606 0.8881 0.96722 1.00000
-
-``` r
-t1pca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = tv1) +
-  scale_color_brewer(name = "Type-Variety",palette = "Set1") +
-  theme(legend.position = "right")
+df<-data[c(2:6)]
+t1pca<-autoplot(prcomp(df),data = data, colour = 'tv1',
+         loadings = TRUE, loadings.colour = 'blue',
+         loadings.label = TRUE,loadings.label.size = 3, 
+         frame = TRUE)
 #render figure
 t1pca
 ```
@@ -2855,20 +2843,11 @@ ppfigure
 
 ``` r
 #pca
-data.pca<-prcomp(data[c(2:6)],center = TRUE,scale. = TRUE)
-summary(data.pca)
-```
-
-    ## Importance of components:
-    ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7169 0.9249 0.7982 0.62917 0.40486
-    ## Proportion of Variance 0.5896 0.1711 0.1274 0.07917 0.03278
-    ## Cumulative Proportion  0.5896 0.7606 0.8881 0.96722 1.00000
-
-``` r
-tv3pca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = tv3) +
-  scale_color_brewer(name = "Type-Variety",palette = "Set1") +
-  theme(legend.position = "right")
+df<-data[c(2:6)]
+tv3pca<-autoplot(prcomp(df),data = data, colour = 'tv3',
+         loadings = TRUE, loadings.colour = 'blue',
+         loadings.label = TRUE,loadings.label.size = 3, 
+         frame = TRUE)
 #render figure
 tv3pca
 ```
@@ -3932,20 +3911,11 @@ ppfigure
 
 ``` r
 #pca
-data.pca<-prcomp(data[c(2:6)],center = TRUE,scale. = TRUE)
-summary(data.pca)
-```
-
-    ## Importance of components:
-    ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7169 0.9249 0.7982 0.62917 0.40486
-    ## Proportion of Variance 0.5896 0.1711 0.1274 0.07917 0.03278
-    ## Cumulative Proportion  0.5896 0.7606 0.8881 0.96722 1.00000
-
-``` r
-tv2pca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = tv2) +
-  scale_color_brewer(name = "Type-Variety",palette = "Set1") +
-  theme(legend.position = "right")
+df<-data[c(2:6)]
+tv2pca<-autoplot(prcomp(df),data = data, colour = 'tv2',
+         loadings = TRUE, loadings.colour = 'blue',
+         loadings.label = TRUE,loadings.label.size = 3, 
+         frame = TRUE)
 #render figure
 tv2pca
 ```
