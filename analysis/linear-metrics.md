@@ -589,7 +589,7 @@ tv0
     ## [201] "TyGS" "SGS"  "SGS"  "SGS"  "UID"  "TyGS" "TyGS" "SGS"  "SGS"  "UID" 
     ## [211] "UID"  "UID"
 
-### Maximum and minimum values for all `tv0` variables
+### Maximum and minimum values for Ford, Phillips, and Haag’s (1955) type-varieties
 
 The Gary type-varieties defined by Ford, Phillips, and Haag (1955) only
 included ranges for maximum length and width. The listing appended below
@@ -901,7 +901,7 @@ min(mmsgs$maxstw)
 
     ## [1] 12.09
 
-### Boxplots for `site` by `tv0` for Gary dart points from Cooper
+### Boxplots for `site` by Ford, Phillips, and Haag’s (1955) type-varieties for Gary dart points from Cooper
 
 ``` r
 # subset cooper data
@@ -958,7 +958,7 @@ cprfigure
 fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper site."
 ```
 
-### Boxplots for `site` by `tv0` for Gary dart points from Means
+### Boxplots for `site` by Ford, Phillips, and Haag’s (1955) type-varieties for Gary dart points from Means
 
 ``` r
 # subset means data
@@ -1015,7 +1015,7 @@ mnsfigure
 fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Means site."
 ```
 
-### Boxplots for `site` by `tv0` for Gary dart points from Poverty Point
+### Boxplots for `site` by Ford, Phillips, and Haag’s (1955) type-varieties for Gary dart points from Poverty Point
 
 ``` r
 # subset poverty point data
@@ -1072,7 +1072,7 @@ ppfigure
 fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Poverty Point site."
 ```
 
-### Principal Components Analysis for `tv0` at all sites
+### Principal Components Analysis for Ford, Phillips, and Haag’s (1955) type-varieties at all sites
 
 ``` r
 #pca
@@ -1091,7 +1091,7 @@ tv0pca
 fig.cap = "PCA by Gary type-varieties reported by Ford, Phillips, and Haag (1955)."
 ```
 
-### Analyses of Variance (ANOVA) for linear variables \~ `tv0`
+### Analyses of Variance (ANOVA) for linear variables \~ Ford, Phillips, and Haag’s (1955) type-varieties
 
 ``` r
 # anova = maximum length ~ tv0
@@ -1317,7 +1317,7 @@ tv1
     ## [193] "S"   "S"   "UID" "UID" "M/T" "UID" "UID" "UID" "M/T" "S"   "S"   "S"  
     ## [205] "S"   "M/T" "M/T" "M/T" "M/T" "UID" "UID" "M/T"
 
-### Maximum and minimum values for all `tv1` variables
+### Maximum and minimum values for Ford and Webb’s (1956) type-varieties
 
 The Gary type-varieties defined by Ford and Webb (1956) only included
 ranges for maximum length and width, and an incomplete listing of
@@ -1554,7 +1554,7 @@ min(mms$maxstw)
 
     ## [1] 11.21
 
-### Boxplots for `site` by `tv1` for Gary dart points from Cooper
+### Boxplots for `site` by Ford and Webb’s (1956) type-varieties for Gary dart points from Cooper
 
 ``` r
 # subset cooper data
@@ -1611,7 +1611,7 @@ cprfigure
 fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper site."
 ```
 
-### Boxplots for `site` by `tv1` for Gary dart points from Means
+### Boxplots for `site` by Ford and Webb’s (1956) type-varieties for Gary dart points from Means
 
 ``` r
 # subset means data
@@ -1668,7 +1668,7 @@ mnsfigure
 fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Means site."
 ```
 
-### Boxplots for `site` by `tv1` for Gary dart points from Poverty Point
+### Boxplots for `site` by Ford and Webb’s (1956) type-varieties for Gary dart points from Poverty Point
 
 ``` r
 # subset poverty point data
@@ -1725,7 +1725,7 @@ ppfigure
 fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Poverty Point site."
 ```
 
-### Principal Components Analysis for `tv1` at all sites
+### Principal Components Analysis for Ford and Webb’s (1956) type-varieties at all sites
 
 ``` r
 #pca
@@ -1744,7 +1744,7 @@ t1pca
 fig.cap = "PCA by Gary type-varieties reported by Ford and Webb (1956)."
 ```
 
-### Analyses of Variance (ANOVA) for `variable` \~ `tv1`
+### Analyses of Variance (ANOVA) for linear variables \~ Ford and Webb’s (1956) type-varieties
 
 ``` r
 # anova = maximum length ~ tv1
@@ -1986,7 +1986,7 @@ tv3
     ## [193] "Ru"  "Cl"  "PM"  "PM"  "UID" "Al"  "UID" "PM"  "Kf"  "PM"  "Cl"  "PM" 
     ## [205] "Cl"  "PM"  "Kf"  "PM"  "PM"  "Ru"  "Cl"  "PM"
 
-### Maximum and minimum values for all `tv3` variables
+### Maximum and minimum values for Johnson’s (1961) type-varieties
 
 The Gary type-varieties defined by Johnson (1961) only included ranges
 for maximum length, width, and thickness. The listing appended below
@@ -2713,7 +2713,7 @@ min(jcl$maxstw)
 
     ## [1] 9.41
 
-### Boxplots for `site` by `tv3` for Gary dart points from Cooper
+### Boxplots for `site` by Johnson’s (1961) type-varieties for Gary dart points from Cooper
 
 ``` r
 # subset cooper data
@@ -2770,7 +2770,7 @@ cprfigure
 fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper site."
 ```
 
-### Boxplots for `site` by `tv3` for Gary dart points from Means
+### Boxplots for `site` by Johnson’s (1961) type-varieties for Gary dart points from Means
 
 ``` r
 # subset means data
@@ -2827,7 +2827,7 @@ mnsfigure
 fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Means site."
 ```
 
-### Boxplots for `site` by `tv3` for Gary dart points from Poverty Point
+### Boxplots for `site` by Johnson’s (1961) type-varieties for Gary dart points from Poverty Point
 
 ``` r
 # subset poverty point data
@@ -2884,7 +2884,7 @@ ppfigure
 fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Poverty Point site."
 ```
 
-### Principal Components Analysis for `tv3` at all sites
+### Principal Components Analysis for Johnson’s (1961) type-varieties at all sites
 
 ``` r
 #pca
@@ -2903,7 +2903,7 @@ tv3pca
 fig.cap = "PCA by Gary type-varieties reported by Johnson (1961)."
 ```
 
-### Analyses of Variance (ANOVA) for linear variables \~ `tv3`
+### Analyses of Variance (ANOVA) for linear variables \~ Johnson’s (1961) type-varieties
 
 ``` r
 # anova = maximum length ~ tv3
@@ -3025,7 +3025,7 @@ anova(t3mstw)
     ## Call: lm.rrpp(f1 = maxstw ~ tv3, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
-## Gary varieties proposed by Shafer (1973)
+## Gary type-varieties proposed by Shafer (1973)
 
 ``` r
 # reported length by variety
@@ -3140,7 +3140,7 @@ tv4
     ## [193] "G1"  "G1"  "UID" "UID" "G1"  "UID" "UID" "UID" "G1"  "UID" "G1"  "G1" 
     ## [205] "G1"  "UID" "UID" "G1"  "G1"  "UID" "UID" "UID"
 
-### Maximum and minimum values for all `tv4` variables
+### Maximum and minimum values for Shafer’s (1973) type-varieties
 
 The Gary type-varieties defined by Shafer (1973) included ranges for
 maximum length width, thickness, stem length, and stem width. The
@@ -3323,7 +3323,7 @@ min(mmg2$maxstw)
 
     ## [1] Inf
 
-### Boxplots for `site` by `tv4` for Gary dart points from Cooper
+### Boxplots for `site` by Shafer’s (1973) type-varieties for Gary dart points from Cooper
 
 ``` r
 # subset cooper data
@@ -3380,7 +3380,7 @@ cprfigure
 fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper site."
 ```
 
-### Boxplots for `site` by `tv4` for Gary dart points from Means
+### Boxplots for `site` by Shafer’s (1973) type-varieties for Gary dart points from Means
 
 ``` r
 # subset means data
@@ -3437,7 +3437,7 @@ mnsfigure
 fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Means site."
 ```
 
-### Boxplots for `site` by `tv4` for Gary dart points from Poverty Point
+### Boxplots for `site` by Shafer’s (1973) type-varieties for Gary dart points from Poverty Point
 
 ``` r
 # subset poverty point data
@@ -3494,7 +3494,7 @@ ppfigure
 fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Poverty Point site."
 ```
 
-### Principal Components Analysis for `tv4` at all sites
+### Principal Components Analysis for Shafer’s (1973) type-varieties at all sites
 
 ``` r
 #pca
@@ -3513,7 +3513,7 @@ tv4pca
 fig.cap = "PCA by Gary type-varieties reported by Shafer (1973)."
 ```
 
-### Analyses of Variance (ANOVA) for linear variables \~ `tv4`
+### Analyses of Variance (ANOVA) for linear variables \~ Shafer’s (1973) type-varieties
 
 ``` r
 # anova = maximum length ~ tv4
@@ -3769,7 +3769,7 @@ tv2
     ## [193] "Cm"  "Cm"  "CmA" "Cm"  "CmA" "Cm"  "UID" "CmA" "CmB" "UID" "Cm"  "CmA"
     ## [205] "CmA" "UID" "CmB" "CmA" "CmA" "Cm"  "UID" "CmA"
 
-### Maximum and minimum values for all `tv2` variables
+### Maximum and minimum values for Schambach’s (1998) type-varieties
 
 The Gary type-varieties defined by Schambach (1998) included ranges for
 maximum length width, thickness, stem length, and stem width for most of
@@ -4404,7 +4404,7 @@ min(mmcmb$maxstw)
 
     ## [1] 14.38
 
-### Boxplots for `site` by `tv2` for Gary dart points from Cooper
+### Boxplots for `site` by Schambach’s (1998) type-varieties for Gary dart points from Cooper
 
 ``` r
 # subset cooper data
@@ -4461,7 +4461,7 @@ cprfigure
 fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper site."
 ```
 
-### Boxplots for `site` by `tv2` for Gary dart points from Means
+### Boxplots for `site` by Schambach’s (1998) type-varieties for Gary dart points from Means
 
 ``` r
 # subset means data
@@ -4518,7 +4518,7 @@ mnsfigure
 fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Means site."
 ```
 
-### Boxplots for `site` by `tv2` for Gary dart points from Poverty Point
+### Boxplots for `site` by Schambach’s (1998) type-varieties for Gary dart points from Poverty Point
 
 ``` r
 # subset poverty point data
@@ -4575,7 +4575,7 @@ ppfigure
 fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Poverty Point site."
 ```
 
-### Principal Components Analysis for `tv2` at all sites
+### Principal Components Analysis for Schambach’s (1998) type-varieties at all sites
 
 ``` r
 #pca
@@ -4594,7 +4594,7 @@ tv2pca
 fig.cap = "PCA by Gary type-varieties reported by Schambach (1998)."
 ```
 
-### Analyses of Variance (ANOVA) for linear variables \~ `tv2`
+### Analyses of Variance (ANOVA) for linear variables \~ Schambach’s (1998) type-varieties
 
 ``` r
 # anova = maximum length ~ tv2
