@@ -344,6 +344,10 @@ sitefigure
 
 <img src="linear-metrics_files/figure-gfm/boxsite-1.png" width="100%" />
 
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper, Means, and Poverty Point sites used in this study."
+```
+
 ### Principal Components Analysis for `site`
 
 ``` r
@@ -358,6 +362,10 @@ sitepca
 ```
 
 <img src="linear-metrics_files/figure-gfm/pcasite-1.png" width="100%" />
+
+``` r
+fig.cap = "PCA by site."
+```
 
 ### Analyses of Variance (ANOVA) for `variable` \~ `site`
 
@@ -516,12 +524,9 @@ fphwidth<-ggplot(fphw,aes(x=Width,xend=end,y=Name,yend=Name,color=Name)) +
 fwebbfig<-ggarrange(fphlength,fphwidth,
                   labels = c("a","b"),
                   ncol = 1, nrow = 2)
-annotate_figure(fwebbfig,
-                top=text_grob("Gary type-variety linear metrics per Ford, Phillips, and Haag (1955)")
-)
-```
 
-<img src="linear-metrics_files/figure-gfm/fphgantt-1.png" width="100%" />
+fig.cap = "Gantt charts illustrating the range of linear measurements for each type-variety reported by Ford, Phillips, and Haag (1955)."
+```
 
 ### Assign Gary type-varieties proposed by Ford, Phillips, and Haag (1955)
 
@@ -539,13 +544,13 @@ expected that *Gary Stemmed* will fall out due to overlap in length with
 ``` r
 # assign varieties based upon reported metrics in Ford, Phillips, and Haag [1954]
 fphlcheck1 <- data$maxl >= 45 & data$maxl <= 70
-fphlcheck2 <- data$maxl > 45 & data$maxl <= 79
-fphlcheck3 <- data$maxl > 45 & data$maxl < 70
+fphlcheck2 <- data$maxl >= 45 & data$maxl <= 79
+fphlcheck3 <- data$maxl >= 45 & data$maxl <= 70
 fphlcheck4 <- data$maxl >= 55 & data$maxl <= 75
 fphlcheck5 <- data$maxl >= 35 & data$maxl <= 50
 
-fphwcheck1 <- data$maxw >= 22 & data$maxw <=31
-fphwcheck2 <- data$maxw > 22 & data$maxw < 31
+fphwcheck1 <- data$maxw >= 22 & data$maxw <= 31
+fphwcheck2 <- data$maxw >= 22 & data$maxw <= 31
 fphwcheck3 <- data$maxw >= 32 & data$maxw <= 48
 fphwcheck4 <- data$maxw >= 30 & data$maxw <= 36
 fphwcheck5 <- data$maxw >= 20 & data$maxw <= 30
@@ -949,6 +954,10 @@ cprfigure
 
 <img src="linear-metrics_files/figure-gfm/boxplot c tv0-1.png" width="100%" />
 
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper site."
+```
+
 ### Boxplots for `site` by `tv0` for Gary dart points from Means
 
 ``` r
@@ -1001,6 +1010,10 @@ mnsfigure
 ```
 
 <img src="linear-metrics_files/figure-gfm/boxplot m tv0-1.png" width="100%" />
+
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Means site."
+```
 
 ### Boxplots for `site` by `tv0` for Gary dart points from Poverty Point
 
@@ -1055,6 +1068,10 @@ ppfigure
 
 <img src="linear-metrics_files/figure-gfm/boxplot pp tv0-1.png" width="100%" />
 
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Poverty Point site."
+```
+
 ### Principal Components Analysis for `tv0` at all sites
 
 ``` r
@@ -1069,6 +1086,10 @@ tv0pca
 ```
 
 <img src="linear-metrics_files/figure-gfm/pca tv0-1.png" width="100%" />
+
+``` r
+fig.cap = "PCA by Gary type-varieties reported by Ford, Phillips, and Haag (1955)."
+```
 
 ### Analyses of Variance (ANOVA) for linear variables \~ `tv0`
 
@@ -1230,8 +1251,8 @@ fwebbwidth<-ggplot(fwebbw,aes(x=Width,xend=end,y=Name,yend=Name,color=Name)) +
   theme(legend.position = "none")
 # thickness values were not precisely reported for GaryLarge and GaryTypical, and are included here for reference only
 fwebbth<-data.frame(Name=c('var.GaryLarge','var.GaryMed/Typical','var.GarySmall'),
-           Thickness=c(13,9,5), # in mm
-           end=c(13,10,10) # in mm
+           Thickness=c(12.9,9,5), # in mm (actual thickness of var. GaryLarge is 13. Plotted as 12.9-13.1 so that it shows on chart)
+           end=c(13.1,10,10) # in mm
 )
 fwebbthickness<-ggplot(fwebbth,aes(x=Thickness,xend=end,y=Name,yend=Name,color=Name)) +
   geom_segment(size=2) +
@@ -1241,12 +1262,9 @@ fwebbthickness<-ggplot(fwebbth,aes(x=Thickness,xend=end,y=Name,yend=Name,color=N
 fwebbfig<-ggarrange(fwebblength,fwebbwidth,fwebbthickness,
                   labels = c("a","b","c"),
                   ncol = 1, nrow = 3)
-annotate_figure(fwebbfig,
-                top=text_grob("Gary type-variety linear metrics per Ford and Webb (1956)")
-)
-```
 
-<img src="linear-metrics_files/figure-gfm/fordwebbgantt-1.png" width="100%" />
+fig.cap = "Gantt charts illustrating the range of linear measurements for each type-variety reported by Ford and Webb (1956)."
+```
 
 ### Assign Gary type-varieties proposed by Ford and Webb (1956)
 
@@ -1256,7 +1274,8 @@ enlists all of Ford and Webb’s (1956) reported metrics, including
 maximum length and maximum width for all varieties, coupled with maximum
 thickness for *Gary Small*. No metrics were reported for *Gary Long*,
 which was omitted from this analysis. Those points that do not match
-with one of the three criteria were assigned as unidentified (“UID”).
+with one of the three criteria were assigned as unidentified (“UID”),
+and should be considered as Gary with no type-variety assignment.
 
 ``` r
 # assign varieties based upon reported metrics in Ford and Webb [1956]
@@ -1588,6 +1607,10 @@ cprfigure
 
 <img src="linear-metrics_files/figure-gfm/boxplot c-1.png" width="100%" />
 
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper site."
+```
+
 ### Boxplots for `site` by `tv1` for Gary dart points from Means
 
 ``` r
@@ -1640,6 +1663,10 @@ mnsfigure
 ```
 
 <img src="linear-metrics_files/figure-gfm/boxplot m-1.png" width="100%" />
+
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Means site."
+```
 
 ### Boxplots for `site` by `tv1` for Gary dart points from Poverty Point
 
@@ -1694,6 +1721,10 @@ ppfigure
 
 <img src="linear-metrics_files/figure-gfm/boxplot pp-1.png" width="100%" />
 
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Poverty Point site."
+```
+
 ### Principal Components Analysis for `tv1` at all sites
 
 ``` r
@@ -1708,6 +1739,10 @@ t1pca
 ```
 
 <img src="linear-metrics_files/figure-gfm/pca-1.png" width="100%" />
+
+``` r
+fig.cap = "PCA by Gary type-varieties reported by Ford and Webb (1956)."
+```
 
 ### Analyses of Variance (ANOVA) for `variable` \~ `tv1`
 
@@ -1872,12 +1907,9 @@ thickness<-ggplot(jth,aes(x=Thickness,xend=end,y=Name,yend=Name,color=Name)) +
 johnsonfig<-ggarrange(length,width,thickness,
                   labels = c("a","b","c"),
                   ncol = 1, nrow = 3)
-annotate_figure(johnsonfig,
-                top=text_grob("Gary type-variety linear metrics per Johnson (1961)")
-)
-```
 
-<img src="linear-metrics_files/figure-gfm/johnsongantt-1.png" width="100%" />
+fig.cap = "Gantt charts illustrating the range of linear measurements for each type-variety reported by Johnson (1961)."
+```
 
 ### Assign Gary type-varieties proposed by Johnson (1961)
 
@@ -2734,6 +2766,10 @@ cprfigure
 
 <img src="linear-metrics_files/figure-gfm/boxplot c tv3-1.png" width="100%" />
 
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper site."
+```
+
 ### Boxplots for `site` by `tv3` for Gary dart points from Means
 
 ``` r
@@ -2786,6 +2822,10 @@ mnsfigure
 ```
 
 <img src="linear-metrics_files/figure-gfm/boxplot m tv3-1.png" width="100%" />
+
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Means site."
+```
 
 ### Boxplots for `site` by `tv3` for Gary dart points from Poverty Point
 
@@ -2840,6 +2880,10 @@ ppfigure
 
 <img src="linear-metrics_files/figure-gfm/boxplot pp tv3-1.png" width="100%" />
 
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Poverty Point site."
+```
+
 ### Principal Components Analysis for `tv3` at all sites
 
 ``` r
@@ -2854,6 +2898,10 @@ tv3pca
 ```
 
 <img src="linear-metrics_files/figure-gfm/pca tv3-1.png" width="100%" />
+
+``` r
+fig.cap = "PCA by Gary type-varieties reported by Johnson (1961)."
+```
 
 ### Analyses of Variance (ANOVA) for linear variables \~ `tv3`
 
@@ -3029,12 +3077,9 @@ stemwidth<-ggplot(schambstw,aes(x=StemWidth,xend=end,y=Name,yend=Name,color=Name
 schambachfig<-ggarrange(length,width,thickness,stemlength,stemwidth,
                   labels = c("a","b","c","d","e"),
                   ncol = 2, nrow = 3)
-annotate_figure(schambachfig,
-                top=text_grob("Gary type-variety linear metrics per Schambach (1998)")
-)
-```
 
-<img src="linear-metrics_files/figure-gfm/schamgantt-1.png" width="100%" />
+fig.cap = "Gantt charts illustrating the range of linear measurements for each type-variety reported by Schambach (1998)."
+```
 
 ``` r
 # assign varieties based upon reported metrics in Schambach (1998)
@@ -3802,6 +3847,10 @@ cprfigure
 
 <img src="linear-metrics_files/figure-gfm/boxplot c tv2-1.png" width="100%" />
 
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper site."
+```
+
 ### Boxplots for `site` by `tv2` for Gary dart points from Means
 
 ``` r
@@ -3854,6 +3903,10 @@ mnsfigure
 ```
 
 <img src="linear-metrics_files/figure-gfm/boxplot m tv2-1.png" width="100%" />
+
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Means site."
+```
 
 ### Boxplots for `site` by `tv2` for Gary dart points from Poverty Point
 
@@ -3908,6 +3961,10 @@ ppfigure
 
 <img src="linear-metrics_files/figure-gfm/boxplot pp tv2-1.png" width="100%" />
 
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Poverty Point site."
+```
+
 ### Principal Components Analysis for `tv2` at all sites
 
 ``` r
@@ -3922,6 +3979,10 @@ tv2pca
 ```
 
 <img src="linear-metrics_files/figure-gfm/pca tv2-1.png" width="100%" />
+
+``` r
+fig.cap = "PCA by Gary type-varieties reported by Schambach (1998)."
+```
 
 ### Analyses of Variance (ANOVA) for linear variables \~ `tv2`
 
