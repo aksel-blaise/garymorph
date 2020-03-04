@@ -203,7 +203,7 @@ anova(sitemstw)
 
 ## Toward a replicable method of assigning Gary type-varieties
 
-### Gary varieties proposed by Ford, Phillips, and Haag [-@RN20899]
+## Gary varieties proposed by Ford, Phillips, and Haag [-@RN20899]
 
 The `tv0` argument used within this and the subsequent section articulates with three variants of the Gary type--including _Gary Stemmed_, _Typical Gary Stemmed_, _Broad Gary Stemmed_, _Thin Gary Stemmed_, and _Small Gary Stemmed_, which were assigned using those morphological criteria advanced by Ford, Phillips, and Haag [-@RN20899] at the Jaketown site in west central Mississippi. The _Long Gary Stemmed_ type was omitted from consideration due to the absence of reported metrics.
 
@@ -1378,6 +1378,321 @@ anova(t3mstl)
 # anova = maximum stem width ~ tv3
 t3mstw<-lm.rrpp(maxstw ~ tv3, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(t3mstw)
+```
+
+## Gary varieties proposed by Shafer [-@RN3682]
+
+
+
+```{r shafgantt, out.width = "100%", dpi = 200, echo=TRUE}
+# reported length by variety
+shafl<-data.frame(Name=c('Group 1','Group2'),
+           Length=c(28,26), # in mm
+           end=c(63,29) # in mm
+)
+length<-ggplot(shafl,aes(x=Length,xend=end,y=Name,yend=Name,color=Name)) +
+  geom_segment(size=2) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# reported width by variety
+shafw<-data.frame(Name=c('Group 1','Group2'),
+           Width=c(15,15), # in mm
+           end=c(30,19) # in mm
+)
+width<-ggplot(shafw,aes(x=Width,xend=end,y=Name,yend=Name,color=Name)) +
+  geom_segment(size=2) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# reported thickness by variety
+shafth<-data.frame(Name=c('Group 1','Group2'),
+           Thickness=c(6,7), # in mm
+           end=c(10,8) # in mm
+)
+thickness<-ggplot(shafth,aes(x=Thickness,xend=end,y=Name,yend=Name,color=Name)) +
+  geom_segment(size=2) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# reported stem length by variety
+shafstl<-data.frame(Name=c('Group 1','Group2'),
+           StemLength=c(10,12), # in mm
+           end=c(17,17) # in mm
+)
+stemlength<-ggplot(shafstl,aes(x=StemLength,xend=end,y=Name,yend=Name,color=Name)) +
+  geom_segment(size=2) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# reported stem width by variety
+shafstw<-data.frame(Name=c('Group 1','Group 2'),
+           StemWidth=c(11,15), # in mm
+           end=c(21,19) # in mm
+)
+stemwidth<-ggplot(shafstw,aes(x=StemWidth,xend=end,y=Name,yend=Name,color=Name)) +
+  geom_segment(size=2) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# render figure
+shaferfig<-ggarrange(length,width,thickness,stemlength,stemwidth,
+                  labels = c("a","b"),
+                  ncol = 2, nrow = 3)
+shaferfig
+
+fig.cap = "Gantt charts illustrating the range of linear measurements for each type-variety reported by Shafer (1973)."
+```
+
+### Assign Gary type-varieties proposed by Shafer [-@RN3682]
+
+Shafer [-@RN3682] used maximum length, width, thickness, stem width, and stem length to assign Gary varieties at the George C. Davis site. The approach empoyed here enlists both of Shafer's [-@RN3682] reported metrics, and applies them to each of the points within the aggregated sample. Those points that do not articulate with one of the three criteria were assigned as unidentified (UID), and should be considered as Gary with no type-variety assignment.
+
+```{r tv4, echo=TRUE}
+# assign varieties based upon reported metrics in Shafer (1973)
+shlcheck1 <- data$maxl >= 28 & data$maxl <= 63
+shlcheck2 <- data$maxl >= 26 & data$maxl <= 29
+
+shwcheck1 <- data$maxw >= 15 & data$maxw <= 30
+shwcheck2 <- data$maxw >= 15 & data$maxw <= 19
+
+shtcheck1 <- data$maxth >= 6 & data$maxth <= 10
+shtcheck2 <- data$maxth >= 7 & data$maxth <= 8
+
+shslcheck1 <- data$maxstl >= 10 & data$maxstl <= 17
+shslcheck2 <- data$maxstl >= 12 & data$maxstl <= 17
+
+shswcheck1 <- data$maxstw >= 11 & data$maxstw <= 21
+shswcheck2 <- data$maxstw >= 15 & data$maxstw <= 19
+
+data$tv4 <- "UID" # = Gary points (no variety)
+data$tv4 <- ifelse(shlcheck1 & shwcheck1 & shtcheck1 & shslcheck1 & shswcheck1, "G1", data$tv4)
+data$tv4 <- ifelse(shlcheck2 & shwcheck2 & shtcheck2 & shslcheck2 & shswcheck2, "G2", data$tv4)
+
+tv4<-data$tv4
+tv4
+```
+
+### Maximum and minimum values for all `tv4` variables
+
+The Gary type-varieties defined by Shafer [-@RN3682] included ranges for maximum length width, thickness, stem length, and stem width. The listing appended below reflects the maximum and minimum values for each  measure included in the dataset, and extends Shafer's type-varieties beyond the George C. Davis site. These metrics may have utility in positing type-variety assignments to partial specimens.
+
+```{r typevartv4, echo=TRUE}
+# subset dataset by tv4 type-varieties
+mmg1<-subset(data,tv4=="G1",select=maxl:tv4)
+mmg2<-subset(data,tv4=="G2",select=maxl:tv4)
+```
+
+##### Maximum/minimum for _Group 1_
+
+```{r, maxmin mmg1, echo=TRUE}
+# identify maximum/minimum metrics for Group 1
+
+# max length (mm)
+max(mmg1$maxl)
+# min length (mm)
+min(mmg1$maxl)
+# max width (mm)
+max(mmg1$maxw)
+# min width (mm)
+min(mmg1$maxw)
+# max thickness (mm)
+max(mmg1$maxth)
+# min thickness (mm)
+min(mmg1$maxth)
+# max stem length (mm)
+max(mmg1$maxstl)
+# min stem length (mm)
+min(mmg1$maxstl)
+# max stem width (mm)
+max(mmg1$maxstw)
+# min stem width (mm)
+min(mmg1$maxstw)
+```
+
+##### Maximum/minimum for _Group 2_
+
+```{r, maxmin mmg2, echo=TRUE}
+# identify maximum/minimum metrics for Group 2
+
+# max length (mm)
+max(mmg2$maxl)
+# min length (mm)
+min(mmg2$maxl)
+# max width (mm)
+max(mmg2$maxw)
+# min width (mm)
+min(mmg2$maxw)
+# max thickness (mm)
+max(mmg2$maxth)
+# min thickness (mm)
+min(mmg2$maxth)
+# max stem length (mm)
+max(mmg2$maxstl)
+# min stem length (mm)
+min(mmg2$maxstl)
+# max stem width (mm)
+max(mmg2$maxstw)
+# min stem width (mm)
+min(mmg2$maxstw)
+```
+
+### Boxplots for `site` by `tv4` for Gary dart points from Cooper
+
+```{r boxplot c tv4, out.width = "100%", dpi = 200, echo=TRUE}
+# subset cooper data
+cprmxl<-subset(data,Site=="Cooper",select=maxl:tv4)
+# boxplot of maximum length
+cprmaxl<-ggplot(cprmxl,aes(x=tv4,y=maxl,color=tv4)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum width
+cprmaxw<-ggplot(cprmxl,aes(x=tv4,y=maxw,color=tv4)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+cprmaxth<-ggplot(cprmxl,aes(x=tv4,y=maxth,color=tv4)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum stem length
+cprmaxstl<-ggplot(cprmxl,aes(x=tv4,y=maxstl,color=tv4)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+cprmaxstw<-ggplot(cprmxl,aes(x=tv4,y=maxstw,color=tv4)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# render figure
+cprfigure<-ggarrange(cprmaxl,cprmaxw,cprmaxth,cprmaxstl,cprmaxstw,
+                  labels = c("a","b","c","d","e"),
+                  ncol = 3, nrow = 2)
+cprfigure
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper site."
+```
+
+### Boxplots for `site` by `tv4` for Gary dart points from Means
+
+```{r boxplot m tv4, out.width = "100%", dpi = 200, echo=TRUE}
+# subset means data
+mnsmxl<-subset(data,Site=="Means",select=maxl:tv4)
+# boxplot of maximum length
+mnsmaxl<-ggplot(mnsmxl,aes(x=tv4,y=maxl,color=tv4)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum width
+mnsmaxw<-ggplot(mnsmxl,aes(x=tv4,y=maxw,color=tv4)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+mnsmaxth<-ggplot(mnsmxl,aes(x=tv4,y=maxth,color=tv4)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum stem length
+mnsmaxstl<-ggplot(mnsmxl,aes(x=tv4,y=maxstl,color=tv4)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+mnsmaxstw<-ggplot(mnsmxl,aes(x=tv4,y=maxstw,color=tv4)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# render figure
+mnsfigure<-ggarrange(mnsmaxl,mnsmaxw,mnsmaxth,mnsmaxstl,mnsmaxstw,
+                  labels = c("a","b","c","d","e"),
+                  ncol = 3, nrow = 2)
+mnsfigure
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Means site."
+```
+
+### Boxplots for `site` by `tv4` for Gary dart points from Poverty Point
+
+```{r boxplot pp tv4, out.width = "100%", dpi = 200, echo=TRUE}
+# subset poverty point data
+pvptmxl<-subset(data,Site=="Pov Pt",select=maxl:tv4)
+# boxplot of maximum length
+pvptmaxl<-ggplot(pvptmxl,aes(x=tv4,y=maxl,color=tv4)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum width
+pvptmaxw<-ggplot(pvptmxl,aes(x=tv4,y=maxw,color=tv4)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+pvptmaxth<-ggplot(pvptmxl,aes(x=tv4,y=maxth,color=tv4)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum stem length
+pvptmaxstl<-ggplot(pvptmxl,aes(x=tv4,y=maxstl,color=tv4)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+pvptmaxstw<-ggplot(pvptmxl,aes(x=tv4,y=maxstw,color=tv4)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# render figure
+ppfigure<-ggarrange(pvptmaxl,pvptmaxw,pvptmaxth,pvptmaxstl,pvptmaxstw,
+                  labels = c("a","b","c","d","e"),
+                  ncol = 3, nrow = 2)
+ppfigure
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Poverty Point site."
+```
+
+### Principal Components Analysis for `tv4` at all sites
+
+```{r pca tv4, out.width = "100%", dpi = 200, echo=TRUE}
+#pca
+df<-data[c(2:6)]
+tv4pca<-autoplot(prcomp(df),data = data, colour = 'tv4',
+         loadings = TRUE, loadings.colour = 'blue',
+         loadings.label = TRUE,loadings.label.size = 3, 
+         frame = TRUE)
+#render figure
+tv4pca
+fig.cap = "PCA by Gary type-varieties reported by Shafer (1973)."
+```
+
+### Analyses of Variance (ANOVA) for linear variables ~ `tv4`
+
+```{r anova tv4, echo=TRUE}
+# anova = maximum length ~ tv4
+t4ml<-lm.rrpp(maxl ~ tv4, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(t4ml)
+# anova = maximum width ~ tv4
+t4mw<-lm.rrpp(maxw ~ tv4, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(t4mw)
+# anova = maximum thickness ~ tv4
+t4mth<-lm.rrpp(maxth ~ tv4, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(t4mth)
+# anova = maximum stem length ~ tv4
+t4mstl<-lm.rrpp(maxstl ~ tv4, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(t4mstl)
+# anova = maximum stem width ~ tv4
+t4mstw<-lm.rrpp(maxstw ~ tv4, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(t4mstw)
 ```
 
 ## Gary varieties proposed by Schambach [-@RN3132]
