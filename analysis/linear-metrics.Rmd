@@ -58,6 +58,7 @@ In his study of the lithic assemblage from the Icy Eye site, Studer [-@RN20894, 
 #devtools::install_github("mlcollyer/RRPP")
 #devtools::install_github("tidyverse/ggplot2")
 #devtools::install_github("kassambara/ggpubr")
+#devtools::install_github('sinhrks/ggfortify')
 # load libraries
 library(DiagrammeR)
 library(ggbiplot)
@@ -98,7 +99,7 @@ arrow
 
 ### Krieger's [-@RN3937, Figure 25] typological concept and the Gary dart point
 
-```{r krieger, echo=TRUE}
+```{r krieger, fig.fullwidth = TRUE, echo=TRUE}
 #grViz("
 #  digraph{
 #    node[shape = rectangle
@@ -132,29 +133,29 @@ fig.cap = "Step 1: sorting into working patterns of distinct structural plan. St
 
 ### Boxplots for `variable` by `site`
 
-```{r boxsite, echo=TRUE}
+```{r boxsite, out.width = "100%", dpi = 200, echo=TRUE}
 # boxplot of maximum length ~ site
-sitemaxl<-ggplot(data,aes(x=site,y=maxl,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxl<-ggplot(data,aes(x=Site,y=maxl,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum width ~ site
-sitemaxw<-ggplot(data,aes(x=site,y=maxw,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxw<-ggplot(data,aes(x=Site,y=maxw,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness ~ site
-sitemaxth<-ggplot(data,aes(x=site,y=maxth,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxth<-ggplot(data,aes(x=Site,y=maxth,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of stem length ~ site
-sitemaxstl<-ggplot(data,aes(x=site,y=maxstl,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxstl<-ggplot(data,aes(x=Site,y=maxstl,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of stem width ~ site
-sitemaxstw<-ggplot(data,aes(x=site,y=maxstw,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxstw<-ggplot(data,aes(x=Site,y=maxstw,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
@@ -167,10 +168,10 @@ sitefigure
 
 ### Principal Components Analysis for `site`
 
-```{r pcasite, echo=TRUE}
+```{r pcasite, out.width = "100%", dpi = 200, echo=TRUE}
 #pca
 df<-data[c(2:6)]
-sitepca<-autoplot(prcomp(df),data = data, colour = 'site',
+sitepca<-autoplot(prcomp(df),data = data, colour = 'Site',
          loadings = TRUE, loadings.colour = 'blue',
          loadings.label = TRUE,loadings.label.size = 3, 
          frame = TRUE)
@@ -182,19 +183,19 @@ sitepca
 
 ```{r anovasite, echo=TRUE}
 # anova = maximum length ~ site
-siteml<-lm.rrpp(maxl ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+siteml<-lm.rrpp(maxl ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(siteml)
 # anova = maximum width ~ site
-sitemw<-lm.rrpp(maxw ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+sitemw<-lm.rrpp(maxw ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemw)
 # anova = maximum thickness ~ site
-sitemth<-lm.rrpp(maxth ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+sitemth<-lm.rrpp(maxth ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemth)
 # anova = maximum stem length ~ site
-sitemstl<-lm.rrpp(maxstl ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+sitemstl<-lm.rrpp(maxstl ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemstl)
 # anova = maximum stem width ~ site
-sitemstw<-lm.rrpp(maxstw ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+sitemstw<-lm.rrpp(maxstw ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemstw)
 ```
 
@@ -204,7 +205,7 @@ anova(sitemstw)
 
 The `tv0` argument used within this and the subsequent section articulates with three variants of the Gary type--including _Gary Stemmed_, _Typical Gary Stemmed_, _Broad Gary Stemmed_, _Thin Gary Stemmed_, and _Small Gary Stemmed_, which were assigned using those morphological criteria advanced by Ford, Phillips, and Haag [-@RN20899] at the Jaketown site in west central Mississippi. The _Long Gary Stemmed_ type was omitted from consideration due to the absence of reported metrics.
 
-```{r fphgantt, echo=TRUE}
+```{r fphgantt, out.width = "100%", dpi = 200, echo=TRUE}
 # Ford, Phillips, and Haag (1955)
 fphl<-data.frame(Name=c('var.GaryStemmed','var.TypicalGaryStemmed','var.BroadGaryStemmed','var.ThinGaryStemmed','var.SmallGaryStemmed'),
            Length=c(45,45,45,55,35), # in mm
@@ -383,9 +384,9 @@ min(mmsgs$maxstw)
 
 ### Boxplots for `site` by `tv0` for Gary dart points from Cooper
 
-```{r boxplot c tv0, echo=TRUE}
+```{r boxplot c tv0, out.width = "100%", dpi = 200, echo=TRUE}
 # subset cooper data
-cprmxl<-subset(data,site=="Cooper",select=maxl:tv0)
+cprmxl<-subset(data,Site=="Cooper",select=maxl:tv0)
 # boxplot of maximum length
 cprmaxl<-ggplot(cprmxl,aes(x=tv0,y=maxl,color=tv0)) + 
   geom_boxplot() +
@@ -425,9 +426,9 @@ cprfigure
 
 ### Boxplots for `site` by `tv0` for Gary dart points from Means
 
-```{r boxplot m tv0, echo=TRUE}
+```{r boxplot m tv0, out.width = "100%", dpi = 200, echo=TRUE}
 # subset means data
-mnsmxl<-subset(data,site=="Means",select=maxl:tv0)
+mnsmxl<-subset(data,Site=="Means",select=maxl:tv0)
 # boxplot of maximum length
 mnsmaxl<-ggplot(mnsmxl,aes(x=tv0,y=maxl,color=tv0)) + 
   geom_boxplot() +
@@ -467,9 +468,9 @@ mnsfigure
 
 ### Boxplots for `site` by `tv0` for Gary dart points from Poverty Point
 
-```{r boxplot pp tv0, echo=TRUE}
+```{r boxplot pp tv0, out.width = "100%", dpi = 200, echo=TRUE}
 # subset poverty point data
-pvptmxl<-subset(data,site=="Pov Pt",select=maxl:tv0)
+pvptmxl<-subset(data,Site=="Pov Pt",select=maxl:tv0)
 # boxplot of maximum length
 pvptmaxl<-ggplot(pvptmxl,aes(x=tv0,y=maxl,color=tv0)) + 
   geom_boxplot() +
@@ -509,7 +510,7 @@ ppfigure
 
 ### Principal Components Analysis for `tv0` at all sites
 
-```{r pca tv0, echo=TRUE}
+```{r pca tv0, out.width = "100%", dpi = 200, echo=TRUE}
 #pca
 df<-data[c(2:6)]
 tv0pca<-autoplot(prcomp(df),data = data, colour = 'tv0',
@@ -546,7 +547,7 @@ The `tv1` argument used within this and the subsequent section articulates with 
 
 Each of the three type-varieties proposed by Ford and Webb [-@RN20898] was based upon a suite of morphological criteria that can be systematically replicated, and a function was used to assign each of the Gary points to the correct type-variety. Gary type varieties range between 80 and 140 mm in maxl, and between 30 and 42 mm in maxw for _Gary Large_; between 46 to 79 mm in maxl, and between 20 and 45 mm in maxw for _Gary Medium/Typical_; and between 33 to 45 mm in maxl, 19 to 32 mm in maxw, and five to 10 mm in maxth for _Gary Small_ [@RN20898].
 
-```{r fordwebbgantt,echo=TRUE}
+```{r fordwebbgantt, out.width = "100%", dpi = 200, echo=TRUE}
 # Ford and Webb (1956)
 fwebbl<-data.frame(Name=c('var.GaryLarge','var.GaryMed/Typical','var.GarySmall'),
            Length=c(80,46,33), # in mm
@@ -701,9 +702,9 @@ min(mms$maxstw)
 
 ### Boxplots for `site` by `tv1` for Gary dart points from Cooper
 
-```{r boxplot c, echo=TRUE}
+```{r boxplot c, out.width = "100%", dpi = 200, echo=TRUE}
 # subset cooper data
-cprmxl<-subset(data,site=="Cooper",select=maxl:tv1)
+cprmxl<-subset(data,Site=="Cooper",select=maxl:tv1)
 # boxplot of maximum length
 cprmaxl<-ggplot(cprmxl,aes(x=tv1,y=maxl,color=tv1)) + 
   geom_boxplot() +
@@ -743,9 +744,9 @@ cprfigure
 
 ### Boxplots for `site` by `tv1` for Gary dart points from Means
 
-```{r boxplot m, echo=TRUE}
+```{r boxplot m, out.width = "100%", dpi = 200, echo=TRUE}
 # subset means data
-mnsmxl<-subset(data,site=="Means",select=maxl:tv1)
+mnsmxl<-subset(data,Site=="Means",select=maxl:tv1)
 # boxplot of maximum length
 mnsmaxl<-ggplot(mnsmxl,aes(x=tv1,y=maxl,color=tv1)) + 
   geom_boxplot() +
@@ -785,9 +786,9 @@ mnsfigure
 
 ### Boxplots for `site` by `tv1` for Gary dart points from Poverty Point
 
-```{r boxplot pp, echo=TRUE}
+```{r boxplot pp, out.width = "100%", dpi = 200, echo=TRUE}
 # subset poverty point data
-pvptmxl<-subset(data,site=="Pov Pt",select=maxl:tv1)
+pvptmxl<-subset(data,Site=="Pov Pt",select=maxl:tv1)
 # boxplot of maximum length
 pvptmaxl<-ggplot(pvptmxl,aes(x=tv1,y=maxl,color=tv1)) + 
   geom_boxplot() +
@@ -827,7 +828,7 @@ ppfigure
 
 ### Principal Components Analysis for `tv1` at all sites
 
-```{r pca, echo=TRUE}
+```{r pca, out.width = "100%", dpi = 200, echo=TRUE}
 #pca
 df<-data[c(2:6)]
 t1pca<-autoplot(prcomp(df),data = data, colour = 'tv1',
@@ -862,7 +863,7 @@ anova(t1mstw)
 
 The `tv3` argument used within this and the subsequent section articulates with nine variants of the Gary type--including _var. Kaufman_, _var. Alsa_, _var. Hobson_, _var. Runge_, _var. Emory_, _var. Kemp_, _var. Panna Maria_, _var. Kenedy_, and _var. Colfax_, which were assigned using those morphological criteria advanced by Johnson [-@RN2403] at the Yarbrough and Miller sites in northeast Texas.
 
-```{r johnsongantt, echo=TRUE}
+```{r johnsongantt, out.width = "100%", dpi = 200, echo=TRUE}
 # reported length by variety
 jl<-data.frame(Name=c('var.Kaufman','var.Alsa','var.Hobson','var.Runge','var.Emory','var.Kemp','var.PannaMaria','var.Kenedy','var.Colfax'),
            Length=c(34,30,22,31,27,29,39,21,25), # in mm
@@ -1212,9 +1213,9 @@ min(jcl$maxstw)
 
 ### Boxplots for `site` by `tv3` for Gary dart points from Cooper
 
-```{r boxplot c tv3, echo=TRUE}
+```{r boxplot c tv3, out.width = "100%", dpi = 200, echo=TRUE}
 # subset cooper data
-cprmxl<-subset(data,site=="Cooper",select=maxl:tv3)
+cprmxl<-subset(data,Site=="Cooper",select=maxl:tv3)
 # boxplot of maximum length
 cprmaxl<-ggplot(cprmxl,aes(x=tv3,y=maxl,color=tv3)) + 
   geom_boxplot() +
@@ -1254,9 +1255,9 @@ cprfigure
 
 ### Boxplots for `site` by `tv3` for Gary dart points from Means
 
-```{r boxplot m tv3, echo=TRUE}
+```{r boxplot m tv3, out.width = "100%", dpi = 200, echo=TRUE}
 # subset means data
-mnsmxl<-subset(data,site=="Means",select=maxl:tv3)
+mnsmxl<-subset(data,Site=="Means",select=maxl:tv3)
 # boxplot of maximum length
 mnsmaxl<-ggplot(mnsmxl,aes(x=tv3,y=maxl,color=tv3)) + 
   geom_boxplot() +
@@ -1296,9 +1297,9 @@ mnsfigure
 
 ### Boxplots for `site` by `tv3` for Gary dart points from Poverty Point
 
-```{r boxplot pp tv3, echo=TRUE}
+```{r boxplot pp tv3, out.width = "100%", dpi = 200, echo=TRUE}
 # subset poverty point data
-pvptmxl<-subset(data,site=="Pov Pt",select=maxl:tv3)
+pvptmxl<-subset(data,Site=="Pov Pt",select=maxl:tv3)
 # boxplot of maximum length
 pvptmaxl<-ggplot(pvptmxl,aes(x=tv3,y=maxl,color=tv3)) + 
   geom_boxplot() +
@@ -1338,7 +1339,7 @@ ppfigure
 
 ### Principal Components Analysis for `tv3` at all sites
 
-```{r pca tv3, echo=TRUE}
+```{r pca tv3, out.width = "100%", dpi = 200, echo=TRUE}
 #pca
 df<-data[c(2:6)]
 tv3pca<-autoplot(prcomp(df),data = data, colour = 'tv3',
@@ -1371,7 +1372,7 @@ anova(t3mstw)
 
 ## Gary varieties proposed by Schambach [-@RN3132]
 
-```{r schamgantt, echo=TRUE}
+```{r schamgantt, out.width = "100%", dpi = 200, echo=TRUE}
 # reported length by variety
 schambl<-data.frame(Name=c('var.Gary','var.Malvern','var.LeFlore','var.Bodcaw','var.Manice','var.Camden','var.CamdenA'),
            Length=c(51,43,43,40,36,34,39), # in mm
@@ -1720,9 +1721,9 @@ min(mmcmb$maxstw)
 
 ### Boxplots for `site` by `tv2` for Gary dart points from Cooper
 
-```{r boxplot c tv2, echo=TRUE}
+```{r boxplot c tv2, out.width = "100%", dpi = 200, echo=TRUE}
 # subset cooper data
-cprmxl<-subset(data,site=="Cooper",select=maxl:tv2)
+cprmxl<-subset(data,Site=="Cooper",select=maxl:tv2)
 # boxplot of maximum length
 cprmaxl<-ggplot(cprmxl,aes(x=tv2,y=maxl,color=tv2)) + 
   geom_boxplot() +
@@ -1762,9 +1763,9 @@ cprfigure
 
 ### Boxplots for `site` by `tv2` for Gary dart points from Means
 
-```{r boxplot m tv2, echo=TRUE}
+```{r boxplot m tv2, out.width = "100%", dpi = 200, echo=TRUE}
 # subset means data
-mnsmxl<-subset(data,site=="Means",select=maxl:tv2)
+mnsmxl<-subset(data,Site=="Means",select=maxl:tv2)
 # boxplot of maximum length
 mnsmaxl<-ggplot(mnsmxl,aes(x=tv2,y=maxl,color=tv2)) + 
   geom_boxplot() +
@@ -1804,9 +1805,9 @@ mnsfigure
 
 ### Boxplots for `site` by `tv2` for Gary dart points from Poverty Point
 
-```{r boxplot pp tv2, echo=TRUE}
+```{r boxplot pp tv2, out.width = "100%", dpi = 200, echo=TRUE}
 # subset poverty point data
-pvptmxl<-subset(data,site=="Pov Pt",select=maxl:tv2)
+pvptmxl<-subset(data,Site=="Pov Pt",select=maxl:tv2)
 # boxplot of maximum length
 pvptmaxl<-ggplot(pvptmxl,aes(x=tv2,y=maxl,color=tv2)) + 
   geom_boxplot() +
@@ -1846,7 +1847,7 @@ ppfigure
 
 ### Principal Components Analysis for `tv2` at all sites
 
-```{r pca tv2, echo=TRUE}
+```{r pca tv2, out.width = "100%", dpi = 200, echo=TRUE}
 #pca
 df<-data[c(2:6)]
 tv2pca<-autoplot(prcomp(df),data = data, colour = 'tv2',

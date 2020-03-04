@@ -27,18 +27,8 @@ site<-data$site # site name
 
 #pca
 df<-data[c(2:6)]
-autoplot(prcomp(df),data = data, colour = 'site',
+sitepca<-autoplot(prcomp(df),data = data,colour = 'Site',
          loadings = TRUE, loadings.colour = 'blue',loadings.label = TRUE,
-         loadings.label.size = 3, frame = TRUE,)
-
-sitepca<-ggplot(data, aes(PC1, PC2)) +
-  geom_point() +
-  stat_ellipse(type = "norm", linetype = 2) +
-  stat_ellipse(type = "t")
-#sitepca<-ggplot(data.pca,obs.scale = 1,var.scale = 1,
-#                 ellipse.prob = 0.95,groups = site) +
-#  scale_color_brewer(name = "Site",palette = "Set1") +
-#  theme(legend.position = "right")
-#render figure
+         loadings.label.size = 3, frame = TRUE)
 sitepca
 ```

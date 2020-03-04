@@ -163,6 +163,7 @@ and localise percussion forces.
 #devtools::install_github("mlcollyer/RRPP")
 #devtools::install_github("tidyverse/ggplot2")
 #devtools::install_github("kassambara/ggpubr")
+#devtools::install_github('sinhrks/ggfortify')
 # load libraries
 library(DiagrammeR)
 library(ggbiplot)
@@ -289,7 +290,7 @@ arrow
 knitr::include_graphics('krieger.png')
 ```
 
-<img src="krieger.png" width="1812" />
+![](krieger.png)<!-- -->
 
 ``` r
 fig.cap = "Step 1: sorting into working patterns of distinct structural plan. Step 2: sorting into detailed working groups each consistently combining features in but one way. Step 3: recombining working groups into tentative types on basis of comparative distributions and associations of working groups. Step 4: consolidation of types through further testing for consistency in form and variation. Step 5: description and illustration of types with full range of variation. Step 6: a - determination of series of linked types, b - determination of material-culture complexes, and c - determination of type relationships in related cultures."
@@ -301,27 +302,27 @@ fig.cap = "Step 1: sorting into working patterns of distinct structural plan. St
 
 ``` r
 # boxplot of maximum length ~ site
-sitemaxl<-ggplot(data,aes(x=site,y=maxl,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxl<-ggplot(data,aes(x=Site,y=maxl,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum width ~ site
-sitemaxw<-ggplot(data,aes(x=site,y=maxw,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxw<-ggplot(data,aes(x=Site,y=maxw,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness ~ site
-sitemaxth<-ggplot(data,aes(x=site,y=maxth,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxth<-ggplot(data,aes(x=Site,y=maxth,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of stem length ~ site
-sitemaxstl<-ggplot(data,aes(x=site,y=maxstl,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxstl<-ggplot(data,aes(x=Site,y=maxstl,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of stem width ~ site
-sitemaxstw<-ggplot(data,aes(x=site,y=maxstw,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxstw<-ggplot(data,aes(x=Site,y=maxstw,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
   scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
@@ -341,14 +342,14 @@ sitefigure<-ggarrange(sitemaxl,sitemaxw,sitemaxth,sitemaxstl,sitemaxstw,
 sitefigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxsite-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxsite-1.png" width="100%" />
 
 ### Principal Components Analysis for `site`
 
 ``` r
 #pca
 df<-data[c(2:6)]
-sitepca<-autoplot(prcomp(df),data = data, colour = 'site',
+sitepca<-autoplot(prcomp(df),data = data, colour = 'Site',
          loadings = TRUE, loadings.colour = 'blue',
          loadings.label = TRUE,loadings.label.size = 3, 
          frame = TRUE)
@@ -356,13 +357,13 @@ sitepca<-autoplot(prcomp(df),data = data, colour = 'site',
 sitepca
 ```
 
-![](linear-metrics_files/figure-gfm/pcasite-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/pcasite-1.png" width="100%" />
 
 ### Analyses of Variance (ANOVA) for `variable` \~ `site`
 
 ``` r
 # anova = maximum length ~ site
-siteml<-lm.rrpp(maxl ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+siteml<-lm.rrpp(maxl ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(siteml)
 ```
 
@@ -375,18 +376,18 @@ anova(siteml)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df      SS     MS     Rsq      F      Z Pr(>F)   
-    ## site        2  1654.9 827.46 0.05936 6.5946 1.9163 0.0016 **
+    ## Site        2  1654.9 827.46 0.05936 6.5946 1.9163 0.0016 **
     ## Residuals 209 26224.4 125.48 0.94064                        
     ## Total     211 27879.3                                       
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxl ~ site, iter = 9999, SS.type = "I", data = data,  
+    ## Call: lm.rrpp(f1 = maxl ~ Site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum width ~ site
-sitemw<-lm.rrpp(maxw ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+sitemw<-lm.rrpp(maxw ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemw)
 ```
 
@@ -399,18 +400,18 @@ anova(sitemw)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
-    ## site        2 1499.0 749.49 0.18081 23.064 2.9037  1e-04 ***
+    ## Site        2 1499.0 749.49 0.18081 23.064 2.9037  1e-04 ***
     ## Residuals 209 6791.6  32.50 0.81919                         
     ## Total     211 8290.6                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxw ~ site, iter = 9999, SS.type = "I", data = data,  
+    ## Call: lm.rrpp(f1 = maxw ~ Site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum thickness ~ site
-sitemth<-lm.rrpp(maxth ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+sitemth<-lm.rrpp(maxth ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemth)
 ```
 
@@ -423,18 +424,18 @@ anova(sitemth)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
-    ## site        2  153.07 76.533 0.15023 18.475 2.7012  1e-04 ***
+    ## Site        2  153.07 76.533 0.15023 18.475 2.7012  1e-04 ***
     ## Residuals 209  865.80  4.143 0.84977                         
     ## Total     211 1018.87                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxth ~ site, iter = 9999, SS.type = "I", data = data,  
+    ## Call: lm.rrpp(f1 = maxth ~ Site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum stem length ~ site
-sitemstl<-lm.rrpp(maxstl ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+sitemstl<-lm.rrpp(maxstl ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemstl)
 ```
 
@@ -447,18 +448,18 @@ anova(sitemstl)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df     SS      MS     Rsq      F     Z Pr(>F)    
-    ## site        2  417.9 208.963 0.12494 14.921 2.528  1e-04 ***
+    ## Site        2  417.9 208.963 0.12494 14.921 2.528  1e-04 ***
     ## Residuals 209 2927.1  14.005 0.87506                        
     ## Total     211 3345.0                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxstl ~ site, iter = 9999, SS.type = "I", data = data,  
+    ## Call: lm.rrpp(f1 = maxstl ~ Site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum stem width ~ site
-sitemstw<-lm.rrpp(maxstw ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+sitemstw<-lm.rrpp(maxstw ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemstw)
 ```
 
@@ -471,13 +472,13 @@ anova(sitemstw)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
-    ## site        2  581.8 290.876 0.15969 19.859 2.7559  1e-04 ***
+    ## Site        2  581.8 290.876 0.15969 19.859 2.7559  1e-04 ***
     ## Residuals 209 3061.3  14.647 0.84031                         
     ## Total     211 3643.0                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxstw ~ site, iter = 9999, SS.type = "I", data = data,  
+    ## Call: lm.rrpp(f1 = maxstw ~ Site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ## Toward a replicable method of assigning Gary type-varieties
@@ -520,7 +521,7 @@ annotate_figure(fwebbfig,
 )
 ```
 
-![](linear-metrics_files/figure-gfm/fphgantt-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/fphgantt-1.png" width="100%" />
 
 ### Assign Gary type-varieties proposed by Ford, Phillips, and Haag (1955)
 
@@ -899,7 +900,7 @@ min(mmsgs$maxstw)
 
 ``` r
 # subset cooper data
-cprmxl<-subset(data,site=="Cooper",select=maxl:tv0)
+cprmxl<-subset(data,Site=="Cooper",select=maxl:tv0)
 # boxplot of maximum length
 cprmaxl<-ggplot(cprmxl,aes(x=tv0,y=maxl,color=tv0)) + 
   geom_boxplot() +
@@ -946,13 +947,13 @@ cprfigure<-ggarrange(cprmaxl,cprmaxw,cprmaxth,cprmaxstl,cprmaxstw,
 cprfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20c%20tv0-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot c tv0-1.png" width="100%" />
 
 ### Boxplots for `site` by `tv0` for Gary dart points from Means
 
 ``` r
 # subset means data
-mnsmxl<-subset(data,site=="Means",select=maxl:tv0)
+mnsmxl<-subset(data,Site=="Means",select=maxl:tv0)
 # boxplot of maximum length
 mnsmaxl<-ggplot(mnsmxl,aes(x=tv0,y=maxl,color=tv0)) + 
   geom_boxplot() +
@@ -999,13 +1000,13 @@ mnsfigure<-ggarrange(mnsmaxl,mnsmaxw,mnsmaxth,mnsmaxstl,mnsmaxstw,
 mnsfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20m%20tv0-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot m tv0-1.png" width="100%" />
 
 ### Boxplots for `site` by `tv0` for Gary dart points from Poverty Point
 
 ``` r
 # subset poverty point data
-pvptmxl<-subset(data,site=="Pov Pt",select=maxl:tv0)
+pvptmxl<-subset(data,Site=="Pov Pt",select=maxl:tv0)
 # boxplot of maximum length
 pvptmaxl<-ggplot(pvptmxl,aes(x=tv0,y=maxl,color=tv0)) + 
   geom_boxplot() +
@@ -1052,7 +1053,7 @@ ppfigure<-ggarrange(pvptmaxl,pvptmaxw,pvptmaxth,pvptmaxstl,pvptmaxstw,
 ppfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20pp%20tv0-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot pp tv0-1.png" width="100%" />
 
 ### Principal Components Analysis for `tv0` at all sites
 
@@ -1067,7 +1068,7 @@ tv0pca<-autoplot(prcomp(df),data = data, colour = 'tv0',
 tv0pca
 ```
 
-![](linear-metrics_files/figure-gfm/pca%20tv0-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/pca tv0-1.png" width="100%" />
 
 ### Analyses of Variance (ANOVA) for linear variables \~ `tv0`
 
@@ -1245,7 +1246,7 @@ annotate_figure(fwebbfig,
 )
 ```
 
-![](linear-metrics_files/figure-gfm/fordwebbgantt-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/fordwebbgantt-1.png" width="100%" />
 
 ### Assign Gary type-varieties proposed by Ford and Webb (1956)
 
@@ -1538,7 +1539,7 @@ min(mms$maxstw)
 
 ``` r
 # subset cooper data
-cprmxl<-subset(data,site=="Cooper",select=maxl:tv1)
+cprmxl<-subset(data,Site=="Cooper",select=maxl:tv1)
 # boxplot of maximum length
 cprmaxl<-ggplot(cprmxl,aes(x=tv1,y=maxl,color=tv1)) + 
   geom_boxplot() +
@@ -1585,13 +1586,13 @@ cprfigure<-ggarrange(cprmaxl,cprmaxw,cprmaxth,cprmaxstl,cprmaxstw,
 cprfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20c-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot c-1.png" width="100%" />
 
 ### Boxplots for `site` by `tv1` for Gary dart points from Means
 
 ``` r
 # subset means data
-mnsmxl<-subset(data,site=="Means",select=maxl:tv1)
+mnsmxl<-subset(data,Site=="Means",select=maxl:tv1)
 # boxplot of maximum length
 mnsmaxl<-ggplot(mnsmxl,aes(x=tv1,y=maxl,color=tv1)) + 
   geom_boxplot() +
@@ -1638,13 +1639,13 @@ mnsfigure<-ggarrange(mnsmaxl,mnsmaxw,mnsmaxth,mnsmaxstl,mnsmaxstw,
 mnsfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20m-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot m-1.png" width="100%" />
 
 ### Boxplots for `site` by `tv1` for Gary dart points from Poverty Point
 
 ``` r
 # subset poverty point data
-pvptmxl<-subset(data,site=="Pov Pt",select=maxl:tv1)
+pvptmxl<-subset(data,Site=="Pov Pt",select=maxl:tv1)
 # boxplot of maximum length
 pvptmaxl<-ggplot(pvptmxl,aes(x=tv1,y=maxl,color=tv1)) + 
   geom_boxplot() +
@@ -1691,7 +1692,7 @@ ppfigure<-ggarrange(pvptmaxl,pvptmaxw,pvptmaxth,pvptmaxstl,pvptmaxstw,
 ppfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20pp-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot pp-1.png" width="100%" />
 
 ### Principal Components Analysis for `tv1` at all sites
 
@@ -1706,7 +1707,7 @@ t1pca<-autoplot(prcomp(df),data = data, colour = 'tv1',
 t1pca
 ```
 
-![](linear-metrics_files/figure-gfm/pca-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/pca-1.png" width="100%" />
 
 ### Analyses of Variance (ANOVA) for `variable` \~ `tv1`
 
@@ -1876,7 +1877,7 @@ annotate_figure(johnsonfig,
 )
 ```
 
-![](linear-metrics_files/figure-gfm/johnsongantt-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/johnsongantt-1.png" width="100%" />
 
 ### Assign Gary type-varieties proposed by Johnson (1961)
 
@@ -2684,7 +2685,7 @@ min(jcl$maxstw)
 
 ``` r
 # subset cooper data
-cprmxl<-subset(data,site=="Cooper",select=maxl:tv3)
+cprmxl<-subset(data,Site=="Cooper",select=maxl:tv3)
 # boxplot of maximum length
 cprmaxl<-ggplot(cprmxl,aes(x=tv3,y=maxl,color=tv3)) + 
   geom_boxplot() +
@@ -2731,13 +2732,13 @@ cprfigure<-ggarrange(cprmaxl,cprmaxw,cprmaxth,cprmaxstl,cprmaxstw,
 cprfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20c%20tv3-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot c tv3-1.png" width="100%" />
 
 ### Boxplots for `site` by `tv3` for Gary dart points from Means
 
 ``` r
 # subset means data
-mnsmxl<-subset(data,site=="Means",select=maxl:tv3)
+mnsmxl<-subset(data,Site=="Means",select=maxl:tv3)
 # boxplot of maximum length
 mnsmaxl<-ggplot(mnsmxl,aes(x=tv3,y=maxl,color=tv3)) + 
   geom_boxplot() +
@@ -2784,13 +2785,13 @@ mnsfigure<-ggarrange(mnsmaxl,mnsmaxw,mnsmaxth,mnsmaxstl,mnsmaxstw,
 mnsfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20m%20tv3-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot m tv3-1.png" width="100%" />
 
 ### Boxplots for `site` by `tv3` for Gary dart points from Poverty Point
 
 ``` r
 # subset poverty point data
-pvptmxl<-subset(data,site=="Pov Pt",select=maxl:tv3)
+pvptmxl<-subset(data,Site=="Pov Pt",select=maxl:tv3)
 # boxplot of maximum length
 pvptmaxl<-ggplot(pvptmxl,aes(x=tv3,y=maxl,color=tv3)) + 
   geom_boxplot() +
@@ -2837,7 +2838,7 @@ ppfigure<-ggarrange(pvptmaxl,pvptmaxw,pvptmaxth,pvptmaxstl,pvptmaxstw,
 ppfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20pp%20tv3-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot pp tv3-1.png" width="100%" />
 
 ### Principal Components Analysis for `tv3` at all sites
 
@@ -2852,7 +2853,7 @@ tv3pca<-autoplot(prcomp(df),data = data, colour = 'tv3',
 tv3pca
 ```
 
-![](linear-metrics_files/figure-gfm/pca%20tv3-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/pca tv3-1.png" width="100%" />
 
 ### Analyses of Variance (ANOVA) for linear variables \~ `tv3`
 
@@ -3033,7 +3034,7 @@ annotate_figure(schambachfig,
 )
 ```
 
-![](linear-metrics_files/figure-gfm/schamgantt-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/schamgantt-1.png" width="100%" />
 
 ``` r
 # assign varieties based upon reported metrics in Schambach (1998)
@@ -3752,7 +3753,7 @@ min(mmcmb$maxstw)
 
 ``` r
 # subset cooper data
-cprmxl<-subset(data,site=="Cooper",select=maxl:tv2)
+cprmxl<-subset(data,Site=="Cooper",select=maxl:tv2)
 # boxplot of maximum length
 cprmaxl<-ggplot(cprmxl,aes(x=tv2,y=maxl,color=tv2)) + 
   geom_boxplot() +
@@ -3799,13 +3800,13 @@ cprfigure<-ggarrange(cprmaxl,cprmaxw,cprmaxth,cprmaxstl,cprmaxstw,
 cprfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20c%20tv2-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot c tv2-1.png" width="100%" />
 
 ### Boxplots for `site` by `tv2` for Gary dart points from Means
 
 ``` r
 # subset means data
-mnsmxl<-subset(data,site=="Means",select=maxl:tv2)
+mnsmxl<-subset(data,Site=="Means",select=maxl:tv2)
 # boxplot of maximum length
 mnsmaxl<-ggplot(mnsmxl,aes(x=tv2,y=maxl,color=tv2)) + 
   geom_boxplot() +
@@ -3852,13 +3853,13 @@ mnsfigure<-ggarrange(mnsmaxl,mnsmaxw,mnsmaxth,mnsmaxstl,mnsmaxstw,
 mnsfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20m%20tv2-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot m tv2-1.png" width="100%" />
 
 ### Boxplots for `site` by `tv2` for Gary dart points from Poverty Point
 
 ``` r
 # subset poverty point data
-pvptmxl<-subset(data,site=="Pov Pt",select=maxl:tv2)
+pvptmxl<-subset(data,Site=="Pov Pt",select=maxl:tv2)
 # boxplot of maximum length
 pvptmaxl<-ggplot(pvptmxl,aes(x=tv2,y=maxl,color=tv2)) + 
   geom_boxplot() +
@@ -3905,7 +3906,7 @@ ppfigure<-ggarrange(pvptmaxl,pvptmaxw,pvptmaxth,pvptmaxstl,pvptmaxstw,
 ppfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20pp%20tv2-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot pp tv2-1.png" width="100%" />
 
 ### Principal Components Analysis for `tv2` at all sites
 
@@ -3920,7 +3921,7 @@ tv2pca<-autoplot(prcomp(df),data = data, colour = 'tv2',
 tv2pca
 ```
 
-![](linear-metrics_files/figure-gfm/pca%20tv2-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/pca tv2-1.png" width="100%" />
 
 ### Analyses of Variance (ANOVA) for linear variables \~ `tv2`
 
