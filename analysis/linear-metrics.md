@@ -1,4 +1,4 @@
-Linear metrics of Gary type-varieties
+Supplementary Material: Linear metrics of Gary type-varieties
 ================
 Robert Z. Selden, Jr.
 March 1, 2020
@@ -85,6 +85,17 @@ contracting stem, and broad, straight shoulders. This is the earliest
 work that begins to expound upon the diversity of morphological
 variation thought to occur within what would later become the Gary type.
 
+Webb and DeJarnette (1942, 8–9) developed a hierarchically-nested
+classification system for projectile points from the Pickwick Basin.
+Within that system, the number *2* denoted a stemmed point, and *b* that
+it contracted toward the base. It is noteworthy that the shape of the
+projectile points was considered the dominant element in classification,
+and comparison of each specimen with the type form was made by the same
+individual throughout their multi-year study (Webb and DeJarnette 1942).
+Many of the *2b* (and various other) projectile point types identified
+during that study would now be considered Gary or Adena, depending upon
+their temporal and contextual association.
+
 In the winter of 1938, two Gary points were excavated from midden B, a
 150 x 100 foot (long axis along northeast-southwest line) elongated-oval
 shell midden, at the Tchefuncte site, located parallel to the shoreline
@@ -101,8 +112,6 @@ one type—represented by two projectiles (one illustrated) (Ford, Quimby
 Jr., and Snow 1945, Figure 8:K)—based upon the initial (Suhm, Krieger,
 and Jelks 1954, 430–31, Plate 94) and current formal definitions
 (Turner, Hester, and McReynolds 2011, 107–8).
-
-  - Webb and DeJarnette (1942, 8–9)
 
 In his discussion of the assemblage from the Harrell site, Krieger
 (1946, 115–17, Table 2, Figure 8p) includes *Gary Contracting Stem*
@@ -121,15 +130,25 @@ two of the southernmost sites in the area (Lewis and Kneberg 1947). The
 Tapered Stem *var. Beaver Tail Stem* was noted to be an Archaic or
 Woodland type (Lewis and Kneberg 1947).
 
-  - Webb (1948, Figure 44:1,4)
-
   - Ford (1951, 115, Figure 45)
+
+  - Baerreis (1951)
+
+  - Bell and Baerreis (1951, Plate 1 (8,22), Plate 3 (6), Plate 8 (8),
+    Plate 9 (3,4), Plate 10 (1,4), Plate 11 (14), and Plate 13 (15))
 
   - Wheat (1953, 204–5, Plate 36)
 
 #### Discussions of manufacture and retouch in Gary dart points
 
-  - Studer (1982, 67–73, Figure 3)
+In his study of the lithic assemblage from the Icy Eye site, Studer
+(1982, 67–73, Figure 3) posited a useful reduction sequence. Unlike
+other areas where Gary dart points are produced, the available raw
+materials from the area where Studer was working (east Texas) were quite
+small (Studer 1982). Studer (1982, 71) posits that bipolar flaking may
+have been used to reflect the percussion force otherwise lost through
+movement, where anvil stones were used to hold the pebbles stationary
+and localise percussion forces.
 
   - Ensor and Carlson (1991, Figure 85)
 
@@ -144,6 +163,7 @@ Woodland type (Lewis and Kneberg 1947).
 #devtools::install_github("mlcollyer/RRPP")
 #devtools::install_github("tidyverse/ggplot2")
 #devtools::install_github("kassambara/ggpubr")
+#devtools::install_github('sinhrks/ggfortify')
 # load libraries
 library(DiagrammeR)
 library(ggbiplot)
@@ -171,6 +191,21 @@ library(ggpubr)
     ## The following object is masked from 'package:plyr':
     ## 
     ##     mutate
+
+``` r
+library(ggfortify)
+```
+
+    ## 
+    ## Attaching package: 'ggfortify'
+
+    ## The following object is masked from 'package:ggbiplot':
+    ## 
+    ##     ggbiplot
+
+``` r
+library(cluster)
+```
 
 ### Set working directory, load data, and define variables
 
@@ -255,7 +290,7 @@ arrow
 knitr::include_graphics('krieger.png')
 ```
 
-<img src="krieger.png" width="1812" />
+![](krieger.png)<!-- -->
 
 ``` r
 fig.cap = "Step 1: sorting into working patterns of distinct structural plan. Step 2: sorting into detailed working groups each consistently combining features in but one way. Step 3: recombining working groups into tentative types on basis of comparative distributions and associations of working groups. Step 4: consolidation of types through further testing for consistency in form and variation. Step 5: description and illustration of types with full range of variation. Step 6: a - determination of series of linked types, b - determination of material-culture complexes, and c - determination of type relationships in related cultures."
@@ -267,29 +302,29 @@ fig.cap = "Step 1: sorting into working patterns of distinct structural plan. St
 
 ``` r
 # boxplot of maximum length ~ site
-sitemaxl<-ggplot(data,aes(x=site,y=maxl,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxl<-ggplot(data,aes(x=Site,y=maxl,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum width ~ site
-sitemaxw<-ggplot(data,aes(x=site,y=maxw,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxw<-ggplot(data,aes(x=Site,y=maxw,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness ~ site
-sitemaxth<-ggplot(data,aes(x=site,y=maxth,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxth<-ggplot(data,aes(x=Site,y=maxth,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of stem length ~ site
-sitemaxstl<-ggplot(data,aes(x=site,y=maxstl,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxstl<-ggplot(data,aes(x=Site,y=maxstl,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of stem width ~ site
-sitemaxstw<-ggplot(data,aes(x=site,y=maxstw,color=site)) + geom_boxplot(notch = TRUE) +
+sitemaxstw<-ggplot(data,aes(x=Site,y=maxstw,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # render figure
 sitefigure<-ggarrange(sitemaxl,sitemaxw,sitemaxth,sitemaxstl,sitemaxstw,
@@ -307,37 +342,36 @@ sitefigure<-ggarrange(sitemaxl,sitemaxw,sitemaxth,sitemaxstl,sitemaxstw,
 sitefigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxsite-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxsite-1.png" width="100%" />
+
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper, Means, and Poverty Point sites used in this study."
+```
 
 ### Principal Components Analysis for `site`
 
 ``` r
 #pca
-data.pca<-prcomp(data[c(2:6)],center = TRUE,scale. = TRUE)
-summary(data.pca)
-```
-
-    ## Importance of components:
-    ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7169 0.9249 0.7982 0.62917 0.40486
-    ## Proportion of Variance 0.5896 0.1711 0.1274 0.07917 0.03278
-    ## Cumulative Proportion  0.5896 0.7606 0.8881 0.96722 1.00000
-
-``` r
-sitepca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = site) +
-  scale_color_brewer(name = "Site",palette = "Dark2") +
-  theme(legend.position = "right")
+df<-data[c(2:6)]
+sitepca<-autoplot(prcomp(df),data = data, colour = 'Site',
+         loadings = TRUE, loadings.colour = 'blue',
+         loadings.label = TRUE,loadings.label.size = 3, 
+         frame = TRUE)
 #render figure
 sitepca
 ```
 
-![](linear-metrics_files/figure-gfm/pcasite-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/pcasite-1.png" width="100%" />
+
+``` r
+fig.cap = "PCA by site."
+```
 
 ### Analyses of Variance (ANOVA) for `variable` \~ `site`
 
 ``` r
 # anova = maximum length ~ site
-siteml<-lm.rrpp(maxl ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+siteml<-lm.rrpp(maxl ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(siteml)
 ```
 
@@ -350,18 +384,18 @@ anova(siteml)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df      SS     MS     Rsq      F      Z Pr(>F)   
-    ## site        2  1654.9 827.46 0.05936 6.5946 1.9163 0.0016 **
+    ## Site        2  1654.9 827.46 0.05936 6.5946 1.9163 0.0016 **
     ## Residuals 209 26224.4 125.48 0.94064                        
     ## Total     211 27879.3                                       
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxl ~ site, iter = 9999, SS.type = "I", data = data,  
+    ## Call: lm.rrpp(f1 = maxl ~ Site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum width ~ site
-sitemw<-lm.rrpp(maxw ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+sitemw<-lm.rrpp(maxw ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemw)
 ```
 
@@ -374,18 +408,18 @@ anova(sitemw)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
-    ## site        2 1499.0 749.49 0.18081 23.064 2.9037  1e-04 ***
+    ## Site        2 1499.0 749.49 0.18081 23.064 2.9037  1e-04 ***
     ## Residuals 209 6791.6  32.50 0.81919                         
     ## Total     211 8290.6                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxw ~ site, iter = 9999, SS.type = "I", data = data,  
+    ## Call: lm.rrpp(f1 = maxw ~ Site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum thickness ~ site
-sitemth<-lm.rrpp(maxth ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+sitemth<-lm.rrpp(maxth ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemth)
 ```
 
@@ -398,18 +432,18 @@ anova(sitemth)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df      SS     MS     Rsq      F      Z Pr(>F)    
-    ## site        2  153.07 76.533 0.15023 18.475 2.7012  1e-04 ***
+    ## Site        2  153.07 76.533 0.15023 18.475 2.7012  1e-04 ***
     ## Residuals 209  865.80  4.143 0.84977                         
     ## Total     211 1018.87                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxth ~ site, iter = 9999, SS.type = "I", data = data,  
+    ## Call: lm.rrpp(f1 = maxth ~ Site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum stem length ~ site
-sitemstl<-lm.rrpp(maxstl ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+sitemstl<-lm.rrpp(maxstl ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemstl)
 ```
 
@@ -422,18 +456,18 @@ anova(sitemstl)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df     SS      MS     Rsq      F     Z Pr(>F)    
-    ## site        2  417.9 208.963 0.12494 14.921 2.528  1e-04 ***
+    ## Site        2  417.9 208.963 0.12494 14.921 2.528  1e-04 ***
     ## Residuals 209 2927.1  14.005 0.87506                        
     ## Total     211 3345.0                                        
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxstl ~ site, iter = 9999, SS.type = "I", data = data,  
+    ## Call: lm.rrpp(f1 = maxstl ~ Site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ``` r
 # anova = maximum stem width ~ site
-sitemstw<-lm.rrpp(maxstw ~ site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+sitemstw<-lm.rrpp(maxstw ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemstw)
 ```
 
@@ -446,13 +480,13 @@ anova(sitemstw)
     ## Effect sizes (Z) based on F distributions
     ## 
     ##            Df     SS      MS     Rsq      F      Z Pr(>F)    
-    ## site        2  581.8 290.876 0.15969 19.859 2.7559  1e-04 ***
+    ## Site        2  581.8 290.876 0.15969 19.859 2.7559  1e-04 ***
     ## Residuals 209 3061.3  14.647 0.84031                         
     ## Total     211 3643.0                                         
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## 
-    ## Call: lm.rrpp(f1 = maxstw ~ site, iter = 9999, SS.type = "I", data = data,  
+    ## Call: lm.rrpp(f1 = maxstw ~ Site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
 ## Toward a replicable method of assigning Gary type-varieties
@@ -476,7 +510,7 @@ fphl<-data.frame(Name=c('var.GaryStemmed','var.TypicalGaryStemmed','var.BroadGar
 )
 fphlength<-ggplot(fphl,aes(x=Length,xend=end,y=Name,yend=Name,color=Name)) +
   geom_segment(size=2) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 fphw<-data.frame(Name=c('var.GaryStemmed','var.TypicalGaryStemmed','var.BroadGaryStemmed','var.ThinGaryStemmed','var.SmallGaryStemmed'),
            Width=c(22,22,32,30,20), # in mm
@@ -484,18 +518,15 @@ fphw<-data.frame(Name=c('var.GaryStemmed','var.TypicalGaryStemmed','var.BroadGar
 )
 fphwidth<-ggplot(fphw,aes(x=Width,xend=end,y=Name,yend=Name,color=Name)) +
   geom_segment(size=2) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # render figure
 fwebbfig<-ggarrange(fphlength,fphwidth,
                   labels = c("a","b"),
                   ncol = 1, nrow = 2)
-annotate_figure(fwebbfig,
-                top=text_grob("Gary type-variety linear metrics per Ford, Phillips, and Haag (1955)")
-)
-```
 
-![](linear-metrics_files/figure-gfm/fphgantt-1.png)<!-- -->
+fig.cap = "Gantt charts illustrating the range of linear measurements for each type-variety reported by Ford, Phillips, and Haag (1955)."
+```
 
 ### Assign Gary type-varieties proposed by Ford, Phillips, and Haag (1955)
 
@@ -513,13 +544,13 @@ expected that *Gary Stemmed* will fall out due to overlap in length with
 ``` r
 # assign varieties based upon reported metrics in Ford, Phillips, and Haag [1954]
 fphlcheck1 <- data$maxl >= 45 & data$maxl <= 70
-fphlcheck2 <- data$maxl > 45 & data$maxl <= 79
-fphlcheck3 <- data$maxl > 45 & data$maxl < 70
+fphlcheck2 <- data$maxl >= 45 & data$maxl <= 79
+fphlcheck3 <- data$maxl >= 45 & data$maxl <= 70
 fphlcheck4 <- data$maxl >= 55 & data$maxl <= 75
 fphlcheck5 <- data$maxl >= 35 & data$maxl <= 50
 
-fphwcheck1 <- data$maxw >= 22 & data$maxw <=31
-fphwcheck2 <- data$maxw > 22 & data$maxw < 31
+fphwcheck1 <- data$maxw >= 22 & data$maxw <= 31
+fphwcheck2 <- data$maxw >= 22 & data$maxw <= 31
 fphwcheck3 <- data$maxw >= 32 & data$maxw <= 48
 fphwcheck4 <- data$maxw >= 30 & data$maxw <= 36
 fphwcheck5 <- data$maxw >= 20 & data$maxw <= 30
@@ -874,36 +905,36 @@ min(mmsgs$maxstw)
 
 ``` r
 # subset cooper data
-cprmxl<-subset(data,site=="Cooper",select=maxl:tv0)
+cprmxl<-subset(data,Site=="Cooper",select=maxl:tv0)
 # boxplot of maximum length
 cprmaxl<-ggplot(cprmxl,aes(x=tv0,y=maxl,color=tv0)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum width
 cprmaxw<-ggplot(cprmxl,aes(x=tv0,y=maxw,color=tv0)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 cprmaxth<-ggplot(cprmxl,aes(x=tv0,y=maxth,color=tv0)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum stem length
 cprmaxstl<-ggplot(cprmxl,aes(x=tv0,y=maxstl,color=tv0)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 cprmaxstw<-ggplot(cprmxl,aes(x=tv0,y=maxstw,color=tv0)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # render figure
 cprfigure<-ggarrange(cprmaxl,cprmaxw,cprmaxth,cprmaxstl,cprmaxstw,
@@ -921,46 +952,46 @@ cprfigure<-ggarrange(cprmaxl,cprmaxw,cprmaxth,cprmaxstl,cprmaxstw,
 cprfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20c%20tv0-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot c tv0-1.png" width="100%" />
 
 ``` r
-fig.cap = "Labels: GS, Gary Stemmed from Cooper; TyGS, Typical Gary Stemmed from Cooper; BGS, Broad Gary Stemmed from Cooper; ThGS, Thin Gary Stemmed from Cooper; SGS, Small Gary Stemmed from Cooper."
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper site."
 ```
 
 ### Boxplots for `site` by `tv0` for Gary dart points from Means
 
 ``` r
 # subset means data
-mnsmxl<-subset(data,site=="Means",select=maxl:tv0)
+mnsmxl<-subset(data,Site=="Means",select=maxl:tv0)
 # boxplot of maximum length
 mnsmaxl<-ggplot(mnsmxl,aes(x=tv0,y=maxl,color=tv0)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum width
 mnsmaxw<-ggplot(mnsmxl,aes(x=tv0,y=maxw,color=tv0)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 mnsmaxth<-ggplot(mnsmxl,aes(x=tv0,y=maxth,color=tv0)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum stem length
 mnsmaxstl<-ggplot(mnsmxl,aes(x=tv0,y=maxstl,color=tv0)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 mnsmaxstw<-ggplot(mnsmxl,aes(x=tv0,y=maxstw,color=tv0)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # render figure
 mnsfigure<-ggarrange(mnsmaxl,mnsmaxw,mnsmaxth,mnsmaxstl,mnsmaxstw,
@@ -978,46 +1009,46 @@ mnsfigure<-ggarrange(mnsmaxl,mnsmaxw,mnsmaxth,mnsmaxstl,mnsmaxstw,
 mnsfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20m%20tv0-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot m tv0-1.png" width="100%" />
 
 ``` r
-fig.cap = "Labels: GS, Gary Stemmed from Means; TyGS, Typical Gary Stemmed from Means; BGS, Broad Gary Stemmed from Means; ThGS, Thin Gary Stemmed from Means; SGS, Small Gary Stemmed from Means."
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Means site."
 ```
 
 ### Boxplots for `site` by `tv0` for Gary dart points from Poverty Point
 
 ``` r
 # subset poverty point data
-pvptmxl<-subset(data,site=="Pov Pt",select=maxl:tv0)
+pvptmxl<-subset(data,Site=="Pov Pt",select=maxl:tv0)
 # boxplot of maximum length
 pvptmaxl<-ggplot(pvptmxl,aes(x=tv0,y=maxl,color=tv0)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum width
 pvptmaxw<-ggplot(pvptmxl,aes(x=tv0,y=maxw,color=tv0)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 pvptmaxth<-ggplot(pvptmxl,aes(x=tv0,y=maxth,color=tv0)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum stem length
 pvptmaxstl<-ggplot(pvptmxl,aes(x=tv0,y=maxstl,color=tv0)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 pvptmaxstw<-ggplot(pvptmxl,aes(x=tv0,y=maxstw,color=tv0)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # render figure
 ppfigure<-ggarrange(pvptmaxl,pvptmaxw,pvptmaxth,pvptmaxstl,pvptmaxstw,
@@ -1035,35 +1066,30 @@ ppfigure<-ggarrange(pvptmaxl,pvptmaxw,pvptmaxth,pvptmaxstl,pvptmaxstw,
 ppfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20pp%20tv0-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot pp tv0-1.png" width="100%" />
 
 ``` r
-fig.cap = "Labels: GS, Gary Stemmed from Poverty Point; TyGS, Typical Gary Stemmed from Poverty Point; BGS, Broad Gary Stemmed from Poverty Point; ThGS, Thin Gary Stemmed from Poverty Point; SGS, Small Gary Stemmed from Poverty Point."
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Poverty Point site."
 ```
 
 ### Principal Components Analysis for `tv0` at all sites
 
 ``` r
 #pca
-data.pca<-prcomp(data[c(2:6)],center = TRUE,scale. = TRUE)
-summary(data.pca)
-```
-
-    ## Importance of components:
-    ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7169 0.9249 0.7982 0.62917 0.40486
-    ## Proportion of Variance 0.5896 0.1711 0.1274 0.07917 0.03278
-    ## Cumulative Proportion  0.5896 0.7606 0.8881 0.96722 1.00000
-
-``` r
-tv0pca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = tv0) +
-  scale_color_brewer(name = "Type-Variety",palette = "Dark2") +
-  theme(legend.position = "right")
+df<-data[c(2:6)]
+tv0pca<-autoplot(prcomp(df),data = data, colour = 'tv0',
+         loadings = TRUE, loadings.colour = 'blue',
+         loadings.label = TRUE,loadings.label.size = 3, 
+         frame = TRUE)
 #render figure
 tv0pca
 ```
 
-![](linear-metrics_files/figure-gfm/pca%20tv0-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/pca tv0-1.png" width="100%" />
+
+``` r
+fig.cap = "PCA by Gary type-varieties reported by Ford, Phillips, and Haag (1955)."
+```
 
 ### Analyses of Variance (ANOVA) for linear variables \~ `tv0`
 
@@ -1213,7 +1239,7 @@ fwebbl<-data.frame(Name=c('var.GaryLarge','var.GaryMed/Typical','var.GarySmall')
 )
 fwebblength<-ggplot(fwebbl,aes(x=Length,xend=end,y=Name,yend=Name,color=Name)) +
   geom_segment(size=2) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 fwebbw<-data.frame(Name=c('var.GaryLarge','var.GaryMed/Typical','var.GarySmall'),
            Width=c(30,20,19), # in mm
@@ -1221,29 +1247,26 @@ fwebbw<-data.frame(Name=c('var.GaryLarge','var.GaryMed/Typical','var.GarySmall')
 )
 fwebbwidth<-ggplot(fwebbw,aes(x=Width,xend=end,y=Name,yend=Name,color=Name)) +
   geom_segment(size=2) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # thickness values were not precisely reported for GaryLarge and GaryTypical, and are included here for reference only
 fwebbth<-data.frame(Name=c('var.GaryLarge','var.GaryMed/Typical','var.GarySmall'),
-           Thickness=c(13,9,5), # in mm
-           end=c(13,10,10) # in mm
+           Thickness=c(12.9,9,5), # in mm (actual thickness of var. GaryLarge is 13. Plotted as 12.9-13.1 so that it shows on chart)
+           end=c(13.1,10,10) # in mm
 )
 fwebbthickness<-ggplot(fwebbth,aes(x=Thickness,xend=end,y=Name,yend=Name,color=Name)) +
   geom_segment(size=2) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # render figure
 fwebbfig<-ggarrange(fwebblength,fwebbwidth,fwebbthickness,
                   labels = c("a","b","c"),
                   ncol = 1, nrow = 3)
-annotate_figure(fwebbfig,
-                top=text_grob("Gary type-variety linear metrics per Ford and Webb (1956)")
-)
+
+fig.cap = "Gantt charts illustrating the range of linear measurements for each type-variety reported by Ford and Webb (1956)."
 ```
 
-![](linear-metrics_files/figure-gfm/fordwebbgantt-1.png)<!-- -->
-
-### Assign Gary type-varieties proposed by Ford and Webb
+### Assign Gary type-varieties proposed by Ford and Webb (1956)
 
 Ford and Webb (1956) used a single metric (maximum length) to assign
 Gary varieties at the Poverty Point site. The approach empoyed here
@@ -1251,7 +1274,8 @@ enlists all of Ford and Webb’s (1956) reported metrics, including
 maximum length and maximum width for all varieties, coupled with maximum
 thickness for *Gary Small*. No metrics were reported for *Gary Long*,
 which was omitted from this analysis. Those points that do not match
-with one of the three criteria were assigned as unidentified (“UID”).
+with one of the three criteria were assigned as unidentified (“UID”),
+and should be considered as Gary with no type-variety assignment.
 
 ``` r
 # assign varieties based upon reported metrics in Ford and Webb [1956]
@@ -1298,9 +1322,8 @@ tv1
 The Gary type-varieties defined by Ford and Webb (1956) only included
 ranges for maximum length and width, and an incomplete listing of
 thickness. The listing appended below reflects the maximum and minimum
-values for each orthogonal measurement included in the dataset. These
-metrics may have utility in positing type-variety assignments to partial
-specimens.
+values for each measure included in the dataset. These metrics may have
+utility in positing type-variety assignments to partial specimens.
 
 ``` r
 # subset dataset by tv1 type-varieties
@@ -1535,36 +1558,36 @@ min(mms$maxstw)
 
 ``` r
 # subset cooper data
-cprmxl<-subset(data,site=="Cooper",select=maxl:tv1)
+cprmxl<-subset(data,Site=="Cooper",select=maxl:tv1)
 # boxplot of maximum length
 cprmaxl<-ggplot(cprmxl,aes(x=tv1,y=maxl,color=tv1)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum width
 cprmaxw<-ggplot(cprmxl,aes(x=tv1,y=maxw,color=tv1)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 cprmaxth<-ggplot(cprmxl,aes(x=tv1,y=maxth,color=tv1)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum stem length
 cprmaxstl<-ggplot(cprmxl,aes(x=tv1,y=maxstl,color=tv1)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 cprmaxstw<-ggplot(cprmxl,aes(x=tv1,y=maxstw,color=tv1)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # render figure
 cprfigure<-ggarrange(cprmaxl,cprmaxw,cprmaxth,cprmaxstl,cprmaxstw,
@@ -1582,46 +1605,46 @@ cprfigure<-ggarrange(cprmaxl,cprmaxw,cprmaxth,cprmaxstl,cprmaxstw,
 cprfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20c-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot c-1.png" width="100%" />
 
 ``` r
-fig.cap = "Labels: lc, Gary Large from Cooper; mc, Gary Medium/Typical from Cooper; sc, Gary Small from Cooper."
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper site."
 ```
 
 ### Boxplots for `site` by `tv1` for Gary dart points from Means
 
 ``` r
 # subset means data
-mnsmxl<-subset(data,site=="Means",select=maxl:tv1)
+mnsmxl<-subset(data,Site=="Means",select=maxl:tv1)
 # boxplot of maximum length
 mnsmaxl<-ggplot(mnsmxl,aes(x=tv1,y=maxl,color=tv1)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum width
 mnsmaxw<-ggplot(mnsmxl,aes(x=tv1,y=maxw,color=tv1)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 mnsmaxth<-ggplot(mnsmxl,aes(x=tv1,y=maxth,color=tv1)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum stem length
 mnsmaxstl<-ggplot(mnsmxl,aes(x=tv1,y=maxstl,color=tv1)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 mnsmaxstw<-ggplot(mnsmxl,aes(x=tv1,y=maxstw,color=tv1)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # render figure
 mnsfigure<-ggarrange(mnsmaxl,mnsmaxw,mnsmaxth,mnsmaxstl,mnsmaxstw,
@@ -1639,46 +1662,46 @@ mnsfigure<-ggarrange(mnsmaxl,mnsmaxw,mnsmaxth,mnsmaxstl,mnsmaxstw,
 mnsfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20m-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot m-1.png" width="100%" />
 
 ``` r
-fig.cap = "Labels: lm, Gary Large from Means; mm, Gary Medium/Typical from Means; sm, Gary Small from Means"
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Means site."
 ```
 
 ### Boxplots for `site` by `tv1` for Gary dart points from Poverty Point
 
 ``` r
 # subset poverty point data
-pvptmxl<-subset(data,site=="Pov Pt",select=maxl:tv1)
+pvptmxl<-subset(data,Site=="Pov Pt",select=maxl:tv1)
 # boxplot of maximum length
 pvptmaxl<-ggplot(pvptmxl,aes(x=tv1,y=maxl,color=tv1)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum width
 pvptmaxw<-ggplot(pvptmxl,aes(x=tv1,y=maxw,color=tv1)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 pvptmaxth<-ggplot(pvptmxl,aes(x=tv1,y=maxth,color=tv1)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum stem length
 pvptmaxstl<-ggplot(pvptmxl,aes(x=tv1,y=maxstl,color=tv1)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 pvptmaxstw<-ggplot(pvptmxl,aes(x=tv1,y=maxstw,color=tv1)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # render figure
 ppfigure<-ggarrange(pvptmaxl,pvptmaxw,pvptmaxth,pvptmaxstl,pvptmaxstw,
@@ -1696,35 +1719,30 @@ ppfigure<-ggarrange(pvptmaxl,pvptmaxw,pvptmaxth,pvptmaxstl,pvptmaxstw,
 ppfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20pp-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot pp-1.png" width="100%" />
 
 ``` r
-fig.cap = "Labels: lpv, Gary Large from Poverty Point; mpv, Gary Medium/Typical from Poverty Point; spv, Gary Small from Poverty Point."
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Poverty Point site."
 ```
 
 ### Principal Components Analysis for `tv1` at all sites
 
 ``` r
 #pca
-data.pca<-prcomp(data[c(2:6)],center = TRUE,scale. = TRUE)
-summary(data.pca)
-```
-
-    ## Importance of components:
-    ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7169 0.9249 0.7982 0.62917 0.40486
-    ## Proportion of Variance 0.5896 0.1711 0.1274 0.07917 0.03278
-    ## Cumulative Proportion  0.5896 0.7606 0.8881 0.96722 1.00000
-
-``` r
-t1pca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = tv1) +
-  scale_color_brewer(name = "Type-Variety",palette = "Dark2") +
-  theme(legend.position = "right")
+df<-data[c(2:6)]
+t1pca<-autoplot(prcomp(df),data = data, colour = 'tv1',
+         loadings = TRUE, loadings.colour = 'blue',
+         loadings.label = TRUE,loadings.label.size = 3, 
+         frame = TRUE)
 #render figure
 t1pca
 ```
 
-![](linear-metrics_files/figure-gfm/pca-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/pca-1.png" width="100%" />
+
+``` r
+fig.cap = "PCA by Gary type-varieties reported by Ford and Webb (1956)."
+```
 
 ### Analyses of Variance (ANOVA) for `variable` \~ `tv1`
 
@@ -1848,6 +1866,1165 @@ anova(t1mstw)
     ## Call: lm.rrpp(f1 = maxstw ~ tv1, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
 
+## Gary varieties proposed by Johnson (1961)
+
+The `tv3` argument used within this and the subsequent section
+articulates with nine variants of the Gary type–including *var.
+Kaufman*, *var. Alsa*, *var. Hobson*, *var. Runge*, *var. Emory*, *var.
+Kemp*, *var. Panna Maria*, *var. Kenedy*, and *var. Colfax*, which were
+assigned using those morphological criteria advanced by Johnson (1961)
+at the Yarbrough and Miller sites in northeast Texas.
+
+``` r
+# reported length by variety
+jl<-data.frame(Name=c('var.Kaufman','var.Alsa','var.Hobson','var.Runge','var.Emory','var.Kemp','var.PannaMaria','var.Kenedy','var.Colfax'),
+           Length=c(34,30,22,31,27,29,39,21,25), # in mm
+           end=c(77,55,58,52,35,40,58,31,43) # in mm
+)
+length<-ggplot(jl,aes(x=Length,xend=end,y=Name,yend=Name,color=Name)) +
+  geom_segment(size=2) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# reported width by variety
+jw<-data.frame(Name=c('var.Kaufman','var.Alsa','var.Hobson','var.Runge','var.Emory','var.Kemp','var.PannaMaria','var.Kenedy','var.Colfax'),
+           Width=c(23,30,13,18,14,13,15,15,14), # in mm
+           end=c(38,42,30,34,24,18,28,23,23) # in mm
+)
+width<-ggplot(jw,aes(x=Width,xend=end,y=Name,yend=Name,color=Name)) +
+  geom_segment(size=2) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# reported thickness by variety
+jth<-data.frame(Name=c('var.Kaufman','var.Alsa','var.Hobson','var.Runge','var.Emory','var.Kemp','var.PannaMaria','var.Kenedy','var.Colfax'),
+           Thickness=c(5,9,5,6,7,5,7,5,5), # in mm
+           end=c(13,12,11,10,9,9,18,7,8) # in mm
+)
+thickness<-ggplot(jth,aes(x=Thickness,xend=end,y=Name,yend=Name,color=Name)) +
+  geom_segment(size=2) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+
+johnsonfig<-ggarrange(length,width,thickness,
+                  labels = c("a","b","c"),
+                  ncol = 1, nrow = 3)
+
+fig.cap = "Gantt charts illustrating the range of linear measurements for each type-variety reported by Johnson (1961)."
+```
+
+### Assign Gary type-varieties proposed by Johnson (1961)
+
+Johnson (1961) used a combination of maximum length, width, and
+thickness to assign Gary varieties at the Yarbrough and Miller sites.
+The approach empoyed here enlists all of Johnson (1961) reported
+metrics. Those points that do not match with one of the three criteria
+were assigned as unidentified (“UID”), which effectively discriminates a
+Gary point with no assigned variety.
+
+``` r
+# assign varieties based upon reported metrics in Schambach (1998)
+jlcheck1 <- data$maxl >= 34 & data$maxl <= 77
+jlcheck2 <- data$maxl >= 30 & data$maxl <= 55
+jlcheck3 <- data$maxl >= 22 & data$maxl <= 58
+jlcheck4 <- data$maxl >= 31 & data$maxl <= 52
+jlcheck5 <- data$maxl >= 27 & data$maxl <= 35
+jlcheck6 <- data$maxl >= 29 & data$maxl <= 40
+jlcheck7 <- data$maxl >= 39 & data$maxl <= 58
+jlcheck8 <- data$maxl >= 21 & data$maxl <= 31
+jlcheck9 <- data$maxl >= 25 & data$maxl <= 43
+
+jwcheck1 <- data$maxw >= 23 & data$maxw <= 38
+jwcheck2 <- data$maxw >= 30 & data$maxw <= 42
+jwcheck3 <- data$maxw >= 13 & data$maxw <= 30
+jwcheck4 <- data$maxw >= 18 & data$maxw <= 34
+jwcheck5 <- data$maxw >= 14 & data$maxw <= 24
+jwcheck6 <- data$maxw >= 13 & data$maxw <= 18
+jwcheck7 <- data$maxw >= 15 & data$maxw <= 28
+jwcheck8 <- data$maxw >= 15 & data$maxw <= 23
+jwcheck9 <- data$maxw >= 14 & data$maxw <= 23
+
+jtcheck1 <- data$maxth >= 5 & data$maxth <= 13
+jtcheck2 <- data$maxth >= 9 & data$maxth <= 12
+jtcheck3 <- data$maxth >= 5 & data$maxth <= 11
+jtcheck4 <- data$maxth >= 6 & data$maxth <= 10
+jtcheck5 <- data$maxth >= 7 & data$maxth <= 9
+jtcheck6 <- data$maxth >= 5 & data$maxth <= 9
+jtcheck7 <- data$maxth >= 7 & data$maxth <= 18
+jtcheck8 <- data$maxth >= 5 & data$maxth <= 7
+jtcheck9 <- data$maxth >= 5 & data$maxth <= 8
+
+data$tv3 <- "UID" # = Gary points (no variety)
+data$tv3 <- ifelse(jlcheck1 & jwcheck1 & jtcheck1, "Kf", data$tv3)
+data$tv3 <- ifelse(jlcheck2 & jwcheck2 & jtcheck2, "Al", data$tv3)
+data$tv3 <- ifelse(jlcheck3 & jwcheck3 & jtcheck3, "Ho", data$tv3)
+data$tv3 <- ifelse(jlcheck4 & jwcheck4 & jtcheck4, "Ru", data$tv3)
+data$tv3 <- ifelse(jlcheck5 & jwcheck5 & jtcheck5, "Em", data$tv3)
+data$tv3 <- ifelse(jlcheck6 & jwcheck6 & jtcheck6, "Km", data$tv3)
+data$tv3 <- ifelse(jlcheck7 & jwcheck7 & jtcheck7, "PM", data$tv3)
+data$tv3 <- ifelse(jlcheck8 & jwcheck8 & jtcheck8, "Kn", data$tv3)
+data$tv3 <- ifelse(jlcheck9 & jwcheck9 & jtcheck9, "Cl", data$tv3)
+
+tv3<-data$tv3
+tv3
+```
+
+    ##   [1] "UID" "UID" "UID" "UID" "Kf"  "Al"  "UID" "Kf"  "Kf"  "Kf"  "UID" "Kf" 
+    ##  [13] "Ho"  "Kf"  "PM"  "Kf"  "PM"  "Kf"  "Kf"  "Kf"  "Kf"  "Kf"  "UID" "Kf" 
+    ##  [25] "Ru"  "PM"  "Ru"  "Kf"  "PM"  "PM"  "PM"  "PM"  "Kf"  "Ru"  "PM"  "PM" 
+    ##  [37] "PM"  "PM"  "PM"  "Cl"  "Kf"  "UID" "Kf"  "Kf"  "Kf"  "UID" "Kf"  "Kf" 
+    ##  [49] "Kf"  "Kf"  "Kf"  "Kf"  "Kf"  "UID" "Kf"  "Kf"  "UID" "Kf"  "Kf"  "Kf" 
+    ##  [61] "Kf"  "UID" "Kf"  "Kf"  "Kf"  "Kf"  "Kf"  "PM"  "PM"  "Kf"  "PM"  "PM" 
+    ##  [73] "Al"  "Al"  "PM"  "PM"  "PM"  "PM"  "PM"  "PM"  "Ru"  "PM"  "PM"  "PM" 
+    ##  [85] "Ru"  "UID" "PM"  "Al"  "PM"  "PM"  "PM"  "PM"  "PM"  "Ru"  "Ru"  "PM" 
+    ##  [97] "Cl"  "Ru"  "Cl"  "Ho"  "PM"  "Al"  "PM"  "Ru"  "Kf"  "PM"  "PM"  "Ho" 
+    ## [109] "PM"  "PM"  "PM"  "PM"  "Cl"  "UID" "PM"  "Kf"  "PM"  "PM"  "Ru"  "PM" 
+    ## [121] "Cl"  "UID" "PM"  "Ru"  "PM"  "UID" "PM"  "PM"  "PM"  "Ho"  "PM"  "PM" 
+    ## [133] "PM"  "Cl"  "Ru"  "PM"  "Ru"  "PM"  "UID" "UID" "Kf"  "Ru"  "UID" "Ru" 
+    ## [145] "Ho"  "PM"  "Cl"  "Ru"  "UID" "UID" "Kf"  "Ru"  "UID" "Ru"  "Ru"  "UID"
+    ## [157] "Al"  "UID" "Ho"  "Ru"  "Cl"  "PM"  "PM"  "Kf"  "Kf"  "Kf"  "PM"  "Ru" 
+    ## [169] "PM"  "Ru"  "Km"  "PM"  "PM"  "PM"  "Ru"  "PM"  "PM"  "Cl"  "PM"  "Kf" 
+    ## [181] "PM"  "Kf"  "Kf"  "PM"  "PM"  "PM"  "PM"  "UID" "Ho"  "Ho"  "Kf"  "Ho" 
+    ## [193] "Ru"  "Cl"  "PM"  "PM"  "UID" "Al"  "UID" "PM"  "Kf"  "PM"  "Cl"  "PM" 
+    ## [205] "Cl"  "PM"  "Kf"  "PM"  "PM"  "Ru"  "Cl"  "PM"
+
+### Maximum and minimum values for all `tv3` variables
+
+The Gary type-varieties defined by Johnson (1961) only included ranges
+for maximum length, width, and thickness. The listing appended below
+reflects the maximum and minimum values for each measure included in the
+dataset. These metrics may have utility in positing type-variety
+assignments to partial specimens.
+
+``` r
+# subset dataset by tv3 type-varieties
+jkf<-subset(data,tv3=="Kf",select=maxl:tv3)
+jal<-subset(data,tv3=="Al",select=maxl:tv3)
+jho<-subset(data,tv3=="Ho",select=maxl:tv3)
+jru<-subset(data,tv3=="Ru",select=maxl:tv3)
+jem<-subset(data,tv3=="Em",select=maxl:tv3)
+jkm<-subset(data,tv3=="Km",select=maxl:tv3)
+jpm<-subset(data,tv3=="PM",select=maxl:tv3)
+jkn<-subset(data,tv3=="Kn",select=maxl:tv3)
+jcl<-subset(data,tv3=="Cl",select=maxl:tv3)
+```
+
+##### Maximum/minimum for *variety Kaufman*
+
+``` r
+# identify maximum/minimum metrics for variety Kaufman
+
+# max length (mm)
+max(jkf$maxl)
+```
+
+    ## [1] 73.58
+
+``` r
+# min length (mm)
+min(jkf$maxl)
+```
+
+    ## [1] 44.33
+
+``` r
+# max width (mm)
+max(jkf$maxw)
+```
+
+    ## [1] 37.93
+
+``` r
+# min width (mm)
+min(jkf$maxw)
+```
+
+    ## [1] 23.75
+
+``` r
+# max thickness (mm)
+max(jkf$maxth)
+```
+
+    ## [1] 12.96
+
+``` r
+# min thickness (mm)
+min(jkf$maxth)
+```
+
+    ## [1] 6.35
+
+``` r
+# max stem length (mm)
+max(jkf$maxstl)
+```
+
+    ## [1] 22.71
+
+``` r
+# min stem length (mm)
+min(jkf$maxstl)
+```
+
+    ## [1] 8.13
+
+``` r
+# max stem width (mm)
+max(jkf$maxstw)
+```
+
+    ## [1] 29.03
+
+``` r
+# min stem width (mm)
+min(jkf$maxstw)
+```
+
+    ## [1] 14.38
+
+#### Maximum/minimum for *variety Alsa*
+
+``` r
+# identify maximum/minimum metrics for variety Alsa
+
+# max length (mm)
+max(jal$maxl)
+```
+
+    ## [1] 54.7
+
+``` r
+# min length (mm)
+min(jal$maxl)
+```
+
+    ## [1] 44.35
+
+``` r
+# max width (mm)
+max(jal$maxw)
+```
+
+    ## [1] 36.63
+
+``` r
+# min width (mm)
+min(jal$maxw)
+```
+
+    ## [1] 30.36
+
+``` r
+# max thickness (mm)
+max(jal$maxth)
+```
+
+    ## [1] 11.92
+
+``` r
+# min thickness (mm)
+min(jal$maxth)
+```
+
+    ## [1] 9.18
+
+``` r
+# max stem length (mm)
+max(jal$maxstl)
+```
+
+    ## [1] 18.45
+
+``` r
+# min stem length (mm)
+min(jal$maxstl)
+```
+
+    ## [1] 10.6
+
+``` r
+# max stem width (mm)
+max(jal$maxstw)
+```
+
+    ## [1] 27.37
+
+``` r
+# min stem width (mm)
+min(jal$maxstw)
+```
+
+    ## [1] 16.68
+
+#### Maximum/minimum for *variety Hobson*
+
+``` r
+# identify maximum/minimum metrics for variety Hobson
+
+# max length (mm)
+max(jho$maxl)
+```
+
+    ## [1] 57.79
+
+``` r
+# min length (mm)
+min(jho$maxl)
+```
+
+    ## [1] 43.07
+
+``` r
+# max width (mm)
+max(jho$maxw)
+```
+
+    ## [1] 29.93
+
+``` r
+# min width (mm)
+min(jho$maxw)
+```
+
+    ## [1] 14.11
+
+``` r
+# max thickness (mm)
+max(jho$maxth)
+```
+
+    ## [1] 9.84
+
+``` r
+# min thickness (mm)
+min(jho$maxth)
+```
+
+    ## [1] 5.87
+
+``` r
+# max stem length (mm)
+max(jho$maxstl)
+```
+
+    ## [1] 20.62
+
+``` r
+# min stem length (mm)
+min(jho$maxstl)
+```
+
+    ## [1] 5.14
+
+``` r
+# max stem width (mm)
+max(jho$maxstw)
+```
+
+    ## [1] 23.76
+
+``` r
+# min stem width (mm)
+min(jho$maxstw)
+```
+
+    ## [1] 11.21
+
+#### Maximum/minimum for *variety Runge*
+
+``` r
+# identify maximum/minimum metrics for variety Runge
+
+# max length (mm)
+max(jru$maxl)
+```
+
+    ## [1] 50.74
+
+``` r
+# min length (mm)
+min(jru$maxl)
+```
+
+    ## [1] 34.76
+
+``` r
+# max width (mm)
+max(jru$maxw)
+```
+
+    ## [1] 33.36
+
+``` r
+# min width (mm)
+min(jru$maxw)
+```
+
+    ## [1] 18.45
+
+``` r
+# max thickness (mm)
+max(jru$maxth)
+```
+
+    ## [1] 9.46
+
+``` r
+# min thickness (mm)
+min(jru$maxth)
+```
+
+    ## [1] 6.02
+
+``` r
+# max stem length (mm)
+max(jru$maxstl)
+```
+
+    ## [1] 24.62
+
+``` r
+# min stem length (mm)
+min(jru$maxstl)
+```
+
+    ## [1] 6.81
+
+``` r
+# max stem width (mm)
+max(jru$maxstw)
+```
+
+    ## [1] 25.44
+
+``` r
+# min stem width (mm)
+min(jru$maxstw)
+```
+
+    ## [1] 10.94
+
+#### Maximum/minimum for *variety Emory*
+
+``` r
+# identify maximum/minimum metrics for variety Emory
+
+# max length (mm)
+max(jem$maxl)
+```
+
+    ## Warning in max(jem$maxl): no non-missing arguments to max; returning -Inf
+
+    ## [1] -Inf
+
+``` r
+# min length (mm)
+min(jem$maxl)
+```
+
+    ## Warning in min(jem$maxl): no non-missing arguments to min; returning Inf
+
+    ## [1] Inf
+
+``` r
+# max width (mm)
+max(jem$maxw)
+```
+
+    ## Warning in max(jem$maxw): no non-missing arguments to max; returning -Inf
+
+    ## [1] -Inf
+
+``` r
+# min width (mm)
+min(jem$maxw)
+```
+
+    ## Warning in min(jem$maxw): no non-missing arguments to min; returning Inf
+
+    ## [1] Inf
+
+``` r
+# max thickness (mm)
+max(jem$maxth)
+```
+
+    ## Warning in max(jem$maxth): no non-missing arguments to max; returning -Inf
+
+    ## [1] -Inf
+
+``` r
+# min thickness (mm)
+min(jem$maxth)
+```
+
+    ## Warning in min(jem$maxth): no non-missing arguments to min; returning Inf
+
+    ## [1] Inf
+
+``` r
+# max stem length (mm)
+max(jem$maxstl)
+```
+
+    ## Warning in max(jem$maxstl): no non-missing arguments to max; returning -Inf
+
+    ## [1] -Inf
+
+``` r
+# min stem length (mm)
+min(jem$maxstl)
+```
+
+    ## Warning in min(jem$maxstl): no non-missing arguments to min; returning Inf
+
+    ## [1] Inf
+
+``` r
+# max stem width (mm)
+max(jem$maxstw)
+```
+
+    ## Warning in max(jem$maxstw): no non-missing arguments to max; returning -Inf
+
+    ## [1] -Inf
+
+``` r
+# min stem width (mm)
+min(jem$maxstw)
+```
+
+    ## Warning in min(jem$maxstw): no non-missing arguments to min; returning Inf
+
+    ## [1] Inf
+
+#### Maximum/minimum for *variety Kemp*
+
+``` r
+# identify maximum/minimum metrics for variety Kemp
+
+# max length (mm)
+max(jkm$maxl)
+```
+
+    ## [1] 34.28
+
+``` r
+# min length (mm)
+min(jkm$maxl)
+```
+
+    ## [1] 34.28
+
+``` r
+# max width (mm)
+max(jkm$maxw)
+```
+
+    ## [1] 16.1
+
+``` r
+# min width (mm)
+min(jkm$maxw)
+```
+
+    ## [1] 16.1
+
+``` r
+# max thickness (mm)
+max(jkm$maxth)
+```
+
+    ## [1] 8.01
+
+``` r
+# min thickness (mm)
+min(jkm$maxth)
+```
+
+    ## [1] 8.01
+
+``` r
+# max stem length (mm)
+max(jkm$maxstl)
+```
+
+    ## [1] 16.44
+
+``` r
+# min stem length (mm)
+min(jkm$maxstl)
+```
+
+    ## [1] 16.44
+
+``` r
+# max stem width (mm)
+max(jkm$maxstw)
+```
+
+    ## [1] 14.28
+
+``` r
+# min stem width (mm)
+min(jkm$maxstw)
+```
+
+    ## [1] 14.28
+
+#### Maximum/minimum for *variety Panna Maria*
+
+``` r
+# identify maximum/minimum metrics for variety Panna Maria
+
+# max length (mm)
+max(jpm$maxl)
+```
+
+    ## [1] 57.72
+
+``` r
+# min length (mm)
+min(jpm$maxl)
+```
+
+    ## [1] 39.28
+
+``` r
+# max width (mm)
+max(jpm$maxw)
+```
+
+    ## [1] 27.8
+
+``` r
+# min width (mm)
+min(jpm$maxw)
+```
+
+    ## [1] 16.87
+
+``` r
+# max thickness (mm)
+max(jpm$maxth)
+```
+
+    ## [1] 12.61
+
+``` r
+# min thickness (mm)
+min(jpm$maxth)
+```
+
+    ## [1] 7.05
+
+``` r
+# max stem length (mm)
+max(jpm$maxstl)
+```
+
+    ## [1] 24.14
+
+``` r
+# min stem length (mm)
+min(jpm$maxstl)
+```
+
+    ## [1] 6.97
+
+``` r
+# max stem width (mm)
+max(jpm$maxstw)
+```
+
+    ## [1] 24.09
+
+``` r
+# min stem width (mm)
+min(jpm$maxstw)
+```
+
+    ## [1] 9.68
+
+#### Maximum/minimum for *variety Kenedy*
+
+``` r
+# identify maximum/minimum metrics for variety Kenedy
+
+# max length (mm)
+max(jkn$maxl)
+```
+
+    ## Warning in max(jkn$maxl): no non-missing arguments to max; returning -Inf
+
+    ## [1] -Inf
+
+``` r
+# min length (mm)
+min(jkn$maxl)
+```
+
+    ## Warning in min(jkn$maxl): no non-missing arguments to min; returning Inf
+
+    ## [1] Inf
+
+``` r
+# max width (mm)
+max(jkn$maxw)
+```
+
+    ## Warning in max(jkn$maxw): no non-missing arguments to max; returning -Inf
+
+    ## [1] -Inf
+
+``` r
+# min width (mm)
+min(jkn$maxw)
+```
+
+    ## Warning in min(jkn$maxw): no non-missing arguments to min; returning Inf
+
+    ## [1] Inf
+
+``` r
+# max thickness (mm)
+max(jkn$maxth)
+```
+
+    ## Warning in max(jkn$maxth): no non-missing arguments to max; returning -Inf
+
+    ## [1] -Inf
+
+``` r
+# min thickness (mm)
+min(jkn$maxth)
+```
+
+    ## Warning in min(jkn$maxth): no non-missing arguments to min; returning Inf
+
+    ## [1] Inf
+
+``` r
+# max stem length (mm)
+max(jkn$maxstl)
+```
+
+    ## Warning in max(jkn$maxstl): no non-missing arguments to max; returning -Inf
+
+    ## [1] -Inf
+
+``` r
+# min stem length (mm)
+min(jkn$maxstl)
+```
+
+    ## Warning in min(jkn$maxstl): no non-missing arguments to min; returning Inf
+
+    ## [1] Inf
+
+``` r
+# max stem width (mm)
+max(jkn$maxstw)
+```
+
+    ## Warning in max(jkn$maxstw): no non-missing arguments to max; returning -Inf
+
+    ## [1] -Inf
+
+``` r
+# min stem width (mm)
+min(jkn$maxstw)
+```
+
+    ## Warning in min(jkn$maxstw): no non-missing arguments to min; returning Inf
+
+    ## [1] Inf
+
+#### Maximum/minimum for *variety Colfax*
+
+``` r
+# identify maximum/minimum metrics for variety Colfax
+
+# max length (mm)
+max(jcl$maxl)
+```
+
+    ## [1] 42.92
+
+``` r
+# min length (mm)
+min(jcl$maxl)
+```
+
+    ## [1] 35.01
+
+``` r
+# max width (mm)
+max(jcl$maxw)
+```
+
+    ## [1] 22.99
+
+``` r
+# min width (mm)
+min(jcl$maxw)
+```
+
+    ## [1] 17.75
+
+``` r
+# max thickness (mm)
+max(jcl$maxth)
+```
+
+    ## [1] 8
+
+``` r
+# min thickness (mm)
+min(jcl$maxth)
+```
+
+    ## [1] 5.87
+
+``` r
+# max stem length (mm)
+max(jcl$maxstl)
+```
+
+    ## [1] 16.98
+
+``` r
+# min stem length (mm)
+min(jcl$maxstl)
+```
+
+    ## [1] 6.46
+
+``` r
+# max stem width (mm)
+max(jcl$maxstw)
+```
+
+    ## [1] 18.88
+
+``` r
+# min stem width (mm)
+min(jcl$maxstw)
+```
+
+    ## [1] 9.41
+
+### Boxplots for `site` by `tv3` for Gary dart points from Cooper
+
+``` r
+# subset cooper data
+cprmxl<-subset(data,Site=="Cooper",select=maxl:tv3)
+# boxplot of maximum length
+cprmaxl<-ggplot(cprmxl,aes(x=tv3,y=maxl,color=tv3)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum width
+cprmaxw<-ggplot(cprmxl,aes(x=tv3,y=maxw,color=tv3)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+cprmaxth<-ggplot(cprmxl,aes(x=tv3,y=maxth,color=tv3)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum stem length
+cprmaxstl<-ggplot(cprmxl,aes(x=tv3,y=maxstl,color=tv3)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+cprmaxstw<-ggplot(cprmxl,aes(x=tv3,y=maxstw,color=tv3)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# render figure
+cprfigure<-ggarrange(cprmaxl,cprmaxw,cprmaxth,cprmaxstl,cprmaxstw,
+                  labels = c("a","b","c","d","e"),
+                  ncol = 3, nrow = 2)
+```
+
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+
+``` r
+cprfigure
+```
+
+<img src="linear-metrics_files/figure-gfm/boxplot c tv3-1.png" width="100%" />
+
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper site."
+```
+
+### Boxplots for `site` by `tv3` for Gary dart points from Means
+
+``` r
+# subset means data
+mnsmxl<-subset(data,Site=="Means",select=maxl:tv3)
+# boxplot of maximum length
+mnsmaxl<-ggplot(mnsmxl,aes(x=tv3,y=maxl,color=tv3)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum width
+mnsmaxw<-ggplot(mnsmxl,aes(x=tv3,y=maxw,color=tv3)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+mnsmaxth<-ggplot(mnsmxl,aes(x=tv3,y=maxth,color=tv3)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum stem length
+mnsmaxstl<-ggplot(mnsmxl,aes(x=tv3,y=maxstl,color=tv3)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+mnsmaxstw<-ggplot(mnsmxl,aes(x=tv3,y=maxstw,color=tv3)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# render figure
+mnsfigure<-ggarrange(mnsmaxl,mnsmaxw,mnsmaxth,mnsmaxstl,mnsmaxstw,
+                  labels = c("a","b","c","d","e"),
+                  ncol = 3, nrow = 2)
+```
+
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+
+``` r
+mnsfigure
+```
+
+<img src="linear-metrics_files/figure-gfm/boxplot m tv3-1.png" width="100%" />
+
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Means site."
+```
+
+### Boxplots for `site` by `tv3` for Gary dart points from Poverty Point
+
+``` r
+# subset poverty point data
+pvptmxl<-subset(data,Site=="Pov Pt",select=maxl:tv3)
+# boxplot of maximum length
+pvptmaxl<-ggplot(pvptmxl,aes(x=tv3,y=maxl,color=tv3)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum width
+pvptmaxw<-ggplot(pvptmxl,aes(x=tv3,y=maxw,color=tv3)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+pvptmaxth<-ggplot(pvptmxl,aes(x=tv3,y=maxth,color=tv3)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum stem length
+pvptmaxstl<-ggplot(pvptmxl,aes(x=tv3,y=maxstl,color=tv3)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# boxplot of maximum thickness
+pvptmaxstw<-ggplot(pvptmxl,aes(x=tv3,y=maxstw,color=tv3)) + 
+  geom_boxplot() +
+  geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
+  scale_color_brewer(palette = "Set1") +
+  theme(legend.position = "none")
+# render figure
+ppfigure<-ggarrange(pvptmaxl,pvptmaxw,pvptmaxth,pvptmaxstl,pvptmaxstw,
+                  labels = c("a","b","c","d","e"),
+                  ncol = 3, nrow = 2)
+```
+
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+    ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
+
+``` r
+ppfigure
+```
+
+<img src="linear-metrics_files/figure-gfm/boxplot pp tv3-1.png" width="100%" />
+
+``` r
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Poverty Point site."
+```
+
+### Principal Components Analysis for `tv3` at all sites
+
+``` r
+#pca
+df<-data[c(2:6)]
+tv3pca<-autoplot(prcomp(df),data = data, colour = 'tv3',
+         loadings = TRUE, loadings.colour = 'blue',
+         loadings.label = TRUE,loadings.label.size = 3, 
+         frame = TRUE)
+#render figure
+tv3pca
+```
+
+<img src="linear-metrics_files/figure-gfm/pca tv3-1.png" width="100%" />
+
+``` r
+fig.cap = "PCA by Gary type-varieties reported by Johnson (1961)."
+```
+
+### Analyses of Variance (ANOVA) for linear variables \~ `tv3`
+
+``` r
+# anova = maximum length ~ tv3
+t3ml<-lm.rrpp(maxl ~ tv3, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(t3ml)
+```
+
+    ## 
+    ## Analysis of Variance, using Residual Randomization
+    ## Permutation procedure: Randomization of null model residuals 
+    ## Number of permutations: 10000 
+    ## Estimation method: Ordinary Least Squares 
+    ## Sums of Squares and Cross-products: Type I 
+    ## Effect sizes (Z) based on F distributions
+    ## 
+    ##            Df      SS      MS     Rsq     F      Z Pr(>F)    
+    ## tv3         7 18834.0 2690.57 0.67555 60.68 7.0889  1e-04 ***
+    ## Residuals 204  9045.4   44.34 0.32445                        
+    ## Total     211 27879.3                                        
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Call: lm.rrpp(f1 = maxl ~ tv3, iter = 9999, SS.type = "I", data = data,  
+    ##     print.progress = FALSE)
+
+``` r
+# anova = maximum width ~ tv3
+t3mw<-lm.rrpp(maxw ~ tv3, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(t3mw)
+```
+
+    ## 
+    ## Analysis of Variance, using Residual Randomization
+    ## Permutation procedure: Randomization of null model residuals 
+    ## Number of permutations: 10000 
+    ## Estimation method: Ordinary Least Squares 
+    ## Sums of Squares and Cross-products: Type I 
+    ## Effect sizes (Z) based on F distributions
+    ## 
+    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
+    ## tv3         7 3310.8 472.97 0.39934 19.375 5.2127  1e-04 ***
+    ## Residuals 204 4979.8  24.41 0.60066                         
+    ## Total     211 8290.6                                        
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Call: lm.rrpp(f1 = maxw ~ tv3, iter = 9999, SS.type = "I", data = data,  
+    ##     print.progress = FALSE)
+
+``` r
+# anova = maximum thickness ~ tv3
+t3mth<-lm.rrpp(maxth ~ tv3, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(t3mth)
+```
+
+    ## 
+    ## Analysis of Variance, using Residual Randomization
+    ## Permutation procedure: Randomization of null model residuals 
+    ## Number of permutations: 10000 
+    ## Estimation method: Ordinary Least Squares 
+    ## Sums of Squares and Cross-products: Type I 
+    ## Effect sizes (Z) based on F distributions
+    ## 
+    ##            Df      SS     MS     Rsq      F     Z Pr(>F)    
+    ## tv3         7  506.64 72.377 0.49726 28.825 6.001  1e-04 ***
+    ## Residuals 204  512.22  2.511 0.50274                        
+    ## Total     211 1018.87                                       
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Call: lm.rrpp(f1 = maxth ~ tv3, iter = 9999, SS.type = "I", data = data,  
+    ##     print.progress = FALSE)
+
+``` r
+# anova = maximum stem length ~ tv3
+t3mstl<-lm.rrpp(maxstl ~ tv3, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(t3mstl)
+```
+
+    ## 
+    ## Analysis of Variance, using Residual Randomization
+    ## Permutation procedure: Randomization of null model residuals 
+    ## Number of permutations: 10000 
+    ## Estimation method: Ordinary Least Squares 
+    ## Sums of Squares and Cross-products: Type I 
+    ## Effect sizes (Z) based on F distributions
+    ## 
+    ##            Df     SS     MS     Rsq      F      Z Pr(>F)    
+    ## tv3         7  464.3 66.333 0.13881 4.6975 2.8785  3e-04 ***
+    ## Residuals 204 2880.6 14.121 0.86119                         
+    ## Total     211 3345.0                                        
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Call: lm.rrpp(f1 = maxstl ~ tv3, iter = 9999, SS.type = "I", data = data,  
+    ##     print.progress = FALSE)
+
+``` r
+# anova = maximum stem width ~ tv3
+t3mstw<-lm.rrpp(maxstw ~ tv3, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
+anova(t3mstw)
+```
+
+    ## 
+    ## Analysis of Variance, using Residual Randomization
+    ## Permutation procedure: Randomization of null model residuals 
+    ## Number of permutations: 10000 
+    ## Estimation method: Ordinary Least Squares 
+    ## Sums of Squares and Cross-products: Type I 
+    ## Effect sizes (Z) based on F distributions
+    ## 
+    ##            Df   SS      MS     Rsq      F      Z Pr(>F)    
+    ## tv3         7  905 129.292 0.24843 9.6332 4.0398  1e-04 ***
+    ## Residuals 204 2738  13.421 0.75157                         
+    ## Total     211 3643                                         
+    ## ---
+    ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+    ## 
+    ## Call: lm.rrpp(f1 = maxstw ~ tv3, iter = 9999, SS.type = "I", data = data,  
+    ##     print.progress = FALSE)
+
 ## Gary varieties proposed by Schambach (1998)
 
 ``` r
@@ -1858,7 +3035,7 @@ schambl<-data.frame(Name=c('var.Gary','var.Malvern','var.LeFlore','var.Bodcaw','
 )
 length<-ggplot(schambl,aes(x=Length,xend=end,y=Name,yend=Name,color=Name)) +
   geom_segment(size=2) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # reported width by variety
 schambw<-data.frame(Name=c('var.Gary','var.Malvern','var.LeFlore','var.Bodcaw','var.Manice','var.Camden','var.CamdenA','var.CamdenB'),
@@ -1867,7 +3044,7 @@ schambw<-data.frame(Name=c('var.Gary','var.Malvern','var.LeFlore','var.Bodcaw','
 )
 width<-ggplot(schambw,aes(x=Width,xend=end,y=Name,yend=Name,color=Name)) +
   geom_segment(size=2) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # reported thickness by variety
 schambth<-data.frame(Name=c('var.Gary','var.Malvern','var.LeFlore','var.Bodcaw','var.Manice','var.Camden','var.CamdenA','var.CamdenB'),
@@ -1876,7 +3053,7 @@ schambth<-data.frame(Name=c('var.Gary','var.Malvern','var.LeFlore','var.Bodcaw',
 )
 thickness<-ggplot(schambth,aes(x=Thickness,xend=end,y=Name,yend=Name,color=Name)) +
   geom_segment(size=2) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # reported stem length by variety
 schambstl<-data.frame(Name=c('var.Gary','var.Malvern','var.LeFlore','var.Bodcaw','var.Manice','var.Camden','var.CamdenA','var.CamdenB'),
@@ -1885,7 +3062,7 @@ schambstl<-data.frame(Name=c('var.Gary','var.Malvern','var.LeFlore','var.Bodcaw'
 )
 stemlength<-ggplot(schambstl,aes(x=StemLength,xend=end,y=Name,yend=Name,color=Name)) +
   geom_segment(size=2) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # reported stem width by variety
 schambstw<-data.frame(Name=c('var.Gary','var.Malvern','var.LeFlore','var.Bodcaw','var.Manice','var.Camden','var.CamdenA'), # var.CamdenB-stemlength not listed in text
@@ -1894,24 +3071,21 @@ schambstw<-data.frame(Name=c('var.Gary','var.Malvern','var.LeFlore','var.Bodcaw'
 )
 stemwidth<-ggplot(schambstw,aes(x=StemWidth,xend=end,y=Name,yend=Name,color=Name)) +
   geom_segment(size=2) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # render figure
 schambachfig<-ggarrange(length,width,thickness,stemlength,stemwidth,
                   labels = c("a","b","c","d","e"),
                   ncol = 2, nrow = 3)
-annotate_figure(schambachfig,
-                top=text_grob("Gary type-variety linear metrics per Schambach (1998)")
-)
-```
 
-![](linear-metrics_files/figure-gfm/schamgantt-1.png)<!-- -->
+fig.cap = "Gantt charts illustrating the range of linear measurements for each type-variety reported by Schambach (1998)."
+```
 
 ``` r
 # assign varieties based upon reported metrics in Schambach (1998)
 slcheck1 <- data$maxl >= 51 & data$maxl <= 73
 slcheck2 <- data$maxl >= 43 & data$maxl <= 72
-slcheck3 <- data$maxl > 43 & data$maxl <= 80
+slcheck3 <- data$maxl >= 43 & data$maxl <= 80
 slcheck4 <- data$maxl >= 40 & data$maxl <= 60
 slcheck5 <- data$maxl >= 36 & data$maxl <= 57
 slcheck6 <- data$maxl >= 34 & data$maxl <= 73
@@ -1928,27 +3102,27 @@ swcheck8 <- data$maxw >= 26 & data$maxw <= 38
 
 stcheck1 <- data$maxth >= 6 & data$maxth <= 11
 stcheck2 <- data$maxth >= 7 & data$maxth <= 13
-stcheck3 <- data$maxth >= 5 & data$maxth < 13
-stcheck4 <- data$maxth > 5 & data$maxth <= 12
-stcheck5 <- data$maxth > 6 & data$maxth <= 9
-stcheck6 <- data$maxth > 6 & data$maxth <= 12
-stcheck7 <- data$maxth > 5 & data$maxth <= 14
-stcheck8 <- data$maxth > 7 & data$maxth < 11
+stcheck3 <- data$maxth >= 5 & data$maxth <= 13
+stcheck4 <- data$maxth >= 5 & data$maxth <= 12
+stcheck5 <- data$maxth >= 6 & data$maxth <= 9
+stcheck6 <- data$maxth >= 6 & data$maxth <= 12
+stcheck7 <- data$maxth >= 5 & data$maxth <= 14
+stcheck8 <- data$maxth >= 7 & data$maxth <= 11
 
 sslcheck1 <- data$maxstl >= 15 & data$maxstl <= 29
 sslcheck2 <- data$maxstl >= 11 & data$maxstl <= 23
-sslcheck3 <- data$maxstl > 11 & data$maxstl <= 24
-sslcheck4 <- data$maxstl > 11 & data$maxstl < 24
+sslcheck3 <- data$maxstl >= 11 & data$maxstl <= 24
+sslcheck4 <- data$maxstl >= 11 & data$maxstl <= 24
 sslcheck5 <- data$maxstl >= 10 & data$maxstl <= 17
 sslcheck6 <- data$maxstl >= 9 & data$maxstl <= 22
-sslcheck7 <- data$maxstl > 9 & data$maxstl <= 19
-sslcheck8 <- data$maxstl > 9 & data$maxstl < 19
+sslcheck7 <- data$maxstl >= 9 & data$maxstl <= 19
+sslcheck8 <- data$maxstl >= 9 & data$maxstl <= 19
 
 sswcheck1 <- data$maxstw >= 20 & data$maxstw <= 28
 sswcheck2 <- data$maxstw >= 17 & data$maxstw <= 25
 sswcheck3 <- data$maxstw >= 13 & data$maxstw <= 33
 sswcheck4 <- data$maxstw >= 15 & data$maxstw <= 24
-sswcheck5 <- data$maxstw >= 12 & data$maxstw < 24
+sswcheck5 <- data$maxstw >= 12 & data$maxstw <= 24
 sswcheck6 <- data$maxstw >= 9 & data$maxstw <= 20
 sswcheck7 <- data$maxstw >= 11 & data$maxstw <= 21
 
@@ -1991,10 +3165,10 @@ The Gary type-varieties defined by Schambach (1998) included ranges for
 maximum length width, thickness, stem length, and stem width for most of
 the types, but maximum length and maximum stem width were missing from
 *variety Camden B*. The listing appended below reflects the maximum and
-minimum values for each orthogonal measurement included in the dataset,
-extending Schambach’s type-varieties beyond the Cooper and Means sites.
-These metrics may have utility in positing type-variety assignments to
-partial specimens.
+minimum values for each measure included in the dataset, and extends
+Schambach’s type-varieties beyond the Cooper and Means sites. These
+metrics may have utility in positing type-variety assignments to partial
+specimens.
 
 ``` r
 # subset dataset by tv2 type-varieties
@@ -2624,36 +3798,36 @@ min(mmcmb$maxstw)
 
 ``` r
 # subset cooper data
-cprmxl<-subset(data,site=="Cooper",select=maxl:tv2)
+cprmxl<-subset(data,Site=="Cooper",select=maxl:tv2)
 # boxplot of maximum length
 cprmaxl<-ggplot(cprmxl,aes(x=tv2,y=maxl,color=tv2)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum width
 cprmaxw<-ggplot(cprmxl,aes(x=tv2,y=maxw,color=tv2)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 cprmaxth<-ggplot(cprmxl,aes(x=tv2,y=maxth,color=tv2)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum stem length
 cprmaxstl<-ggplot(cprmxl,aes(x=tv2,y=maxstl,color=tv2)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 cprmaxstw<-ggplot(cprmxl,aes(x=tv2,y=maxstw,color=tv2)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # render figure
 cprfigure<-ggarrange(cprmaxl,cprmaxw,cprmaxth,cprmaxstl,cprmaxstw,
@@ -2671,46 +3845,46 @@ cprfigure<-ggarrange(cprmaxl,cprmaxw,cprmaxth,cprmaxstl,cprmaxstw,
 cprfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20c%20tv2-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot c tv2-1.png" width="100%" />
 
 ``` r
-fig.cap = "Labels: GS, Gary Stemmed from Cooper; TyGS, Typical Gary Stemmed from Cooper; BGS, Broad Gary Stemmed from Cooper; ThGS, Thin Gary Stemmed from Cooper; SGS, Small Gary Stemmed from Cooper."
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Cooper site."
 ```
 
 ### Boxplots for `site` by `tv2` for Gary dart points from Means
 
 ``` r
 # subset means data
-mnsmxl<-subset(data,site=="Means",select=maxl:tv2)
+mnsmxl<-subset(data,Site=="Means",select=maxl:tv2)
 # boxplot of maximum length
 mnsmaxl<-ggplot(mnsmxl,aes(x=tv2,y=maxl,color=tv2)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum width
 mnsmaxw<-ggplot(mnsmxl,aes(x=tv2,y=maxw,color=tv2)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 mnsmaxth<-ggplot(mnsmxl,aes(x=tv2,y=maxth,color=tv2)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum stem length
 mnsmaxstl<-ggplot(mnsmxl,aes(x=tv2,y=maxstl,color=tv2)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 mnsmaxstw<-ggplot(mnsmxl,aes(x=tv2,y=maxstw,color=tv2)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # render figure
 mnsfigure<-ggarrange(mnsmaxl,mnsmaxw,mnsmaxth,mnsmaxstl,mnsmaxstw,
@@ -2728,46 +3902,46 @@ mnsfigure<-ggarrange(mnsmaxl,mnsmaxw,mnsmaxth,mnsmaxstl,mnsmaxstw,
 mnsfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20m%20tv2-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot m tv2-1.png" width="100%" />
 
 ``` r
-fig.cap = "Labels: GS, Gary Stemmed from Means; TyGS, Typical Gary Stemmed from Means; BGS, Broad Gary Stemmed from Means; ThGS, Thin Gary Stemmed from Means; SGS, Small Gary Stemmed from Means."
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Means site."
 ```
 
 ### Boxplots for `site` by `tv2` for Gary dart points from Poverty Point
 
 ``` r
 # subset poverty point data
-pvptmxl<-subset(data,site=="Pov Pt",select=maxl:tv2)
+pvptmxl<-subset(data,Site=="Pov Pt",select=maxl:tv2)
 # boxplot of maximum length
 pvptmaxl<-ggplot(pvptmxl,aes(x=tv2,y=maxl,color=tv2)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum width
 pvptmaxw<-ggplot(pvptmxl,aes(x=tv2,y=maxw,color=tv2)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 pvptmaxth<-ggplot(pvptmxl,aes(x=tv2,y=maxth,color=tv2)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum stem length
 pvptmaxstl<-ggplot(pvptmxl,aes(x=tv2,y=maxstl,color=tv2)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # boxplot of maximum thickness
 pvptmaxstw<-ggplot(pvptmxl,aes(x=tv2,y=maxstw,color=tv2)) + 
   geom_boxplot() +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3)+
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1") +
   theme(legend.position = "none")
 # render figure
 ppfigure<-ggarrange(pvptmaxl,pvptmaxw,pvptmaxth,pvptmaxstl,pvptmaxstw,
@@ -2785,35 +3959,30 @@ ppfigure<-ggarrange(pvptmaxl,pvptmaxw,pvptmaxth,pvptmaxstl,pvptmaxstw,
 ppfigure
 ```
 
-![](linear-metrics_files/figure-gfm/boxplot%20pp%20tv2-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/boxplot pp tv2-1.png" width="100%" />
 
 ``` r
-fig.cap = "Labels: GS, Gary Stemmed from Poverty Point; TyGS, Typical Gary Stemmed from Poverty Point; BGS, Broad Gary Stemmed from Poverty Point; ThGS, Thin Gary Stemmed from Poverty Point; SGS, Small Gary Stemmed from Poverty Point."
+fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem width for Gary dart points from the Poverty Point site."
 ```
 
 ### Principal Components Analysis for `tv2` at all sites
 
 ``` r
 #pca
-data.pca<-prcomp(data[c(2:6)],center = TRUE,scale. = TRUE)
-summary(data.pca)
-```
-
-    ## Importance of components:
-    ##                           PC1    PC2    PC3     PC4     PC5
-    ## Standard deviation     1.7169 0.9249 0.7982 0.62917 0.40486
-    ## Proportion of Variance 0.5896 0.1711 0.1274 0.07917 0.03278
-    ## Cumulative Proportion  0.5896 0.7606 0.8881 0.96722 1.00000
-
-``` r
-tv2pca<-ggbiplot(data.pca,obs.scale = 1,var.scale = 1,ellipse = TRUE,groups = tv2) +
-  scale_color_brewer(name = "Type-Variety",palette = "Dark2") +
-  theme(legend.position = "right")
+df<-data[c(2:6)]
+tv2pca<-autoplot(prcomp(df),data = data, colour = 'tv2',
+         loadings = TRUE, loadings.colour = 'blue',
+         loadings.label = TRUE,loadings.label.size = 3, 
+         frame = TRUE)
 #render figure
 tv2pca
 ```
 
-![](linear-metrics_files/figure-gfm/pca%20tv2-1.png)<!-- -->
+<img src="linear-metrics_files/figure-gfm/pca tv2-1.png" width="100%" />
+
+``` r
+fig.cap = "PCA by Gary type-varieties reported by Schambach (1998)."
+```
 
 ### Analyses of Variance (ANOVA) for linear variables \~ `tv2`
 
@@ -2969,9 +4138,17 @@ Skeletons in Central Texas.” *Central Texas Archeological Society* 2:
 
 <div id="ref-RN20896">
 
-Baerreis, D. A. 1951. *The Preceramic Horizons of Northeastern
+Baerreis, David A. 1951. *The Preceramic Horizons of Northeastern
 Oklahoma*. Anthropological Papers, Museum of Anthropology, No. 6. Ann
 Arbor.
+
+</div>
+
+<div id="ref-RN1085">
+
+Bell, Robert E., and David A. Baerreis. 1951. “A Survey of Oklahoma
+Archaeology.” *Bulletin of the Texas Archeological and Paleontological
+Society* 22: 7–100.
 
 </div>
 
@@ -3065,6 +4242,14 @@ Technological Change in the American West.” *American Antiquity* 77 (4):
 
 </div>
 
+<div id="ref-RN2403">
+
+Johnson, L.eRoy. 1961. “The Yarbrough and Miller Sites of Northeastern
+Texas, with a Preliminary Definition of the Laharpe Aspect.” *Bulletin
+of the Texas Archeological Society* 32: 141–284.
+
+</div>
+
 <div id="ref-RN3937">
 
 Krieger, Alex D. 1944. “The Typological Concept.” *American Antiquity* 9
@@ -3132,14 +4317,6 @@ Archeological Society* 25: 1–562.
 Turner, Ellen Sue, Thomas R. Hester, and Richard L. McReynolds. 2011.
 *Stone Artifacts of Texas Indians*. Lanham, Maryland: Third Edition.
 Taylor Trade Publishing.
-
-</div>
-
-<div id="ref-RN20851">
-
-Webb, Clarence H. 1948. “Evidences of Pre-Pottery Cultures in
-Louisiana.” *American Antiquity* 13 (3): 227–32.
-<https://doi.org/10.2307/275428>.
 
 </div>
 
