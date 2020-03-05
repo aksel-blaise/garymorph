@@ -1,54 +1,26 @@
 Supplementary Material: Linear metrics of Gary type-varieties
 ================
 Robert Z. Selden, Jr.
-March 1, 2020
+March 5, 2020
 
-## Introduction
+## The Gary type prior to formal definition by Suhm, Krieger, and Jelks (1954, 430–31, Plate 94)
 
-This document includes supplemental materials for the article, “A
-quantitative assessment of intraspecific morphological variation in Gary
-dart points: An exercise in archaeological epistemology and heuristics.”
-The traditional linear measures of maximum length, width, and thickness
-were combined with stem length and stem width for this study. These
-variables represent the standard suite of metrics used to characterise
-Gary points in previous studies, and provide those data needed to
-examine whether specimens included in this study may transcend the
-threshold between dart and arrow points (Hildebrandt and King 2012).
-
-Others have noted the gradual diminution in the size of Gary dart points
-through time (Baerreis 1951; Ford and Webb 1956; Schambach 1998;
-Densmore 2007), thus it was necessary to begin by asking whether the
-size of those points aggregated for this study may fall below the
-arbitrary 11.8 mm dart-arrow index (DAI) threshold posited by
-Hildebrandt and King (2012). The temporal span associated with
-morphologically-diagnostic Gary dart points is thought to transcend the
-cultural shift from hunter-gatherer to emergent horticulturalist, and
-overlaps temporally with the advent and flourescence of the bow and
-arrow. The dart-arrow index was calculated for all specimens of Gary
-dart points used in this study, and none fall below the dart-arrow
-threshold posited by Hildebrandt and King (2012). It is noteworthy that
-others (Erlandson, Watts, and Jew 2014) have found that the DAI may not
-be universally applicable; however, the DAI and the threshold identified
-by Hildebrandt and King (2012) is a useful heuristic in this instance.
-
-### The Gary type prior to formal definition by Suhm, Krieger, and Jelks (1954, 430–31, Plate 94)
-
-Gary dart points were formally defined by (Suhm, Krieger, and Jelks
-1954, 430–31, Plate 94), providing a description with defining
-morphological characteristics for a point known to investigators working
-across the region, but by different names. The earliest recorded Gary
-dart point was excavated on September 14, 1930 by Frank Bryan
-(Aynesworth 1936, 76). The point was recovered from the chest cavity,
-behind the sternum of a flexed burial eroding from a wall in an active
-gravel pit—roughly two and one-half feet below the surface—located
-around 14 miles from Waco, Texas on the East side of the Brazos River in
-Texas (Aynesworth 1936, 76, 78–79, Plate XIV:6). While discovered in
-association with the burial, this point may have been included in the
-fill that was excavated when the burial was interred. In the same
-burial, a Perdiz arrow point was found lodged in the upper end of the
-right humerus (Aynesworth 1936, Plate XIV:4a, 4b, 5), and a small arrow
-point fragment was found lodged between the neck and greater trochanter
-of the left femur (Aynesworth 1936, Plate XIV:3).
+Gary dart points were formally defined by Suhm, Krieger, and Jelks
+(1954, 430–31, Plate 94), providing a description with defining
+morphological characteristics for a projectile point known to
+investigators working across the region, but by different names. The
+earliest recorded Gary dart point was excavated on September 14, 1930 by
+Frank Bryan (Aynesworth 1936, 76). The point was recovered from the
+chest cavity, behind the sternum of a flexed burial eroding from a wall
+in an active gravel pit—roughly two and one-half feet below the
+surface—located around 14 miles from Waco, Texas on the East side of
+the Brazos River in Texas (Aynesworth 1936, 76, 78–79, Plate XIV:6).
+While discovered in association with the burial, this point may have
+been included in the fill that was excavated when the burial was
+interred. In the same burial, a Perdiz arrow point was found lodged in
+the upper end of the right humerus (Aynesworth 1936, Plate XIV:4a, 4b,
+5), and a small arrow point fragment was found lodged between the neck
+and greater trochanter of the left femur (Aynesworth 1936, Plate XIV:3).
 
 In Limestone County, Texas, (Bryan 1936, 83–84) found Gary points in the
 Delia Area (sites 7, 8, 9, 10, 11, 18, 19, and 20), the Cooledge Area
@@ -139,16 +111,68 @@ Woodland type (Lewis and Kneberg 1947).
 
   - Wheat (1953, 204–5, Plate 36)
 
-#### Discussions of manufacture and retouch in Gary dart points
+### Gary type-varieties
+
+Soon after the Gary type was formally defined, the type-varieties
+followed. Like the Gary point itself, the previously-defined
+type-varieties include substantial variation.
+
+  - Ford, Phillips, and Haag (1955) at the Jaketown site (MS)
+      - Gary Stemmed
+      - Typical Gary Stemmed
+      - Broad Gary Stemmed
+      - Thin Gary Stemmed
+      - Small Gary Stemmed
+  - Ford and Webb (1956) at the Poverty Point site (LA)
+      - Gary Large
+      - Gary Typical
+      - Gary Small
+  - Johnson (1961) at the Yarbrough and Miller sites (TX)
+      - var. Kaufman
+      - var. Alsa
+      - var. Hobson
+      - var. Runge
+      - var. Emory
+      - var. Kemp
+      - var. Panna Maria
+      - var. Kenedy
+      - var. Colfax
+  - Phillips (1970) in the lower Yazoo Basin (MS)
+      - var. Mabin
+  - Schambach (1970) at the Cooper and Means sites (AR)
+      - var. Gary
+      - var. Malvern
+      - var. LeFlore
+      - var. Bodcaw
+      - var. Manice
+      - var. Camden
+      - var. Camden subgroup A
+      - var. Camden subgroup B
+  - Shafer (1973) at the George C. Davis site (TX)
+      - Group 1
+      - Group 2
+  - Williams and Brain (1983) at the Lake George Site (MS)
+      - var. Maybon
+  - Densmore (2007) at the Scott site (OK)
+      - Class A
+      - Class B
+      - Class C
+
+### Discussions of manufacture and retouch in Gary dart points
 
 In his study of the lithic assemblage from the Icy Eye site, Studer
-(1982, 67–73, Figure 3) posited a useful reduction sequence. Unlike
-other areas where Gary dart points are produced, the available raw
-materials from the area where Studer was working (east Texas) were quite
-small (Studer 1982). Studer (1982, 71) posits that bipolar flaking may
-have been used to reflect the percussion force otherwise lost through
-movement, where anvil stones were used to hold the pebbles stationary
-and localise percussion forces.
+(1982, 67–73, Figure 3) posited an archaic pebble core reduction
+sequence. Unlike other areas where Gary dart points are produced, the
+available raw materials from the area where Studer was working (east
+Texas) were small (Studer 1982). Studer (1982, 71) posits that bipolar
+flaking may have been used to reflect the percussion force otherwise
+lost through movement, where anvil stones were used to hold the pebbles
+stationary and localise percussion forces. The anvil stones recovered
+from the Icy Eye site included U-shaped pits, which Studer (1982, 71)
+believed to be suggestive of the bipolar technique used in flaking, or
+splitting, rounded pebbles. He further reasons that “few angular or
+worked pebbles were chipped on the anvils since such object pieces would
+tend to cause V-shaped pits” (Studer 1982, 71).
 
   - Ensor and Carlson (1991, Figure 85)
 
@@ -226,6 +250,27 @@ site<-data$site # site name
 
 ### Calculate dart-arrow index (Hildebrandt and King 2012)
 
+Others have noted the gradual diminution in the size of Gary dart points
+through time (Baerreis 1951; Ford and Webb 1956; Schambach 1998;
+Densmore 2007), thus it was necessary to begin by asking whether the
+size of those points aggregated for this study may fall below the
+arbitrary 11.8 mm dart-arrow index (DAI) threshold posited by
+Hildebrandt and King (2012). The temporal span associated with
+morphologically-diagnostic Gary dart points is thought to transcend the
+cultural shift in subsistence practices from hunter-gatherer to emergent
+horticulturalist, and overlaps temporally with the advent and
+flourescence of the bow and arrow.
+
+Stem width (neck width) and thickness are among those variables included
+in this study, and can be used to identify whether Gary dart points may
+transcend the threshold between dart and arrow points (Hildebrandt and
+King 2012). The dart-arrow index was calculated for all specimens of
+Gary dart points used in this study, and none fall below the dart-arrow
+threshold posited by Hildebrandt and King (2012). It is noteworthy that
+others (Erlandson, Watts, and Jew 2014) have found that the DAI may not
+be universally applicable; however, the DAI and the threshold identified
+by Hildebrandt and King (2012) is a useful heuristic in this instance.
+
 ``` r
 # calculate dart-arrow index (max stem width + max thickness)
 dai<-maxstw + maxth
@@ -261,6 +306,17 @@ arrow
 
 ### Krieger’s (1944, Figure 25) typological concept and the Gary dart point
 
+> …the purpose of a type in archaeology must be to provide an
+> organizational tool which will enable the investigator to group
+> specimens into bodies which have *demonstrable historical meaning in
+> terms of behavior patterns*. Any group which may be labeled a ‘type’
+> must embrace material which can be shown to consist of individual
+> variations in the execution of a definite constructional idea;
+> likewise, the dividing lines between a series of types must be based
+> upon demonstrable historical factors, not, as is often the case, upon
+> the inclinations of the analyst or the niceties of descriptive
+> orderliness. (Krieger 1944, 272)
+
 ``` r
 #grViz("
 #  digraph{
@@ -290,7 +346,7 @@ arrow
 knitr::include_graphics('krieger.png')
 ```
 
-![](krieger.png)<!-- -->
+<img src="krieger.png" width="1812" />
 
 ``` r
 fig.cap = "Step 1: sorting into working patterns of distinct structural plan. Step 2: sorting into detailed working groups each consistently combining features in but one way. Step 3: recombining working groups into tentative types on basis of comparative distributions and associations of working groups. Step 4: consolidation of types through further testing for consistency in form and variation. Step 5: description and illustration of types with full range of variation. Step 6: a - determination of series of linked types, b - determination of material-culture complexes, and c - determination of type relationships in related cultures."
