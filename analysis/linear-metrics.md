@@ -151,6 +151,9 @@ type-varieties include substantial variation.
   - Shafer (1973) at the George C. Davis site (TX)
       - Group 1
       - Group 2
+  - Shafer (1975) at Lake Conroe (TX)
+      - ?
+      - ?
   - Williams and Brain (1983) at the Lake George Site (MS)
       - var. Maybon
   - Densmore (2007) at the Scott site (OK)
