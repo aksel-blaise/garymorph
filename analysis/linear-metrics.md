@@ -453,6 +453,16 @@ anova(siteml)
     ##     print.progress = FALSE)
 
 ``` r
+# visualise model predictions for maximum length ~ site
+siteDF<-data.frame(Site = c("Cooper","Means","Pov Pt"))
+rownames(siteDF)<-c("Cooper","Means","Pov Pt")
+sitePreds<-predict(siteml,siteDF)
+plot(sitePreds)
+```
+
+<img src="linear-metrics_files/figure-gfm/anovasite-1.png" width="100%" />
+
+``` r
 # anova = maximum width ~ site
 sitemw<-lm.rrpp(maxw ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemw)
@@ -475,6 +485,14 @@ anova(sitemw)
     ## 
     ## Call: lm.rrpp(f1 = maxw ~ Site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
+
+``` r
+# visualise model predictions for maximum width ~ site
+sitePreds<-predict(sitemw,siteDF)
+plot(sitePreds)
+```
+
+<img src="linear-metrics_files/figure-gfm/anovasite-2.png" width="100%" />
 
 ``` r
 # anova = maximum thickness ~ site
@@ -501,6 +519,14 @@ anova(sitemth)
     ##     print.progress = FALSE)
 
 ``` r
+# visualise model predictions for maximum thickness ~ site
+sitePreds<-predict(sitemth,siteDF)
+plot(sitePreds)
+```
+
+<img src="linear-metrics_files/figure-gfm/anovasite-3.png" width="100%" />
+
+``` r
 # anova = maximum stem length ~ site
 sitemstl<-lm.rrpp(maxstl ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemstl)
@@ -525,6 +551,14 @@ anova(sitemstl)
     ##     print.progress = FALSE)
 
 ``` r
+# visualise model predictions for maximum stem length ~ site
+sitePreds<-predict(sitemstl,siteDF)
+plot(sitePreds)
+```
+
+<img src="linear-metrics_files/figure-gfm/anovasite-4.png" width="100%" />
+
+``` r
 # anova = maximum stem width ~ site
 sitemstw<-lm.rrpp(maxstw ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemstw)
@@ -547,6 +581,14 @@ anova(sitemstw)
     ## 
     ## Call: lm.rrpp(f1 = maxstw ~ Site, iter = 9999, SS.type = "I", data = data,  
     ##     print.progress = FALSE)
+
+``` r
+# visualise model predictions for maximum stem width ~ site
+sitePreds<-predict(sitemstw,siteDF)
+plot(sitePreds)
+```
+
+<img src="linear-metrics_files/figure-gfm/anovasite-5.png" width="100%" />
 
 ## Toward a replicable method of assigning Gary type-varieties
 

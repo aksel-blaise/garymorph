@@ -190,7 +190,7 @@ fig.cap = "Step 1: sorting into working patterns of distinct structural plan. St
 
 ### Boxplots for `variable` by `site`
 
-```{r boxsite, out.width = "100%", dpi = 200, echo=TRUE}
+```{r boxsite, out.width = "100%", dpi = 300, echo=TRUE}
 # boxplot of maximum length ~ site
 sitemaxl<-ggplot(data,aes(x=Site,y=maxl,color=Site)) + geom_boxplot(notch = TRUE) +
   geom_dotplot(binaxis = 'y',stackdir = 'center',dotsize = 0.3) +
@@ -226,7 +226,7 @@ fig.cap = "Boxplots for maximum length, width, thickness, stem length, and stem 
 
 ### Principal Components Analysis for `site`
 
-```{r pcasite, out.width = "100%", dpi = 200, echo=TRUE}
+```{r pcasite, out.width = "100%", dpi = 300, echo=TRUE}
 #pca
 df<-data[c(2:6)]
 sitepca<-autoplot(prcomp(df),data = data, colour = 'Site',
@@ -240,22 +240,39 @@ fig.cap = "PCA by site."
 
 ### Analyses of Variance (ANOVA) for `variable` ~ `site`
 
-```{r anovasite, echo=TRUE}
+```{r anovasite, out.width = "100%", dpi = 300, echo=TRUE}
 # anova = maximum length ~ site
 siteml<-lm.rrpp(maxl ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(siteml)
+# visualise model predictions for maximum length ~ site
+siteDF<-data.frame(Site = c("Cooper","Means","Pov Pt"))
+rownames(siteDF)<-c("Cooper","Means","Pov Pt")
+sitePreds<-predict(siteml,siteDF)
+plot(sitePreds)
 # anova = maximum width ~ site
 sitemw<-lm.rrpp(maxw ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemw)
+# visualise model predictions for maximum width ~ site
+sitePreds<-predict(sitemw,siteDF)
+plot(sitePreds)
 # anova = maximum thickness ~ site
 sitemth<-lm.rrpp(maxth ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemth)
+# visualise model predictions for maximum thickness ~ site
+sitePreds<-predict(sitemth,siteDF)
+plot(sitePreds)
 # anova = maximum stem length ~ site
 sitemstl<-lm.rrpp(maxstl ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemstl)
+# visualise model predictions for maximum stem length ~ site
+sitePreds<-predict(sitemstl,siteDF)
+plot(sitePreds)
 # anova = maximum stem width ~ site
 sitemstw<-lm.rrpp(maxstw ~ Site, SS.type = "I",data = data,iter = 9999,print.progress = FALSE)
 anova(sitemstw)
+# visualise model predictions for maximum stem width ~ site
+sitePreds<-predict(sitemstw,siteDF)
+plot(sitePreds)
 ```
 
 ## Toward a replicable method of assigning Gary type-varieties
